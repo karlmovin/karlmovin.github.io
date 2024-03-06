@@ -1,6 +1,7 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
+
 export default {
-  content: ["./index.html", "./src/**/*.{html,js, jsx, ts, tsx}"],
+  content: ["./index.html", "./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     container: {
       center: true,
@@ -9,4 +10,4 @@ export default {
     extend: {},
   },
   plugins: [],
-};
+} satisfies Config;

@@ -1,4 +1,5 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import karl from "./assets/karl.png";
 
 function Nav() {
   function toggleDropdown() {
@@ -13,27 +14,18 @@ function Nav() {
     }
   }
 
-  const activeStyle =
-    "block py-2 px-3 text-white bg-gray-900 rounded md:bg-transparent md:border-b md:p-0";
-  const inactiveStyle =
-    "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent";
-
   return (
     <nav className="bg-white dark:bg-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link
+        <NavLink
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img
-            src="/assets/karl.png"
-            className="h-12 rounded-full"
-            alt="Karl"
-          />
+          <img src={karl} className="h-12 rounded-full" alt="Karl" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             Karl Movin
           </span>
-        </Link>
+        </NavLink>
         <button
           onClick={toggleDropdown}
           type="button"
@@ -64,7 +56,7 @@ function Nav() {
               <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                  isActive ? activeStyle : isPending ? inactiveStyle : ""
+                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
               >
                 Hem
@@ -74,11 +66,7 @@ function Nav() {
               <NavLink
                 to="/packning"
                 className={({ isActive, isPending }) =>
-                  isActive
-                    ? activeStyle
-                    : isPending
-                    ? inactiveStyle
-                    : inactiveStyle
+                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
               >
                 Packning
