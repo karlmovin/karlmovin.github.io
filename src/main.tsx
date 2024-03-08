@@ -6,6 +6,7 @@ import Packning from "./routes/packning.tsx";
 import "./index.css";
 import ErrorPage from "./error-page.tsx";
 import Todos from "./routes/todos.tsx";
+import Books from "./routes/books.tsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
           {
             path: "packning",
             element: <Packning />,
+          },
+          {
+            path: "books",
+            element: <Books />,
           },
         ],
       },
