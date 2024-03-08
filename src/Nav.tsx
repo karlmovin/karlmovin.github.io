@@ -72,6 +72,16 @@ function Nav() {
                 Packning
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/books"
+                className={({ isActive, isPending }) =>
+                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                }
+              >
+                Boknoter
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
