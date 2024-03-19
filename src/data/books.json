@@ -6,7 +6,7 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": ["facklitteratur", "psykologi", "vetenskap"]
     },
     {
       "title": "Barn i början: Språkutveckling i förskoleåldern",
@@ -14,11 +14,11 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": ["facklitteratur", "barn", "språkutveckling"]
     },
     {
       "title": "Barnets första tecken de första åren",
-      "author": "Engegerd Lennqvist",
+      "author": "Ingegerd Lennqvist",
       "notes": [
         "Ge inte barnet ansvar att vara lärare i familjen",
         "Upprepa tecknet som barnet försöker göra, det rättar sig själv i framtiden om det är lite fel.",
@@ -41,7 +41,7 @@
       ],
       "status": "reading",
       "tags": ["TAKK"],
-      "genre": "non-fiction"
+      "genres": ["facklitteratur", "barn", "språkutveckling", "teckenspråk"]
     },
     {
       "title": "Liv 3.0: Att vara människa i den artificiella intelligensens tid",
@@ -49,7 +49,7 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": ["facklitteratur", "AI", "teknik", "teknologi"]
     },
     {
       "title": "På spaning efter språkets ursprung",
@@ -57,7 +57,7 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": ["facklitteratur", "språkvetenskap", "lingvistik", "evolution"]
     },
     {
       "title": "The Pragmatic Programmer: Your Journey to Mastery",
@@ -65,7 +65,13 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "programmering",
+        "teknik",
+        "teknologi",
+        "mjukvara"
+      ]
     },
     {
       "title": "Handbok för fifflare",
@@ -73,7 +79,14 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "fusk",
+        "bedrägeri",
+        "kriminalitet",
+        "juridik",
+        "samhälle"
+      ]
     },
     {
       "title": "På vandring i språkens fotspår",
@@ -81,7 +94,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": ["facklitteratur", "språkvetenskap", "lingvistik", "evolution"]
     },
     {
       "title": "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses",
@@ -89,7 +102,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "entreprenörskap",
+        "företagande",
+        "teknik",
+        "innovation"
+      ]
     },
     {
       "title": "Konsten att tänka klart",
@@ -97,7 +116,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "psykologi",
+        "filosofi",
+        "självhjälp",
+        "kognition"
+      ]
     },
     {
       "title": "Peak, Vetenskapen om att ble bättre på nästan allt",
@@ -105,7 +130,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "prestation",
+        "träning",
+        "utveckling",
+        "mänsklig potential"
+      ]
     },
     {
       "title": "Konsten att leva enkelt",
@@ -113,7 +144,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "livsstil",
+        "minimalism",
+        "självhjälp",
+        "mindfulness"
+      ]
     },
     {
       "title": "Predictably Irrational",
@@ -121,7 +158,13 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "ekonomi",
+        "beteendeekonomi",
+        "psykologi",
+        "beslutsfattande"
+      ]
     },
     {
       "title": "How to lead",
@@ -129,7 +172,13 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "ledarskap",
+        "management",
+        "karriär",
+        "teamarbete"
+      ]
     },
     {
       "title": "Inspired; How to create tech products customers love",
@@ -137,7 +186,13 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "produktutveckling",
+        "teknik",
+        "affärsstrategi",
+        "användarcentrerad design"
+      ]
     },
     {
       "title": "Skick och oskick på jobbet",
@@ -145,7 +200,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "arbetsliv",
+        "karriärutveckling",
+        "personlig utveckling",
+        "kommunikation"
+      ]
     },
     {
       "title": "Vad är lean?",
@@ -153,7 +214,13 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "lean",
+        "effektivitet",
+        "processförbättring",
+        "kvalitet"
+      ]
     },
     {
       "title": "Sapiens: A Brief History of Humankind",
@@ -161,7 +228,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "historia",
+        "antropologi",
+        "mänsklig utveckling",
+        "kulturell evolution"
+      ]
     },
     {
       "title": "Homo Deus",
@@ -169,7 +242,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "teknik",
+        "framtid",
+        "existentialism",
+        "artificiell intelligens"
+      ]
     },
     {
       "title": "12 rules for life",
@@ -177,7 +256,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "filosofi",
+        "självhjälp",
+        "psykologi",
+        "personlig utveckling"
+      ]
     },
     {
       "title": "Factfulness",
@@ -185,7 +270,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "statistik",
+        "världsbild",
+        "fakta",
+        "global utveckling"
+      ]
     },
     {
       "title": "21 lessons for the 21st century",
@@ -193,7 +284,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "samhälle",
+        "teknik",
+        "politik",
+        "mänsklig framtid"
+      ]
     },
     {
       "title": "Humankind",
@@ -201,7 +298,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "samhälle",
+        "mänskligt beteende",
+        "solidaritet",
+        "historia"
+      ]
     },
     {
       "title": "Äntligen vardag!",
@@ -209,7 +312,7 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": ["facklitteratur", "livsstil", "hälsa", "arbetsliv", "balans"]
     },
     {
       "title": "4 hour body",
@@ -217,7 +320,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "hälsa",
+        "fitness",
+        "kroppsoptimering",
+        "prestation"
+      ]
     },
     {
       "title": "4 hour work week",
@@ -225,7 +334,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "karriär",
+        "livsstil",
+        "effektivitet",
+        "tidsstyrning"
+      ]
     },
     {
       "title": "A short history of nearly everything",
@@ -233,7 +348,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "vetenskap",
+        "historia",
+        "naturvetenskap",
+        "universum"
+      ]
     },
     {
       "title": "How pleasure works",
@@ -241,7 +362,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "psykologi",
+        "känslor",
+        "njutning",
+        "mänskligt välbefinnande"
+      ]
     },
     {
       "title": "The logic of life",
@@ -249,7 +376,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "ekonomi",
+        "beslutsfattande",
+        "mikroekonomi",
+        "mänskligt beteende"
+      ]
     },
     {
       "title": "How the world really works",
@@ -257,7 +390,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": ["facklitteratur", "vetenskap", "energi", "miljö", "hållbarhet"]
     },
     {
       "title": "Framgångsfaktorn",
@@ -265,7 +398,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "framgång",
+        "prestation",
+        "talang",
+        "arbetsliv"
+      ]
     },
     {
       "title": "Vardagsmakt",
@@ -273,7 +412,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "kommunikation",
+        "personlig utveckling",
+        "relationer",
+        "influens"
+      ]
     },
     {
       "title": "Härskarteknik",
@@ -281,7 +426,13 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "kommunikation",
+        "makt",
+        "relationer",
+        "självförtroende"
+      ]
     },
     {
       "title": "Vi måste prata",
@@ -289,7 +440,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "kommunikation",
+        "relationer",
+        "konflikthantering",
+        "empati"
+      ]
     },
     {
       "title": "Behavioural economics saved my dog",
@@ -297,7 +454,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "ekonomi",
+        "beteendeekonomi",
+        "psykologi",
+        "beslutsfattande"
+      ]
     },
     {
       "title": "WTF, What's the future and why it's up to us",
@@ -305,7 +468,13 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "teknik",
+        "framtid",
+        "innovation",
+        "samhälle"
+      ]
     },
     {
       "title": "Noise",
@@ -313,7 +482,13 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": [
+        "facklitteratur",
+        "psykologi",
+        "beslutsfattande",
+        "kognition",
+        "informationsoverflöd"
+      ]
     },
     {
       "title": "Gödel, Escher, Bach: An eternal golden braid",
@@ -321,7 +496,7 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genre": "non-fiction"
+      "genres": ["facklitteratur", "matematik", "konst", "musik", "kognition"]
     },
     {
       "title": "",
@@ -329,7 +504,7 @@
       "notes": [],
       "status": "",
       "tags": [],
-      "genre": ""
+      "genres": [""]
     }
   ]
 }

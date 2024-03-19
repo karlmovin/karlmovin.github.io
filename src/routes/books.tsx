@@ -4,7 +4,10 @@ export default function Books() {
     <>
       <main className="flex flex-col gap-4 container max-w-screen-xl">
         <section>
-          <p className="text-2xl">Anteckningar från lästa böcker</p>
+          <p className="text-4xl">Anteckningar från böcker</p>
+        </section>
+        <section>
+          <p className="text-2xl">Lästa böcker</p>
           <ul>
             {books.books
               .filter((book) => book.status === "read")
@@ -17,7 +20,7 @@ export default function Books() {
         </section>
 
         <section>
-          <p className="text-2xl">Anteckningar från pågående böcker</p>
+          <p className="text-2xl">Pågående böcker</p>
           <ul>
             {books.books
               .filter((book) => book.status === "reading")

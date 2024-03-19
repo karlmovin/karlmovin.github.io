@@ -1,9 +1,6 @@
 export default function Packning() {
   return (
     <main className="flex flex-col gap-8 container max-w-screen-xl">
-      <section>
-        <div className="text-4xl"></div>
-      </section>
       <section id="skridskopackning">
         <p className="text-4xl">Skridsko</p>
         <div className="mt-2 ml-1 flex flex-row">
