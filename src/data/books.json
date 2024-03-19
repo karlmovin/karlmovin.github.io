@@ -1,0 +1,335 @@
+{
+  "books": [
+    {
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Barn i början: Språkutveckling i förskoleåldern",
+      "author": "Monica Westerlund",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Barnets första tecken de första åren",
+      "author": "Engegerd Lennqvist",
+      "notes": [
+        "Ge inte barnet ansvar att vara lärare i familjen",
+        "Upprepa tecknet som barnet försöker göra, det rättar sig själv i framtiden om det är lite fel.",
+        "1-2 år: börjar förstå logiska samband mellan orsak och verkan. Uppfattar oftast endast slutklämmen i en mening (t.ex. sönder, slut, tom). Kan mellan 5-50 ord.",
+        "ca 2 år: första ansats till koppling mellan substantiv och verb (pappa borta).",
+        "ca 3 år: kan ungefär 1000 ord, kan berätta namn och ålder, små historier, kan utöver 'vad?' och 'var?' fråga om 'hur?' och 'varför?'",
+        "3-4 år: börjar förstå enkla om-satser, kan länka logiskt när de logiska sambanden knyter an till barnets egna erfarenheter.",
+        "ca 4 år: 1500-2000 ord, låtsas mycket, kan berätta långa historier.",
+        "ca 5 år: börjar behärska adjektiv och adverb samt viss uppfattning om tid.",
+        "skolålder: ca 2500 ord, börjar intressera sig för det skrivna språket.",
+        "Använd pekning på det som beskrivs så att barn ser det som pekas på tillsammans med tecknet. Upprepa tecknet i olika sammanhang.",
+        "Till skillnad  från det orala/auditiva talspråket, där orden är symboler och relerna är grammatiken, så är teckenspråket ett manuellt/visuellt språk, där byggstenarna är handform, läge och rörelse. Tecknena är symbolerna och i huvudsak är ansiktssignalerna (blickriktning, ögonkontakt, ögonbryn, mun, huvudrörelse) grammatiken.",
+        "Teckenspråk har en manuell del (handtecken) och en oral del (munformer/munrörelser) som samarbetar med varandra.",
+        "Munformen kan vara svenskpåverkad (formar mer eller mindre de svenska orden), eller vara 'genuina' (förekommer mest vid starka och aktiva verb).",
+        "Munformssymbolen [U] står för 'lite' eller att något pågår eller sker med lätthet utan ansträngning. Munnen formas som vid att säga u och lite luft blåses ev. ut.",
+        "Munformssymbolen [M] står för 'lagom', 'mitt emellan', 'ganska mycket', 'normalt', 'det vanliga', etc. Munnen är sluten på ett neutralt sätt, bred eller plutig ev. med indragen haka.",
+        "Munformssymbolen [()] står för 'mycket'. Munnen är lätt sluten och kinderna fylls med lite luft.",
+        "Munformssymbolen [i] står för 'väldigt mycket'. Munnen är formad som ett i med synliga hopbitna tänder.",
+        "Tecknaren väljer själv vilken genuin munform denna ska göra, men intensitet kan även visas med handformer, föreställ dig att visa lätt vispning kontra hårdvispning och hur det faktiskt hade sett ut."
+      ],
+      "status": "reading",
+      "tags": ["TAKK"],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Liv 3.0: Att vara människa i den artificiella intelligensens tid",
+      "author": "Max Tegmark",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "På spaning efter språkets ursprung",
+      "author": "Sverker Johansson",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "The Pragmatic Programmer: Your Journey to Mastery",
+      "author": "Andrew Hunt, David Thomas",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Handbok för fifflare",
+      "author": "Hanne Kjöller",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "På vandring i språkens fotspår",
+      "author": "Sverker Johansson",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses",
+      "author": "Eric Ries",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Konsten att tänka klart",
+      "author": "Christer Sturemark, Douglas Hofstadter",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Peak, Vetenskapen om att ble bättre på nästan allt",
+      "author": "K Anders Ericsson & Robert Pool",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Konsten att leva enkelt",
+      "author": "Shunmyo Masuno",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Predictably Irrational",
+      "author": "Dan Ariely",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "How to lead",
+      "author": "Jo Owen",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Inspired; How to create tech products customers love",
+      "author": "Marty Cagan",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Skick och oskick på jobbet",
+      "author": "Jan Atle Andersen",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Vad är lean?",
+      "author": "Niklas Modig, Pär Åhlström",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Homo Deus",
+      "author": "Yuval Noah Harari",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "12 rules for life",
+      "author": "Jordan B. Peterson",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Factfulness",
+      "author": "Hans Rosling",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "21 lessons for the 21st century",
+      "author": "Yuval Noah Harari",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Humankind",
+      "author": "Rutger Bregman",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Äntligen vardag!",
+      "author": "Petter A. Stordalen",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "4 hour body",
+      "author": "Timothy Ferris",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "4 hour work week",
+      "author": "Timothy Ferris",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "A short history of nearly everything",
+      "author": "Bill Bryson",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "How pleasure works",
+      "author": "Paul Bloom",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "The logic of life",
+      "author": "Tim Harford",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "How the world really works",
+      "author": "Vaclav Smil",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Framgångsfaktorn",
+      "author": "Malcolm Gladwell",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Vardagsmakt",
+      "author": "Elaine Eksvärd",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Härskarteknik",
+      "author": "Elaine Eksvärd",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Vi måste prata",
+      "author": "Elain Eksvärd",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Behavioural economics saved my dog",
+      "author": "Dan Ariely",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "WTF, What's the future and why it's up to us",
+      "author": "Tim O'Reilly",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Noise",
+      "author": "Daniel Kahneman, Oliver Sibony, Carr R. Sunstein",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "Gödel, Escher, Bach: An eternal golden braid",
+      "author": "Douglas Hofstadter",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genre": "non-fiction"
+    },
+    {
+      "title": "",
+      "author": "",
+      "notes": [],
+      "status": "",
+      "tags": [],
+      "genre": ""
+    }
+  ]
+}

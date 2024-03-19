@@ -1,10 +1,10 @@
 export default function Packning() {
   return (
-    <main className="flex flex-col gap-8">
-      <section className="container max-w-screen-xl">
+    <main className="flex flex-col gap-8 container max-w-screen-xl">
+      <section>
         <div className="text-4xl"></div>
       </section>
-      <section id="skridskopackning" className="container max-w-screen-xl">
+      <section id="skridskopackning">
         <p className="text-4xl">Skridsko</p>
         <div className="mt-2 ml-1 flex flex-row">
           <div className="flex-1 ">
@@ -72,7 +72,7 @@ export default function Packning() {
           </div>
         </div>
       </section>
-      <section id="längd" className="container max-w-screen-xl">
+      <section id="längd">
         <p className="text-4xl">Längdskidåkning (klassisk/skate)</p>
         <div className="mt-2 ml-1">
           <p className="text-xl">Utrustning</p>
@@ -109,7 +109,7 @@ export default function Packning() {
           </ol>
         </div>
       </section>
-      <section id="utför" className="container max-w-screen-xl">
+      <section id="utför">
         <p className="text-4xl">Utförsskidor/turskidor TODO</p>
         <ol className="border-double border-l-2 border-slate-400 pl-2">
           <li>Skidor och pjäxor</li>
@@ -121,20 +121,20 @@ export default function Packning() {
           <li>Skydd (Huvud, rygg om turskidor)</li>
         </ol>
       </section>
-      <section id="vandring" className="container max-w-screen-xl">
+      <section id="vandring">
         <p className="text-4xl">Vandring TODO</p>
         <ol className="border-double border-l-2 border-slate-400 pl-2">
           <li>Kängor</li>
         </ol>
       </section>
-      <section id="tältning" className="container max-w-screen-xl">
+      <section id="tältning">
         <p className="text-4xl">Tältning TODO</p>
         <ol className="border-double border-l-2 border-slate-400 pl-2">
           <li>Tält</li>
           <li>Sovsäck</li>
         </ol>
       </section>
-      <section id="bebis" className="container max-w-screen-xl">
+      <section id="bebis">
         <p className="text-4xl">Bebis TODO</p>
         <ol className="border-double border-l-2 border-slate-400 pl-2">
           <li>Ombyte</li>
@@ -144,7 +144,7 @@ export default function Packning() {
           <li>Vattenflaska</li>
         </ol>
       </section>
-      <section id="resa" className="container max-w-screen-xl">
+      <section id="resa">
         <p className="text-4xl">Resa TODO</p>
         <ol className="border-double border-l-2 border-slate-400 pl-2">
           <li>Tandborste, tandkräm</li>
@@ -152,7 +152,7 @@ export default function Packning() {
           <li>Necessär</li>
         </ol>
       </section>
-      <section id="segling" className="container max-w-screen-xl">
+      <section id="segling">
         <p className="text-4xl">Segling TODO</p>
         <ol className="border-double border-l-2 border-slate-400 pl-2">
           <li>Skor/stövlar med bra grepp som inte färgar av</li>
