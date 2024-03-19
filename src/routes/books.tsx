@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import books from "../data/books.json";
+
 export default function Books() {
   return (
     <>
@@ -26,7 +28,9 @@ export default function Books() {
               .filter((book) => book.status === "reading")
               .map((book) => (
                 <li>
-                  {book.title} av {book.author}
+                  <Link to={book.slug ?? ""}>
+                    {book.title} av {book.author}
+                  </Link>
                 </li>
               ))}
           </ul>
