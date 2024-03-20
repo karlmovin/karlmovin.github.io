@@ -127,7 +127,7 @@
       ]
     },
     {
-      "title": "Peak, Vetenskapen om att ble bättre på nästan allt",
+      "title": "Peak: Vetenskapen om att bli bättre på nästan allt",
       "author": "K Anders Ericsson & Robert Pool",
       "notes": [],
       "status": "planned",
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "title": "Predictably Irrational",
+      "title": "Predictably Irrational: The Hidden Forces That Shape Our Decisions",
       "author": "Dan Ariely",
       "notes": [],
       "status": "reading",
@@ -169,7 +169,7 @@
       ]
     },
     {
-      "title": "How to lead",
+      "title": "How to lead: What You Actually Need to Do to Manage, Lead & Succeed.",
       "author": "Jo Owen",
       "notes": [],
       "status": "reading",
@@ -183,7 +183,7 @@
       ]
     },
     {
-      "title": "Inspired; How to create tech products customers love",
+      "title": "Inspired: How to create tech products customers love",
       "author": "Marty Cagan",
       "notes": [],
       "status": "reading",
@@ -239,7 +239,7 @@
       ]
     },
     {
-      "title": "Homo Deus",
+      "title": "Homo Deus: A brief history of tomorrow",
       "author": "Yuval Noah Harari",
       "notes": [],
       "status": "read",
@@ -250,34 +250,6 @@
         "framtid",
         "existentialism",
         "artificiell intelligens"
-      ]
-    },
-    {
-      "title": "12 rules for life",
-      "author": "Jordan B. Peterson",
-      "notes": [],
-      "status": "read",
-      "tags": [],
-      "genres": [
-        "facklitteratur",
-        "filosofi",
-        "självhjälp",
-        "psykologi",
-        "personlig utveckling"
-      ]
-    },
-    {
-      "title": "Factfulness",
-      "author": "Hans Rosling",
-      "notes": [],
-      "status": "read",
-      "tags": [],
-      "genres": [
-        "facklitteratur",
-        "statistik",
-        "världsbild",
-        "fakta",
-        "global utveckling"
       ]
     },
     {
@@ -295,7 +267,36 @@
       ]
     },
     {
-      "title": "Humankind",
+      "title": "12 rules for life: An antidote to chaos",
+      "author": "Jordan B. Peterson",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genres": [
+        "facklitteratur",
+        "filosofi",
+        "självhjälp",
+        "psykologi",
+        "personlig utveckling"
+      ]
+    },
+    {
+      "title": "Factfulness: Ten Reasons We're Wrong About the World – and Why Things Are Better Than You Think",
+      "author": "Hans Rosling",
+      "notes": [],
+      "status": "read",
+      "tags": [],
+      "genres": [
+        "facklitteratur",
+        "statistik",
+        "världsbild",
+        "fakta",
+        "global utveckling"
+      ]
+    },
+
+    {
+      "title": "Humankind: A hopeful history",
       "author": "Rutger Bregman",
       "notes": [],
       "status": "read",
@@ -317,7 +318,7 @@
       "genres": ["facklitteratur", "livsstil", "hälsa", "arbetsliv", "balans"]
     },
     {
-      "title": "4 hour body",
+      "title": "The 4-Hour Body: An Uncommon Guide to Rapid Fat-Loss, Incredible Sex, and Becoming Superhuman",
       "author": "Timothy Ferris",
       "notes": [],
       "status": "read",
@@ -331,7 +332,7 @@
       ]
     },
     {
-      "title": "4 hour work week",
+      "title": "The 4-Hour Work Week: Escape the 9-5, Live Anywhere and Join the New Rich",
       "author": "Timothy Ferris",
       "notes": [],
       "status": "read",
@@ -359,7 +360,7 @@
       ]
     },
     {
-      "title": "How pleasure works",
+      "title": "How pleasure works: The New Science of Why We Like What We Like",
       "author": "Paul Bloom",
       "notes": [],
       "status": "planned",
@@ -373,7 +374,7 @@
       ]
     },
     {
-      "title": "The logic of life",
+      "title": "The logic of life: The Rational Economics of an Irrational World",
       "author": "Tim Harford",
       "notes": [],
       "status": "planned",
@@ -451,7 +452,7 @@
       ]
     },
     {
-      "title": "Behavioural economics saved my dog",
+      "title": "Behavioural Economics Saved My Dog: Life Advice For The Imperfect Human",
       "author": "Dan Ariely",
       "notes": [],
       "status": "planned",
@@ -479,7 +480,7 @@
       ]
     },
     {
-      "title": "Noise",
+      "title": "Noise: A flaw in human judgement",
       "author": "Daniel Kahneman, Oliver Sibony, Carr R. Sunstein",
       "notes": [],
       "status": "reading",
