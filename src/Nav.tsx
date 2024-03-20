@@ -69,7 +69,7 @@ function Nav() {
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
               >
-                Packning
+                Packlistor
               </NavLink>
             </li>
             <li>
@@ -79,7 +79,7 @@ function Nav() {
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
               >
-                Boknoter
+                Bokanteckningar
               </NavLink>
             </li>
           </ul>

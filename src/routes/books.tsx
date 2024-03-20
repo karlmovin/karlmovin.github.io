@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import books from "../data/books.json";
+import BookList from "../components/BookList";
 
 export default function Books() {
   return (
@@ -8,45 +8,26 @@ export default function Books() {
         <section>
           <p className="text-4xl">Anteckningar från böcker</p>
         </section>
-        <section>
-          <p className="text-2xl">Lästa böcker</p>
-          <ul>
-            {books.books
-              .filter((book) => book.status === "read")
-              .map((book) => (
-                <li>
-                  {book.title} av {book.author}
-                </li>
-              ))}
-          </ul>
-        </section>
 
         <section>
           <p className="text-2xl">Pågående böcker</p>
-          <ul>
-            {books.books
-              .filter((book) => book.status === "reading")
-              .map((book) => (
-                <li>
-                  <Link to={book.slug ?? ""}>
-                    {book.title} av {book.author}
-                  </Link>
-                </li>
-              ))}
-          </ul>
+          <BookList
+            books={books.books.filter((book) => book.status === "reading")}
+          />
+        </section>
+
+        <section>
+          <p className="text-2xl">Lästa böcker</p>
+          <BookList
+            books={books.books.filter((book) => book.status === "read")}
+          />
         </section>
 
         <section>
           <p className="text-2xl">Planerade böcker</p>
-          <ul>
-            {books.books
-              .filter((book) => book.status === "planned")
-              .map((book) => (
-                <li>
-                  {book.title} av {book.author}
-                </li>
-              ))}
-          </ul>
+          <BookList
+            books={books.books.filter((book) => book.status === "planned")}
+          />
         </section>
       </main>
     </>
