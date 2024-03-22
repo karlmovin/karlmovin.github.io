@@ -8,6 +8,7 @@ import ErrorPage from "./error-page.tsx";
 import Todos from "./routes/todos.tsx";
 import Books from "./routes/books.tsx";
 import BookPage from "./routes/book.tsx";
+import BookmarksPage from "./routes/links.tsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
           {
             path: "books/:slug",
             element: <BookPage />,
+          },
+          {
+            path: "bookmarks",
+            element: <BookmarksPage />,
           },
         ],
       },

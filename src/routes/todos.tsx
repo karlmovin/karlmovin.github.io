@@ -1,8 +1,8 @@
 const todos = [
-  "lägg till funktion att filtrera på genre",
-  "presentera anteckningar bättre",
+  "lägg till funktion att filtrera böcker på genre",
   "förbättra packlistvisningen, gör den dynamisk",
   "gör klart packlistorna",
+  "presentera bokmärken bättre, kanske som kort?",
 ];
 
 export default function Todos() {

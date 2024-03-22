@@ -82,6 +82,16 @@ function Nav() {
                 Bokanteckningar
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/bookmarks"
+                className={({ isActive, isPending }) =>
+                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                }
+              >
+                Bokmärken
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
