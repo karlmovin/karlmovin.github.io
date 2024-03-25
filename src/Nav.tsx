@@ -79,7 +79,7 @@ function Nav() {
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
               >
-                Bokanteckningar
+                Böcker
               </NavLink>
             </li>
             <li>
