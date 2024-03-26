@@ -101,15 +101,15 @@ const packlistdata = [
           "Solskyddskläder",
           "Solhatt",
           "Badblöjor",
-          "UV-tält (ofta ganska smidiga att packa ner!)",
-          "Solkräm för barn (våra bästa tips här!)",
+          "UV-tält (ofta ganska smidiga att packa ner)",
+          "Solkräm för barn",
           "Badskor",
         ],
       },
       {
         title: "Sova",
         items: [
-          "Resesäng (men enklare att boka på hotellet!)",
+          "Resesäng (men enklare att boka på hotellet)",
           "Babyvakt",
           "Egen kudde och filt",
         ],
@@ -226,21 +226,25 @@ const packlistdata = [
     ],
   },
   {
-    title: "Utförsskidor",
+    title: "Utförsåkning",
     data: [
       {
         title: "Utrustning",
         items: [
           "Skidor och pjäxor",
           "Stavar",
-          "Skidunderställ (2 par räcker för de flesta)",
-          "Skidkläder",
-          "Skidstrumpor",
           "Skidhandskar",
           "Skidhjälm",
           "Ryggskydd",
           "Goggles",
-          "Solglasögon",
+        ],
+      },
+      {
+        title: "Kläder",
+        items: [
+          "Skidunderställ (2 par räcker för de flesta)",
+          "Skidkläder",
+          "Skidstrumpor",
           "Mössa/pannband/balaklava",
           "Handskar",
           "Halsduk/buff",
@@ -248,10 +252,17 @@ const packlistdata = [
           "3-4 överdelar",
           "1-3 tjockare tröjor",
           "Underkläder",
+          "Vinterskor och kanske ett lättare par du kan ha inne på hotellet",
+        ],
+      },
+      {
+        title: "Bra att ha",
+        items: [
+          "Solglasögon",
+          "Underkläder",
           "Toalettartiklar (glöm inte viktiga mediciner)",
           "Solkräm",
           "Laddare",
-          "Vinterskor och kanske ett lättare par du kan ha inne på hotellet",
         ],
       },
     ],
@@ -268,9 +279,9 @@ const packlistdata = [
         ],
       },
       {
-        title: "Turskidor",
+        title: "Kläder",
         subtitle:
-          "Basen i din packning är densamma på dagsturen som på den längre utfärden. Däremot tillkommer utrustning för övernattning, samt ombyten om du blir borta i flera dagar. Under vintern blir det extra viktigt att klä sig enligt lager på lager-principen. Kom även ihåg att du lätt fryser när du stannar till. Därför behövs förstärkningsplagg, såsom dunjacka, under pauserna. På långturer är det viktigt att ha med en bra jacka som tål både vind och väta. \n\n Du som ska på flerdagstur i snön kan dra packningen på en pulka, så avlastar du ryggen. I fjällvärlden slipper du bära med dig mat om du i förväg ser efter vilka av STFs fjällstugor som har butik. Glöm inte att läsa på om fjällsäkerhet innan du ger dig av.",
+          "Basen i din packning är densamma på dagsturen som på den längre utfärden. Däremot tillkommer utrustning för övernattning, samt ombyten om du blir borta i flera dagar. Under vintern blir det extra viktigt att klä sig enligt lager på lager-principen. Kom även ihåg att du lätt fryser när du stannar till. Därför behövs förstärkningsplagg, såsom dunjacka, under pauserna. På långturer är det viktigt att ha med en bra jacka som tål både vind och väta. ",
         items: [
           "Ull-/syntetunderställ närmast kroppen.",
           "Tröja.",
@@ -280,10 +291,17 @@ const packlistdata = [
           "Damasker.",
           "Extra mössa, buff och vantar. Helst tjocka tumvantar.",
           "Extra underställ och strumpor. Men ta inte med för mycket, du kan tvätta om det behövs.",
-          "Tvål som fungerar för tvätt, städ och disk.",
+        ],
+      },
+      {
+        title: "Annat",
+        subtitle:
+          "Du som ska på flerdagstur i snön kan dra packningen på en pulka, så avlastar du ryggen. I fjällvärlden slipper du bära med dig mat om du i förväg ser efter vilka av STFs fjällstugor som har butik. Glöm inte att läsa på om fjällsäkerhet innan du ger dig av.",
+        items: [
           "Solglasögon/skidglasögon, solskyddsfaktor.",
           "Mat och dryck. Vattenflaska, termos, kåsa och spork.",
           "Plastpåsar för skräp (så du kan ta med det ned från fjället och närmsta sophantering).",
+          "Tvål som fungerar för tvätt, städ och disk.",
           "Ligg-/sittunderlag.",
           "Första hjälpen-kit, inklusive första förband, elastisk binda och skavsårsplåster.",
           "Toalettpapper.",
@@ -291,7 +309,7 @@ const packlistdata = [
           "Fickkniv, tändstickor/tändstål.",
           "Ficklampa, pannlampa.",
           "Mobiltelefon och powerbank. (Tänk på att det inte alltid finns mobiltäckning i fjällvärlden)",
-          "Vindsäck och spade. De går att hyra på många fjällstationer.",
+          "Vindsäck. De går att hyra på många fjällstationer.",
           "Lite reparationsutrustning, exempelvis silvertejp och remmar.",
         ],
       },
@@ -516,31 +534,27 @@ export default function Packlistor() {
             selectedCategory === "" || category.title === selectedCategory
         )
         .map(({ title, data }) => (
-          <section id={title} key={title}>
-            <p className="text-4xl">{title}</p>
-            <div className="mt-2 ml-1 flex flex-row">
-              <div className="flex-1">
-                {data.map(({ title: dataTitle, subtitle, items }) => (
-                  <>
-                    <p className="text-xl">{dataTitle}</p>
-                    <p className="text-sm py-2 whitespace-pre-line">
-                      {subtitle}
-                    </p>
-                    <ol className="pl-2">
-                      {items?.map((item) => (
-                        <li key={item}>
-                          <input
-                            type="checkbox"
-                            className="checked:bg-blue-500 mr-1"
-                          />
-                          {item}
-                        </li>
-                      ))}
-                    </ol>
-                    <br />
-                  </>
-                ))}
-              </div>
+          <section id={title} key={title} className="flex flex-col">
+            <p className="text-4xl self-center pb-3">{title}</p>
+            <div className="mt-2 ml-1 flex flex-row flex-wrap">
+              {data.map(({ title: dataTitle, subtitle, items }) => (
+                <div className="max-w-1/2 min-w-56 pl-3">
+                  <p className="text-xl">{dataTitle}</p>
+                  <p className="text-sm py-2 whitespace-pre-line">{subtitle}</p>
+                  <ol className="">
+                    {items?.map((item) => (
+                      <li key={item}>
+                        <input
+                          type="checkbox"
+                          className="checked:bg-blue-500 mr-1"
+                        />
+                        {item}
+                      </li>
+                    ))}
+                  </ol>
+                  <br />
+                </div>
+              ))}
             </div>
           </section>
         ))}
