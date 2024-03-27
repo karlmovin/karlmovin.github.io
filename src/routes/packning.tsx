@@ -516,18 +516,20 @@ export default function Packlistor() {
 
   return (
     <main className="flex flex-col gap-8 container max-w-screen-xl">
-      <select
-        value={selectedCategory || ""}
-        onChange={handleCategoryChange}
-        className="w-48 p-2 border border-gray-300 rounded-md"
-      >
-        <option value={""}>Alla listor</option>
-        {packlistdata.map(({ title }) => (
-          <option key={title} value={title}>
-            {title}
-          </option>
-        ))}
-      </select>
+      <div className="relative h-10 w-72 min-w-[200px]">
+        <select
+          value={selectedCategory || ""}
+          onChange={handleCategoryChange}
+          className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900 focus:border-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+        >
+          <option value={""}>Alla listor</option>
+          {packlistdata.map(({ title }) => (
+            <option key={title} value={title}>
+              {title}
+            </option>
+          ))}
+        </select>
+      </div>
       {packlistdata
         .filter(
           (category) =>
@@ -539,9 +541,11 @@ export default function Packlistor() {
             <div className="mt-2 gap-2 flex flex-row flex-wrap">
               {data.map(({ title: dataTitle, subtitle, items }) => (
                 <div className="flex flex-col">
-                  <p className="text-xl self-center font-medium">{dataTitle}</p>
+                  <p className="px-2 text-xl self-center font-medium text-gray-700 bg-white shadow-md rounded-t-xl bg-clip-border">
+                    {dataTitle}
+                  </p>
                   {subtitle && (
-                    <p className="text-sm py-2 whitespace-pre-line">
+                    <p className="text-sm p-2 whitespace-pre-line text-gray-700 bg-white shadow-md  bg-clip-border">
                       {subtitle}
                     </p>
                   )}
