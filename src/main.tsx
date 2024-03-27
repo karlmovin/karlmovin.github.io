@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root.tsx";
-import Packning from "./routes/packning.tsx";
+import Packlistor from "./routes/packlistor.tsx";
 import "./index.css";
 import ErrorPage from "./error-page.tsx";
 import Todos from "./routes/todos.tsx";
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <Todos /> },
           {
-            path: "packning",
-            element: <Packning />,
+            path: "packlistor",
+            element: <Packlistor />,
           },
           {
             path: "books",

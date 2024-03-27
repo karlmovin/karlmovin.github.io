@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const packlistdata = [
   {
-    title: "Resa (TODO)",
+    title: "Resa (todo)",
     data: [
       {
         title: "Necessär",
@@ -515,7 +515,7 @@ export default function Packlistor() {
   };
 
   return (
-    <main className="flex flex-col gap-8 container max-w-screen-xl">
+    <main className="flex flex-col gap-8 container max-w-screen-xl pb-8">
       <div className="relative h-10 w-72 min-w-[200px]">
         <select
           value={selectedCategory || ""}
@@ -537,7 +537,9 @@ export default function Packlistor() {
         )
         .map(({ title, data }) => (
           <section id={title} key={title} className="flex flex-col">
-            <p className="text-4xl self-center pb-3">{title}</p>
+            <p className="text-4xl self-center text-center pb-2 bg-white w-full">
+              {title}
+            </p>
             <div className="mt-2 gap-2 flex flex-row flex-wrap">
               {data.map(({ title: dataTitle, subtitle, items }) => (
                 <div className="flex flex-col">

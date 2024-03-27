@@ -56,7 +56,7 @@ function BookmarksPage() {
       description: "Extensions, themes, and apps for Chrome",
     },
     {
-      url: "https://www.material-tailwind.com/docs/overview",
+      url: "https://www.material-tailwind.com/docs/html/installation",
       title: "Material Tailwind",
       description: "Material Design components for Tailwind CSS",
     },
@@ -68,9 +68,9 @@ function BookmarksPage() {
   ];
 
   return (
-    <section className="container max-w-screen-xl">
+    <section className="container max-w-screen-xl ">
       <p className="text-4xl">Bokmärken</p>
-      <ul>
+      <ul className="flex flex-wrap flex-row gap-8">
         {bookmarks.map((bookmark) => (
           <li key={bookmark.url}>
             <Card

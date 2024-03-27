@@ -64,7 +64,7 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/packning"
+                to="/packlistor"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }

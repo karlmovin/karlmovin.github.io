@@ -1,7 +1,5 @@
 const todos = [
   "lägg till funktion att filtrera böcker på genre",
-  "förbättra packlistvisningen, gör den dynamisk",
-  "gör klart packlistorna",
   "förbättra bokanteckningsvisningen",
 ];
 
