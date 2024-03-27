@@ -3,6 +3,7 @@
     {
       "title": "Thinking, Fast and Slow",
       "author": "Daniel Kahneman",
+      "slug": "thinking-fast-and-slow_kahneman",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -24,13 +25,7 @@
       "notes": [
         "Ge inte barnet ansvar att vara lärare i familjen",
         "Upprepa tecknet som barnet försöker göra, det rättar sig själv i framtiden om det är lite fel.",
-        "1-2 år: börjar förstå logiska samband mellan orsak och verkan. Uppfattar oftast endast slutklämmen i en mening (t.ex. sönder, slut, tom). Kan mellan 5-50 ord.",
-        "ca 2 år: första ansats till koppling mellan substantiv och verb (pappa borta).",
-        "ca 3 år: kan ungefär 1000 ord, kan berätta namn och ålder, små historier, kan utöver 'vad?' och 'var?' fråga om 'hur?' och 'varför?'",
-        "3-4 år: börjar förstå enkla om-satser, kan länka logiskt när de logiska sambanden knyter an till barnets egna erfarenheter.",
-        "ca 4 år: 1500-2000 ord, låtsas mycket, kan berätta långa historier.",
-        "ca 5 år: börjar behärska adjektiv och adverb samt viss uppfattning om tid.",
-        "skolålder: ca 2500 ord, börjar intressera sig för det skrivna språket.",
+        "Runt skolålder: ca 2500 ord, börjar intressera sig för det skrivna språket.",
         "Använd pekning på det som beskrivs så att barn ser det som pekas på tillsammans med tecknet. Upprepa tecknet i olika sammanhang.",
         "Till skillnad  från det orala/auditiva talspråket, där orden är symboler och relerna är grammatiken, så är teckenspråket ett manuellt/visuellt språk, där byggstenarna är handform, läge och rörelse. Tecknena är symbolerna och i huvudsak är ansiktssignalerna (blickriktning, ögonkontakt, ögonbryn, mun, huvudrörelse) grammatiken.",
         "Teckenspråk har en manuell del (handtecken) och en oral del (munformer/munrörelser) som samarbetar med varandra.",
@@ -39,7 +34,13 @@
         "Munformssymbolen [M] står för 'lagom', 'mitt emellan', 'ganska mycket', 'normalt', 'det vanliga', etc. Munnen är sluten på ett neutralt sätt, bred eller plutig ev. med indragen haka.",
         "Munformssymbolen [()] står för 'mycket'. Munnen är lätt sluten och kinderna fylls med lite luft.",
         "Munformssymbolen [i] står för 'väldigt mycket'. Munnen är formad som ett i med synliga hopbitna tänder.",
-        "Tecknaren väljer själv vilken genuin munform denna ska göra, men intensitet kan även visas med handformer, föreställ dig att visa lätt vispning kontra hårdvispning och hur det faktiskt hade sett ut."
+        "Tecknaren väljer själv vilken genuin munform denna ska göra, men intensitet kan även visas med handformer, föreställ dig att visa lätt vispning kontra hårdvispning och hur det faktiskt hade sett ut.",
+        "Runt 1-2 år börjar barnet förstå logiska samband mellan orsak och verkan. De uppfattar oftast endast slutklämmen i en mening (t.ex. sönder, slut, tom). Kan mellan 5-50 ord.",
+        "Runt 2 år gör barnet en första ansats till koppling mellan substantiv och verb (t.ex. 'pappa borta').",
+        "Runt 3 år kan barnet ungefär 1000 ord och kan berätta namn, ålder och små historier. Utöver 'vad?' och 'var?' kan de även fråga om 'hur?' och 'varför?'",
+        "Runt 3-4 år börjar barnet förstå enkla om-satser och kan tänka logiskt när de logiska sambanden knyter an till barnets egna erfarenheter.",
+        "Runt 4 år kan barnet ca 1500-2000 ord, låtsas mycket och kan berätta långa historier.",
+        "Runt 5 år börjar barnet behärska adjektiv och adverb samt har viss uppfattning om tid."
       ],
       "status": "reading",
       "tags": ["TAKK"],
@@ -48,6 +49,7 @@
     {
       "title": "Liv 3.0: Att vara människa i den artificiella intelligensens tid",
       "author": "Max Tegmark",
+      "slug": "liv-30_tegmark",
       "notes": [],
       "status": "reading",
       "tags": [],
@@ -56,6 +58,7 @@
     {
       "title": "På spaning efter språkets ursprung",
       "author": "Sverker Johansson",
+      "slug": "ursprung_johansson",
       "notes": [],
       "status": "reading",
       "tags": [],
@@ -64,6 +67,7 @@
     {
       "title": "The Pragmatic Programmer: Your Journey to Mastery",
       "author": "Andrew Hunt, David Thomas",
+      "slug": "pragmatic-programmer_hunt-thomas",
       "notes": [],
       "status": "reading",
       "tags": [],
@@ -77,6 +81,7 @@
     },
     {
       "title": "Handbok för fifflare",
+      "slug": "handbok-fifflare_kjoller",
       "author": "Hanne Kjöller",
       "notes": [],
       "status": "reading",
@@ -93,6 +98,7 @@
     {
       "title": "På vandring i språkens fotspår",
       "author": "Sverker Johansson",
+      "slug": "vandring-sprakens-fotspar_johansson",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -101,6 +107,7 @@
     {
       "title": "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses",
       "author": "Eric Ries",
+      "slug": "lean-startup_ries",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -115,6 +122,7 @@
     {
       "title": "Konsten att tänka klart",
       "author": "Christer Sturemark, Douglas Hofstadter",
+      "slug": "konsten-att-tanka-klart_sturemark-hofstadter",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -129,6 +137,7 @@
     {
       "title": "Peak: Vetenskapen om att bli bättre på nästan allt",
       "author": "K Anders Ericsson & Robert Pool",
+      "slug": "peak_ericsson-pool",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -143,6 +152,7 @@
     {
       "title": "Konsten att leva enkelt",
       "author": "Shunmyo Masuno",
+      "slug": "konsten-att-leva-enkelt_masuno",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -157,6 +167,7 @@
     {
       "title": "Predictably Irrational: The Hidden Forces That Shape Our Decisions",
       "author": "Dan Ariely",
+      "slug": "predictably-irrational_ariely",
       "notes": [],
       "status": "reading",
       "tags": [],
@@ -171,6 +182,7 @@
     {
       "title": "How to lead: What You Actually Need to Do to Manage, Lead & Succeed.",
       "author": "Jo Owen",
+      "slug": "how-to-lead_owen",
       "notes": [],
       "status": "reading",
       "tags": [],
@@ -185,6 +197,7 @@
     {
       "title": "Inspired: How to create tech products customers love",
       "author": "Marty Cagan",
+      "slug": "inspired_cagan",
       "notes": [],
       "status": "reading",
       "tags": [],
@@ -199,6 +212,7 @@
     {
       "title": "Skick och oskick på jobbet",
       "author": "Jan Atle Andersen",
+      "slug": "skick-och-oskick-andersen",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -213,6 +227,7 @@
     {
       "title": "Vad är lean?",
       "author": "Niklas Modig, Pär Åhlström",
+      "slug": "vad-ar-lean_modig-ahlstrom",
       "notes": [],
       "status": "reading",
       "tags": [],
@@ -227,6 +242,7 @@
     {
       "title": "Sapiens: A Brief History of Humankind",
       "author": "Yuval Noah Harari",
+      "slug": "sapiens_harari",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -241,6 +257,7 @@
     {
       "title": "Homo Deus: A brief history of tomorrow",
       "author": "Yuval Noah Harari",
+      "slug": "homo-deus_harari",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -255,6 +272,7 @@
     {
       "title": "21 lessons for the 21st century",
       "author": "Yuval Noah Harari",
+      "slug": "21-lessons_harari",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -269,6 +287,7 @@
     {
       "title": "12 rules for life: An antidote to chaos",
       "author": "Jordan B. Peterson",
+      "slug": "12-rules-for-life_peterson",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -283,6 +302,7 @@
     {
       "title": "Factfulness: Ten Reasons We're Wrong About the World – and Why Things Are Better Than You Think",
       "author": "Hans Rosling",
+      "slug": "factfulness_rosling",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -294,10 +314,10 @@
         "global utveckling"
       ]
     },
-
     {
       "title": "Humankind: A hopeful history",
       "author": "Rutger Bregman",
+      "slug": "humankind_bregman",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -312,6 +332,7 @@
     {
       "title": "Äntligen vardag!",
       "author": "Petter A. Stordalen",
+      "slug": "antligen-vardag_stordalen",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -320,6 +341,7 @@
     {
       "title": "The 4-Hour Body: An Uncommon Guide to Rapid Fat-Loss, Incredible Sex, and Becoming Superhuman",
       "author": "Timothy Ferris",
+      "slug": "4-hour-body_ferris",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -334,6 +356,7 @@
     {
       "title": "The 4-Hour Work Week: Escape the 9-5, Live Anywhere and Join the New Rich",
       "author": "Timothy Ferris",
+      "slug": "4-hour-work-week_ferris",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -348,6 +371,7 @@
     {
       "title": "A short history of nearly everything",
       "author": "Bill Bryson",
+      "slug": "short-history-everything_bryson",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -362,6 +386,7 @@
     {
       "title": "How pleasure works: The New Science of Why We Like What We Like",
       "author": "Paul Bloom",
+      "slug": "how-pleasure-works_bloom",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -376,6 +401,7 @@
     {
       "title": "The logic of life: The Rational Economics of an Irrational World",
       "author": "Tim Harford",
+      "slug": "logic-of-life_harford",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -390,6 +416,7 @@
     {
       "title": "How the world really works",
       "author": "Vaclav Smil",
+      "slug": "how-the-world-works_smil",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -398,6 +425,7 @@
     {
       "title": "Framgångsfaktorn",
       "author": "Malcolm Gladwell",
+      "slug": "framgangsfaktorn_gladwell",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -412,6 +440,7 @@
     {
       "title": "Vardagsmakt",
       "author": "Elaine Eksvärd",
+      "slug": "vardagsmakt_eksvard",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -426,6 +455,7 @@
     {
       "title": "Härskarteknik",
       "author": "Elaine Eksvärd",
+      "slug": "harskarteknik_eksvard",
       "notes": [],
       "status": "read",
       "tags": [],
@@ -440,6 +470,7 @@
     {
       "title": "Vi måste prata",
       "author": "Elain Eksvärd",
+      "slug": "vi-maste-prata_eksvard",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -454,6 +485,7 @@
     {
       "title": "Behavioural Economics Saved My Dog: Life Advice For The Imperfect Human",
       "author": "Dan Ariely",
+      "slug": "behavioural-economics-ariely",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -468,6 +500,7 @@
     {
       "title": "WTF, What's the future and why it's up to us",
       "author": "Tim O'Reilly",
+      "slug": "wtf-whats-the-future_oreilly",
       "notes": [],
       "status": "planned",
       "tags": [],
@@ -482,6 +515,7 @@
     {
       "title": "Noise: A flaw in human judgement",
       "author": "Daniel Kahneman, Oliver Sibony, Carr R. Sunstein",
+      "slug": "noise-flaw-in-human-judgement_kahneman-sibony-sunstein",
       "notes": [],
       "status": "reading",
       "tags": [],
@@ -496,6 +530,7 @@
     {
       "title": "Gödel, Escher, Bach: An eternal golden braid",
       "author": "Douglas Hofstadter",
+      "slug": "godel-escher-bach_hofstadter",
       "notes": [],
       "status": "reading",
       "tags": [],
@@ -504,6 +539,7 @@
     {
       "title": "",
       "author": "",
+      "slug": "",
       "notes": [],
       "status": "",
       "tags": [],

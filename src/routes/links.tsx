@@ -65,6 +65,11 @@ function BookmarksPage() {
       title: "Tailwind CSS",
       description: "A utility-first CSS framework for rapid UI development.",
     },
+    {
+      url: "https://unicode.org/charts/",
+      title: "Unicode Character Table",
+      description: "A complete table of Unicode characters",
+    },
   ];
 
   return (

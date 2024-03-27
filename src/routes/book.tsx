@@ -18,16 +18,15 @@ function BookPage() {
         ))}
       </div>
       <div className="w-[32rem]">
-        <ul className="flex flex-col w-full">
+        <ul className="flex flex-col w-full gap-3">
           {notes.map((note, index) => (
-            <li className="relative flex flex-col gap-2" key={index}>
-              <div className="flex gap-4 pb-6">
-                <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-0.5 text-white"></span>
-                <span className="flex-shrink-0 invisible h-full pointer-events-none"></span>
-                <blockquote className="block font-sans text-normal antialiased font-normal leading-normal text-gray-600">
-                  {note}
-                </blockquote>
-              </div>
+            <li
+              className="flex gap-4 pt-2 pb-4 bg-slate-300 border-l-2 border-slate-600"
+              key={index}
+            >
+              <p className="before:content-['\201C\00a0'] after:content-['\00a0\201C'] italic mx-2 font-sans antialiased text-gray-800">
+                {note}
+              </p>
             </li>
           ))}
         </ul>
