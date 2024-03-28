@@ -23,9 +23,8 @@
       "author": "Ingegerd Lennqvist",
       "slug": "forsta-tecken_lennqvist",
       "notes": [
-        "Ge inte barnet ansvar att vara lärare i familjen",
+        "Ge inte barnet ansvar att vara lärare i familjen. Barnet ska inte behöva vara den som lär föräldrarna hela tiden.",
         "Upprepa tecknet som barnet försöker göra, det rättar sig själv i framtiden om det är lite fel.",
-        "Runt skolålder: ca 2500 ord, börjar intressera sig för det skrivna språket.",
         "Använd pekning på det som beskrivs så att barn ser det som pekas på tillsammans med tecknet. Upprepa tecknet i olika sammanhang.",
         "Till skillnad  från det orala/auditiva talspråket, där orden är symboler och relerna är grammatiken, så är teckenspråket ett manuellt/visuellt språk, där byggstenarna är handform, läge och rörelse. Tecknena är symbolerna och i huvudsak är ansiktssignalerna (blickriktning, ögonkontakt, ögonbryn, mun, huvudrörelse) grammatiken.",
         "Teckenspråk har en manuell del (handtecken) och en oral del (munformer/munrörelser) som samarbetar med varandra.",
@@ -40,7 +39,8 @@
         "Runt 3 år kan barnet ungefär 1000 ord och kan berätta namn, ålder och små historier. Utöver 'vad?' och 'var?' kan de även fråga om 'hur?' och 'varför?'",
         "Runt 3-4 år börjar barnet förstå enkla om-satser och kan tänka logiskt när de logiska sambanden knyter an till barnets egna erfarenheter.",
         "Runt 4 år kan barnet ca 1500-2000 ord, låtsas mycket och kan berätta långa historier.",
-        "Runt 5 år börjar barnet behärska adjektiv och adverb samt har viss uppfattning om tid."
+        "Runt 5 år börjar barnet behärska adjektiv och adverb samt har viss uppfattning om tid.",
+        "Runt skolåldern kan barnet ca 2500 ord, börjar intressera sig för det skrivna språket."
       ],
       "status": "reading",
       "tags": ["TAKK"],
@@ -414,7 +414,7 @@
       ]
     },
     {
-      "title": "How the world really works",
+      "title": "How the world really works: A Scientist's Guide to Our Past, Present and Future",
       "author": "Vaclav Smil",
       "slug": "how-the-world-works_smil",
       "notes": [],
@@ -535,6 +535,15 @@
       "status": "reading",
       "tags": [],
       "genres": ["facklitteratur", "matematik", "konst", "musik", "kognition"]
+    },
+    {
+      "title": "The God Delusion",
+      "author": "Richard Dawkins",
+      "slug": "the-god-delusion_dawkins",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genres": ["vetenskap", "ateism", "filosofi"]
     },
     {
       "title": "",
