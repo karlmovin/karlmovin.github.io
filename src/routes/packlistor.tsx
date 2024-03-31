@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const packlistdata = [
   {
-    title: "Resa (todo)",
+    title: "Resa",
     data: [
       {
         title: "Necessär",
@@ -506,7 +506,9 @@ const packlistdata = [
 ];
 
 export default function Packlistor() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    packlistdata[0].title
+  );
 
   const handleCategoryChange = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -522,7 +524,7 @@ export default function Packlistor() {
           onChange={handleCategoryChange}
           className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900 focus:border-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
         >
-          <option value={""}>Alla listor</option>
+          {/* <option value={""}>Alla listor</option> */}
           {packlistdata.map(({ title }) => (
             <option key={title} value={title}>
               {title}

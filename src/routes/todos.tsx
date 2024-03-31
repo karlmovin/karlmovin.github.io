@@ -1,7 +1,4 @@
-const todos = [
-  "lägg till funktion att filtrera böcker på genre",
-  "förbättra bokanteckningsvisningen",
-];
+const todos = [""];
 
 export default function Todos() {
   return (

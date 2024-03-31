@@ -60,7 +60,7 @@
       "author": "Sverker Johansson",
       "slug": "ursprung_johansson",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": ["facklitteratur", "språkvetenskap", "lingvistik", "evolution"]
     },
@@ -69,7 +69,7 @@
       "author": "Andrew Hunt, David Thomas",
       "slug": "pragmatic-programmer_hunt-thomas",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": [
         "facklitteratur",
@@ -169,7 +169,7 @@
       "author": "Dan Ariely",
       "slug": "predictably-irrational_ariely",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": [
         "facklitteratur",
@@ -184,7 +184,7 @@
       "author": "Jo Owen",
       "slug": "how-to-lead_owen",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": [
         "facklitteratur",
@@ -199,7 +199,7 @@
       "author": "Marty Cagan",
       "slug": "inspired_cagan",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": [
         "facklitteratur",
@@ -229,7 +229,7 @@
       "author": "Niklas Modig, Pär Åhlström",
       "slug": "vad-ar-lean_modig-ahlstrom",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": [
         "facklitteratur",
@@ -517,7 +517,7 @@
       "author": "Daniel Kahneman, Oliver Sibony, Carr R. Sunstein",
       "slug": "noise-flaw-in-human-judgement_kahneman-sibony-sunstein",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": [
         "facklitteratur",
@@ -532,7 +532,7 @@
       "author": "Douglas Hofstadter",
       "slug": "godel-escher-bach_hofstadter",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": ["facklitteratur", "matematik", "konst", "musik", "kognition"]
     },

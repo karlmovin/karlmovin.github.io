@@ -72,6 +72,7 @@ function BookList({
 export default function Books() {
   const booksByStatus = [
     ["reading", "Pågående böcker"],
+    ["paused", "Påbörjade böcker"],
     ["read", "Lästa böcker"],
     ["planned", "Planerade böcker"],
   ].map(([status, title]) => ({
