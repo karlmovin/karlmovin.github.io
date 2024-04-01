@@ -1,5 +1,4 @@
-const todos = ["
-               fixa mobilvyn"];
+const todos = ["fixa mobilvyn"];
 
 export default function Todos() {
   return (
