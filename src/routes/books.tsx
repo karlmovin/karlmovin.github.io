@@ -40,14 +40,29 @@ function BookList({
               <p className="mt-1 truncate text-xs leading-5 text-gray-500">
                 {book.author}
               </p>
+              <div className="flex sm:hidden gap-1 flex-wrap">
+                {book.genres.map((genre) => (
+                  <button
+                    key={genre}
+                    className={`text-gray-500 text-sm hover:underline ${
+                      genreFilters.includes(genre) ? "font-semibold" : ""
+                    }`}
+                    onClick={() =>
+                      handleGenreFilter(!genreFilters.includes(genre), genre)
+                    }
+                  >
+                    {genre}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+          <div className="shrink-0 flex flex-col items-end">
             <p className="text-sm leading-6 text-gray-900 flex gap-1">
               <span className="material-symbols-outlined">notes</span>
               {book.notes.length}
             </p>
-            <div className="flex gap-1">
+            <div className="hidden sm:flex gap-1">
               {book.genres.map((genre) => (
                 <button
                   key={genre}

@@ -10,27 +10,25 @@ function BookPage() {
     <main className="flex flex-col gap-4 container max-w-screen-xl">
       <p className="text-2xl">{title}</p>
       <p className="text-sm">Författare: {author}</p>
-      <div className="flex gap-2">
+      <div className="flex gap-2 flex-wrap">
         {genres.map((genre) => (
           <div className="relative grid select-none items-center whitespace-nowrap rounded-lg border border-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-700">
             {genre}
           </div>
         ))}
       </div>
-      <div className="w-[32rem]">
-        <ul className="flex flex-col w-full gap-3">
-          {notes.map((note, index) => (
-            <li
-              className="flex gap-4 pt-2 pb-4 bg-slate-300 border-l-2 border-slate-600"
-              key={index}
-            >
-              <p className="before:content-['\201C\00a0'] after:content-['\00a0\201C'] italic mx-2 font-sans antialiased text-gray-800">
-                {note}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="flex flex-col w-full max-w-[32rem] gap-3">
+        {notes.map((note, index) => (
+          <li
+            className="flex gap-4 pt-2 pb-4 bg-slate-300 border-l-2 border-slate-600"
+            key={index}
+          >
+            <p className="before:content-['\201C\00a0'] after:content-['\00a0\201C'] italic mx-2 font-sans antialiased text-gray-800">
+              {note}
+            </p>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }
