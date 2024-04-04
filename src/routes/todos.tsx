@@ -1,4 +1,4 @@
-const todos = ["fixa mobilvyn"];
+const todos = ["fixa mobilvyn, känsla behov vilja handling"];
 
 export default function Todos() {
   return (
