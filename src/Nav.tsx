@@ -92,6 +92,16 @@ function Nav() {
                 Bokmärken
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/konst"
+                className={({ isActive, isPending }) =>
+                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                }
+              >
+                Konst
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

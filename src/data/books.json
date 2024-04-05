@@ -61,7 +61,7 @@
         "Tecken kan vara logiska/avbildade eller ologiska/arbiträra. Logiska tecken ser ut som det de beskriver, t.ex. 'BOLL' som görs med kupade händer strykandes runt en imaginär sfär, eller telefon som görs med flyghanden (tummen och lillfingret ut) och förs upp till örat. Dock är de flesta tecken inte logiska, då de flesta ord inte kan imiteras, som t.ex. 'SKORPA' eller 'ANVÄNDA'.",
         "De flesta tidiga tecknen är logiska, och majoriteten är substantiv. Det underlättar också för den som lär sig."
       ],
-      "status": "reading",
+      "status": "read",
       "tags": ["TAKK"],
       "genres": ["facklitteratur", "barn", "språkutveckling", "teckenspråk"]
     },

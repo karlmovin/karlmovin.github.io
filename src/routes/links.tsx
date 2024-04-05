@@ -98,6 +98,78 @@ const bookmarks = [
     description: "A complete table of Unicode characters",
     tags: ["unicode", "characters"],
   },
+  {
+    url: "https://www.ritsumei.ac.jp/~akitaoka/index-e.html",
+    title: "Akiyoshi's illusion pages",
+    description: "Akiyoshi Kitaoka's illusion pages",
+    tags: ["optical illusions", "visual illusions"],
+  },
+  {
+    url: "https://www.latinintroduktion.se/etapp-1/",
+    title: "Latin Introduktion",
+    description: "Latin Introduktion",
+    tags: ["latin"],
+  },
+  {
+    url: "https://fab.cba.mit.edu/classes/863.20/",
+    title: "How to Make (Almost) Anything",
+    description: "How to Make (Almost) Anything",
+    tags: ["fablab", "mit"],
+  },
+  {
+    url: "https://cba.mit.edu/classes/",
+    title: "MIT Center for Bits and Atoms",
+    description: "MIT Center for Bits and Atoms",
+    tags: ["mit", "fablab"],
+  },
+  {
+    url: "https://www.naturalhabitatshorts.com/",
+    title: "Natural Habitat Shorts",
+    description: "Natural Habitat Shorts",
+    tags: ["film", "shorts"],
+  },
+  {
+    url: "https://tlnotes.com/",
+    title: "TL Notes",
+    description: "TL Notes",
+    tags: ["japanese", "language"],
+  },
+  {
+    url: "https://paulgraham.com/ds.html",
+    title: "Do Things that Don't Scale",
+    description: "Do Things that Don't Scale",
+    tags: ["startup", "business", "article"],
+  },
+  {
+    url: "https://jakobgreenfeld.com/stay-in-touch",
+    title: "Stay in Touch",
+    description: "Stay in Touch",
+    tags: ["networking", "business", "article"],
+  },
+  {
+    url: "https://www.edge.org/adversarial-collaboration-daniel-kahneman",
+    title: "Adversarial Collaboration",
+    description: "Adversarial Collaboration",
+    tags: ["collaboration", "psychology", "article"],
+  },
+];
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const comics = [
+  "Oglaf",
+  "Potatodogcomics",
+  "Gone with the blastwave",
+  "Baalbuddy",
+  "Telepurte",
+  "Wait but why",
+  "SMBC",
+  "XKCD",
+  "Orc stain",
+  "Steve Lichman",
+  "Nedroid",
+  "False knees",
+  "CMT",
+  "Marketoonist",
 ];
 
 function BookmarksPage() {
