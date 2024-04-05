@@ -65,7 +65,7 @@ const packlistdata = [
         items: [
           "Skötväskan (skötunderlägg, blöjor, tvättdukar osv)",
           "Ombyte",
-          "Vårservetter",
+          "Våtservetter",
           "Smoothies, gröt och mat",
           "Snacks (gärna sådant bebisen kan pilla länge med)",
           "Flaska för vatten",
