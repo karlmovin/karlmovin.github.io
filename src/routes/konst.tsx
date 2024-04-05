@@ -384,7 +384,6 @@ export default function Konst() {
           </div>
         </a>
       ))}
-      <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
     </section>
   );
 }
