@@ -154,7 +154,7 @@ const bookmarks = [
   },
 ];
 
-// eslint-disable @typescript-eslint/no-unused-vars
+/*
 const comics = [
   "Oglaf",
   "Potatodogcomics",
@@ -170,7 +170,7 @@ const comics = [
   "False knees",
   "CMT",
   "Marketoonist",
-];
+];*/
 
 function BookmarksPage() {
   const [tagFilters, setTagFilters] = useState<string[]>([]);
