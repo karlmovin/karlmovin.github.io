@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root.tsx";
 import Packlistor from "./routes/packlistor.tsx";
 import "./index.css";
@@ -12,7 +12,7 @@ import BookmarksPage from "./routes/links.tsx";
 import Konst from "./routes/konst.tsx";
 import WhatToDo from "./routes/whatToDo.tsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Root />,
