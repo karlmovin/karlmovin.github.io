@@ -19,7 +19,6 @@ const router = createHashRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        errorElement: <ErrorPage />,
         children: [
           { index: true, element: <Todos /> },
           {
