@@ -10,6 +10,7 @@ import Books from "./routes/books.tsx";
 import BookPage from "./routes/book.tsx";
 import BookmarksPage from "./routes/links.tsx";
 import Konst from "./routes/konst.tsx";
+import WhatToDo from "./routes/whatToDo.tsx";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
           {
             path: "konst",
             element: <Konst />,
+          },
+          {
+            path: "what-to-do",
+            element: <WhatToDo />,
           },
         ],
       },

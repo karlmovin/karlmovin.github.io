@@ -102,6 +102,16 @@ function Nav() {
                 Konst
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/what-to-do"
+                className={({ isActive, isPending }) =>
+                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                }
+              >
+                Vad ska jag göra idag?
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
