@@ -2,6 +2,7 @@ const todos = [
   "fixa mobilvyn",
   "känsla->behov->vilja->handling",
   "kika på https://github.com/remarkjs/react-markdown?tab=readme-ov-file",
+  "inkludera rimliga tider i vad ska jag göra?",
 ];
 
 export default function Todos() {
