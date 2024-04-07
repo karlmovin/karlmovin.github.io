@@ -171,6 +171,57 @@ type Forecast = {
   };
 };
 
+function handleSymbol(symbol_code: string) {
+  // console.log(symbol_code);
+  if (symbol_code.includes("partly")) {
+    return symbol_code.replace("partly", "partly_");
+  }
+  if (symbol_code.includes("fair")) {
+    return symbol_code.replace("fair", "clear");
+  }
+  if (symbol_code.includes("rain")) {
+    return "rainy";
+  }
+  if (symbol_code === "sky_night" || symbol_code === "clearsky_night") {
+    return "clear_night";
+  }
+  return symbol_code;
+}
+
+function forecast(time: string, forecast: Forecast) {
+  const {
+    air_temperature_max,
+    air_temperature_min,
+    probability_of_precipitation,
+    precipitation_amount,
+    precipitation_amount_min,
+    precipitation_amount_max,
+  } = forecast.details;
+  return (
+    <div className="flex">
+      {time}:
+      <span className="material-symbols-outlined">
+        {handleSymbol(forecast.summary.symbol_code)}
+      </span>
+      {air_temperature_min
+        ? `${air_temperature_min}° - ${air_temperature_max}°`
+        : ""}
+      {precipitation_amount || precipitation_amount_min ? (
+        <>
+          <span className="material-symbols-outlined">umbrella</span>
+          {precipitation_amount &&
+            `${precipitation_amount} ${
+              precipitation_amount_min && precipitation_amount_max
+                ? `(${precipitation_amount_min}-${precipitation_amount_max})`
+                : ""
+            } mm`}
+          {`(${probability_of_precipitation}%)`}
+        </>
+      ) : null}
+    </div>
+  );
+}
+
 export default function WhatToDo() {
   const [selectedSport, setSelectedSport] = useState("");
   const [location, setLocation] = useState({ lat: 59.334591, lon: 18.06324 });
@@ -208,6 +259,8 @@ export default function WhatToDo() {
           instant: {
             details: {
               air_temperature,
+              air_temperature_max,
+              air_temperature_min,
               wind_speed,
               wind_from_direction,
               wind_speed_of_gust,
@@ -231,14 +284,12 @@ export default function WhatToDo() {
             9
           ).toISOString()
       );
-      console.log(tomorrow, {
-        ...tomorrow.data.next_1_hours,
-        ...tomorrow.data.next_6_hours,
-        ...tomorrow.data.next_12_hours,
-      });
+
       setWeather({
         now: {
           air_temperature,
+          air_temperature_max,
+          air_temperature_min,
           wind_speed,
           wind_from_direction,
           wind_speed_of_gust,
@@ -322,84 +373,10 @@ export default function WhatToDo() {
             </div>
           </div>
           <div className="flex flex-col">
-            <div>
-              1h:
-              <span className="material-symbols-outlined">
-                {weather.forecast.next_1_hours.summary.symbol_code}
-              </span>
-              <span className="material-symbols-outlined">umbrella</span>
-              {weather.forecast.next_6_hours.details.precipitation_amount}mm (
-              {
-                weather.forecast.next_1_hours.details
-                  .probability_of_precipitation
-              }
-              %)
-            </div>
-            <div>
-              6h:
-              <span className="material-symbols-outlined">
-                {weather.forecast.next_6_hours.summary.symbol_code}
-              </span>
-              <span className="material-symbols-outlined">umbrella</span>
-              {weather.forecast.next_6_hours.details.precipitation_amount}mm (
-              {
-                weather.forecast.next_6_hours.details
-                  .probability_of_precipitation
-              }
-              %)
-            </div>
-            <div>
-              12h:
-              <span className="material-symbols-outlined">
-                {weather.forecast.next_12_hours.summary.symbol_code}
-              </span>
-              <span className="material-symbols-outlined">umbrella</span>
-              {weather.forecast.next_6_hours.details.precipitation_amount}mm (
-              {
-                weather.forecast.next_12_hours.details
-                  .probability_of_precipitation
-              }
-              %)
-            </div>
-            <div className="flex">
-              {weather.forecast.tomorrow.details.air_temperature_max && (
-                <div>
-                  <div className="flex gap-1">
-                    Imorgon:
-                    <span className="material-symbols-outlined">
-                      device_thermostat
-                    </span>{" "}
-                    <div
-                      className={
-                        weather.forecast.tomorrow.details.air_temperature_max >=
-                        0
-                          ? "text-red-400"
-                          : "text-blue-400"
-                      }
-                    >
-                      {weather.forecast.tomorrow.details.air_temperature_max}°
-                    </div>
-                  </div>
-                </div>
-              )}
-              <div className="flex">
-                <span className="material-symbols-outlined">
-                  {weather.forecast.tomorrow.summary.symbol_code.includes(
-                    "partly"
-                  )
-                    ? weather.forecast.tomorrow.summary.symbol_code.replace(
-                        "partly",
-                        "partly_"
-                      )
-                    : weather.forecast.tomorrow.summary.symbol_code}
-                </span>
-                <span className="material-symbols-outlined">umbrella</span>
-                {weather.forecast.tomorrow.details.precipitation_amount_min}-
-                {weather.forecast.tomorrow.details.precipitation_amount_max}mm (
-                {weather.forecast.tomorrow.details.probability_of_precipitation}
-                %)
-              </div>
-            </div>
+            {forecast("Närmsta timme", weather.forecast.next_1_hours)}
+            {forecast("Kommande 6 timmar", weather.forecast.next_6_hours)}
+            {forecast("Kommande 12 timmar", weather.forecast.next_12_hours)}
+            {forecast("Imorgon", weather.forecast.tomorrow)}
           </div>
           <button
             className="m-2 align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
