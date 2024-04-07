@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
 
+// https://api.met.no/weatherapi/documentation
+// https://api.met.no/doc/ClientLibraries
+// https://opendata.smhi.se/apidocs/metobs/index.html
+// YRs ikoner: https://github.com/metno/weathericons/tree/main
+// https://www.geonames.org/export/web-services.html
+// https://nominatim.org/
+// https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
+
 const sporter: Record<
   string,
   {
@@ -14,68 +22,66 @@ const sporter: Record<
     verb: "åka skridsko",
     månader: [10, 11, 12, 1, 2, 3, 4],
     plats: ["på isbanan", "på sjön", "i skärgården"],
-    krav: ["ej snö"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: -20, max: 10 },
   },
   längdskidor: {
     verb: "åka längdskidor",
     månader: [11, 12, 1, 2, 3, 4],
     plats: ["i skidspåret", "i fjällen"],
-    krav: ["snö"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: -20, max: 10 },
   },
   utförsåkning: {
     verb: "åka utförsåkning",
     månader: [1, 2, 3, 4],
     plats: ["i skidbacken", "i fjällen"],
-    krav: ["snö"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: -20, max: 10 },
   },
   randonné: {
     verb: "åka randonné",
     månader: [1, 2, 3, 4],
     plats: ["i fjällen"],
-    krav: ["snö"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: -20, max: 10 },
   },
   turskidor: {
     verb: "åka turskidor",
     månader: [1, 2, 3, 4],
     plats: ["i fjällen"],
-    krav: ["snö"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: -20, max: 10 },
   },
   vandring: {
     verb: "vandra",
-    månader: [5, 6, 7, 8, 9],
+    månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["i skogen", "i fjällen"],
     temperaturer: { min: 10, max: 30 },
   },
   tältning: {
     verb: "tälta",
-    månader: [5, 6, 7, 8, 9],
+    månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["i skogen", "i fjällen"],
     temperaturer: { min: 10, max: 30 },
   },
   orientering: {
     verb: "orientera",
-    månader: [5, 6, 7, 8, 9],
+    månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["i skogen"],
-    krav: ["ej storm"],
-    temperaturer: { min: 10, max: 30 },
+    temperaturer: { min: 0, max: 30 },
   },
   segling: {
     verb: "segla",
     månader: [5, 6, 7, 8, 9],
     plats: ["i skärgården"],
-    krav: ["ej storm"],
     temperaturer: { min: 10, max: 30 },
   },
   utomhusklättring: {
     verb: "klättra utomhus",
     månader: [5, 6, 7, 8, 9],
     plats: ["vid klipporna"],
-    krav: ["ej regn"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: 10, max: 30 },
   },
   inomhusklättring: {
@@ -86,23 +92,21 @@ const sporter: Record<
   },
   mountainbike: {
     verb: "cykla mountainbike",
-    månader: [5, 6, 7, 8, 9],
+    månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["i skogen", "i fjällen"],
-    krav: ["ej storm"],
     temperaturer: { min: 10, max: 30 },
   },
   landsvägscykel: {
     verb: "cykla landsvägscykel",
     månader: [5, 6, 7, 8, 9],
     plats: ["på vägen"],
-    krav: ["ej regn"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: 10, max: 30 },
   },
   gravelbike: {
     verb: "cykla gravelbike",
-    månader: [5, 6, 7, 8, 9],
+    månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["på vägen", "på grusvägar"],
-    krav: ["ej storm"],
     temperaturer: { min: 10, max: 30 },
   },
   löpning: {
@@ -114,34 +118,40 @@ const sporter: Record<
   simning: {
     verb: "simma",
     månader: [5, 6, 7, 8, 9],
-    plats: ["i sjön", "i havet", "i poolen"],
+    plats: ["i sjön", "i havet"],
     temperaturer: { min: 10, max: 30 },
+  },
+  inomhussimning: {
+    verb: "simma",
+    månader: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    plats: ["i poolen"],
+    temperaturer: { min: -20, max: 40 },
   },
   kajak: {
     verb: "kajaka",
     månader: [5, 6, 7, 8, 9],
     plats: ["i skärgården", "i havet"],
-    krav: ["ej regn"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: 10, max: 30 },
   },
   downhill: {
-    verb: "åka downhill",
+    verb: "köra downhill",
     månader: [5, 6, 7, 8, 9],
     plats: ["i skidbacken"],
-    krav: ["ej regn"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: 10, max: 30 },
   },
   inomhusträning: {
     verb: "träna inomhus",
     månader: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    plats: ["i gymmet", "hemma"],
+    plats: ["på gymmet", "hemma"],
     temperaturer: { min: -20, max: 40 },
   },
   utomhusträning: {
     verb: "träna utomhus",
     månader: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     plats: ["i parken", "på altanen"],
-    krav: ["ej regn"],
+    krav: ["fair", "cloudy", "clear"],
     temperaturer: { min: 10, max: 30 },
   },
 };
@@ -248,6 +258,10 @@ export default function WhatToDo() {
 
   useEffect(() => {
     async function fetchWeather() {
+      // https://developer.yr.no/doc/GettingStarted/
+      // https://docs.api.met.no/doc/
+      // https://api.met.no/weatherapi/locationforecast/2.0/documentation
+      // https://api.met.no/doc/ForecastJSON
       const response = await fetch(
         `https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=${location.lat}&lon=${location.lon}`
       );
@@ -317,14 +331,19 @@ export default function WhatToDo() {
 
   const handleButtonClick = () => {
     const currentMonth = new Date().getMonth() + 1;
-    const currentWeather = "isar"; // Replace with actual weather data
+    if (!weather) return;
+    const currentWeather = weather?.forecast.next_1_hours.summary.symbol_code;
+    const currentTemperature = weather.now.air_temperature;
 
     const availableSports = Object.keys(sporter).filter((sport) => {
       const sportData = sport in sporter && sporter[sport];
       return (
         sportData &&
         sportData.månader.includes(currentMonth) &&
-        (!sportData.krav || sportData.krav.includes(currentWeather))
+        (!sportData.krav || sportData.krav.includes(currentWeather)) &&
+        (!sportData.temperaturer ||
+          (currentTemperature >= sportData.temperaturer.min &&
+            currentTemperature <= sportData.temperaturer.max))
       );
     });
 
@@ -390,7 +409,14 @@ export default function WhatToDo() {
           {selectedSport && (
             <p>
               Du kan till exempel {sporter[selectedSport].verb}{" "}
-              {sporter[selectedSport].plats[0]}!
+              {
+                sporter[selectedSport].plats[
+                  Math.floor(
+                    Math.random() * sporter[selectedSport].plats.length
+                  )
+                ]
+              }
+              !
             </p>
           )}
         </div>
