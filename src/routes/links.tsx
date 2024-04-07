@@ -152,25 +152,109 @@ const bookmarks = [
     description: "Adversarial Collaboration",
     tags: ["collaboration", "psychology", "article"],
   },
+  {
+    url: "https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene",
+    title: "Three.js",
+    description: "Three.js",
+    tags: ["3d", "web", "development"],
+  },
+  {
+    url: "https://firebase.google.com/docs/firestore/quickstart?authuser=0&hl=en#web-modular-api",
+    title: "Firebase Firestore",
+    description: "Firebase Firestore",
+    tags: ["firebase", "database", "development"],
+  },
+  {
+    url: "https://docs.github.com/en/rest/quickstart?apiVersion=2022-11-28",
+    title: "GitHub API",
+    description: "GitHub API",
+    tags: ["github", "api", "development"],
+  },
+  {
+    url: "https://learn.svelte.dev/tutorial/post-handlers",
+    title: "Svelte",
+    description: "Svelte",
+    tags: ["svelte", "development"],
+  },
+  {
+    url: "https://oglaf.com/",
+    title: "Oglaf",
+    description: "Oglaf",
+    tags: ["comics"],
+  },
+  {
+    url: "https://www.potatodogcomics.com/",
+    title: "Potatodogcomics",
+    description: "Potatodogcomics",
+    tags: ["comics"],
+  },
+  {
+    url: "https://www.blastwave-comic.com/",
+    title: "Gone with the blastwave",
+    description: "Gone with the blastwave",
+    tags: ["comics"],
+  },
+  {
+    url: "https://baalbuddy.com/",
+    title: "Baalbuddy",
+    description: "Baalbuddy",
+    tags: ["comics"],
+  },
+  {
+    url: "https://waitbutwhy.com/",
+    title: "Wait but why",
+    description: "Wait but why",
+    tags: ["comics"],
+  },
+  {
+    url: "https://www.smbc-comics.com/",
+    title: "SMBC",
+    description: "SMBC",
+    tags: ["comics"],
+  },
+  {
+    url: "https://xkcd.com/",
+    title: "XKCD",
+    description: "XKCD",
+    tags: ["comics"],
+  },
+  {
+    url: "https://imagecomics.com/comics/series/orc-stain",
+    title: "Orc stain",
+    description: "Orc stain",
+    tags: ["comics"],
+  },
+  {
+    url: "https://www.stevelichman.com/",
+    title: "Steve Lichman",
+    description: "Steve Lichman",
+    tags: ["comics"],
+  },
+  {
+    url: "https://nedroid.com/",
+    title: "Nedroid",
+    description: "Nedroid",
+    tags: ["comics"],
+  },
+  {
+    url: "https://falseknees.com/",
+    title: "False knees",
+    description: "False knees",
+    tags: ["comics"],
+  },
+  {
+    url: "https://www.webtoons.com/en/canvas/the-weekly-roll/list",
+    title: "The weekly roll",
+    description: "The weekly roll",
+    tags: ["comics"],
+  },
+  {
+    url: "https://marketoonist.com/",
+    title: "Marketoonist",
+    description: "Marketoonist",
+    tags: ["comics"],
+  },
 ];
-
-/*
-const comics = [
-  "Oglaf",
-  "Potatodogcomics",
-  "Gone with the blastwave",
-  "Baalbuddy",
-  "Telepurte",
-  "Wait but why",
-  "SMBC",
-  "XKCD",
-  "Orc stain",
-  "Steve Lichman",
-  "Nedroid",
-  "False knees",
-  "CMT",
-  "Marketoonist",
-];*/
 
 function BookmarksPage() {
   const [tagFilters, setTagFilters] = useState<string[]>([]);
