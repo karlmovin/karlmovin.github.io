@@ -15,7 +15,7 @@ function errorMessage(error: unknown): string {
 
 export default function ErrorPage() {
   const error = useRouteError();
-  console.error(error);
+  console.error(errorMessage(error));
 
   return (
     <div id="error-page">
