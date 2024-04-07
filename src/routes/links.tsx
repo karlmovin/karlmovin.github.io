@@ -254,6 +254,42 @@ const bookmarks = [
     description: "Marketoonist",
     tags: ["comics"],
   },
+  {
+    url: "http://play-agricola.com/Agricola/Board1/Agricola.html",
+    title: "Play Agricola",
+    description: "Online version of the board game Agricola",
+    tags: ["board games", "online games"],
+  },
+  {
+    url: "https://terra.snellman.net/",
+    title: "terra.snellman.net",
+    description: "Play Terra Mystica online",
+    tags: ["board games", "online games"],
+  },
+  {
+    url: "https://catanuniverse.com/en/game/",
+    title: "Catan Universe",
+    description: "Play the popular board game Catan online",
+    tags: ["board games", "online games"],
+  },
+  {
+    url: "https://www.jinteki.net/",
+    title: "Jinteki.net",
+    description: "Play the card game Android: Netrunner online",
+    tags: ["card games", "online games"],
+  },
+  {
+    url: "https://tabletopia.com/find-play#games-in-progress",
+    title: "Tabletopia",
+    description: "Play a wide variety of board games online",
+    tags: ["board games", "online games"],
+  },
+  {
+    url: "https://cascadiagame.github.io/",
+    title: "Cascadia",
+    description: "Play the board game Cascadia online",
+    tags: ["board games", "online games"],
+  },
 ];
 
 function BookmarksPage() {

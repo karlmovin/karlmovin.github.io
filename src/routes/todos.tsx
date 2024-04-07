@@ -1,4 +1,8 @@
-const todos = ["fixa mobilvyn", "känsla->behov->vilja->handling"];
+const todos = [
+  "fixa mobilvyn",
+  "känsla->behov->vilja->handling",
+  "kika på https://github.com/remarkjs/react-markdown?tab=readme-ov-file",
+];
 
 export default function Todos() {
   return (
