@@ -298,6 +298,7 @@ function forecast(time: string, forecast: Forecast) {
 
 export default function WhatToDo() {
   const [selectedSport, setSelectedSport] = useState("");
+  const [selectedIntresse, setSelectedIntresse] = useState("");
   const [location, setLocation] = useState({ lat: 59.334591, lon: 18.06324 });
   const [weather, setWeather] = useState<{
     now: Instant;
@@ -414,6 +415,11 @@ export default function WhatToDo() {
     const randomIndex = Math.floor(Math.random() * availableSports.length);
     const randomSport = availableSports[randomIndex];
     setSelectedSport(randomSport);
+    setSelectedIntresse(
+      Object.keys(intressen)[
+        Math.floor(Math.random() * Object.keys(intressen).length)
+      ]
+    );
   };
 
   return (
@@ -480,19 +486,12 @@ export default function WhatToDo() {
                   )
                 ]
               }
-              !
             </p>
-          ) : (
-            <>
-              {
-                intressen[
-                  Object.keys(intressen)[
-                    Math.floor(Math.random() * Object.keys(intressen).length)
-                  ]
-                ].verb
-              }
-            </>
-          )}
+          ) : null}
+
+          {selectedIntresse ? (
+            <p>eller så kan du kanske {intressen[selectedIntresse].verb}?</p>
+          ) : null}
         </div>
       )}
     </section>
