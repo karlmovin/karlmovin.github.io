@@ -15,6 +15,8 @@ const sporter: Record<
     månader: number[];
     plats: string[];
     krav?: string[];
+    tidsåtgång?: { min: number; max: number };
+    tiderPåDygnet?: { från: number; till: number };
     temperaturer: { max: number; min: number };
   }
 > = {
@@ -23,6 +25,8 @@ const sporter: Record<
     månader: [10, 11, 12, 1, 2, 3, 4],
     plats: ["på isbanan", "på sjön", "i skärgården"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 1, max: 10 },
+    tiderPåDygnet: { från: 8, till: 20 },
     temperaturer: { min: -20, max: 10 },
   },
   längdskidor: {
@@ -30,6 +34,7 @@ const sporter: Record<
     månader: [11, 12, 1, 2, 3, 4],
     plats: ["i skidspåret", "i fjällen"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 1, max: 10 },
     temperaturer: { min: -20, max: 10 },
   },
   utförsåkning: {
@@ -37,6 +42,7 @@ const sporter: Record<
     månader: [1, 2, 3, 4],
     plats: ["i skidbacken", "i fjällen"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 2, max: 7 },
     temperaturer: { min: -20, max: 10 },
   },
   randonné: {
@@ -44,6 +50,7 @@ const sporter: Record<
     månader: [1, 2, 3, 4],
     plats: ["i fjällen"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 4, max: 10 },
     temperaturer: { min: -20, max: 10 },
   },
   turskidor: {
@@ -51,30 +58,36 @@ const sporter: Record<
     månader: [1, 2, 3, 4],
     plats: ["i fjällen"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 4, max: 10 },
     temperaturer: { min: -20, max: 10 },
   },
   vandring: {
     verb: "vandra",
     månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["i skogen", "i fjällen"],
+    tidsåtgång: { min: 2, max: 10 },
     temperaturer: { min: 10, max: 30 },
   },
   tältning: {
     verb: "tälta",
     månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["i skogen", "i fjällen"],
+    tidsåtgång: { min: 6, max: 10 },
     temperaturer: { min: 10, max: 30 },
   },
   orientering: {
     verb: "orientera",
     månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["i skogen"],
+    tidsåtgång: { min: 1, max: 4 },
     temperaturer: { min: 0, max: 30 },
   },
   segling: {
     verb: "segla",
     månader: [5, 6, 7, 8, 9],
     plats: ["i skärgården"],
+    krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 2, max: 8 },
     temperaturer: { min: 10, max: 30 },
   },
   utomhusklättring: {
@@ -82,18 +95,21 @@ const sporter: Record<
     månader: [5, 6, 7, 8, 9],
     plats: ["vid klipporna"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 2, max: 8 },
     temperaturer: { min: 10, max: 30 },
   },
   inomhusklättring: {
     verb: "klättra inomhus",
     månader: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     plats: ["i klätterhallen"],
+    tidsåtgång: { min: 1, max: 4 },
     temperaturer: { min: -20, max: 40 },
   },
   mountainbike: {
     verb: "cykla mountainbike",
     månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["i skogen", "i fjällen"],
+    tidsåtgång: { min: 2, max: 8 },
     temperaturer: { min: 10, max: 30 },
   },
   landsvägscykel: {
@@ -101,30 +117,35 @@ const sporter: Record<
     månader: [5, 6, 7, 8, 9],
     plats: ["på vägen"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 2, max: 8 },
     temperaturer: { min: 10, max: 30 },
   },
   gravelbike: {
     verb: "cykla gravelbike",
     månader: [4, 5, 6, 7, 8, 9, 10],
     plats: ["på vägen", "på grusvägar"],
+    tidsåtgång: { min: 2, max: 8 },
     temperaturer: { min: 10, max: 30 },
   },
   löpning: {
     verb: "springa",
     månader: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     plats: ["i skogen", "i parken"],
+    tidsåtgång: { min: 1, max: 3 },
     temperaturer: { min: -20, max: 40 },
   },
   simning: {
     verb: "simma",
     månader: [5, 6, 7, 8, 9],
     plats: ["i sjön", "i havet"],
+    tidsåtgång: { min: 1, max: 3 },
     temperaturer: { min: 10, max: 30 },
   },
   inomhussimning: {
     verb: "simma",
     månader: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     plats: ["i poolen"],
+    tidsåtgång: { min: 1, max: 3 },
     temperaturer: { min: -20, max: 40 },
   },
   kajak: {
@@ -132,6 +153,7 @@ const sporter: Record<
     månader: [5, 6, 7, 8, 9],
     plats: ["i skärgården", "i havet"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 2, max: 8 },
     temperaturer: { min: 10, max: 30 },
   },
   downhill: {
@@ -139,12 +161,14 @@ const sporter: Record<
     månader: [5, 6, 7, 8, 9],
     plats: ["i skidbacken"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 2, max: 6 },
     temperaturer: { min: 10, max: 30 },
   },
   inomhusträning: {
     verb: "träna inomhus",
     månader: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     plats: ["på gymmet", "hemma"],
+    tidsåtgång: { min: 1, max: 3 },
     temperaturer: { min: -20, max: 40 },
   },
   utomhusträning: {
@@ -152,7 +176,47 @@ const sporter: Record<
     månader: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     plats: ["i parken", "på altanen"],
     krav: ["fair", "cloudy", "clear"],
+    tidsåtgång: { min: 1, max: 3 },
     temperaturer: { min: 10, max: 30 },
+  },
+};
+
+const intressen: Record<string, { verb: string }> = {
+  programmering: {
+    verb: "programmera",
+  },
+  läsning: {
+    verb: "läsa",
+  },
+  film: {
+    verb: "titta på film",
+  },
+  brädspel: {
+    verb: "spela brädspel",
+  },
+  dataspel: {
+    verb: "spela dataspel",
+  },
+  keramik: {
+    verb: "göra keramik",
+  },
+  finsnickeri: {
+    verb: "snickra",
+  },
+  målning: {
+    verb: "måla",
+  },
+  video: {
+    verb: "göra video",
+  },
+  musik: {
+    verb: "göra musik",
+  },
+  rollspel: {
+    verb: "spela rollspel",
+  },
+  diarama: {
+    verb: "göra diarama",
   },
 };
 
@@ -406,7 +470,7 @@ export default function WhatToDo() {
               ? "Vad ska jag göra idag?"
               : "Nä tack, något annat?"}
           </button>
-          {selectedSport && (
+          {selectedSport ? (
             <p>
               Du kan till exempel {sporter[selectedSport].verb}{" "}
               {
@@ -418,6 +482,16 @@ export default function WhatToDo() {
               }
               !
             </p>
+          ) : (
+            <>
+              {
+                intressen[
+                  Object.keys(intressen)[
+                    Math.floor(Math.random() * Object.keys(intressen).length)
+                  ]
+                ].verb
+              }
+            </>
           )}
         </div>
       )}
