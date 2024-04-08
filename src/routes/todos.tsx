@@ -8,6 +8,7 @@ const todos = [
   "flytta väderdatan åt sidan",
   "använd metAPIs ikoner, fundera över att använda existerande lib för detta",
   "vis förslagen på vad jag kan göra på ett bättre sätt",
+  "kika på https://texttv.nu/blogg/texttv-api",
 ];
 
 export default function Todos() {

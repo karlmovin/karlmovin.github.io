@@ -192,8 +192,8 @@ function handleSymbol(symbol_code: string) {
   if (symbol_code.includes("rain")) {
     return "rainy";
   }
-  if (symbol_code === "sky_night" || symbol_code === "clearsky_night") {
-    return "clear_night";
+  if (symbol_code.includes("clearsky")) {
+    return symbol_code.replace("clearsky", "clear");
   }
   return symbol_code;
 }
