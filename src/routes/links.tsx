@@ -183,7 +183,7 @@ const bookmarks = [
     tags: ["comics"],
   },
   {
-    url: "https://www.potatodogcomics.com/",
+    url: "https://potatodogcomics.tumblr.com/",
     title: "Potatodogcomics",
     description: "Potatodogcomics",
     tags: ["comics"],
@@ -192,12 +192,6 @@ const bookmarks = [
     url: "https://www.blastwave-comic.com/",
     title: "Gone with the blastwave",
     description: "Gone with the blastwave",
-    tags: ["comics"],
-  },
-  {
-    url: "https://baalbuddy.com/",
-    title: "Baalbuddy",
-    description: "Baalbuddy",
     tags: ["comics"],
   },
   {
