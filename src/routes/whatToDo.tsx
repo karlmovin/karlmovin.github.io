@@ -144,7 +144,7 @@ const sporter: Record<
   inomhussimning: {
     verb: "simma",
     månader: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    plats: ["i poolen"],
+    plats: ["i bassängen"],
     tidsåtgång: { min: 1, max: 3 },
     temperaturer: { min: -20, max: 40 },
   },
