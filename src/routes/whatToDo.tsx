@@ -381,17 +381,31 @@ function forecast(time: string, forecast: Forecast) {
         {handleSymbol(symbol_code)}
       </span>
       {symbol_confidence ? `(${symbol_confidence})` : ""}
-      {air_temperature
-        ? `${air_temperature}°`
-        : air_temperature_max && air_temperature_min
-        ? `~${
-            Math.floor(
-              (air_temperature_min +
-                (air_temperature_max - air_temperature_min) / 2) *
-                10
-            ) / 10
-          }°`
-        : ""}
+      {air_temperature ? (
+        <div
+          className={air_temperature >= 0 ? "text-red-400" : "text-blue-400"}
+        >
+          {air_temperature}°
+        </div>
+      ) : air_temperature_max && air_temperature_min ? (
+        <div
+          className={
+            air_temperature_max - air_temperature_min >= 0
+              ? "text-red-400"
+              : "text-blue-400"
+          }
+        >
+          ~
+          {Math.floor(
+            (air_temperature_min +
+              (air_temperature_max - air_temperature_min) / 2) *
+              10
+          ) / 10}
+          °
+        </div>
+      ) : (
+        ""
+      )}
       {air_temperature_min && air_temperature_max
         ? `(${air_temperature_min}° - ${air_temperature_max}°)`
         : ""}
@@ -584,19 +598,21 @@ export default function WhatToDo() {
                   device_thermostat
                 </span>{" "}
                 <div
-                  className={
+                  className={`${
                     weather.now.details.air_temperature >= 0
                       ? "text-red-400"
                       : "text-blue-400"
-                  }
+                  } text-xl`}
                 >
                   {weather.now.details.air_temperature}°
                 </div>
               </div>
               <div className="flex gap-1">
                 <span className="material-symbols-outlined">air</span>
-                {weather.now.details.wind_speed} (
-                {weather.now.details.wind_speed_of_gust}) m/s
+                <div className="text-xl">
+                  {weather.now.details.wind_speed}
+                </div>{" "}
+                ({weather.now.details.wind_speed_of_gust}) m/s
                 <span
                   className={"material-symbols-outlined"}
                   style={{
