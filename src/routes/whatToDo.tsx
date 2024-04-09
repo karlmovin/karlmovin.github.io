@@ -287,7 +287,7 @@ const intressen: Record<
     tiderPåDygnet: { från: 8, till: 20 },
   },
   sova: {
-    verb: "sova",
+    verb: "gå och fucking lägga dig??",
     tidsåtgång: { min: 1, max: 9 },
     tiderPåDygnet: { från: 20, till: 24 + 8 },
   },
@@ -558,7 +558,16 @@ export default function WhatToDo() {
               weekday: "long",
               hour: "2-digit",
               minute: "2-digit",
-            }).format(new Date())}
+            }).format(new Date())}{" "}
+            (
+            <a href="https://developer.yr.no/doc/GettingStarted/">powered by</a>{" "}
+            <a
+              href="https://www.yr.no/"
+              className="bg-[#00A5D8] text-white rounded-full p-1"
+            >
+              YR
+            </a>
+            )
           </h5>
         </div>
         {weather && (
@@ -607,7 +616,27 @@ export default function WhatToDo() {
           </div>
         )}
       </div>
-      <section className="container max-w-screen-xl place-content-center flex h-dvh items-center">
+      <section className="container max-w-screen-xl place-content-center flex h-dvh items-center flex-col">
+        {selectedSport || selectedIntresse ? (
+          <p className="text-2xl">
+            Du kan till exempel
+            {selectedSport
+              ? ` ${sporter[selectedSport].verb} ${
+                  sporter[selectedSport].plats[
+                    Math.floor(
+                      Math.random() * sporter[selectedSport].plats.length
+                    )
+                  ]
+                }${
+                  selectedIntresse
+                    ? " eller så kan du kanske " +
+                      intressen[selectedIntresse].verb +
+                      "?"
+                    : "?"
+                }`
+              : " " + intressen[selectedIntresse].verb + "?"}
+          </p>
+        ) : null}
         <button
           className="m-2 align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-gray-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
           type="button"
@@ -617,23 +646,6 @@ export default function WhatToDo() {
             ? "Vad ska jag göra idag?"
             : "Nä tack, något annat?"}
         </button>
-        {selectedSport ? (
-          <p>
-            Du kan till exempel {sporter[selectedSport].verb}{" "}
-            {
-              sporter[selectedSport].plats[
-                Math.floor(Math.random() * sporter[selectedSport].plats.length)
-              ]
-            }
-          </p>
-        ) : null}
-
-        {selectedIntresse ? (
-          <p>
-            {selectedSport ? "eller så kan du kanske" : "Du kan till exempel"}{" "}
-            {intressen[selectedIntresse].verb}?
-          </p>
-        ) : null}
       </section>
     </main>
   );
