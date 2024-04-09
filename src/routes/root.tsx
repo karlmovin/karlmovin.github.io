@@ -5,7 +5,7 @@ import Nav from "../Nav";
 function Root() {
   return (
     <>
-      <main className="flex flex-col gap-8">
+      <main className="flex flex-col">
         <Nav />
         <Outlet />
       </main>
