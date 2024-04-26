@@ -233,6 +233,36 @@
       "title": "Behandlingsrekommendation sömnstörning hos barn",
       "description": "Behandlingsrekommendation sömnstörning hos barn",
       "tags": ["medicin", "barn", "sömnstörning"]
+    },
+    {
+      "url": "https://console.groq.com/playground",
+      "title": "Groq Playground",
+      "description": "Groq Playground",
+      "tags": ["groq", "development", "ai"]
+    },
+    {
+      "url": "https://chat.openai.com/",
+      "title": "OpenAI Chat",
+      "description": "OpenAI Chat",
+      "tags": ["ai", "chat"]
+    },
+    {
+      "url": "https://www.openapis.org/",
+      "title": "OpenAPI",
+      "description": "OpenAPI",
+      "tags": ["api", "development"]
+    },
+    {
+      "url": "https://swagger.io/specification/",
+      "title": "Swagger",
+      "description": "Swagger",
+      "tags": ["api", "development"]
+    },
+    {
+      "url": "https://www.postman.com/",
+      "title": "Postman",
+      "description": "Postman",
+      "tags": ["api", "development"]
     }
   ]
 }

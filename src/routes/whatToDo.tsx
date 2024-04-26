@@ -414,13 +414,12 @@ function forecast(time: string, forecast: Forecast) {
       precipitation_amount_max ? (
         <>
           <span className="material-symbols-outlined">umbrella</span>
-          {precipitation_amount ||
-            (precipitation_amount_min &&
-              `${precipitation_amount} ${
-                precipitation_amount_min && precipitation_amount_max
-                  ? `(${precipitation_amount_min}-${precipitation_amount_max})`
-                  : ""
-              } mm`)}
+          {precipitation_amount && precipitation_amount}
+          {`${
+            !!precipitation_amount_min && !!precipitation_amount_max
+              ? `(${precipitation_amount_min}-${precipitation_amount_max})`
+              : ""
+          } mm`}
           {`(${probability_of_precipitation}%)`}
         </>
       ) : null}
@@ -475,7 +474,7 @@ export default function WhatToDo() {
           new Date(time).getHours() + 1 === today.getHours()
       );
 
-      const tomorrow = data.properties.timeseries.find(
+      const tomorrow: TimeSerie = data.properties.timeseries.find(
         ({ time }: { time: string }) =>
           time >=
           new Date(
@@ -509,8 +508,8 @@ export default function WhatToDo() {
             summary: tomorrow.data.next_12_hours.summary,
             details: {
               ...tomorrow.data.next_1_hours.details,
-              ...tomorrow.data.next_6_hours.details,
               ...tomorrow.data.next_12_hours.details,
+              ...tomorrow.data.next_6_hours.details,
             },
           },
         },
