@@ -263,6 +263,42 @@
       "title": "Postman",
       "description": "Postman",
       "tags": ["api", "development"]
+    },
+    {
+      "url": "https://www.trafiklab.se/sv/api/trafiklab-apis/sl/",
+      "title": "Trafiklab SL",
+      "description": "Trafiklab SL",
+      "tags": ["api", "development", "SL"]
+    },
+    {
+      "url": "https://en.parkopedia.se/",
+      "title": "Parkopedia",
+      "description": "Parkopedia",
+      "tags": ["api", "development", "parking"]
+    },
+    {
+      "url": "https://api.sl.se/fordonspositioner#PT",
+      "title": "SL Fordonspositioner",
+      "description": "SL Fordonspositioner",
+      "tags": ["api", "development", "SL"]
+    },
+    {
+      "url": "https://loppistajm.se/kalender.html",
+      "title": "Loppistajm",
+      "description": "Loppistajm",
+      "tags": ["loppis"]
+    },
+    {
+      "url": "https://ground.news/landingV7/nutshell?utm_source=nutshell&utm_medium=Youtube&utm_campaign=nov30",
+      "title": "Ground News",
+      "description": "Ground News",
+      "tags": ["news"]
+    },
+    {
+      "url": "https://texttv.nu/blogg/texttv-api",
+      "title": "TextTV API",
+      "description": "TextTV API",
+      "tags": ["api", "development"]
     }
   ]
 }
