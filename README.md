@@ -1,3 +1,1 @@
-# karlmovin.github.io
-
-This page uses Typescript, Vite, React, TailwindCss and React Router
+This is just where I store some of my stuff, and maybe also try things out
