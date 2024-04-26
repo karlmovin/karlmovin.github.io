@@ -8,11 +8,11 @@ function BookList({
   handleGenreFilter = () => {},
 }: {
   books: {
-    title: string;
-    author: string;
+    title?: string;
+    author?: string;
     genres: string[];
     notes: string[];
-    status: string;
+    status?: string;
     slug?: string;
   }[];
   genreFilters?: string[];
