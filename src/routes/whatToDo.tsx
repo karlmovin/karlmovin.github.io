@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Forecast, Instant, TimeSerie } from "./weather";
 
 // https://api.met.no/weatherapi/documentation
 // https://api.met.no/doc/ClientLibraries
@@ -293,140 +294,6 @@ const intressen: Record<
   },
 };
 
-type Instant = {
-  details: {
-    air_temperature: number;
-    wind_speed: number;
-    wind_from_direction: number;
-    wind_speed_of_gust: number;
-    air_temperature_max?: number;
-    air_temperature_min?: number;
-    air_pressure_at_sea_level?: number;
-    air_temperature_percentile_10?: number;
-    air_temperature_percentile_90?: number;
-    cloud_area_fraction?: number;
-    cloud_area_fraction_high?: number;
-    cloud_area_fraction_low?: number;
-    cloud_area_fraction_medium?: number;
-    dew_point_temperature?: number;
-    fog_area_fraction?: number;
-    relative_humidity?: number;
-    ultraviolet_index_clear_sky?: number;
-    wind_speed_percentile_10?: number;
-    wind_speed_percentile_90?: number;
-  };
-};
-
-type Forecast = {
-  summary: {
-    symbol_code: string;
-    symbol_confidence: string;
-  };
-  details: {
-    probability_of_precipitation: number;
-    precipitation_amount?: number;
-    precipitation_amount_max?: number;
-    precipitation_amount_min?: number;
-    probability_of_thunder?: number;
-    air_temperature_max?: number;
-    air_temperature_min?: number;
-    air_temperature?: number;
-  };
-};
-
-type TimeSerie = {
-  time: string;
-  data: {
-    instant: Instant;
-    next_1_hours: Forecast;
-    next_6_hours: Forecast;
-    next_12_hours: Forecast;
-  };
-};
-
-function handleSymbol(symbol_code: string) {
-  // console.log(symbol_code);
-  if (symbol_code.includes("partly")) {
-    return symbol_code.replace("partly", "partly_");
-  }
-  if (symbol_code.includes("fair")) {
-    return symbol_code.replace("fair", "clear");
-  }
-  if (symbol_code.includes("rain")) {
-    return "rainy";
-  }
-  if (symbol_code.includes("clearsky")) {
-    return symbol_code.replace("clearsky", "clear");
-  }
-  return symbol_code;
-}
-
-function forecast(time: string, forecast: Forecast) {
-  const {
-    summary: { symbol_code, symbol_confidence },
-    details: {
-      air_temperature,
-      air_temperature_max,
-      air_temperature_min,
-      probability_of_precipitation,
-      precipitation_amount,
-      precipitation_amount_min,
-      precipitation_amount_max,
-    },
-  } = forecast;
-  return (
-    <div className="flex">
-      {time}:
-      <span className="material-symbols-outlined">
-        {handleSymbol(symbol_code)}
-      </span>
-      {symbol_confidence ? `(${symbol_confidence})` : ""}
-      {air_temperature ? (
-        <div
-          className={air_temperature >= 0 ? "text-red-400" : "text-blue-400"}
-        >
-          {air_temperature}°
-        </div>
-      ) : air_temperature_max && air_temperature_min ? (
-        <div
-          className={
-            air_temperature_max - air_temperature_min >= 0
-              ? "text-red-400"
-              : "text-blue-400"
-          }
-        >
-          ~
-          {Math.floor(
-            (air_temperature_min +
-              (air_temperature_max - air_temperature_min) / 2) *
-              10
-          ) / 10}
-          °
-        </div>
-      ) : (
-        ""
-      )}
-      {air_temperature_min && air_temperature_max
-        ? `(${air_temperature_min}° - ${air_temperature_max}°)`
-        : ""}
-      {precipitation_amount ||
-      precipitation_amount_min ||
-      precipitation_amount_max ? (
-        <>
-          <span className="material-symbols-outlined">umbrella</span>
-          {precipitation_amount && precipitation_amount}
-          {`${
-            !!precipitation_amount_min && !!precipitation_amount_max
-              ? `(${precipitation_amount_min}-${precipitation_amount_max})`
-              : ""
-          } mm`}
-          {`(${probability_of_precipitation}%)`}
-        </>
-      ) : null}
-    </div>
-  );
-}
-
 export default function WhatToDo() {
   const [selectedSport, setSelectedSport] = useState("");
   const [selectedIntresse, setSelectedIntresse] = useState("");
@@ -441,6 +308,21 @@ export default function WhatToDo() {
       tomorrow: Forecast;
     };
   } | null>(null);
+  const [textTvWeather, setTextTvWeather] = useState<
+    | {
+        num: string;
+        title: string;
+        content: string[];
+        content_plain: string[];
+        next_page: string;
+        prev_page: string;
+        date_updated_unix: number;
+        permalink: string;
+        id: string;
+        breadcrumbs: [];
+      }[]
+    | null
+  >(null);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -454,6 +336,13 @@ export default function WhatToDo() {
   }, []);
 
   useEffect(() => {
+    async function fetchTextTvWeather() {
+      const response = await fetch(
+        "https://api.texttv.nu/api/get/410?includePlainTextContent=1&app=kallesväder"
+      );
+      const data = await response.json();
+      setTextTvWeather(data);
+    }
     async function fetchWeather() {
       // https://developer.yr.no/doc/GettingStarted/
       // https://docs.api.met.no/doc/
@@ -519,6 +408,9 @@ export default function WhatToDo() {
     if (location) {
       fetchWeather();
     }
+    if (!textTvWeather) {
+      fetchTextTvWeather();
+    }
   }, [location]);
 
   const handleButtonClick = () => {
@@ -563,74 +455,6 @@ export default function WhatToDo() {
 
   return (
     <main>
-      <div className="absolute flex  w-full max-w-[30rem] flex-col rounded-br-xl bg-white bg-clip-border p-4 text-gray-700 ">
-        <div className="p-4 mb-2">
-          <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-            Väder{" "}
-            {new Intl.DateTimeFormat("se-SE", {
-              weekday: "long",
-              hour: "2-digit",
-              minute: "2-digit",
-            }).format(new Date())}{" "}
-            (
-            <a href="https://developer.yr.no/doc/GettingStarted/">powered by</a>{" "}
-            <a
-              href="https://www.yr.no/"
-              className="bg-[#00A5D8] text-white rounded-full p-1"
-            >
-              YR
-            </a>
-            )
-          </h5>
-        </div>
-        {weather && (
-          <div>
-            <div className="flex gap-4">
-              <div className="flex gap-1">
-                {new Intl.DateTimeFormat("se-SE", {
-                  weekday: "long",
-                  hour: "2-digit",
-                  minute: "2-digit",
-                }).format(new Date(weather.time))}
-                :
-                <span className="material-symbols-outlined">
-                  device_thermostat
-                </span>{" "}
-                <div
-                  className={`${
-                    weather.now.details.air_temperature >= 0
-                      ? "text-red-400"
-                      : "text-blue-400"
-                  } text-xl`}
-                >
-                  {weather.now.details.air_temperature}°
-                </div>
-              </div>
-              <div className="flex gap-1">
-                <span className="material-symbols-outlined">air</span>
-                <div className="text-xl">
-                  {weather.now.details.wind_speed}
-                </div>{" "}
-                ({weather.now.details.wind_speed_of_gust}) m/s
-                <span
-                  className={"material-symbols-outlined"}
-                  style={{
-                    transform: `rotate(${weather.now.details.wind_from_direction}deg)`,
-                  }}
-                >
-                  arrow_downward
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              {forecast("< 1h", weather.forecast.next_1_hours)}
-              {forecast("< 6h", weather.forecast.next_6_hours)}
-              {forecast("< 12h", weather.forecast.next_12_hours)}
-              {forecast("Imorgon 9-15", weather.forecast.tomorrow)}
-            </div>
-          </div>
-        )}
-      </div>
       <section className="container max-w-screen-xl place-content-center flex h-dvh items-center flex-col">
         {selectedSport || selectedIntresse ? (
           <p className="text-2xl">
