@@ -80,6 +80,8 @@ function BookmarksPage() {
     new Set(bookmarks.flatMap((bookmark) => bookmark.tags))
   );
 
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
   const handleTagFilter = (isChecked: boolean, tag: string) => {
     if (isChecked) {
       setTagFilters([...tagFilters, tag]);
@@ -88,10 +90,41 @@ function BookmarksPage() {
     }
   };
 
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredBookmarks = bookmarks.filter((bookmark) => {
+    const { title, tags } = bookmark;
+    const lowerCaseSearchTerm = searchTerm.toLowerCase();
+    return (
+      title.toLowerCase().includes(lowerCaseSearchTerm) ||
+      tags.some((tag) => tag.toLowerCase().includes(lowerCaseSearchTerm))
+    );
+  });
+
   return (
     <section className="container max-w-screen-xl">
-      <p className="text-4xl">Bokmärken</p>
+      <div className="flex justify-between pr-8 pt-4">
+        <p className="text-4xl">Bokmärken</p>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearch}
+          className="p-2 border border-gray-300 rounded-md"
+        />
+      </div>
       <div className="flex gap-2 mt-4">
+        {tagFilters.length ? (
+          <button
+            key={"tag"}
+            className="text-gray-500 text-2xl hover:underline"
+            onClick={() => setTagFilters([])}
+          >
+            tag:
+          </button>
+        ) : null}
         {tagFilters.map((tag) => (
           <div key={tag}>
             <button
@@ -101,18 +134,20 @@ function BookmarksPage() {
             >
               {tag}
             </button>
-            {tagFilters[tagFilters.length - 1] != tag && (
+            {tagFilters[tagFilters.length - 1] !== tag && (
               <span className="text-gray-500 text-2xl"> |</span>
             )}
           </div>
         ))}
       </div>
       <HorizontalList>
-        {bookmarks
+        {filteredBookmarks
           .filter((bookmark) =>
-            tagFilters.length === 0
-              ? false
-              : bookmark.tags.some((tag) => tagFilters.includes(tag))
+            tagFilters.length
+              ? bookmark.tags.some((tag) => tagFilters.includes(tag))
+              : searchTerm.length
+              ? true
+              : false
           )
           .map((bookmark) => (
             <Card
@@ -127,7 +162,7 @@ function BookmarksPage() {
         <div className="my-2" key={availableTag}>
           <div className="text-2xl">{availableTag}</div>
           <HorizontalList key={availableTag}>
-            {bookmarks
+            {filteredBookmarks
               .filter((bookmark) => bookmark.tags.includes(availableTag))
               .map((bookmark) => (
                 <Card
