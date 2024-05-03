@@ -52,7 +52,7 @@ function Nav() {
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar">
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-700 md:dark:bg-gray-700 dark:border-gray-700">
-            <li>
+            {/* <li>
               <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
@@ -61,7 +61,7 @@ function Nav() {
               >
                 Hem
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 to="/packlistor"
@@ -120,6 +120,16 @@ function Nav() {
                 }
               >
                 Väder
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/blog"
+                className={({ isActive, isPending }) =>
+                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                }
+              >
+                Blog
               </NavLink>
             </li>
           </ul>
