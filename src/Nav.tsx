@@ -104,16 +104,6 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/what-to-do"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
-                }
-              >
-                Vad ska jag göra idag?
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
                 to="/weather"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
@@ -130,6 +120,16 @@ function Nav() {
                 }
               >
                 Blog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/what-to-do"
+                className={({ isActive, isPending }) =>
+                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                }
+              >
+                Vad ska jag göra idag?
               </NavLink>
             </li>
           </ul>
