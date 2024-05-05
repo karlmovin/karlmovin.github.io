@@ -37,6 +37,41 @@ function Accordion({
 export default function Konst() {
   return (
     <section className="container max-w-screen-xl">
+      <p className="text-2xl pb-2">Konstperioder</p>
+      <div className="w-[32rem]">
+        <ul className="flex flex-col w-full">
+          {Object.entries(konstperioder).map(
+            ([period, { years, description, url, images }]) => (
+              <a
+                key={period}
+                href={url}
+                target="_blank"
+                className="flex items-center gap-4 pb-1 w-max"
+              >
+                <img
+                  src={images[0]} // Make it random
+                  alt={period}
+                  className="inline-block relative object-cover object-center w-28 h-28"
+                />
+                <div>
+                  <h6 className="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-inherit">
+                    {period}
+                  </h6>
+                  <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
+                    {years}
+                  </p>
+                  <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
+                    {description}
+                  </p>
+                  <div className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+                    {url}
+                  </div>
+                </div>
+              </a>
+            )
+          )}
+        </ul>
+      </div>
       <Accordion title="Konstriktning">
         En konstriktning är en stil inom konsten. Benämningen används för
         övergripande stilar som rör många konstnärer och under en längre tid,
@@ -64,48 +99,10 @@ export default function Konst() {
         då som beteckning för en krets konstnärer (eller elever) som studerat
         för en mästare, eller efterföljare till konstnären.
       </Accordion>
-
-      <p className="text-2xl pb-2">Konstperioder</p>
-      <div className="w-[32rem]">
-        <ul className="flex flex-col w-full">
-          {Object.entries(konstperioder).map(
-            ([period, { years, description, url }]) => (
-              <li className="relative flex flex-col gap-2">
-                <span className="absolute left-0 grid justify-center transition-opacity duration-200 bg-transparent">
-                  <span className="h-full w-0.5 bg-blue-gray-100"></span>
-                </span>
-                <div className="flex items-center h-3 gap-4">
-                  <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
-                  <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                    <a href={url} target="_blank">
-                      {period}
-                    </a>
-                  </h6>
-                </div>
-                <div className="flex gap-4 pb">
-                  <span className="flex-shrink-0 invisible h-full pointer-events-none"></span>
-                  <div>
-                    <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                      {years}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4 pb-4">
-                  <span className="flex-shrink-0 invisible h-full pointer-events-none"></span>
-                  <div>
-                    <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                      {description}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            )
-          )}
-        </ul>
-      </div>
       <p className="text-2xl">Konstnärer</p>
       {Object.entries(artists).map(([artist, { url, image }]) => (
         <a
+          key={artist}
           href={url}
           target="_blank"
           className="flex items-center gap-4 pb-1 w-max"

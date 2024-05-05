@@ -7,7 +7,9 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": ["facklitteratur", "psykologi", "vetenskap"]
+      "genres": ["psykologi", "vetenskap"],
+      "rating": 4,
+      "image": "https://image.bokus.com/images/9780374533557_383px_thinking-fast-and-slow_haftad"
     },
     {
       "title": "Barn i början: Språkutveckling i förskoleåldern",
@@ -28,9 +30,11 @@
         "Att prata MYCKET med barnet är av stor vikt. Upprepning, betonande av huvudorden samt korta, enkla meningar med ljus röst, hjälper barnet.",
         "Det är viktigt att se, observera och lyssna på barnet, för att de ska förstå hur kommunikationen går till och vara uppmuntrande. Att övertolka, ge återkoppling och att ge barnet tid att svara är allmänt bättre än att inte alls försöka förstå."
       ],
-      "status": "reading",
+      "status": "read",
       "tags": [],
-      "genres": ["facklitteratur", "barn", "språkutveckling"]
+      "genres": ["barn", "språkutveckling"],
+      "image": "https://bilder.akademibokhandeln.se/images_akb/9789127412576_383/barn-i-borjan-sprakutveckling-i-forskolealdern-barn-i-borjan-sprakutveckling-i-forskolealdern",
+      "rating": 5
     },
     {
       "notes": [
@@ -46,7 +50,7 @@
         "Faryngala konsonanter uttalas genom att tungan trycker mot svalget och används inte i rikssvenskan. Det epiglottala fonemet som tillhör de faryngala uttalas genom att struplocket lyfts mot struphuvudet.",
         "De glottala fonen (kallas även laryngaler efter latinets struphuvud -> larynx) bildas genom att stämläpparna (stämbanden) förs samman. Vokaler är av naturen glottalt producerade. De glottala konsonanterna är båda frikativa, de tonlösa [h] och de tonande [ɦ]."
       ],
-      "genres": ["facklitteratur", "språk", "språkutveckling"]
+      "genres": ["språk", "språkutveckling"]
     },
     {
       "title": "Barnets första tecken de första åren",
@@ -93,7 +97,9 @@
       ],
       "status": "read",
       "tags": ["TAKK"],
-      "genres": ["facklitteratur", "barn", "språkutveckling", "teckenspråk"]
+      "genres": ["barn", "språkutveckling", "teckenspråk"],
+      "image": "https://image.bokus.com/images/9789175170343_200px_barnets-forsta-tecken-de-forsta-aren-svenskt-teckensprak",
+      "rating": 4
     },
     {
       "title": "Liv 3.0: Att vara människa i den artificiella intelligensens tid",
@@ -102,7 +108,7 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genres": ["facklitteratur", "AI", "teknik", "teknologi"]
+      "genres": ["AI", "teknik", "teknologi"]
     },
     {
       "title": "På spaning efter språkets ursprung",
@@ -111,7 +117,7 @@
       "notes": [],
       "status": "paused",
       "tags": [],
-      "genres": ["facklitteratur", "språkvetenskap", "lingvistik", "evolution"]
+      "genres": ["språkvetenskap", "lingvistik", "evolution"]
     },
     {
       "title": "The Pragmatic Programmer: Your Journey to Mastery",
@@ -120,13 +126,7 @@
       "notes": [],
       "status": "paused",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "programmering",
-        "teknik",
-        "teknologi",
-        "mjukvara"
-      ]
+      "genres": ["programmering", "teknik", "teknologi", "mjukvara"]
     },
     {
       "title": "Handbok för fifflare",
@@ -135,14 +135,7 @@
       "notes": [],
       "status": "reading",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "fusk",
-        "bedrägeri",
-        "kriminalitet",
-        "juridik",
-        "samhälle"
-      ]
+      "genres": ["fusk", "juridik", "samhälle"]
     },
     {
       "title": "På vandring i språkens fotspår",
@@ -151,7 +144,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": ["facklitteratur", "språkvetenskap", "lingvistik", "evolution"]
+      "genres": ["språkvetenskap", "lingvistik", "evolution"]
     },
     {
       "title": "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses",
@@ -160,13 +153,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "entreprenörskap",
-        "företagande",
-        "teknik",
-        "innovation"
-      ]
+      "genres": ["entreprenörskap", "företagande", "teknik", "innovation"]
     },
     {
       "title": "Konsten att tänka klart",
@@ -175,13 +162,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "psykologi",
-        "filosofi",
-        "självhjälp",
-        "kognition"
-      ]
+      "genres": ["psykologi", "filosofi", "självhjälp", "kognition"]
     },
     {
       "title": "Peak: Vetenskapen om att bli bättre på nästan allt",
@@ -190,13 +171,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "prestation",
-        "träning",
-        "utveckling",
-        "mänsklig potential"
-      ]
+      "genres": ["prestation", "träning", "utveckling", "mänsklig potential"]
     },
     {
       "title": "Konsten att leva enkelt",
@@ -205,13 +180,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "livsstil",
-        "minimalism",
-        "självhjälp",
-        "mindfulness"
-      ]
+      "genres": ["livsstil", "minimalism", "självhjälp", "mindfulness"]
     },
     {
       "title": "Predictably Irrational: The Hidden Forces That Shape Our Decisions",
@@ -220,13 +189,8 @@
       "notes": [],
       "status": "paused",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "ekonomi",
-        "beteendeekonomi",
-        "psykologi",
-        "beslutsfattande"
-      ]
+      "genres": ["ekonomi", "beteendeekonomi", "psykologi", "beslutsfattande"],
+      "rating": 5
     },
     {
       "title": "How to lead: What You Actually Need to Do to Manage, Lead & Succeed.",
@@ -235,13 +199,7 @@
       "notes": [],
       "status": "paused",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "ledarskap",
-        "management",
-        "karriär",
-        "teamarbete"
-      ]
+      "genres": ["ledarskap", "management", "karriär", "teamarbete"]
     },
     {
       "title": "Inspired: How to create tech products customers love",
@@ -251,7 +209,6 @@
       "status": "paused",
       "tags": [],
       "genres": [
-        "facklitteratur",
         "produktutveckling",
         "teknik",
         "affärsstrategi",
@@ -266,7 +223,6 @@
       "status": "planned",
       "tags": [],
       "genres": [
-        "facklitteratur",
         "arbetsliv",
         "karriärutveckling",
         "personlig utveckling",
@@ -280,13 +236,7 @@
       "notes": [],
       "status": "paused",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "lean",
-        "effektivitet",
-        "processförbättring",
-        "kvalitet"
-      ]
+      "genres": ["lean", "effektivitet", "processförbättring", "kvalitet"]
     },
     {
       "title": "Sapiens: A Brief History of Humankind",
@@ -296,12 +246,12 @@
       "status": "read",
       "tags": [],
       "genres": [
-        "facklitteratur",
         "historia",
         "antropologi",
         "mänsklig utveckling",
         "kulturell evolution"
-      ]
+      ],
+      "rating": 5
     },
     {
       "title": "Homo Deus: A brief history of tomorrow",
@@ -311,12 +261,12 @@
       "status": "read",
       "tags": [],
       "genres": [
-        "facklitteratur",
         "teknik",
         "framtid",
         "existentialism",
         "artificiell intelligens"
-      ]
+      ],
+      "rating": 4
     },
     {
       "title": "21 lessons for the 21st century",
@@ -325,13 +275,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "samhälle",
-        "teknik",
-        "politik",
-        "mänsklig framtid"
-      ]
+      "genres": ["samhälle", "teknik", "politik", "mänsklig framtid"],
+      "rating": 4
     },
     {
       "title": "12 rules for life: An antidote to chaos",
@@ -340,13 +285,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "filosofi",
-        "självhjälp",
-        "psykologi",
-        "personlig utveckling"
-      ]
+      "genres": ["filosofi", "självhjälp", "psykologi", "personlig utveckling"],
+      "rating": 3
     },
     {
       "title": "Factfulness: Ten Reasons We're Wrong About the World – and Why Things Are Better Than You Think",
@@ -355,13 +295,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "statistik",
-        "världsbild",
-        "fakta",
-        "global utveckling"
-      ]
+      "genres": ["statistik", "världsbild", "fakta", "global utveckling"],
+      "rating": 4
     },
     {
       "title": "Humankind: A hopeful history",
@@ -370,13 +305,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "samhälle",
-        "mänskligt beteende",
-        "solidaritet",
-        "historia"
-      ]
+      "genres": ["samhälle", "mänskligt beteende", "solidaritet", "historia"],
+      "rating": 5
     },
     {
       "title": "Äntligen vardag!",
@@ -385,7 +315,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": ["facklitteratur", "livsstil", "hälsa", "arbetsliv", "balans"]
+      "genres": ["livsstil", "hälsa", "arbetsliv", "balans"],
+      "rating": 3
     },
     {
       "title": "The 4-Hour Body: An Uncommon Guide to Rapid Fat-Loss, Incredible Sex, and Becoming Superhuman",
@@ -394,13 +325,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "hälsa",
-        "fitness",
-        "kroppsoptimering",
-        "prestation"
-      ]
+      "genres": ["hälsa", "fitness", "kroppsoptimering", "prestation"],
+      "rating": 4
     },
     {
       "title": "The 4-Hour Work Week: Escape the 9-5, Live Anywhere and Join the New Rich",
@@ -409,13 +335,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "karriär",
-        "livsstil",
-        "effektivitet",
-        "tidsstyrning"
-      ]
+      "genres": ["karriär", "livsstil", "effektivitet", "tidsstyrning"],
+      "rating": 3
     },
     {
       "title": "A short history of nearly everything",
@@ -424,13 +345,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "vetenskap",
-        "historia",
-        "naturvetenskap",
-        "universum"
-      ]
+      "genres": ["vetenskap", "historia", "naturvetenskap", "universum"],
+      "rating": 4
     },
     {
       "title": "How pleasure works: The New Science of Why We Like What We Like",
@@ -439,13 +355,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "psykologi",
-        "känslor",
-        "njutning",
-        "mänskligt välbefinnande"
-      ]
+      "genres": ["psykologi", "känslor", "njutning", "mänskligt välbefinnande"]
     },
     {
       "title": "The logic of life: The Rational Economics of an Irrational World",
@@ -455,7 +365,6 @@
       "status": "planned",
       "tags": [],
       "genres": [
-        "facklitteratur",
         "ekonomi",
         "beslutsfattande",
         "mikroekonomi",
@@ -469,7 +378,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": ["facklitteratur", "vetenskap", "energi", "miljö", "hållbarhet"]
+      "genres": ["vetenskap", "energi", "miljö", "hållbarhet"]
     },
     {
       "title": "Framgångsfaktorn",
@@ -478,13 +387,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "framgång",
-        "prestation",
-        "talang",
-        "arbetsliv"
-      ]
+      "genres": ["framgång", "prestation", "talang", "arbetsliv"],
+      "rating": 3
     },
     {
       "title": "Vardagsmakt",
@@ -494,7 +398,6 @@
       "status": "planned",
       "tags": [],
       "genres": [
-        "facklitteratur",
         "kommunikation",
         "personlig utveckling",
         "relationer",
@@ -508,13 +411,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "kommunikation",
-        "makt",
-        "relationer",
-        "självförtroende"
-      ]
+      "genres": ["kommunikation", "makt", "relationer", "självförtroende"],
+      "rating": 3
     },
     {
       "title": "Vi måste prata",
@@ -523,13 +421,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "kommunikation",
-        "relationer",
-        "konflikthantering",
-        "empati"
-      ]
+      "genres": ["kommunikation", "relationer", "konflikthantering", "empati"]
     },
     {
       "title": "Behavioural Economics Saved My Dog: Life Advice For The Imperfect Human",
@@ -538,13 +430,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "ekonomi",
-        "beteendeekonomi",
-        "psykologi",
-        "beslutsfattande"
-      ]
+      "genres": ["ekonomi", "beteendeekonomi", "psykologi", "beslutsfattande"]
     },
     {
       "title": "WTF, What's the future and why it's up to us",
@@ -553,13 +439,7 @@
       "notes": [],
       "status": "planned",
       "tags": [],
-      "genres": [
-        "facklitteratur",
-        "teknik",
-        "framtid",
-        "innovation",
-        "samhälle"
-      ]
+      "genres": ["teknik", "framtid", "innovation", "samhälle"]
     },
     {
       "title": "Noise: A flaw in human judgement",
@@ -569,7 +449,6 @@
       "status": "paused",
       "tags": [],
       "genres": [
-        "facklitteratur",
         "psykologi",
         "beslutsfattande",
         "kognition",
@@ -583,7 +462,7 @@
       "notes": [],
       "status": "paused",
       "tags": [],
-      "genres": ["facklitteratur", "matematik", "konst", "musik", "kognition"]
+      "genres": ["matematik", "konst", "musik", "kognition"]
     },
     {
       "title": "The God Delusion",
@@ -601,7 +480,7 @@
       "notes": [],
       "status": "paused",
       "tags": [],
-      "genres": ["facklitteratur", "teknik", "ledarskap", "karriär", "mjukvara"]
+      "genres": ["teknik", "ledarskap", "karriär", "mjukvara"]
     },
     {
       "title": "",

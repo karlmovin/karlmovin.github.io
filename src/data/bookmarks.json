@@ -299,6 +299,12 @@
       "title": "TextTV API",
       "description": "TextTV API",
       "tags": ["api", "development"]
+    },
+    {
+      "url": "https://www.tate.org.uk/art/art-terms",
+      "title": "Tate Art Terms",
+      "description": "Tate Art Terms",
+      "tags": ["art"]
     }
   ]
 }

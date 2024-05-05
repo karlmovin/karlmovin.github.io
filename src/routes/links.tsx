@@ -17,7 +17,7 @@ function Card({
   handleTagFilter: (checked: boolean, tag: string) => void;
 }) {
   return (
-    <div className="flex flex-col justify-between text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+    <div className="flex flex-col justify-between text-gray-700 bg-white shadow-md bg-clip-border rounded-xl max-w-screen-sm">
       <div className="p-6">
         <h5 className="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
           {title}

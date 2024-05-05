@@ -12,7 +12,10 @@ function BookPage() {
       <p className="text-sm">Författare: {author}</p>
       <div className="flex gap-2 flex-wrap">
         {genres.map((genre) => (
-          <div className="relative grid select-none items-center whitespace-nowrap rounded-lg border border-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-700">
+          <div
+            key={genre}
+            className="relative grid select-none items-center whitespace-nowrap rounded-lg border border-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-700"
+          >
             {genre}
           </div>
         ))}

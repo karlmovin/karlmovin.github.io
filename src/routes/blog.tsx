@@ -8,11 +8,13 @@ function Post({
 }) {
   const [isTruncated, setIsTruncated] = useState(true);
   return (
-    <li key={post.title} className="flex flex-col gap-2">
+    <li className="flex flex-col gap-2 bg-slate-100 p-2">
       <div className="text-lg">{post.title}</div>
       <div className="text-sm">{post.date}</div>
       <div
-        className={`${isTruncated ? "line-clamp-5" : "line-clamp-none"} w-1/2`}
+        className={`${
+          isTruncated ? "line-clamp-5" : "line-clamp-none"
+        } max-w-prose`}
       >
         {post.body}
       </div>
@@ -34,7 +36,7 @@ function Blog() {
       <h1 className="text-3xl">Någonstans måste jag ju skriva av mig...</h1>
       <ul className="flex flex-col gap-4">
         {posts.map((post) => (
-          <Post>{post}</Post>
+          <Post key={post.title}>{post}</Post>
         ))}
       </ul>
     </section>
