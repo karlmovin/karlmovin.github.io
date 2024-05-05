@@ -1,0 +1,260 @@
+{
+  "artists": {
+    "Louis Wain": {
+      "url": "https://en.wikipedia.org/wiki/Louis_Wain",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Louis_Wain_-_Lascelles.png"
+    },
+    "Karl Mårtens": {
+      "url": "https://www.konstochfolk.se/2015/08/19/karl-martens/",
+      "image": "https://www.konstochfolk.se/files/2020/04/Karl-Ma%CC%8Artens-800x867.jpg"
+    },
+    "Theodor Kittelsen": {
+      "url": "https://en.wikipedia.org/wiki/Theodor_Kittelsen",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Kittelsen_av_krohg_1892.jpg"
+    },
+    "Eric H Olson": {
+      "url": "https://sv.wikipedia.org/wiki/Eric_H._Olson",
+      "image": "https://sis.modernamuseet.se/internal/media/dispatcher/12538/preview"
+    },
+    "Waldemar von Kozak": {
+      "url": "https://www.artstation.com/waldemarvonkozak",
+      "image": "https://cdnb.artstation.com/p/users/avatars/000/675/235/large/cc50ac9e26466f2eb71a4c677e6792b9.jpg?1520807145"
+    },
+    "Elhuervo (Niklas Åkerblad)": {
+      "url": "https://elhuervo.tumblr.com/",
+      "image": "https://static.tumblr.com/e812d26a629f7cbe9ece3d294ff752ce/jyntbvr/z5Anzi9x3/tumblr_static_8zjlkkr64xs0wso0oc4w808oo.jpg"
+    },
+    "Vincenzo Riccardi": {
+      "url": "https://www.artstation.com/vinartwork",
+      "image": "https://cdnb.artstation.com/p/users/avatars/000/733/101/large/20d2ce237e6e033c5f5e2d822710c1c3.jpg?1670611202"
+    },
+    "Hydro74 (Joshua M. Smith)": {
+      "url": "https://hydro74.com/",
+      "image": "https://hydro74.com/IMG_2024/LOGO_2.jpg"
+    }
+  },
+  "konstperioder": {
+    "Medeltiden": {
+      "years": "500-1500",
+      "description": "En period präglad av religiös konst och kyrkliga motiv.",
+      "artists": [],
+      "url": "https://en.wikipedia.org/wiki/Medieval_art",
+      "images": [""]
+    },
+    "Renässansen": {
+      "years": "1400-1600",
+      "description": "En period av återupplivad intresse för antikens konst och humanism.",
+      "artists": ["Leonardo da Vinci", "Michelangelo", "Raphael"],
+      "url": "https://en.wikipedia.org/wiki/Renaissance_art",
+      "images": ["data/downloaded_images/renässans.jpg"]
+    },
+    "Manierismen": {
+      "years": "1520-1600",
+      "description": "Överdrivna former, tillgjorda teatraliska rörelser och oklara perspektiv.",
+      "artists": ["El Greco", "Parmigianino", "Giuseppe Arcimboldo"],
+      "url": "https://en.wikipedia.org/wiki/Mannerism",
+      "images": ["manierism.jpg"]
+    },
+    "Barocken": {
+      "years": "1600-1750",
+      "description": "En period av dramatisk och dekorativ konst med religiösa och världsliga motiv.",
+      "artists": ["Caravaggio", "Peter Paul Rubens", "Rembrandt"],
+      "url": "https://en.wikipedia.org/wiki/Baroque_art",
+      "images": ["barock.jpg"]
+    },
+    "Rokoko": {
+      "years": "1700-1800",
+      "description": "En period av elegant och dekorativ konst med pastellfärger och romantiska motiv.",
+      "artists": [
+        "Jean-Antoine Watteau",
+        "François Boucher",
+        "Jean-Honoré Fragonard"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Rococo",
+      "images": ["rokoko.jpg"]
+    },
+    "Nyklassicismen": {
+      "years": "1750-1850",
+      "description": "En period av återgång till antikens ideal och enkelhet i konsten.",
+      "artists": [
+        "Jacques-Louis David",
+        "Antonio Canova",
+        "Jean-Auguste-Dominique Ingres"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Neoclassicism",
+      "images": ["klassicism.jpg"]
+    },
+    "Romantiken": {
+      "years": "1800-1850",
+      "description": "En period av känslomässig och dramatisk konst med fokus på naturen och det övernaturliga.",
+      "artists": [
+        "Caspar David Friedrich",
+        "Eugène Delacroix",
+        "William Blake"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Romanticism",
+      "images": ["romantik.jpg"]
+    },
+    "Realismen": {
+      "years": "1840-1900",
+      "description": "En period av konst som avbildar verkligheten och vardagslivet.",
+      "artists": ["Gustave Courbet", "Édouard Manet", "Jean-François Millet"],
+      "url": "https://en.wikipedia.org/wiki/Realism_(arts)",
+      "images": ["realism.jpg"]
+    },
+    "Impressionismen": {
+      "years": "1860-1900",
+      "description": "En period av konst som fångar ögonblickets intryck och ljusets skiftningar.",
+      "artists": ["Claude Monet", "Pierre-Auguste Renoir", "Edgar Degas"],
+      "url": "https://en.wikipedia.org/wiki/Impressionism",
+      "images": ["impressionism.jpg"]
+    },
+    "Symbolismen": {
+      "years": "1880-1910",
+      "description": "En period av konst som uttrycker symboliska och drömlika teman.",
+      "artists": ["Gustav Klimt", "Edvard Munch", "Odilon Redon"],
+      "url": "https://en.wikipedia.org/wiki/Symbolism_(arts)",
+      "images": ["symbolism.jpg"]
+    },
+    "Jugend / Art Nouveau": {
+      "years": "1890-1910",
+      "description": "En period av konst med organiska former och dekorativa mönster.",
+      "artists": ["Alphonse Mucha", "Antoni Gaudí", "René Lalique"],
+      "url": "https://en.wikipedia.org/wiki/Art_Nouveau",
+      "images": ["jugend.jpg"]
+    },
+    "Pointilism": {
+      "years": "1886-1906",
+      "description": "En period av konst som använder små prickar för att skapa bilder.",
+      "artists": ["Georges Seurat", "Paul Signac", "Camille Pissarro"],
+      "url": "https://en.wikipedia.org/wiki/Pointillism",
+      "images": ["pointilism.jpg"]
+    },
+    "Modernism": {
+      "years": "1890-1940",
+      "description": "En period av konst som bryter med traditionella normer och utforskar nya uttrycksformer.",
+      "artists": ["Pablo Picasso", "Henri Matisse", "Wassily Kandinsky"],
+      "url": "https://en.wikipedia.org/wiki/Modernism",
+      "images": ["modernism.jpg"]
+    },
+    "Fauvismen": {
+      "years": "1900-1910",
+      "description": "En period av konst med starka och expressiva färger.",
+      "artists": ["Henri Matisse", "André Derain", "Raoul Dufy"],
+      "url": "https://en.wikipedia.org/wiki/Fauvism",
+      "images": [""]
+    },
+    "Kubismen": {
+      "years": "1907-1920",
+      "description": "En period av konst som bryter ner motiv i geometriska former och olika perspektiv.",
+      "artists": ["Pablo Picasso", "Georges Braque", "Juan Gris"],
+      "url": "https://en.wikipedia.org/wiki/Cubism",
+      "images": ["kubism.jpg"]
+    },
+    "Expressionism": {
+      "years": "1905-1925",
+      "description": "En period av konst som uttrycker starka känslor och inre upplevelser.",
+      "artists": ["Edvard Munch", "Egon Schiele", "Ernst Ludwig Kirchner"],
+      "url": "https://en.wikipedia.org/wiki/Expressionism",
+      "images": ["expressionism.jpg"]
+    },
+    "Futurismen / Vorticism": {
+      "years": "1909-1914",
+      "description": "En period av konst som hyllar teknologi, rörelse och framtidstro.",
+      "artists": ["Umberto Boccioni", "Giacomo Balla", "Wyndham Lewis"],
+      "url": "https://en.wikipedia.org/wiki/Futurism",
+      "images": ["futurism.jpg"]
+    },
+    "Suprematism": {
+      "years": "1913-1920",
+      "description": "En period av konst som fokuserar på geometriska former och abstraktion.",
+      "artists": ["Kazimir Malevich", "El Lissitzky", "Natalia Goncharova"],
+      "url": "https://en.wikipedia.org/wiki/Suprematism",
+      "images": [""]
+    },
+    "Dadaismen": {
+      "years": "1916-1924",
+      "description": "En period av konst som ifrågasätter etablerade normer och konventioner.",
+      "artists": ["Marcel Duchamp", "Hannah Höch", "Man Ray"],
+      "url": "https://en.wikipedia.org/wiki/Dada",
+      "images": [""]
+    },
+    "Art Deco": {
+      "years": "1920-1939",
+      "description": "En period av konst med eleganta former, geometriska mönster och lyxiga material.",
+      "artists": ["Tamara de Lempicka", "Erté", "Cassandre"],
+      "url": "https://en.wikipedia.org/wiki/Art_Deco",
+      "images": [""]
+    },
+    "Surrealismen": {
+      "years": "1920-1950",
+      "description": "En period av konst som utforskar det undermedvetna och drömlika världar.",
+      "artists": ["Salvador Dalí", "René Magritte", "Max Ernst"],
+      "url": "https://en.wikipedia.org/wiki/Surrealism",
+      "images": [""]
+    },
+    "Abstrakt konst": {
+      "years": "1910-",
+      "description": "En period av konst som inte föreställer något konkret utan fokuserar på färg, form och linje.",
+      "artists": ["Wassily Kandinsky", "Piet Mondrian", "Kazimir Malevich"],
+      "url": "https://en.wikipedia.org/wiki/Abstract_art",
+      "images": ["abstrakt.jpg"]
+    },
+    "Popkonst": {
+      "years": "1950-",
+      "description": "En period av konst som använder populärkulturella motiv och tekniker.",
+      "artists": ["Andy Warhol", "Roy Lichtenstein", "David Hockney"],
+      "url": "https://en.wikipedia.org/wiki/Pop_art",
+      "images": [""]
+    },
+    "Opkonst": {
+      "years": "1960-",
+      "description": "En period av konst som använder optiska illusioner och geometriska mönster.",
+      "artists": ["Victor Vasarely", "Bridget Riley", "Carlos Cruz-Diez"],
+      "url": "https://en.wikipedia.org/wiki/Op_art",
+      "images": [""]
+    },
+    "Minimalism": {
+      "years": "1960-",
+      "description": "En period av konst som reducerar form och material till det väsentliga.",
+      "artists": ["Donald Judd", "Dan Flavin", "Agnes Martin"],
+      "url": "https://en.wikipedia.org/wiki/Minimalism",
+      "images": [""]
+    },
+    "Fotorealism / Superrealism": {
+      "years": "1960-",
+      "description": "En period av konst som återger motiv med extrem detaljrikedom och realism.",
+      "artists": ["Chuck Close", "Richard Estes", "Ralph Goings"],
+      "url": "https://en.wikipedia.org/wiki/Photorealism",
+      "images": [""]
+    },
+    "Hyperrealism": {
+      "years": "1960-",
+      "description": "En period av konst som strävar efter att återge motiv så verklighetstroget som möjligt.",
+      "artists": ["Duane Hanson", "Ron Mueck", "Robert Bechtle"],
+      "url": "https://en.wikipedia.org/wiki/Hyperrealism",
+      "images": [""]
+    },
+    "Postmodernism": {
+      "years": "1970-",
+      "description": "En period av konst som ifrågasätter modernismens ideal och experimenterar med olika stilar och tekniker.",
+      "artists": ["Cindy Sherman", "Jeff Koons", "Barbara Kruger"],
+      "url": "https://en.wikipedia.org/wiki/Postmodern_art",
+      "images": [""]
+    },
+    "Graffiti": {
+      "years": "1970-",
+      "description": "En period av konst som uttrycks genom målningar och texter på offentliga platser.",
+      "artists": ["Banksy", "Keith Haring", "Jean-Michel Basquiat"],
+      "url": "https://en.wikipedia.org/wiki/Graffiti",
+      "images": [""]
+    },
+    "Digital konst": {
+      "years": "1980-",
+      "description": "En period av konst som skapas med hjälp av digitala verktyg och tekniker.",
+      "artists": ["Nam June Paik", "Stelarc", "Rafael Lozano-Hemmer"],
+      "url": "https://en.wikipedia.org/wiki/Digital_art",
+      "images": [""]
+    }
+  }
+}
