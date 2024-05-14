@@ -483,6 +483,25 @@
       "genres": ["teknik", "ledarskap", "karriär", "mjukvara"]
     },
     {
+      "title": "Kollektivt självmord",
+      "author": "Arto Paasilinna",
+      "slug": "kollektivt-sjalvmord_paasilinna",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genres": ["roman"]
+    },
+    {
+      "title": "Prometheus Rising",
+      "author": "Robert Anton Wilson",
+      "slug": "prometheus-rising_wilson",
+      "notes": [],
+      "status": "planned",
+      "tags": [],
+      "genres": ["psykologi", "självhjälp", "medvetande", "utveckling"]
+    },
+
+    {
       "title": "",
       "author": "",
       "slug": "",

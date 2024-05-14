@@ -305,6 +305,84 @@
       "title": "Tate Art Terms",
       "description": "Tate Art Terms",
       "tags": ["art"]
+    },
+    {
+      "url": "https://api.pollenrapporten.se/docs/",
+      "title": "Pollenrapporten",
+      "description": "Pollenrapporten",
+      "tags": ["api", "pollen"]
+    },
+    {
+      "url": "https://ncf.idallen.com/english.html",
+      "title": "The Chaos by Gerard Nolst Trenité",
+      "description": "English Vocabulary Word Lists with Games, Puzzles and Quizzes",
+      "tags": ["english", "language"]
+    },
+    {
+      "url": "https://immersivemath.com/ila/index.html",
+      "title": "Immersive Linear Algebra",
+      "description": "Immersive Linear Algebra",
+      "tags": ["math", "linear algebra"]
+    },
+    {
+      "url": "https://www.3blue1brown.com/",
+      "title": "3Blue1Brown",
+      "description": "3Blue1Brown",
+      "tags": ["math", "youtube"]
+    },
+    {
+      "url": "https://www.khanacademy.org/math",
+      "title": "Khan Academy",
+      "description": "Khan Academy",
+      "tags": ["math", "education"]
+    },
+    {
+      "url": "https://www.wolframalpha.com/",
+      "title": "Wolfram Alpha",
+      "description": "Wolfram Alpha",
+      "tags": ["math", "search engine"]
+    },
+    {
+      "url": "https://www.desmos.com/",
+      "title": "Desmos",
+      "description": "Desmos",
+      "tags": ["math", "graphing"]
+    },
+    {
+      "url": "https://www.geogebra.org/",
+      "title": "Geogebra",
+      "description": "Geogebra",
+      "tags": ["math", "graphing"]
+    },
+    {
+      "url": "https://www.mathway.com/",
+      "title": "Mathway",
+      "description": "Mathway",
+      "tags": ["math", "calculator"]
+    },
+    {
+      "url": "https://www.symbolab.com/",
+      "title": "Symbolab",
+      "description": "Symbolab",
+      "tags": ["math", "calculator"]
+    },
+    {
+      "url": "https://www.mathsisfun.com/",
+      "title": "Math is Fun",
+      "description": "Math is Fun",
+      "tags": ["math", "education"]
+    },
+    {
+      "url": "https://www.mathopenref.com/",
+      "title": "Math Open Reference",
+      "description": "Math Open Reference",
+      "tags": ["math", "education"]
+    },
+    {
+      "URL": "https://www.lesswrong.com/posts/BPpeBH8brSCRvZajs/how-to-be-an-amateur-polyglot",
+      "title": "How to be an amateur polyglot",
+      "description": "How to be an amateur polyglot",
+      "tags": ["languages", "polyglot", "blog post"]
     }
   ]
 }
