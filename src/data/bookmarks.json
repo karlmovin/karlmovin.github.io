@@ -383,6 +383,72 @@
       "title": "How to be an amateur polyglot",
       "description": "How to be an amateur polyglot",
       "tags": ["languages", "polyglot", "blog post"]
+    },
+    {
+      "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+      "title": "Stable Diffusion WebUI",
+      "description": "Stable Diffusion WebUI",
+      "tags": ["ai", "web", "development"]
+    },
+    {
+      "url": "https://github.com/open-webui/open-webui",
+      "title": "Open WebUI",
+      "description": "Open WebUI",
+      "tags": ["web", "development", "ai"]
+    },
+    {
+      "url": "https://huggingface.co/welcome",
+      "title": "Hugging Face",
+      "description": "Hugging Face",
+      "tags": ["ai", "development"]
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g&t=1234s",
+      "title": "[1hr Talk] Intro to Large Language Models",
+      "description": "This is a 1 hour general-audience introduction to Large Language Models: the core technical component behind systems like ChatGPT, Claude, and Bard. What they are, where they are headed, comparisons and analogies to present-day operating systems, and some of the security-related challenges of this new computing paradigm.",
+      "tags": ["watching", "ai"]
+    },
+    {
+      "url": "https://joinmastodon.org/",
+      "title": "Mastodon",
+      "description": "Mastodon",
+      "tags": ["social media"]
+    },
+    {
+      "url": "https://relentless.so/",
+      "description": "Publish websites from your markdown notes. Great for sharing technical blogs, academic wikis and rich content",
+      "title": "Relentless",
+      "tags": ["development"]
+    },
+    {
+      "url": "https://firebase.blog/posts/2024/05/introducing-app-hosting/",
+      "title": "Introducing App Hosting",
+      "description": "Introducing App Hosting",
+      "tags": ["firebase", "development"]
+    },
+    {
+      "url": "https://teachyourselfmath.app/?page=1&tags=&difficulty=",
+      "title": "Teach Yourself Math",
+      "description": "Teach Yourself Math",
+      "tags": ["math", "education"]
+    },
+    {
+      "url": "https://www.executeprogram.com/",
+      "title": "Execute Program",
+      "description": "Execute Program is a learning platform built by developers for developers, because we thought there should be a better way to learn – and remember – programming languages and tools.",
+      "tags": ["development"]
+    },
+    {
+      "url": "https://monkeytype.com/",
+      "title": "Monkeytype",
+      "description": "Improve your typing speed",
+      "tags": ["typing"]
+    },
+    {
+      "url": "https://codeium.com/",
+      "title": "Codeium",
+      "description": "Codeium",
+      "tags": ["development"]
     }
   ]
 }
