@@ -449,6 +449,163 @@
       "title": "Codeium",
       "description": "Codeium",
       "tags": ["development"]
+    },
+    {
+      "url": "https://cssgridgarden.com/",
+      "title": "CSS Grid Garden",
+      "description": "CSS Grid Garden",
+      "tags": ["css", "development"]
+    },
+    {
+      "url": "https://flexboxfroggy.com/",
+      "title": "Flexbox Froggy",
+      "description": "Flexbox Froggy",
+      "tags": ["css", "development"]
+    },
+    {
+      "url": "https://3dinsider.com/3d-printing-filaments-types/",
+      "title": "3D Printing Filaments",
+      "description": "3D Printing Filaments",
+      "tags": ["3d printing"]
+    },
+    {
+      "url": "https://www.thingiverse.com/education",
+      "title": "Thingiverse Education",
+      "description": "Thingiverse Education",
+      "tags": ["3d printing"]
+    },
+    {
+      "url": "https://www.outdoorexperten.se/sv/magasinet/bygga-klattervagg",
+      "title": "Bygga klättervägg",
+      "description": "Guide on how to build a climbing wall",
+      "tags": ["climbing"]
+    },
+    {
+      "url": "https://www.smartblinds.com/stories/the-difference-between-thread-and-matter/",
+      "title": "The Difference Between Thread and Matter",
+      "description": "Learn about the difference between Thread and Matter in smart blinds technology",
+      "tags": ["home automation"]
+    },
+    {
+      "url": "https://nginx.org/en/",
+      "title": "NGINX",
+      "description": "NGINX is a high-performance web server and reverse proxy server.",
+      "tags": ["web", "server"]
+    },
+    {
+      "url": "https://vercel.com/",
+      "title": "Vercel",
+      "description": "Vercel is a cloud platform for static sites and serverless functions.",
+      "tags": ["web", "development"]
+    },
+    {
+      "url": "https://www.martinsons.se/sv/kunskap-och-inspiration/inspiration/arets-trafluga/",
+      "title": "Årets Träfluga",
+      "description": "Inspiration and knowledge about woodworking and carpentry",
+      "tags": ["woodworking", "carpentry"]
+    },
+    {
+      "url": "https://www.bauhaus.se/bordssag-skil-1340aa-2000w",
+      "title": "Bordssåg Skil 1340AA 2000W",
+      "description": "A powerful table saw for woodworking projects",
+      "tags": ["woodworking", "tools"]
+    },
+    { "url": "https://civitai.com/", "title": "Civitai", "tags": ["ai"] },
+    {
+      "url": "https://reesewoods.com/how-to-make-a-homemade-adjustable-kettlebell/",
+      "title": "How to Make a Homemade Adjustable Kettlebell",
+      "description": "Learn how to make your own adjustable kettlebell at home",
+      "tags": ["fitness", "DIY"]
+    },
+    {
+      "url": "https://www.stremio.com/",
+      "title": "Stremio",
+      "description": "Stremio is a media streaming platform",
+      "tags": ["media", "streaming"]
+    },
+    {
+      "url": "https://real-debrid.com/",
+      "title": "Real-Debrid",
+      "description": "Real-Debrid is a subscription service that provides access to various file hosting websites and allows for faster and unrestricted downloading.",
+      "tags": ["file hosting", "downloading"]
+    },
+    {
+      "url": "https://nextcloud.com/",
+      "title": "Nextcloud",
+      "description": "Nextcloud is a self-hosted file sync and share solution designed to be easy to use and highly secure.",
+      "tags": ["file sync", "file sharing"]
+    },
+    {
+      "url": "https://pi-hole.net/",
+      "title": "Pi-hole",
+      "description": "Pi-hole is a network-wide ad blocker that acts as a DNS sinkhole, blocking ads and tracking domains at the network level.",
+      "tags": ["ad blocker", "network security"]
+    },
+    {
+      "url": "https://www.one.com/sv/webbhotell-hosting/vad-ar-vps-hosting",
+      "title": "VPS Hosting",
+      "description": "VPS hosting, or Virtual Private Server hosting, is a type of hosting that uses virtualization technology to provide dedicated resources on a shared server.",
+      "tags": ["web hosting", "virtualization"]
+    },
+    {
+      "url": "https://shadcn.com/",
+      "title": "Shadowsocks",
+      "description": "Shadowsocks is an open-source proxy tool that allows users to bypass internet censorship and securely access restricted content.",
+      "tags": ["proxy", "internet censorship"]
+    },
+    {
+      "url": "https://headlessui.com/",
+      "title": "Headless UI",
+      "description": "Headless UI is a set of completely unstyled, fully accessible UI components for React and Vue.",
+      "tags": ["UI components", "React", "Vue"]
+    },
+    {
+      "url": "https://grpc.io/",
+      "title": "gRPC",
+      "description": "gRPC is a high-performance, open-source framework for building remote procedure call (RPC) APIs.",
+      "tags": ["RPC", "APIs"]
+    },
+    {
+      "url": "https://www.cloudflare.com/",
+      "title": "Cloudflare",
+      "description": "Cloudflare is a web infrastructure and website security company that provides content delivery network (CDN) services, DDoS mitigation, and more.",
+      "tags": ["web infrastructure", "security", "CDN"]
+    },
+    {
+      "url": "https://svenska.yle.fi/a/7-1456449",
+      "title": "Svenska Yle",
+      "description": "Svenska Yle is the Swedish-language division of the Finnish national public broadcasting company Yle.",
+      "tags": ["Swedish", "media"]
+    },
+    {
+      "url": "https://freefoot.se/blogs/barfotaskor/10-myter-om-barfotaskor-fotter-och-skor",
+      "title": "10 Myter om Barfotaskor, Fötter och Skor",
+      "description": "Learn about the myths surrounding barefoot shoes, feet, and footwear",
+      "tags": ["footwear", "health"]
+    },
+    {
+      "url": "https://www.hantverkarpriser.se/sida/prisgue-infor-ditt-altanbygge",
+      "title": "Prisguide inför ditt altanbygge",
+      "description": "Get a price guide for building your deck",
+      "tags": ["deck", "construction"]
+    },
+    {
+      "url": "https://www.levels.fyi/?compare=Spotify,Ericsson,Klarna&track=Software%20Engineer",
+      "title": "Software Engineer Salary Comparison",
+      "description": "Compare salaries of software engineers at Spotify, Ericsson, and Klarna",
+      "tags": ["salary", "software engineering"]
+    },
+    {
+      "url": "https://pappor.se/",
+      "title": "Pappor.se",
+      "description": "A website for fathers, providing resources and support",
+      "tags": ["parenting", "fatherhood"]
+    },
+    {
+      "url": "https://prisjakt.nu/s/baby-float/",
+      "description": "A baby float is a device that helps infants and toddlers learn to swim and stay afloat in the water.",
+      "tags": ["parenting", "swimming", "baby float"],
+      "title": "Prisjakt baby float"
     }
   ]
 }

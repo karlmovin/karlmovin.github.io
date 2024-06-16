@@ -78,7 +78,15 @@ function BookmarksPage() {
 
   const availableTags = Array.from(
     new Set(bookmarks.flatMap((bookmark) => bookmark.tags))
-  );
+  ).sort((tagA, tagB) => {
+    const countA = bookmarks.filter((bookmark) =>
+      bookmark.tags.includes(tagA)
+    ).length;
+    const countB = bookmarks.filter((bookmark) =>
+      bookmark.tags.includes(tagB)
+    ).length;
+    return countB - countA;
+  });
 
   const [searchTerm, setSearchTerm] = useState<string>("");
 
