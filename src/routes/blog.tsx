@@ -35,9 +35,11 @@ function Blog() {
     <section className="flex flex-col gap-4 py-4 container max-w-screen-xl">
       <h1 className="text-3xl">Någonstans måste jag ju skriva av mig...</h1>
       <ul className="flex flex-col gap-4">
-        {posts.map((post) => (
-          <Post key={post.title}>{post}</Post>
-        ))}
+        {posts
+          .sort((b, a) => a.date.localeCompare(b.date))
+          .map((post) => (
+            <Post key={post.title}>{post}</Post>
+          ))}
       </ul>
     </section>
   );
