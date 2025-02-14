@@ -53,6 +53,7 @@ const packlistdata = [
           "Kikare",
           "Kortlek",
           "Resespel",
+          "Högtalare",
         ],
       },
     ],
@@ -88,11 +89,12 @@ const packlistdata = [
       {
         title: "Äta",
         items: [
-          "Barnmatsburkar och smoothies",
+          "Grötpåsar, Barnmatsburkar och smoothies",
           "Nappflaska, haklapp och bestick",
           "Välling och grötpulver",
           "Bröstmjölksersättning",
           "Termos eller vattenkokare (går ofta att låna på hotellet)",
+          "Barnstol",
         ],
       },
       {
@@ -112,6 +114,8 @@ const packlistdata = [
           "Resesäng (men enklare att boka på hotellet)",
           "Babyvakt",
           "Egen kudde och filt",
+          "Högtalare",
+          "Vattenflaska",
         ],
       },
       {
