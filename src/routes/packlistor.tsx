@@ -220,6 +220,7 @@ const packlistdata = [
         items: [
           "Ombyte till efter (tröja, strumpor, skor, mössa, handskar)",
           "Saft, dryck, fika att ta med och/eller till efter",
+          "Behållare för dryck: vätskebälte, vätskeryggsäck",
           "Solglasögon vid sol",
           "Lampa (för mörkeråkning)",
           "GoPro",
