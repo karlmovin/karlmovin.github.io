@@ -99,7 +99,7 @@ export default function Konst() {
         då som beteckning för en krets konstnärer (eller elever) som studerat
         för en mästare, eller efterföljare till konstnären.
       </Accordion>
-      <p className="text-2xl">Konstnärer</p>
+      <p className="text-2xl">Konstnärer jag fastnat för</p>
       {Object.entries(artists).map(([artist, { url, image }]) => (
         <a
           key={artist}

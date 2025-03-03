@@ -124,6 +124,16 @@ function Nav() {
             </li>
             <li>
               <NavLink
+                to="/news"
+                className={({ isActive, isPending }) =>
+                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                }
+              >
+                Text-TV
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/what-to-do"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"

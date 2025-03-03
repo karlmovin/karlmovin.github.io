@@ -106,7 +106,7 @@
       "author": "Max Tegmark",
       "slug": "liv-30_tegmark",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": ["AI", "teknik", "teknologi"]
     },
@@ -133,7 +133,7 @@
       "slug": "handbok-fifflare_kjoller",
       "author": "Hanne Kjöller",
       "notes": [],
-      "status": "reading",
+      "status": "paused",
       "tags": [],
       "genres": ["fusk", "juridik", "samhälle"]
     },
@@ -187,7 +187,7 @@
       "author": "Dan Ariely",
       "slug": "predictably-irrational_ariely",
       "notes": [],
-      "status": "paused",
+      "status": "read",
       "tags": [],
       "genres": ["ekonomi", "beteendeekonomi", "psykologi", "beslutsfattande"],
       "rating": 5
@@ -220,7 +220,7 @@
       "author": "Jan Atle Andersen",
       "slug": "skick-och-oskick-andersen",
       "notes": [],
-      "status": "planned",
+      "status": "reading",
       "tags": [],
       "genres": [
         "arbetsliv",
@@ -428,7 +428,7 @@
       "author": "Dan Ariely",
       "slug": "behavioural-economics-ariely",
       "notes": [],
-      "status": "planned",
+      "status": "reading",
       "tags": [],
       "genres": ["ekonomi", "beteendeekonomi", "psykologi", "beslutsfattande"]
     },

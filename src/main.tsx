@@ -13,6 +13,7 @@ import Konst from "./routes/konst.tsx";
 import WhatToDo from "./routes/whatToDo.tsx";
 import Weather from "./routes/weather.tsx";
 import Blog from "./routes/blog.tsx";
+import News from "./routes/news.tsx";
 
 const router = createHashRouter([
   {
@@ -54,6 +55,10 @@ const router = createHashRouter([
           {
             path: "blog",
             element: <Blog />,
+          },
+          {
+            path: "news",
+            element: <News />,
           },
         ],
       },

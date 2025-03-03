@@ -1,22 +1,33 @@
 import { useState } from "react";
-import books from "../data/books.json";
+import jsonBooks from "../data/books.json";
 import { Link } from "react-router-dom";
+
+const books = jsonBooks.books as Book[];
+
+enum Status {
+  Reading = "reading",
+  Paused = "paused",
+  Read = "read",
+  Planned = "planned",
+}
+
+type Book = {
+  title?: string;
+  author?: string;
+  genres: string[];
+  notes: string[];
+  status?: Status;
+  slug?: string;
+  image?: string;
+  rating?: number;
+};
 
 function BookList({
   books,
   genreFilters = [],
   handleGenreFilter = () => {},
 }: {
-  books: {
-    title?: string;
-    author?: string;
-    genres: string[];
-    notes: string[];
-    status?: string;
-    slug?: string;
-    image?: string;
-    rating?: number;
-  }[];
+  books: Book[];
   genreFilters?: string[];
   handleGenreFilter?: (checked: boolean, genre: string) => void;
 }) {
@@ -128,17 +139,17 @@ function BookList({
 
 export default function Books() {
   const booksByStatus = [
-    ["reading", "Pågående böcker"],
-    ["paused", "Påbörjade böcker"],
-    ["read", "Lästa böcker"],
-    ["planned", "Planerade böcker"],
-  ].map(([status, title]) => ({
+    { status: Status.Reading, title: "Pågående böcker" },
+    { status: Status.Paused, title: "Påbörjade böcker" },
+    { status: Status.Read, title: "Lästa böcker" },
+    { status: Status.Planned, title: "Planerade böcker" },
+  ].map(({ status, title }) => ({
     title,
-    books: books.books.filter((book) => book.status === status),
+    books: books.filter((book) => book.status === status),
   }));
 
   // const allBookGenres = Array.from(
-  //   new Set(books.books.flatMap((book) => book.genres))
+  //   new Set(books.flatMap((book) => book.genres))
   // );
 
   const [genreFilters, setGenreFilters] = useState<string[]>([]);
