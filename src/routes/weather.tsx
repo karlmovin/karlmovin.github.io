@@ -124,7 +124,7 @@ export default function Weather() {
   }, [location]);
 
   return (
-    <section className="container max-w-screen-xl ">
+    <main className="container max-w-screen-xl ">
       <div className="flex w-full max-w-[50rem] flex-col rounded-br-xl bg-white bg-clip-border p-4 text-gray-700 ">
         <div className="p-4 mb-2">
           <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
@@ -171,6 +171,6 @@ export default function Weather() {
             )
           : null}
       </div>
-    </section>
+    </main>
   );
 }

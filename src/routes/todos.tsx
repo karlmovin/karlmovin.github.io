@@ -2,7 +2,7 @@ import { todos } from "../data/todos";
 
 export default function Todos() {
   return (
-    <section className="container max-w-screen-xl">
+    <main className="container max-w-screen-xl">
       {todos?.length ? (
         <>
           <p className="text-4xl">Todos</p>
@@ -13,6 +13,6 @@ export default function Todos() {
           </ol>
         </>
       ) : null}
-    </section>
+    </main>
   );
 }

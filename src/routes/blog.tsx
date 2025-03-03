@@ -32,7 +32,7 @@ function Post({
 
 function Blog() {
   return (
-    <section className="flex flex-col gap-4 py-4 container max-w-screen-xl">
+    <main className="flex flex-col gap-4 py-4 container max-w-screen-xl">
       <h1 className="text-3xl">Någonstans måste jag ju skriva av mig...</h1>
       <ul className="flex flex-col gap-4">
         {posts
@@ -41,7 +41,7 @@ function Blog() {
             <Post key={post.title}>{post}</Post>
           ))}
       </ul>
-    </section>
+    </main>
   );
 }
 

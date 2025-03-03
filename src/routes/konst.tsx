@@ -13,7 +13,7 @@ function Accordion({
     setOpen(!open);
   };
   return (
-    <div className="relative mb-3">
+    <main className="relative mb-3">
       <h6 className="mb-0">
         <button
           onClick={handleClick}
@@ -30,7 +30,7 @@ function Accordion({
           {children}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
