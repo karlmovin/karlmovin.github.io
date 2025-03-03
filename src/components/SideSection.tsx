@@ -19,7 +19,7 @@ function Notes() {
 
 export default function SideSection() {
   return (
-    <aside className="w-72 p-4">
+    <aside className="hidden w-72 p-4 md:block">
       <Notes />
     </aside>
   );
