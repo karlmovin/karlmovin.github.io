@@ -1,4 +1,4 @@
-import { isRouteErrorResponse, useRouteError } from "react-router-dom";
+import { isRouteErrorResponse, useRouteError } from "react-router";
 
 function errorMessage(error: unknown): string {
   if (isRouteErrorResponse(error)) {

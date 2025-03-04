@@ -1,6 +1,6 @@
 import { useState } from "react";
 import jsonBooks from "../data/books.json";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const books = jsonBooks.books as Book[];
 

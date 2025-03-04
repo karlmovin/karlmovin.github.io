@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import books from "../data/books.json";
 
 function BookPage() {

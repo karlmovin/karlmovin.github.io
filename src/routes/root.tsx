@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 import Nav from "../Nav";
 import SideSection from "../components/SideSection";
 // import Footer from "../footer";
