@@ -18,7 +18,7 @@ function Nav() {
     <nav className="bg-white dark:bg-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
-          to="/"
+          to="../"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img src={karl} className="h-12 rounded-full" alt="Karl" />
@@ -54,7 +54,7 @@ function Nav() {
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-700 md:dark:bg-gray-700 dark:border-gray-700">
             {/* <li>
               <NavLink
-                to="/"
+                to="../"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
@@ -64,7 +64,7 @@ function Nav() {
             </li> */}
             <li>
               <NavLink
-                to="/packlistor"
+                to="../packlistor"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
@@ -74,7 +74,7 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/books"
+                to="../books"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
@@ -84,7 +84,7 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/bookmarks"
+                to="../bookmarks"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
@@ -94,7 +94,7 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/konst"
+                to="../konst"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
@@ -104,7 +104,7 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/weather"
+                to="../weather"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
@@ -114,7 +114,7 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/blog"
+                to="../blog"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
@@ -124,7 +124,7 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/news"
+                to="../news"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
@@ -134,7 +134,7 @@ function Nav() {
             </li>
             <li>
               <NavLink
-                to="/what-to-do"
+                to="../what-to-do"
                 className={({ isActive, isPending }) =>
                   isActive ? "nav-active" : isPending ? "" : "nav-inactive"
                 }
