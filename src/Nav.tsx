@@ -1,196 +1,307 @@
+import { useState } from "react";
 import { NavLink } from "react-router";
 import karl from "./assets/karl.png";
 import ThemeToggle from "./components/ThemeToggle";
+import WhatToDoPopup from "./components/WhatToDoPopup";
 
-function Nav() {
-  function toggleDropdown() {
-    const navbar = document.getElementById("navbar");
-    if (
-      navbar &&
-      window.getComputedStyle(navbar).getPropertyValue("display") === "none"
-    ) {
-      navbar.style.display = "block";
-    } else if (navbar) {
-      navbar.style.display = "none";
-    }
-  }
+export default function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isWhatToDoOpen, setIsWhatToDoOpen] = useState(false);
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-md">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <NavLink
-          to="../"
-          className="flex items-center space-x-3 rtl:space-x-reverse group"
-        >
-          <img
-            src={karl}
-            className="h-12 rounded-full ring-2 ring-gray-200 dark:ring-gray-700 transition-transform group-hover:scale-105"
-            alt="Karl"
-          />
-          <span className="self-center text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-            Karl Movin
-          </span>
-        </NavLink>
-        <button
-          onClick={toggleDropdown}
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 dark:text-gray-200 rounded-lg md:hidden hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 transition-colors"
-          aria-controls="navbar"
-          aria-expanded="false"
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M1 1h15M1 7h15M1 13h15"
-            />
-          </svg>
-        </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:items-center">
-            <li>
+    <nav className="bg-white dark:bg-gray-900 shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          <div className="flex">
+            <div className="flex-shrink-0 flex items-center">
+              <NavLink
+                to="../"
+                className="flex items-center space-x-3 rtl:space-x-reverse group"
+              >
+                <img
+                  src={karl}
+                  className="h-12 rounded-full ring-2 ring-gray-200 dark:ring-gray-700 transition-transform group-hover:scale-105"
+                  alt="Karl"
+                />
+                <span className="self-center text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  Karl Movin
+                </span>
+              </NavLink>
+            </div>
+            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <NavLink
                 to="../packlistor"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={({ isActive }: { isActive: boolean }) =>
+                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
-                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
                   }`
                 }
               >
                 Packlistor
               </NavLink>
-            </li>
-            <li>
               <NavLink
                 to="../books"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={({ isActive }: { isActive: boolean }) =>
+                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
-                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
                   }`
                 }
               >
                 Böcker
               </NavLink>
-            </li>
-            <li>
               <NavLink
                 to="../bookmarks"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={({ isActive }: { isActive: boolean }) =>
+                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
-                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
                   }`
                 }
               >
                 Bokmärken
               </NavLink>
-            </li>
-            <li>
               <NavLink
                 to="../konst"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={({ isActive }: { isActive: boolean }) =>
+                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
-                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
                   }`
                 }
               >
                 Konst
               </NavLink>
-            </li>
-            <li>
               <NavLink
                 to="../weather"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={({ isActive }: { isActive: boolean }) =>
+                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
-                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
                   }`
                 }
               >
                 Väder
               </NavLink>
-            </li>
-            <li>
               <NavLink
                 to="../blog"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={({ isActive }: { isActive: boolean }) =>
+                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
-                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
                   }`
                 }
               >
                 Blog
               </NavLink>
-            </li>
-            <li>
               <NavLink
                 to="../news"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={({ isActive }: { isActive: boolean }) =>
+                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
-                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
                   }`
                 }
               >
                 Text-TV
               </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="../what-to-do"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
-                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
-                  }`
-                }
-              >
-                Vad ska jag göra idag?
-              </NavLink>
-            </li>
-            <li>
               <NavLink
                 to="../goals"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={({ isActive }: { isActive: boolean }) =>
+                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                     isActive
-                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
-                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
                   }`
                 }
               >
                 Mål
               </NavLink>
-            </li>
-            <li className="md:ml-4">
-              <ThemeToggle />
-            </li>
-          </ul>
+            </div>
+          </div>
+          <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
+            <button
+              onClick={() => setIsWhatToDoOpen(true)}
+              className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              Vad ska jag göra idag?
+            </button>
+            <ThemeToggle />
+          </div>
+          <div className="-mr-2 flex items-center sm:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
+              aria-expanded="false"
+            >
+              <span className="sr-only">Öppna huvudmeny</span>
+              {!isOpen ? (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </div>
+
+      {isOpen && (
+        <div className="sm:hidden">
+          <div className="pt-2 pb-3 space-y-1">
+            <NavLink
+              to="../packlistor"
+              className={({ isActive }: { isActive: boolean }) =>
+                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                  isActive
+                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+                }`
+              }
+            >
+              Packlistor
+            </NavLink>
+            <NavLink
+              to="../books"
+              className={({ isActive }: { isActive: boolean }) =>
+                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                  isActive
+                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+                }`
+              }
+            >
+              Böcker
+            </NavLink>
+            <NavLink
+              to="../bookmarks"
+              className={({ isActive }: { isActive: boolean }) =>
+                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                  isActive
+                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+                }`
+              }
+            >
+              Bokmärken
+            </NavLink>
+            <NavLink
+              to="../konst"
+              className={({ isActive }: { isActive: boolean }) =>
+                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                  isActive
+                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+                }`
+              }
+            >
+              Konst
+            </NavLink>
+            <NavLink
+              to="../weather"
+              className={({ isActive }: { isActive: boolean }) =>
+                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                  isActive
+                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+                }`
+              }
+            >
+              Väder
+            </NavLink>
+            <NavLink
+              to="../blog"
+              className={({ isActive }: { isActive: boolean }) =>
+                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                  isActive
+                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+                }`
+              }
+            >
+              Blog
+            </NavLink>
+            <NavLink
+              to="../news"
+              className={({ isActive }: { isActive: boolean }) =>
+                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                  isActive
+                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+                }`
+              }
+            >
+              Text-TV
+            </NavLink>
+            <NavLink
+              to="../goals"
+              className={({ isActive }: { isActive: boolean }) =>
+                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                  isActive
+                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
+                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+                }`
+              }
+            >
+              Mål
+            </NavLink>
+            <button
+              onClick={() => {
+                setIsWhatToDoOpen(true);
+                setIsOpen(false);
+              }}
+              className="block w-full text-left pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+            >
+              Vad ska jag göra idag?
+            </button>
+          </div>
+          <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center px-4">
+              <ThemeToggle />
+            </div>
+          </div>
+        </div>
+      )}
+
+      <WhatToDoPopup
+        isOpen={isWhatToDoOpen}
+        onClose={() => setIsWhatToDoOpen(false)}
+      />
     </nav>
   );
 }
-
-export default Nav;

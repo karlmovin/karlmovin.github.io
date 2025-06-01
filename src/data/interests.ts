@@ -75,7 +75,7 @@ export const intressen: Record<
     tiderPåDygnet: { från: 8, till: 20 },
   },
   sova: {
-    verb: "gå och fucking lägga dig??",
+    verb: "gå och lägga dig",
     tidsåtgång: { min: 1, max: 9 },
     tiderPåDygnet: { från: 20, till: 24 + 8 },
   },
