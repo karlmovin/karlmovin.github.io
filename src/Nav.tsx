@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import karl from "./assets/karl.png";
+import ThemeToggle from "./components/ThemeToggle";
 
 function Nav() {
   function toggleDropdown() {
@@ -15,21 +16,25 @@ function Nav() {
   }
 
   return (
-    <nav className="bg-white dark:bg-gray-700">
+    <nav className="bg-white dark:bg-gray-800 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           to="../"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+          className="flex items-center space-x-3 rtl:space-x-reverse group"
         >
-          <img src={karl} className="h-12 rounded-full" alt="Karl" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <img
+            src={karl}
+            className="h-12 rounded-full ring-2 ring-gray-200 dark:ring-gray-700 transition-transform group-hover:scale-105"
+            alt="Karl"
+          />
+          <span className="self-center text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
             Karl Movin
           </span>
         </NavLink>
         <button
           onClick={toggleDropdown}
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 dark:text-gray-200 rounded-lg md:hidden hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 transition-colors"
           aria-controls="navbar"
           aria-expanded="false"
         >
@@ -51,22 +56,16 @@ function Nav() {
           </svg>
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-700 md:dark:bg-gray-700 dark:border-gray-700">
-            {/* <li>
-              <NavLink
-                to="../"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
-                }
-              >
-                Hem
-              </NavLink>
-            </li> */}
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:items-center">
             <li>
               <NavLink
                 to="../packlistor"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                  }`
                 }
               >
                 Packlistor
@@ -75,8 +74,12 @@ function Nav() {
             <li>
               <NavLink
                 to="../books"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                  }`
                 }
               >
                 Böcker
@@ -85,8 +88,12 @@ function Nav() {
             <li>
               <NavLink
                 to="../bookmarks"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                  }`
                 }
               >
                 Bokmärken
@@ -95,8 +102,12 @@ function Nav() {
             <li>
               <NavLink
                 to="../konst"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                  }`
                 }
               >
                 Konst
@@ -105,8 +116,12 @@ function Nav() {
             <li>
               <NavLink
                 to="../weather"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                  }`
                 }
               >
                 Väder
@@ -115,8 +130,12 @@ function Nav() {
             <li>
               <NavLink
                 to="../blog"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                  }`
                 }
               >
                 Blog
@@ -125,8 +144,12 @@ function Nav() {
             <li>
               <NavLink
                 to="../news"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                  }`
                 }
               >
                 Text-TV
@@ -135,12 +158,33 @@ function Nav() {
             <li>
               <NavLink
                 to="../what-to-do"
-                className={({ isActive, isPending }) =>
-                  isActive ? "nav-active" : isPending ? "" : "nav-inactive"
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                  }`
                 }
               >
                 Vad ska jag göra idag?
               </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="../goals"
+                className={({ isActive }) =>
+                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-gray-700"
+                      : "text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700"
+                  }`
+                }
+              >
+                Mål
+              </NavLink>
+            </li>
+            <li className="md:ml-4">
+              <ThemeToggle />
             </li>
           </ul>
         </div>

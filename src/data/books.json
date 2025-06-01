@@ -115,7 +115,7 @@
       "author": "Sverker Johansson",
       "slug": "ursprung_johansson",
       "notes": [],
-      "status": "paused",
+      "status": "planned",
       "tags": [],
       "genres": ["språkvetenskap", "lingvistik", "evolution"]
     },
@@ -353,7 +353,7 @@
       "author": "Paul Bloom",
       "slug": "how-pleasure-works_bloom",
       "notes": [],
-      "status": "planned",
+      "status": "reading",
       "tags": [],
       "genres": ["psykologi", "känslor", "njutning", "mänskligt välbefinnande"]
     },
@@ -428,9 +428,10 @@
       "author": "Dan Ariely",
       "slug": "behavioural-economics-ariely",
       "notes": [],
-      "status": "reading",
+      "status": "read",
       "tags": [],
-      "genres": ["ekonomi", "beteendeekonomi", "psykologi", "beslutsfattande"]
+      "genres": ["ekonomi", "beteendeekonomi", "psykologi", "beslutsfattande"],
+      "rating": 3
     },
     {
       "title": "WTF, What's the future and why it's up to us",
@@ -508,7 +509,8 @@
       "notes": [],
       "status": "read",
       "tags": [],
-      "genres": ["medvetande", "neurologi", "psykologi"]
+      "genres": ["medvetande", "neurologi", "psykologi"],
+      "rating": 4
     },
 
     {

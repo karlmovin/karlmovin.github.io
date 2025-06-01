@@ -124,10 +124,10 @@ export default function Weather() {
   }, [location]);
 
   return (
-    <main className="container max-w-screen-xl ">
-      <div className="flex w-full max-w-[50rem] flex-col rounded-br-xl bg-white bg-clip-border p-4 text-gray-700 ">
+    <main className="container max-w-screen-xl mx-auto px-4 py-8">
+      <div className="flex w-full max-w-[50rem] flex-col rounded-br-xl bg-white dark:bg-gray-800 bg-clip-border p-4 text-gray-700 dark:text-gray-200 shadow-sm">
         <div className="p-4 mb-2">
-          <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+          <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-900 dark:text-white">
             {"Väder idag "}
             {new Intl.DateTimeFormat("se-SE", {
               weekday: "long",
@@ -135,33 +135,43 @@ export default function Weather() {
               minute: "2-digit",
             }).format(new Date())}{" "}
             (
-            <a href="https://developer.yr.no/doc/GettingStarted/">powered by</a>{" "}
+            <a
+              href="https://developer.yr.no/doc/GettingStarted/"
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              powered by
+            </a>{" "}
             <a
               href="https://www.yr.no/"
-              className="bg-[#00A5D8] text-white rounded-full p-1"
+              className="bg-[#00A5D8] text-white rounded-full p-1 hover:bg-[#0088b3] transition-colors"
             >
               YR
             </a>
             )
           </h5>
         </div>
-        <iframe
-          height="400"
-          width="100%"
-          src={`https://www.yr.no/en/content/${yrLoc.id}/card.html`}
-        />
-        <iframe
-          height="400"
-          width="100%"
-          src={`https://www.yr.no/en/content/${yrLoc.id}/meteogram.svg`}
-        />
-        <iframe
-          height="400"
-          width="100%"
-          src={`https://www.yr.no/en/content/${yrLoc.id}/table.html`}
-        />
+        <div className="space-y-4">
+          <iframe
+            height="400"
+            width="100%"
+            src={`https://www.yr.no/en/content/${yrLoc.id}/card.html`}
+            className="rounded-lg"
+          />
+          <iframe
+            height="400"
+            width="100%"
+            src={`https://www.yr.no/en/content/${yrLoc.id}/meteogram.svg`}
+            className="rounded-lg"
+          />
+          <iframe
+            height="400"
+            width="100%"
+            src={`https://www.yr.no/en/content/${yrLoc.id}/table.html`}
+            className="rounded-lg"
+          />
+        </div>
       </div>
-      <div className="flex w-full max-w-[30rem] flex-col rounded-br-xl bg-white bg-clip-border p-4 text-gray-700 ">
+      <div className="flex w-full max-w-[30rem] flex-col rounded-br-xl bg-white dark:bg-gray-800 bg-clip-border p-4 text-gray-700 dark:text-gray-200 mt-4 shadow-sm">
         {textTvWeather
           ? parse(
               textTvWeather[0].content_plain

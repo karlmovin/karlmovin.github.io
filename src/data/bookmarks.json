@@ -606,6 +606,12 @@
       "description": "A baby float is a device that helps infants and toddlers learn to swim and stay afloat in the water.",
       "tags": ["parenting", "swimming", "baby float"],
       "title": "Prisjakt baby float"
+    },
+    {
+      "url": "https://d3js.org/",
+      "title": "D3.js",
+      "description": "D3.js is a JavaScript library for manipulating documents based on data.",
+      "tags": ["javascript", "data visualization"]
     }
   ]
 }

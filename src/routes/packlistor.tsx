@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { packlistdata } from "../data/packlistor";
 
 export default function Packlistor() {
   const [selectedCategory, setSelectedCategory] = useState<string>(
     packlistdata[0].title
   );
+  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
+
+  // Läs in sparade värden från localStorage vid start
+  useEffect(() => {
+    const savedItems = localStorage.getItem("packlistCheckedItems");
+    if (savedItems) {
+      setCheckedItems(JSON.parse(savedItems));
+    }
+  }, []);
+
+  // Spara ändringar i localStorage
+  useEffect(() => {
+    localStorage.setItem("packlistCheckedItems", JSON.stringify(checkedItems));
+  }, [checkedItems]);
 
   const handleCategoryChange = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -12,93 +26,117 @@ export default function Packlistor() {
     setSelectedCategory(event.target.value);
   };
 
+  const handleItemToggle = (item: string) => {
+    setCheckedItems((prev) => ({
+      ...prev,
+      [item]: !prev[item],
+    }));
+  };
+
+  const handleResetAll = () => {
+    setCheckedItems({});
+  };
+
+  // Kontrollera om några items är checkade
+  const hasCheckedItems = Object.values(checkedItems).some(
+    (isChecked) => isChecked
+  );
+
   return (
-    <main className="flex flex-col gap-8 container max-w-screen-xl pb-8">
-      <div className="relative h-10 w-72 min-w-[200px]">
-        <select
-          value={selectedCategory || ""}
-          onChange={handleCategoryChange}
-          className="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900 focus:border-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-        >
-          {/* <option value={""}>Alla listor</option> */}
-          {packlistdata.map(({ title }) => (
-            <option key={title} value={title}>
-              {title}
-            </option>
-          ))}
-        </select>
+    <main className="container max-w-screen-xl mx-auto px-4 py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">
+          Packlistor
+        </h1>
+        <div className="max-w-md mx-auto space-y-4">
+          <select
+            value={selectedCategory}
+            onChange={handleCategoryChange}
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-gray-400 focus:border-gray-400 transition-colors"
+          >
+            {packlistdata.map(({ title }) => (
+              <option
+                key={title}
+                value={title}
+                className="text-gray-900 dark:text-white"
+              >
+                {title}
+              </option>
+            ))}
+          </select>
+          <button
+            onClick={handleResetAll}
+            disabled={!hasCheckedItems}
+            className="w-full px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-300 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-100 dark:disabled:hover:bg-gray-700"
+          >
+            Återställ alla
+          </button>
+        </div>
       </div>
+
       {packlistdata
-        .filter(
-          (category) =>
-            selectedCategory === "" || category.title === selectedCategory
-        )
+        .filter((category) => category.title === selectedCategory)
         .map(({ title, data }) => (
-          <section id={title} key={title} className="flex flex-col">
-            <p className="text-4xl self-center text-center pb-2 bg-white w-full">
+          <section key={title} className="space-y-6">
+            <h2 className="text-2xl font-semibold text-center text-gray-900 dark:text-white">
               {title}
-            </p>
-            <div className="mt-2 gap-2 flex flex-row flex-wrap">
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {data.map(({ title: dataTitle, subtitle, items }) => (
-                <div key={dataTitle} className="flex flex-col">
-                  <p className="px-2 text-xl self-center font-medium text-gray-700 bg-white shadow-md rounded-t-xl bg-clip-border">
-                    {dataTitle}
-                  </p>
-                  {subtitle && (
-                    <p className="text-sm p-2 whitespace-pre-line text-gray-700 bg-white shadow-md  bg-clip-border">
-                      {subtitle}
-                    </p>
-                  )}
+                <div
+                  key={dataTitle}
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700"
+                >
+                  <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+                    <h3 className="text-xl font-medium text-gray-900 dark:text-white">
+                      {dataTitle}
+                    </h3>
+                    {subtitle && (
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 whitespace-pre-line">
+                        {subtitle}
+                      </p>
+                    )}
+                  </div>
                   {items && (
-                    <div className="relative flex flex-col text-gray-700 bg-white shadow-md rounded-b-xl bg-clip-border">
-                      <div className="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700 divide-y">
-                        {items?.map((item) => (
-                          <div
-                            key={item}
-                            role="button"
-                            className="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
-                          >
-                            <label
-                              htmlFor={`vertical-list-${item}`}
-                              className="flex items-center w-full px-3 py-2 cursor-pointer"
-                            >
-                              <div className="grid mr-3 place-items-center">
-                                <div className="inline-flex items-center">
-                                  <label
-                                    className="relative flex items-center p-0 rounded-full cursor-pointer"
-                                    htmlFor={`vertical-list-${item}`}
+                    <div className="divide-y divide-gray-200 dark:divide-gray-700">
+                      {items.map((item) => (
+                        <div
+                          key={item}
+                          className="group flex items-center p-4 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
+                        >
+                          <label className="flex items-center space-x-3 cursor-pointer w-full">
+                            <div className="relative">
+                              <input
+                                type="checkbox"
+                                className="peer sr-only"
+                                id={`checkbox-${item}`}
+                                checked={checkedItems[item] || false}
+                                onChange={() => handleItemToggle(item)}
+                              />
+                              <div className="h-5 w-5 rounded border-2 border-gray-300 dark:border-gray-600 peer-checked:border-gray-700 peer-checked:bg-gray-700 dark:peer-checked:border-gray-300 dark:peer-checked:bg-gray-300 transition-colors flex items-center justify-center">
+                                {checkedItems[item] && (
+                                  <svg
+                                    className="h-4 w-4 text-white dark:text-gray-900"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
                                   >
-                                    <input
-                                      id={`vertical-list-${item}`}
-                                      type="checkbox"
-                                      className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border-2 border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={3}
+                                      d="M5 13l4 4L19 7"
                                     />
-                                    <span className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-3.5 w-3.5"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                        stroke="currentColor"
-                                        strokeWidth="1"
-                                      >
-                                        <path
-                                          fillRule="evenodd"
-                                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                          clipRule="evenodd"
-                                        ></path>
-                                      </svg>
-                                    </span>
-                                  </label>
-                                </div>
+                                  </svg>
+                                )}
                               </div>
-                              <p className="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-                                {item}
-                              </p>
-                            </label>
-                          </div>
-                        ))}
-                      </div>
+                            </div>
+                            <span className="text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                              {item}
+                            </span>
+                          </label>
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
