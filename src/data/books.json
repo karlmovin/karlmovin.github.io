@@ -37,6 +37,9 @@
       "rating": 5
     },
     {
+      "title": "Språkvetenskap",
+      "author": "Wikipedia",
+      "slug": "wikipedia-sprakvetenskap",
       "notes": [
         "https://sv.wikipedia.org/wiki/Spr%C3%A5kvetenskap",
         "https://sv.wikipedia.org/wiki/Artikulationsst%C3%A4lle",
@@ -50,7 +53,11 @@
         "Faryngala konsonanter uttalas genom att tungan trycker mot svalget och används inte i rikssvenskan. Det epiglottala fonemet som tillhör de faryngala uttalas genom att struplocket lyfts mot struphuvudet.",
         "De glottala fonen (kallas även laryngaler efter latinets struphuvud -> larynx) bildas genom att stämläpparna (stämbanden) förs samman. Vokaler är av naturen glottalt producerade. De glottala konsonanterna är båda frikativa, de tonlösa [h] och de tonande [ɦ]."
       ],
-      "genres": ["språk", "språkutveckling"]
+      "genres": ["språk", "språkutveckling"],
+      "status": "read",
+      "tags": [],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png",
+      "rating": 5
     },
     {
       "title": "Barnets första tecken de första åren",
@@ -511,16 +518,6 @@
       "tags": [],
       "genres": ["medvetande", "neurologi", "psykologi"],
       "rating": 4
-    },
-
-    {
-      "title": "",
-      "author": "",
-      "slug": "",
-      "notes": [],
-      "status": "",
-      "tags": [],
-      "genres": [""]
     }
   ]
 }
