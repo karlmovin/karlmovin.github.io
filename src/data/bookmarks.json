@@ -612,6 +612,18 @@
       "title": "D3.js",
       "description": "D3.js is a JavaScript library for manipulating documents based on data.",
       "tags": ["javascript", "data visualization"]
+    },
+    {
+      "url": "https://animejs.com/",
+      "title": "Anime.js",
+      "description": "Anime.js is a JavaScript library for creating animations.",
+      "tags": ["javascript", "animation"]
+    },
+    {
+      "url": "https://min.io/",
+      "title": "Min.io",
+      "description": "Min.io is a high performance, distributed object storage system.",
+      "tags": ["storage", "object storage"]
     }
   ]
 }
