@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { bookmarks } from "../data/bookmarks.json";
+import { fetchBookmarks, type Bookmark } from "../lib/api/bookmarks";
 
 function Card({
   title,
@@ -58,14 +58,16 @@ function Card({
 }
 
 function HorizontalList({ children }: { children: React.ReactNode[] }) {
-  const [showScrollButton, setShowScrollButton] = useState(false);
+  const [showRightScrollButton, setShowRightScrollButton] = useState(false);
+  const [showLeftScrollButton, setShowLeftScrollButton] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const checkScroll = () => {
       if (containerRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
-        setShowScrollButton(scrollLeft + clientWidth < scrollWidth);
+        setShowRightScrollButton(scrollLeft + clientWidth < scrollWidth);
+        setShowLeftScrollButton(scrollLeft > 0);
       }
     };
 
@@ -90,15 +92,31 @@ function HorizontalList({ children }: { children: React.ReactNode[] }) {
     }
   };
 
+  const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="flex relative">
+      {showLeftScrollButton && (
+        <button
+          onClick={scrollLeft}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-2 rounded-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-lg border border-gray-200 dark:border-gray-700 transition-all hover:scale-110 flex items-center justify-center w-8 h-8 animate-color-pulse dark:animate-color-pulse-dark"
+        >
+          <span className="material-symbols-outlined text-xl">
+            chevron_left
+          </span>
+        </button>
+      )}
       <div
         ref={containerRef}
         className="flex overflow-x-auto pb-4 scrollbar-hide"
       >
         <div className="flex gap-6">{children}</div>
       </div>
-      {showScrollButton && (
+      {showRightScrollButton && (
         <button
           onClick={scrollRight}
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 p-2 rounded-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-lg border border-gray-200 dark:border-gray-700 transition-all hover:scale-110 flex items-center justify-center w-8 h-8 animate-color-pulse dark:animate-color-pulse-dark"
@@ -113,11 +131,20 @@ function HorizontalList({ children }: { children: React.ReactNode[] }) {
 }
 
 function BookmarksPage() {
+  const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
   const [tagFilters, setTagFilters] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const searchRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const loadBookmarks = async () => {
+      const fetchedBookmarks = await fetchBookmarks();
+      setBookmarks(fetchedBookmarks);
+    };
+    loadBookmarks();
+  }, []);
 
   const availableTags = Array.from(
     new Set(bookmarks.flatMap((bookmark) => bookmark.tags))
@@ -251,7 +278,7 @@ function BookmarksPage() {
           )
           .map((bookmark) => (
             <Card
-              key={bookmark.url}
+              key={bookmark.id}
               tagFilters={tagFilters}
               handleTagFilter={handleTagFilter}
               {...bookmark}
@@ -272,7 +299,7 @@ function BookmarksPage() {
               .filter((bookmark) => bookmark.tags.includes(availableTag))
               .map((bookmark) => (
                 <Card
-                  key={bookmark.url + availableTag}
+                  key={bookmark.id + availableTag}
                   tagFilters={tagFilters}
                   handleTagFilter={handleTagFilter}
                   {...bookmark}
