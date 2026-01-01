@@ -1,24 +1,29 @@
-import { todos } from "../data/todos";
+import { useState, useEffect } from "react";
+import { quotes } from "../data/quotes";
 
 export default function Todos() {
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+  useEffect(() => {
+    // Only set up rotation if there are multiple quotes
+    if (quotes.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+      }, 5000); // Change quote every 5 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, []);
+
   return (
     <main className="container max-w-screen-xl mx-auto px-4 py-8">
-      {todos?.length ? (
+      {quotes?.length ? (
         <div className="card p-6">
-          <h1 className="text-3xl font-bold mb-6">Todos</h1>
-          <ol className="space-y-3">
-            {todos.map((todo, index) => (
-              <li
-                key={index}
-                className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg"
-              >
-                <span className="text-gray-500 dark:text-gray-400">
-                  {index + 1}.
-                </span>
-                <span className="text-gray-700 dark:text-gray-200">{todo}</span>
-              </li>
-            ))}
-          </ol>
+          <div className="flex items-center justify-center min-h-[200px]">
+            <p className="text-3xl font-bold text-center text-gray-700 dark:text-gray-200">
+              {quotes[currentQuoteIndex]}
+            </p>
+          </div>
         </div>
       ) : null}
     </main>
