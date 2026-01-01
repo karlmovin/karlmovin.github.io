@@ -6,7 +6,7 @@ import Root from "./routes/root.tsx";
 import Packlistor from "./routes/packlistor.tsx";
 import "./index.css";
 import ErrorPage from "./error-page.tsx";
-import Todos from "./routes/todos.tsx";
+import Home from "./routes/home.tsx";
 import Books from "./routes/books.tsx";
 import BookPage from "./routes/book.tsx";
 import BookmarksPage from "./routes/links.tsx";
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
         children: [
-          { index: true, element: <Todos /> },
+          { index: true, element: <Home /> },
           {
             path: "packlistor",
             element: <Packlistor />,
