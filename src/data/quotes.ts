@@ -1,3 +1,3 @@
 export const quotes = [
-  "SLEEP is time well invested","Anything worth doing is worth doing well, and anything worth doing is worth doing poorly"
+  "SLEEP is time well invested","Anything worth doing is worth doing well, and anything worth doing is worth doing poorly","The days go slow, and the years go fast"
 ];
