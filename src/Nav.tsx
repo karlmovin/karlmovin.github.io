@@ -42,30 +42,6 @@ export default function Nav() {
                 Packlistor
               </NavLink>
               <NavLink
-                to="../books"
-                className={({ isActive }: { isActive: boolean }) =>
-                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                    isActive
-                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
-                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
-                  }`
-                }
-              >
-                Böcker
-              </NavLink>
-              <NavLink
-                to="../bookmarks"
-                className={({ isActive }: { isActive: boolean }) =>
-                  `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                    isActive
-                      ? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
-                      : "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
-                  }`
-                }
-              >
-                Bokmärken
-              </NavLink>
-              <NavLink
                 to="../konst"
                 className={({ isActive }: { isActive: boolean }) =>
                   `inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
@@ -195,30 +171,6 @@ export default function Nav() {
               }
             >
               Packlistor
-            </NavLink>
-            <NavLink
-              to="../books"
-              className={({ isActive }: { isActive: boolean }) =>
-                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                  isActive
-                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
-                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
-                }`
-              }
-            >
-              Böcker
-            </NavLink>
-            <NavLink
-              to="../bookmarks"
-              className={({ isActive }: { isActive: boolean }) =>
-                `block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                  isActive
-                    ? "bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white"
-                    : "border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
-                }`
-              }
-            >
-              Bokmärken
             </NavLink>
             <NavLink
               to="../konst"
