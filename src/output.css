@@ -1859,8 +1859,8 @@ p:is(.dark *) {
   content: var(--tw-content);
 }
 
-.after\:content-\[\'\\00a0\\201C\'\]::after {
-  --tw-content: '\00a0\201C';
+.after\:content-\[\'\\00a0\\201D\'\]::after {
+  --tw-content: '\00a0\201D';
   content: var(--tw-content);
 }
 

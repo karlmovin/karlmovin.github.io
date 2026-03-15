@@ -1,6 +1,5 @@
 import { useParams } from "react-router";
-import { useEffect, useState } from "react";
-import { fetchBooks } from "../lib/api/books";
+import { books as booksData } from "../data/books.json";
 
 type Book = {
   title: string;
@@ -12,20 +11,8 @@ type Book = {
 
 function BookPage() {
   const slug = useParams<{ slug: string }>().slug;
-  const [book, setBook] = useState<Book | null>(null);
-
-  useEffect(() => {
-    const loadBook = async () => {
-      const books = await fetchBooks();
-      if (books) {
-        const foundBook = books.find((b: Book) => b.slug === slug);
-        if (foundBook) {
-          setBook(foundBook);
-        }
-      }
-    };
-    loadBook();
-  }, [slug]);
+  const books = booksData as Book[];
+  const book = books.find((b: Book) => b.slug === slug);
 
   if (!book) {
     return <p className="text-gray-500 text-sm">Laddar bok...</p>;
@@ -53,7 +40,7 @@ function BookPage() {
             className="flex gap-4 pt-2 pb-4 bg-slate-300 dark:bg-slate-700 border-l-2 border-slate-600 dark:border-slate-400"
             key={index}
           >
-            <p className="before:content-['\201C\00a0'] after:content-['\00a0\201C'] italic mx-2 font-sans antialiased text-gray-800 dark:text-gray-200">
+            <p className="before:content-['\201C\00a0'] after:content-['\00a0\201D'] italic mx-2 font-sans antialiased text-gray-800 dark:text-gray-200">
               {note}
             </p>
           </li>

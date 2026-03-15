@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router";
-import { fetchBooks } from "../lib/api/books";
+import { books as booksData } from "../data/books.json";
 
 enum Status {
   Reading = "reading",
@@ -10,7 +10,7 @@ enum Status {
 }
 
 type Book = {
-  id: string;
+  id?: string;
   title: string;
   author?: string;
   genres: string[];
@@ -34,8 +34,8 @@ function BookList({
     return <p className="text-gray-500 text-sm">Inga böcker</p>;
   return (
     <ul role="list" className="divide-y divide-gray-100">
-      {books.map((book) => (
-        <li key={book.id} className="flex justify-between gap-x-4 py-5">
+      {books.map((book, index) => (
+        <li key={book.id || book.slug || index} className="flex justify-between gap-x-4 py-5">
           <div className="flex min-w-0 gap-x-4">
             {book.image && (
               <img
@@ -60,7 +60,7 @@ function BookList({
               <div className="flex sm:hidden gap-1 flex-wrap">
                 {book.genres.map((genre, index) => (
                   <button
-                    key={`${book.id}-${genre}-${index}`}
+                    key={`${book.slug}-${genre}-${index}`}
                     className={`text-gray-500 text-sm hover:underline ${
                       genreFilters.includes(genre) ? "font-semibold" : ""
                     }`}
@@ -119,7 +119,7 @@ function BookList({
             <div className="hidden sm:flex gap-1">
               {book.genres.map((genre, index) => (
                 <button
-                  key={`${book.id}-${genre}-${index}`}
+                  key={`${book.slug}-${genre}-${index}`}
                   className={`text-gray-500 text-sm hover:underline ${
                     genreFilters.includes(genre) ? "font-semibold" : ""
                   }`}
@@ -139,17 +139,7 @@ function BookList({
 }
 
 export default function Books() {
-  const [books, setBooks] = useState<Book[]>([]);
-
-  useEffect(() => {
-    const loadBooks = async () => {
-      const fetchedBooks = await fetchBooks();
-      if (fetchedBooks) {
-        setBooks(fetchedBooks);
-      }
-    };
-    loadBooks();
-  }, []);
+  const books = booksData as Book[];
 
   const booksByStatus = [
     { status: Status.Reading, title: "Pågående böcker" },
@@ -160,10 +150,6 @@ export default function Books() {
     title,
     books: books.filter((book) => book.status === status),
   }));
-
-  // const allBookGenres = Array.from(
-  //   new Set(books.flatMap((book) => book.genres))
-  // );
 
   const [genreFilters, setGenreFilters] = useState<string[]>([]);
   const handleGenreFilter = (checked: boolean, genre: string) => {

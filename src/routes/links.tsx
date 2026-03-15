@@ -1,5 +1,13 @@
 import { useState, useRef, useEffect } from "react";
-import { fetchBookmarks, type Bookmark } from "../lib/api/bookmarks";
+import { bookmarks as bookmarksData } from "../data/bookmarks.json";
+
+type Bookmark = {
+  id?: string;
+  title: string;
+  url: string;
+  description?: string;
+  tags: string[];
+};
 
 function Card({
   title,
@@ -131,20 +139,12 @@ function HorizontalList({ children }: { children: React.ReactNode[] }) {
 }
 
 function BookmarksPage() {
-  const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
+  const bookmarks = bookmarksData as Bookmark[];
   const [tagFilters, setTagFilters] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const searchRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const loadBookmarks = async () => {
-      const fetchedBookmarks = await fetchBookmarks();
-      setBookmarks(fetchedBookmarks);
-    };
-    loadBookmarks();
-  }, []);
 
   const availableTags = Array.from(
     new Set(bookmarks.flatMap((bookmark) => bookmark.tags))
@@ -272,13 +272,11 @@ function BookmarksPage() {
           .filter((bookmark) =>
             tagFilters.length
               ? bookmark.tags.some((tag) => tagFilters.includes(tag))
-              : searchTerm.length
-              ? true
-              : false
+              : !!searchTerm.length
           )
-          .map((bookmark) => (
+          .map((bookmark, index) => (
             <Card
-              key={bookmark.id}
+              key={bookmark.id || bookmark.url || index}
               tagFilters={tagFilters}
               handleTagFilter={handleTagFilter}
               {...bookmark}
@@ -297,9 +295,9 @@ function BookmarksPage() {
           <HorizontalList key={availableTag}>
             {filteredBookmarks
               .filter((bookmark) => bookmark.tags.includes(availableTag))
-              .map((bookmark) => (
+              .map((bookmark, index) => (
                 <Card
-                  key={bookmark.id + availableTag}
+                  key={bookmark.id || bookmark.url || `${availableTag}-${index}`}
                   tagFilters={tagFilters}
                   handleTagFilter={handleTagFilter}
                   {...bookmark}
