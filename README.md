@@ -1,1 +1,1 @@
-An ugly lil site using vite and tailwind
+# Personal, but available website for random stuff
