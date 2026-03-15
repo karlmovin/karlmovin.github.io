@@ -7,6 +7,9 @@ import Packlistor from "./routes/packlistor.tsx";
 import "./index.css";
 import ErrorPage from "./error-page.tsx";
 import Home from "./routes/home.tsx";
+import Books from "./routes/books.tsx";
+import BookPage from "./routes/book.tsx";
+import BookmarksPage from "./routes/links.tsx";
 import Konst from "./routes/konst.tsx";
 import WhatToDo from "./routes/whatToDo.tsx";
 import Weather from "./routes/weather.tsx";
@@ -26,6 +29,18 @@ const router = createBrowserRouter([
           {
             path: "packlistor",
             element: <Packlistor />,
+          },
+          {
+            path: "books",
+            element: <Books />,
+          },
+          {
+            path: "books/:slug",
+            element: <BookPage />,
+          },
+          {
+            path: "bookmarks",
+            element: <BookmarksPage />,
           },
           {
             path: "konst",
