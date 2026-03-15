@@ -272,9 +272,7 @@ function BookmarksPage() {
           .filter((bookmark) =>
             tagFilters.length
               ? bookmark.tags.some((tag) => tagFilters.includes(tag))
-              : searchTerm.length
-              ? true
-              : false
+              : !!searchTerm.length
           )
           .map((bookmark, index) => (
             <Card
