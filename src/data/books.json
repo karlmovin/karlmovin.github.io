@@ -508,7 +508,6 @@
       "tags": [],
       "genres": ["psykologi", "självhjälp", "medvetande", "utveckling"]
     },
-
     {
       "title": "The man who mistook his wife for a hat",
       "author": "Oliver Sacks",
@@ -518,6 +517,26 @@
       "tags": [],
       "genres": ["medvetande", "neurologi", "psykologi"],
       "rating": 4
+    },
+    {
+      "title": "Start with Why",
+      "author": "Simon Sinek",
+      "slug": "start-with-why_sinek",
+      "notes": ["insightful but simple, there has to be a purpose of what you're doing"],
+      "status": "reading",
+      "tags": [],
+      "genres": ["mening", "arbete", "ledarskap"],
+      "rating": 5
+    },
+    {
+      "title": "Raising a Spirited Child",
+      "author": "Mary Sheedy Kurcinka",
+      "slug": "raising-a-spirited-child_kurcinka",
+      "notes": [],
+      "status": "reading",
+      "tags": [],
+      "genres": ["children", "NPF", "parenting"],
+      "rating": 5
     }
   ]
 }
