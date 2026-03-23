@@ -1,6 +1,106 @@
-export const packlistdata = [
+export type PacklistGroup = "Säsong" | "Aktivitet";
+
+export const packlistdata: {
+  title: string;
+  group: PacklistGroup;
+  extra?: string;
+  data: { title: string; subtitle?: string; items?: string[] }[];
+}[] = [
+  {
+    title: "Vinter",
+    group: "Säsong",
+    data: [
+      {
+        title: "Kläder",
+        items: [
+          "Mössa/Balaklava",
+          "Buff/Halsduk",
+          "Tumvantar",
+          "Fingervantar",
+          "Underställ överkropp (ull/syntet)",
+          "Underställ underkropp (ull/syntet)",
+          "Ullstrumpor",
+          "Varm mellanlagerströja",
+          "Dunjacka/varm jacka",
+          "Skaljacka med vindskydd",
+          "Skalbyxor med vindskydd",
+          "Vattentäta skor/stövlar",
+        ],
+      },
+      {
+        title: "Bra att ha",
+        items: [
+          "Pannlampa (mörknar tidigt)",
+          "Värmepåsar för händer/fötter",
+          "Solglasögon (sol och snö)",
+          "Solkräm (UV-strålning i snö)",
+          "Termos med varm dryck",
+          "Snökedja för skor",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Sommar",
+    group: "Säsong",
+    data: [
+      {
+        title: "Kläder",
+        items: [
+          "Shorts",
+          "T-shirt",
+          "Lätta byxor",
+          "Baddräkt/badbyxor",
+          "Sandaler",
+          "Lätta skor",
+          "Keps/solhatt",
+        ],
+      },
+      {
+        title: "Solskydd",
+        items: [
+          "Solkräm",
+          "Solglasögon",
+          "Läppbalsam med SPF",
+        ],
+      },
+      {
+        title: "Bra att ha",
+        items: [
+          "Myggmedel",
+          "Vattenflaska",
+          "Fläkt/solparasoll",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Vår/Höst",
+    group: "Säsong",
+    data: [
+      {
+        title: "Kläder",
+        items: [
+          "Regnkläder (jacka och byxor)",
+          "Lätt mellanlager",
+          "Lager-på-lager klädsel",
+          "Vattenresistenta skor",
+          "Vantar (tunna)",
+          "Mössa (tunn)",
+        ],
+      },
+      {
+        title: "Bra att ha",
+        items: [
+          "Paraply",
+          "Vattenflaska",
+        ],
+      },
+    ],
+  },
   {
     title: "Resa",
+    group: "Aktivitet",
     data: [
       {
         title: "Necessär",
@@ -58,6 +158,7 @@ export const packlistdata = [
   },
   {
     title: "Utflykt med bebis",
+    group: "Aktivitet",
     data: [
       {
         title: "På flyget / i bilen / på tåget",
@@ -135,6 +236,7 @@ export const packlistdata = [
   },
   {
     title: "Skridsko",
+    group: "Aktivitet",
     data: [
       {
         title: "Utrustning",
@@ -196,6 +298,7 @@ export const packlistdata = [
   },
   {
     title: "Längdskidåkning (klassisk/skate)",
+    group: "Aktivitet",
     data: [
       {
         title: "Utrustning",
@@ -231,6 +334,7 @@ export const packlistdata = [
   },
   {
     title: "Utförsåkning",
+    group: "Aktivitet",
     data: [
       {
         title: "Utrustning",
@@ -273,6 +377,7 @@ export const packlistdata = [
   },
   {
     title: "Turskidor",
+    group: "Aktivitet",
     data: [
       {
         title: "Utrustning",
@@ -340,6 +445,7 @@ export const packlistdata = [
   },
   {
     title: "Vandring",
+    group: "Aktivitet",
     extra:
       "Tänk på att packningen kan variera beroende på årstid och väder. Listor tagna från STF: https://www.svenskaturistforeningen.se/guider-tips/packlistor/packlista-fjallvandring/",
     data: [
@@ -447,6 +553,7 @@ export const packlistdata = [
   },
   {
     title: "Segling",
+    group: "Aktivitet",
     data: [
       {
         title: "I packningen",
@@ -472,6 +579,7 @@ export const packlistdata = [
   },
   {
     title: "Klättring",
+    group: "Aktivitet",
     data: [
       {
         title: "Utrustning",
@@ -490,6 +598,7 @@ export const packlistdata = [
   },
   {
     title: "Cykling",
+    group: "Aktivitet",
     data: [
       {
         title: "Utrustning",
