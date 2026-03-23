@@ -224,6 +224,7 @@ export const packlistdata = [
           "GoPro",
           "Sportklocka",
           "Pulsband",
+          "Dubbskor",
         ],
       },
     ],
