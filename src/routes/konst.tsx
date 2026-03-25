@@ -46,7 +46,7 @@ export default function Konst() {
                 key={period}
                 href={url}
                 target="_blank"
-                className="flex items-center gap-4 pb-1 w-max"
+                className="flex items-center gap-4 pb-1 w-max" rel="noopener"
               >
                 <img
                   src={images[0]} // Make it random
@@ -105,7 +105,7 @@ export default function Konst() {
           key={artist}
           href={url}
           target="_blank"
-          className="flex items-center gap-4 pb-1 w-max"
+          className="flex items-center gap-4 pb-1 w-max" rel="noopener"
         >
           <img
             src={image}

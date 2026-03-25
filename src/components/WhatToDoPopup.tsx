@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Forecast, Instant, TimeSerie } from "../routes/weather";
+import type { Forecast, Instant, TimeSerie } from "../routes/weather";
 import { sporter } from "../data/sports";
 import { intressen } from "../data/interests";
 
