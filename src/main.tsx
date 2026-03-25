@@ -15,7 +15,6 @@ import WhatToDo from "./routes/whatToDo.tsx";
 import Weather from "./routes/weather.tsx";
 import Blog from "./routes/blog.tsx";
 import News from "./routes/news.tsx";
-import Goals from "./routes/goals.tsx";
 
 const router = createBrowserRouter([
   {
@@ -61,10 +60,6 @@ const router = createBrowserRouter([
           {
             path: "news",
             element: <News />,
-          },
-          {
-            path: "goals",
-            element: <Goals />,
           },
         ],
       },
