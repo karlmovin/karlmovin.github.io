@@ -124,8 +124,8 @@ export default function Weather() {
   }, [location]);
 
   return (
-    <main className="container max-w-screen-xl mx-auto px-4 py-8">
-      <div className="flex w-full max-w-[50rem] flex-col rounded-br-xl bg-white dark:bg-gray-800 bg-clip-border p-4 text-gray-700 dark:text-gray-200 shadow-sm">
+    <main className="container max-w-(--breakpoint-xl) mx-auto px-4 py-8">
+      <div className="flex w-full max-w-200 flex-col rounded-br-xl bg-white dark:bg-gray-800 bg-clip-border p-4 text-gray-700 dark:text-gray-200 shadow-xs">
         <div className="p-4 mb-2">
           <h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-900 dark:text-white">
             {"Väder idag "}
@@ -171,7 +171,7 @@ export default function Weather() {
           />
         </div>
       </div>
-      <div className="flex w-full max-w-[30rem] flex-col rounded-br-xl bg-white dark:bg-gray-800 bg-clip-border p-4 text-gray-700 dark:text-gray-200 mt-4 shadow-sm">
+      <div className="flex w-full max-w-120 flex-col rounded-br-xl bg-white dark:bg-gray-800 bg-clip-border p-4 text-gray-700 dark:text-gray-200 mt-4 shadow-xs">
         {textTvWeather
           ? parse(
               textTvWeather[0].content_plain

@@ -24,7 +24,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="group relative flex h-8 w-16 items-center rounded-full bg-gray-200 dark:bg-gray-700 p-1 transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+      className="group relative flex h-8 w-16 items-center rounded-full bg-gray-200 dark:bg-gray-700 p-1 transition-colors duration-300 ease-in-out focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       aria-label="Växla mellan ljust och mörkt tema"
     >
       <div

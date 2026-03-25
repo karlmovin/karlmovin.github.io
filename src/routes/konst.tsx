@@ -36,9 +36,9 @@ function Accordion({
 
 export default function Konst() {
   return (
-    <section className="container max-w-screen-xl">
+    <section className="container max-w-(--breakpoint-xl)">
       <p className="text-2xl pb-2">Konstperioder</p>
-      <div className="w-[32rem]">
+      <div className="w-lg">
         <ul className="flex flex-col w-full">
           {Object.entries(konstperioder).map(
             ([period, { years, description, url, images }]) => (
@@ -110,7 +110,7 @@ export default function Konst() {
           <img
             src={image}
             alt="avatar"
-            className="inline-block relative object-cover object-center !rounded-full w-12 h-12"
+            className="inline-block relative object-cover object-center rounded-full! w-12 h-12"
           />
           <div>
             <h6 className="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-inherit">

@@ -1,6 +1,89 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@theme {
+  --animate-color-pulse: color-pulse 2s ease-in-out infinite;
+  --animate-color-pulse-dark: color-pulse-dark 2s ease-in-out infinite;
+
+  @keyframes color-pulse {
+    0%,
+    100% {
+      background-color: rgb(255, 255, 255);
+      color: rgb(31, 41, 55);
+    }
+    50% {
+      background-color: rgb(59, 130, 246);
+      color: rgb(255, 255, 255);
+    }
+  }
+  @keyframes color-pulse-dark {
+    0%,
+    100% {
+      background-color: rgb(31, 41, 55);
+      color: rgb(229, 231, 235);
+    }
+    50% {
+      background-color: rgb(59, 130, 246);
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-xs hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700;
+}
+
+@utility btn {
+  @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+}
+
+@utility btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-600;
+}
+
+@utility btn-secondary {
+  @apply bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600;
+}
+
+@utility input {
+  @apply px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+}
+
+@utility nav-active {
+  @apply block py-2 px-3 rounded-sm text-white bg-gray-900 md:bg-transparent md:border-b-2 md:rounded-none md:p-0;
+}
+
+@utility nav-inactive {
+  @apply block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent;
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600;
+}
 
 @layer base {
   body {
@@ -13,40 +96,5 @@
 
   p {
     @apply text-gray-700 dark:text-gray-300;
-  }
-}
-
-@layer components {
-  .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700;
-  }
-
-  .btn {
-    @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
-  }
-
-  .btn-primary {
-    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-600;
-  }
-
-  .btn-secondary {
-    @apply bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600;
-  }
-
-  .input {
-    @apply px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
-  }
-
-  .nav-active {
-    @apply block py-2 px-3 rounded text-white bg-gray-900 md:bg-transparent md:border-b-2 md:rounded-none md:p-0;
-  }
-  .nav-inactive {
-    @apply block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent;
-  }
-}
-
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-400 dark:to-blue-600;
   }
 }

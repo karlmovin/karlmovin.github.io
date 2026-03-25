@@ -16,7 +16,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="container max-w-screen-xl mx-auto px-4 py-8">
+    <main className="container max-w-(--breakpoint-xl) mx-auto px-4 py-8">
       {quotes?.length ? (
         <div className="card p-6">
           <div className="flex items-center justify-center min-h-[200px]">

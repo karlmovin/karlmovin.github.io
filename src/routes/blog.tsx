@@ -25,7 +25,7 @@ function HighlightText({
         part.toLowerCase() === searchTerm.toLowerCase() ? (
           <mark
             key={i}
-            className="bg-yellow-200 dark:bg-yellow-800 text-gray-900 dark:text-gray-100 px-0.5 rounded"
+            className="bg-yellow-200 dark:bg-yellow-800 text-gray-900 dark:text-gray-100 px-0.5 rounded-sm"
           >
             {part}
           </mark>
@@ -52,7 +52,7 @@ function Post({
   });
 
   return (
-    <li className="flex flex-col gap-3 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+    <li className="flex flex-col gap-3 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xs border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
       <div className="flex flex-col gap-1">
         <div className="text-xl font-semibold text-gray-900 dark:text-white">
           <HighlightText text={post.title} searchTerm={searchTerm} />
@@ -139,7 +139,7 @@ function Blog() {
   };
 
   return (
-    <main className="flex flex-col gap-6 py-8 container max-w-screen-xl mx-auto px-4">
+    <main className="flex flex-col gap-6 py-8 container max-w-(--breakpoint-xl) mx-auto px-4">
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
           Någonstans måste jag ju skriva av mig...
