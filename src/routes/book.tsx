@@ -40,7 +40,7 @@ function BookPage() {
             className="flex gap-4 pt-2 pb-4 bg-slate-300 dark:bg-slate-700 border-l-2 border-slate-600 dark:border-slate-400"
             key={index}
           >
-            <p className="before:content-['\201C\00a0'] after:content-['\00a0\201D'] italic mx-2 font-sans antialiased text-gray-800 dark:text-gray-200">
+            <p className="before:content-['\u201C\u00a0'] after:content-['\u00a0\u201D'] italic mx-2 font-sans antialiased text-gray-800 dark:text-gray-200">
               {note}
             </p>
           </li>
