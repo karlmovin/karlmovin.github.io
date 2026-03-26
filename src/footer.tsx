@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="w-full">
-      <div className="flex flex-row flex-wrap container max-w-screen-xl items-center justify-center  py-6 text-center border-t gap-y-6 gap-x-12 border-blue-gray-50 md:justify-between">
+      <div className="flex flex-row flex-wrap container max-w-(--breakpoint-xl) items-center justify-center  py-6 text-center border-t gap-y-6 gap-x-12 border-blue-gray-50 md:justify-between">
         <p className="block font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
           2024 Karl Movin
         </p>

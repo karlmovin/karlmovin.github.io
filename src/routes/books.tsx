@@ -159,7 +159,7 @@ export default function Books() {
   };
 
   return (
-    <main className="flex flex-col gap-4 container max-w-screen-xl">
+    <main className="flex flex-col gap-4 container max-w-(--breakpoint-xl)">
       {booksByStatus.map(({ title, books }) => (
         <section key={title}>
           <p className="text-2xl">{title}</p>

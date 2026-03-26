@@ -25,7 +25,7 @@ function Card({
   handleTagFilter: (checked: boolean, tag: string) => void;
 }) {
   return (
-    <div className="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 w-[300px] h-[280px]">
+    <div className="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-lg shadow-xs hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 w-[300px] h-[280px]">
       <div className="p-6 overflow-hidden">
         <h5 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2">
           {title}
@@ -215,7 +215,7 @@ function BookmarksPage() {
   });
 
   return (
-    <section className="container max-w-screen-xl mx-auto px-4 py-8">
+    <section className="container max-w-(--breakpoint-xl) mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
           Bokmärken

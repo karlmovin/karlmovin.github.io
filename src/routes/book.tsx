@@ -19,7 +19,7 @@ function BookPage() {
   }
 
   return (
-    <main className="flex flex-col gap-4 container max-w-screen-xl">
+    <main className="flex flex-col gap-4 container max-w-(--breakpoint-xl)">
       <p className="text-2xl text-gray-900 dark:text-gray-100">{book.title}</p>
       <p className="text-sm text-gray-700 dark:text-gray-300">
         Författare: {book.author}
@@ -34,13 +34,13 @@ function BookPage() {
           </div>
         ))}
       </div>
-      <ul className="flex flex-col w-full max-w-[32rem] gap-3">
+      <ul className="flex flex-col w-full max-w-lg gap-3">
         {book.notes.map((note, index) => (
           <li
             className="flex gap-4 pt-2 pb-4 bg-slate-300 dark:bg-slate-700 border-l-2 border-slate-600 dark:border-slate-400"
             key={index}
           >
-            <p className="before:content-['\201C\00a0'] after:content-['\00a0\201D'] italic mx-2 font-sans antialiased text-gray-800 dark:text-gray-200">
+            <p className="before:content-['\u201C\u00a0'] after:content-['\u00a0\u201D'] italic mx-2 font-sans antialiased text-gray-800 dark:text-gray-200">
               {note}
             </p>
           </li>

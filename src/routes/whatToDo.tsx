@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Forecast, Instant, TimeSerie } from "./weather";
+import type { Forecast, Instant, TimeSerie } from "./weather";
 import { sporter } from "../data/sports";
 import { intressen } from "../data/interests";
 
@@ -177,7 +177,7 @@ export default function WhatToDo() {
   };
 
   return (
-    <main className="container max-w-screen-xl place-content-center flex h-dvh items-center flex-col">
+    <main className="container max-w-(--breakpoint-xl) place-content-center flex h-dvh items-center flex-col">
       {selectedSport || selectedIntresse ? (
         <p className="text-2xl">
           Du kan till exempel

@@ -112,7 +112,7 @@ export default function Packlistor() {
                 checked={selectedEntries.has(title)}
                 onChange={() => handleEntryToggle(title)}
               />
-              <div className="h-5 w-5 rounded border-2 border-gray-300 dark:border-gray-600 peer-checked:border-gray-700 peer-checked:bg-gray-700 dark:peer-checked:border-gray-300 dark:peer-checked:bg-gray-300 transition-colors flex items-center justify-center">
+              <div className="h-5 w-5 rounded-sm border-2 border-gray-300 dark:border-gray-600 peer-checked:border-gray-700 peer-checked:bg-gray-700 dark:peer-checked:border-gray-300 dark:peer-checked:bg-gray-300 transition-colors flex items-center justify-center">
                 {selectedEntries.has(title) && (
                   <svg
                     className="h-4 w-4 text-white dark:text-gray-900"
@@ -138,7 +138,7 @@ export default function Packlistor() {
   );
 
   return (
-    <main className="container max-w-screen-xl mx-auto px-4 py-8">
+    <main className="container max-w-(--breakpoint-xl) mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">
           Packlistor
@@ -149,7 +149,7 @@ export default function Packlistor() {
           <button
             onClick={handleResetAll}
             disabled={!hasCheckedItems}
-            className="w-full px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-300 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-100 dark:disabled:hover:bg-gray-700"
+            className="w-full px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-300 font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-100 dark:disabled:hover:bg-gray-700"
           >
             Återställ alla
           </button>
@@ -161,7 +161,7 @@ export default function Packlistor() {
           {mergedGroups.map(({ title: groupTitle, items }) => (
             <div
               key={groupTitle}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-xs hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700"
             >
               <div className="p-4 border-b border-gray-200 dark:border-gray-700">
                 <h3 className="text-xl font-medium text-gray-900 dark:text-white">
@@ -183,7 +183,7 @@ export default function Packlistor() {
                           checked={checkedItems[item] || false}
                           onChange={() => handleItemToggle(item)}
                         />
-                        <div className="h-5 w-5 rounded border-2 border-gray-300 dark:border-gray-600 peer-checked:border-gray-700 peer-checked:bg-gray-700 dark:peer-checked:border-gray-300 dark:peer-checked:bg-gray-300 transition-colors flex items-center justify-center">
+                        <div className="h-5 w-5 rounded-sm border-2 border-gray-300 dark:border-gray-600 peer-checked:border-gray-700 peer-checked:bg-gray-700 dark:peer-checked:border-gray-300 dark:peer-checked:bg-gray-300 transition-colors flex items-center justify-center">
                           {checkedItems[item] && (
                             <svg
                               className="h-4 w-4 text-white dark:text-gray-900"
