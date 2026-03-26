@@ -5,14 +5,13 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "pnpm run tailwind && vite",
+    "dev": "vite",
     "build": "tsc && pnpm run tailwind && vite build",
     "lint": "pnpx @biomejs/biome lint --write",
     "format": "pnpx @biomejs/biome format --write",
     "check": "pnpx @biomejs/biome check --write",
     "preview": "pnpm run build && vite preview",
-    "tsc": "tsgo",
-    "tailwind": "pnpm exec tailwindcss -i ./src/index.css -o ./src/output.css"
+    "tsc": "tsgo"
   },
   "dependencies": {
     "html-react-parser": "^5.2.17",
@@ -22,13 +21,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.9",
-    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^20.19.37",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
     "@typescript/native-preview": "7.0.0-dev.20260325.1",
     "@vitejs/plugin-react": "^6.0.1",
-    "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
     "vite": "^8.0.2"
   }
