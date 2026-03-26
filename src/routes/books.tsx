@@ -50,7 +50,7 @@ function BookList({
                 className={book.slug ? "" : "pointer-events-none"}
                 aria-disabled={book.slug ? "false" : "true"}
               >
-                <p className="text-sm font-semibold leading-6 text-gray-900">
+                <p className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100">
                   {book.title}
                 </p>
               </Link>

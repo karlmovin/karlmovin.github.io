@@ -69,8 +69,8 @@ export const intressen: Record<
     tidsåtgång: { min: 1, max: 3 },
     tiderPåDygnet: { från: 8, till: 20 },
   },
-  diarama: {
-    verb: "göra diarama",
+  diorama: {
+    verb: "göra diorama",
     tidsåtgång: { min: 1, max: 3 },
     tiderPåDygnet: { från: 8, till: 20 },
   },
