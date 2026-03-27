@@ -116,7 +116,7 @@ function BookList({
 										handleGenreFilter(!genreFilters.includes(genre), genre)
 									}
 								>
-									{genre}
+									{translateGenre(genre)}
 								</button>
 							))}
 						</div>
