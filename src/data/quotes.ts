@@ -1,7 +1,24 @@
-export const quotes = [
-	"SLEEP is time well invested",
-	"Anything worth doing is worth doing well, and anything worth doing is worth doing poorly",
-	"The days go slow, and the years go fast",
-	"There is no need to do today, what can be done tomorrow.",
-	"Don't wait until tomorrow with what can be done today.",
+import type { Translated } from "./i18n-helpers";
+
+export const quotes: Translated[] = [
+	{
+		sv: "SÖMN är väl investerad tid",
+		en: "SLEEP is time well invested",
+	},
+	{
+		sv: "Allt som är värt att göra är värt att göra bra, och allt som är värt att göra är värt att göra dåligt",
+		en: "Anything worth doing is worth doing well, and anything worth doing is worth doing poorly",
+	},
+	{
+		sv: "Dagarna går långsamt, och åren går fort",
+		en: "The days go slow, and the years go fast",
+	},
+	{
+		sv: "Det finns ingen anledning att göra idag det som kan göras imorgon.",
+		en: "There is no need to do today, what can be done tomorrow.",
+	},
+	{
+		sv: "Skjut inte upp till imorgon det som kan göras idag.",
+		en: "Don't wait until tomorrow with what can be done today.",
+	},
 ];

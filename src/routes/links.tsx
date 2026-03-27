@@ -1,14 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { bookmarks as bookmarksData } from "../data/bookmarks.json";
-
-type Bookmark = {
-	id?: string;
-	title: string;
-	url: string;
-	description?: string;
-	tags: string[];
-};
+import { type Bookmark, bookmarks as bookmarksData } from "../data/bookmarks";
 
 function Card({
 	title,

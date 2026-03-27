@@ -11,7 +11,7 @@ import Blog from "./routes/blog.tsx";
 import BookPage from "./routes/book.tsx";
 import Books from "./routes/books.tsx";
 import Home from "./routes/home.tsx";
-import Konst from "./routes/konst.tsx";
+import Art from "./routes/art.tsx";
 import BookmarksPage from "./routes/links.tsx";
 import News from "./routes/news.tsx";
 import Weather from "./routes/weather.tsx";
@@ -43,8 +43,8 @@ const router = createBrowserRouter([
 						element: <BookmarksPage />,
 					},
 					{
-						path: "konst",
-						element: <Konst />,
+						path: "art",
+						element: <Art />,
 					},
 					{
 						path: "what-to-do",

@@ -1,82 +1,84 @@
-export const intressen: Record<
+import type { Translated } from "./i18n-helpers";
+
+export const interests: Record<
 	string,
 	{
-		verb: string;
-		tidsåtgång: { min: number; max: number };
-		tiderPåDygnet: { från: number; till: number };
-		krav?: string[];
+		verb: Translated;
+		duration: { min: number; max: number };
+		hoursOfDay: { from: number; to: number };
+		requirements?: string[];
 	}
 > = {
-	programmering: {
-		verb: "programmera",
-		tidsåtgång: { min: 1, max: 4 },
-		tiderPåDygnet: { från: 8, till: 20 },
+	programming: {
+		verb: { sv: "programmera", en: "do some programming" },
+		duration: { min: 1, max: 4 },
+		hoursOfDay: { from: 8, to: 20 },
 	},
-	läsning: {
-		verb: "läsa",
-		tidsåtgång: { min: 1, max: 2 },
-		tiderPåDygnet: { från: 8, till: 22 },
+	reading: {
+		verb: { sv: "läsa", en: "read a book" },
+		duration: { min: 1, max: 2 },
+		hoursOfDay: { from: 8, to: 22 },
 	},
-	film: {
-		verb: "titta på film/serier",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 20 },
+	movies: {
+		verb: { sv: "titta på film/serier", en: "watch movies/series" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 20 },
 	},
-	brädspel: {
-		verb: "spela brädspel",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 20 },
-		krav: ["fler än 1 personer"],
+	boardGames: {
+		verb: { sv: "spela brädspel", en: "play board games" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 20 },
+		requirements: ["fler än 1 personer"],
 	},
-	dataspel: {
-		verb: "spela dataspel",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 19 },
+	videoGames: {
+		verb: { sv: "spela dataspel", en: "play video games" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 19 },
 	},
-	keramik: {
-		verb: "göra keramik",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 20 },
+	ceramics: {
+		verb: { sv: "göra keramik", en: "do some ceramics" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 20 },
 	},
-	finsnickeri: {
-		verb: "snickra",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 20 },
+	woodworking: {
+		verb: { sv: "snickra", en: "do some woodworking" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 20 },
 	},
-	målning: {
-		verb: "måla",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 20 },
+	painting: {
+		verb: { sv: "måla", en: "paint" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 20 },
 	},
 	video: {
-		verb: "göra video",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 19 },
+		verb: { sv: "göra video", en: "make a video" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 19 },
 	},
-	musik: {
-		verb: "göra musik",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 20 },
+	music: {
+		verb: { sv: "göra musik", en: "make some music" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 20 },
 	},
-	rollspel: {
-		verb: "spela rollspel",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 20 },
-		krav: ["fler än 1 personer"],
+	tabletopRpg: {
+		verb: { sv: "spela rollspel", en: "play tabletop RPGs" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 20 },
+		requirements: ["fler än 1 personer"],
 	},
-	rollspelsPrepp: {
-		verb: "förbereda rollspel",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 20 },
+	rpgPrep: {
+		verb: { sv: "förbereda rollspel", en: "prepare for RPG sessions" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 20 },
 	},
 	diorama: {
-		verb: "göra diorama",
-		tidsåtgång: { min: 1, max: 3 },
-		tiderPåDygnet: { från: 8, till: 20 },
+		verb: { sv: "göra diorama", en: "build a diorama" },
+		duration: { min: 1, max: 3 },
+		hoursOfDay: { from: 8, to: 20 },
 	},
-	sova: {
-		verb: "gå och lägga dig",
-		tidsåtgång: { min: 1, max: 9 },
-		tiderPåDygnet: { från: 20, till: 24 + 8 },
+	sleep: {
+		verb: { sv: "gå och lägga dig", en: "go to bed" },
+		duration: { min: 1, max: 9 },
+		hoursOfDay: { from: 20, to: 24 + 8 },
 	},
 };

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { artists, konstperioder } from "../data/konst.json";
+import { artists, artPeriods } from "../data/art";
+import { t as tData } from "../data/i18n-helpers";
 
 function Accordion({
 	title,
@@ -35,56 +36,55 @@ function Accordion({
 	);
 }
 
-export default function Konst() {
-	const { t } = useTranslation();
+export default function Art() {
+	const { t, i18n } = useTranslation();
+	const lang = i18n.language;
 	return (
 		<section className="container max-w-(--breakpoint-xl)">
-			<p className="text-2xl pb-2">{t("konst.periods")}</p>
+			<p className="text-2xl pb-2">{t("art.periods")}</p>
 			<div className="w-lg">
 				<ul className="flex flex-col w-full">
-					{Object.entries(konstperioder).map(
-						([period, { years, description, url, images }]) => (
-							<a
-								key={period}
-								href={url}
-								target="_blank"
-								className="flex items-center gap-4 pb-1 w-max"
-								rel="noopener"
-							>
-								<img
-									src={images[0]} // Make it random
-									alt={period}
-									className="inline-block relative object-cover object-center w-28 h-28"
-								/>
-								<div>
-									<h6 className="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-inherit">
-										{period}
-									</h6>
-									<p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-										{years}
-									</p>
-									<p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-										{description}
-									</p>
-									<div className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
-										{url}
-									</div>
+					{artPeriods.map((period) => (
+						<a
+							key={period.name.sv}
+							href={period.url}
+							target="_blank"
+							className="flex items-center gap-4 pb-1 w-max"
+							rel="noopener"
+						>
+							<img
+								src={period.images[0]}
+								alt={tData(period.name, lang)}
+								className="inline-block relative object-cover object-center w-28 h-28"
+							/>
+							<div>
+								<h6 className="block font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-inherit">
+									{tData(period.name, lang)}
+								</h6>
+								<p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
+									{period.years}
+								</p>
+								<p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
+									{tData(period.description, lang)}
+								</p>
+								<div className="block font-sans text-sm antialiased font-normal leading-normal text-gray-700">
+									{period.url}
 								</div>
-							</a>
-						),
-					)}
+							</div>
+						</a>
+					))}
 				</ul>
 			</div>
-			<Accordion title={t("konst.konstriktning")}>
-				{t("konst.konstriktningText")}
+			<Accordion title={t("art.konstriktning")}>
+				{t("art.konstriktningText")}
 			</Accordion>
-			<Accordion title={t("konst.konststilar")}>
-				{t("konst.konststilarText")}
+			<Accordion title={t("art.konststilar")}>
+				{t("art.konststilarText")}
 			</Accordion>
-			<Accordion title={t("konst.konstskola")}>
-				{t("konst.konstskolaText")}
+			<Accordion title={t("art.konstskola")}>
+				{t("art.konstskolaText")}
 			</Accordion>
-			<p className="text-2xl">{t("konst.artists")}</p>
+			<p className="text-2xl">{t("art.artists")}</p>
 			{Object.entries(artists).map(([artist, { url, image }]) => (
 				<a
 					key={artist}

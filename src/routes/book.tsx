@@ -1,20 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router";
-import { books as booksData } from "../data/books.json";
-
-type Book = {
-	title: string;
-	author?: string;
-	genres: string[];
-	notes: string[];
-	slug: string;
-};
+import { type Book, books as booksData } from "../data/books";
+import { genreTranslations } from "../data/genre-translations";
 
 function BookPage() {
 	const slug = useParams<{ slug: string }>().slug;
 	const books = booksData as Book[];
 	const book = books.find((b: Book) => b.slug === slug);
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const translateGenre = (genre: string) =>
+		i18n.language === "en" ? genreTranslations[genre] || genre : genre;
 
 	if (!book) {
 		return <p className="text-gray-500 text-sm">{t("books.loading")}</p>;
@@ -32,7 +27,7 @@ function BookPage() {
 						key={genre}
 						className="relative grid select-none items-center whitespace-nowrap rounded-lg border border-gray-900 dark:border-gray-100 py-1.5 px-3 font-sans text-xs font-bold uppercase text-gray-700 dark:text-gray-300"
 					>
-						{genre}
+						{translateGenre(genre)}
 					</div>
 				))}
 			</div>

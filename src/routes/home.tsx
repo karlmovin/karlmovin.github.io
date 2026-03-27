@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { t as tData } from "../data/i18n-helpers";
 import { quotes } from "../data/quotes";
 
 export default function Home() {
 	const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+	const { i18n } = useTranslation();
 
 	useEffect(() => {
 		// Only set up rotation if there are multiple quotes
@@ -21,7 +24,7 @@ export default function Home() {
 				<div className="card p-6">
 					<div className="flex items-center justify-center min-h-[200px]">
 						<p className="text-3xl font-bold text-center text-gray-700 dark:text-gray-200">
-							{quotes[currentQuoteIndex]}
+							{tData(quotes[currentQuoteIndex], i18n.language)}
 						</p>
 					</div>
 				</div>

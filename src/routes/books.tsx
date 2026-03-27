@@ -1,26 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
-import { books as booksData } from "../data/books.json";
-
-enum Status {
-	Reading = "reading",
-	Paused = "paused",
-	Read = "read",
-	Planned = "planned",
-}
-
-type Book = {
-	id?: string;
-	title: string;
-	author?: string;
-	genres: string[];
-	notes: string[];
-	status: Status;
-	slug: string;
-	image?: string;
-	rating?: number;
-};
+import { type Book, books as booksData } from "../data/books";
+import { genreTranslations } from "../data/genre-translations";
 
 function BookList({
 	books,
@@ -31,7 +13,9 @@ function BookList({
 	genreFilters?: string[];
 	handleGenreFilter?: (checked: boolean, genre: string) => void;
 }) {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const translateGenre = (genre: string) =>
+		i18n.language === "en" ? genreTranslations[genre] || genre : genre;
 	if (books.length === 0)
 		return <p className="text-gray-500 text-sm">{t("books.noBooks")}</p>;
 	return (
@@ -73,7 +57,7 @@ function BookList({
 											handleGenreFilter(!genreFilters.includes(genre), genre)
 										}
 									>
-										{genre}
+										{translateGenre(genre)}
 									</button>
 								))}
 							</div>
@@ -148,10 +132,10 @@ export default function Books() {
 	const { t } = useTranslation();
 
 	const booksByStatus = [
-		{ status: Status.Reading, title: t("books.reading") },
-		{ status: Status.Paused, title: t("books.paused") },
-		{ status: Status.Read, title: t("books.read") },
-		{ status: Status.Planned, title: t("books.planned") },
+		{ status: "reading" as const, title: t("books.reading") },
+		{ status: "paused" as const, title: t("books.paused") },
+		{ status: "read" as const, title: t("books.read") },
+		{ status: "planned" as const, title: t("books.planned") },
 	].map(({ status, title }) => ({
 		title,
 		books: books.filter((book) => book.status === status),

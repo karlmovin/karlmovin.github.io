@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
+import { t as tData } from "../data/i18n-helpers";
 import { notes } from "../data/notes";
 
 function Notes() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	return (
 		<section>
 			{notes?.length ? (
@@ -10,7 +11,7 @@ function Notes() {
 					<p className="text-2xl">{t("sideSection.notes")}</p>
 					<ol>
 						{notes.map((note, index) => (
-							<li key={index}>{note}</li>
+							<li key={index}>{tData(note, i18n.language)}</li>
 						))}
 					</ol>
 				</>

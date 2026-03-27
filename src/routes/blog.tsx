@@ -58,11 +58,14 @@ function Post({
 }) {
 	const [isTruncated, setIsTruncated] = useState(true);
 	const { t, i18n } = useTranslation();
-	const formattedDate = new Date(post.date).toLocaleDateString(i18n.language === "sv" ? "sv-SE" : "en-US", {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
+	const formattedDate = new Date(post.date).toLocaleDateString(
+		i18n.language === "sv" ? "sv-SE" : "en-US",
+		{
+			year: "numeric",
+			month: "long",
+			day: "numeric",
+		},
+	);
 
 	return (
 		<li className="flex flex-col gap-3 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xs border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">

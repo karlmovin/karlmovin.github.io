@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { intressen } from "../data/interests";
-import { sporter } from "../data/sports";
+import { t as tData } from "../data/i18n-helpers";
+import { interests } from "../data/interests";
+import { sports } from "../data/sports";
 import type { Forecast, Instant, TimeSerie } from "./weather";
 
 // https://api.met.no/weatherapi/documentation
@@ -19,9 +20,10 @@ import type { Forecast, Instant, TimeSerie } from "./weather";
 */
 
 export default function WhatToDo() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const lang = i18n.language;
 	const [selectedSport, setSelectedSport] = useState("");
-	const [selectedIntresse, setSelectedIntresse] = useState("");
+	const [selectedInterest, setSelectedIntresse] = useState("");
 	const [location, setLocation] = useState({ lat: 59.334591, lon: 18.06324 });
 	const [weather, setWeather] = useState<{
 		time: string;
@@ -145,17 +147,18 @@ export default function WhatToDo() {
 		const currentWeather = weather?.forecast.next_1_hours.summary.symbol_code;
 		const currentTemperature = weather.now.details.air_temperature;
 
-		const availableSports = Object.keys(sporter).filter((sport) => {
-			const sportData = sport in sporter && sporter[sport];
+		const availableSports = Object.keys(sports).filter((sport) => {
+			const sportData = sport in sports && sports[sport];
 			return (
 				sportData &&
-				sportData.månader.includes(currentMonth) &&
-				(!sportData.krav || sportData.krav.includes(currentWeather)) &&
-				(!sportData.temperaturer ||
-					(currentTemperature >= sportData.temperaturer.min &&
-						currentTemperature <= sportData.temperaturer.max)) &&
-				currentHour >= sportData.tiderPåDygnet.från &&
-				currentHour + sportData.tidsåtgång.min <= sportData.tiderPåDygnet.till
+				sportData.months.includes(currentMonth) &&
+				(!sportData.requirements ||
+					sportData.requirements.includes(currentWeather)) &&
+				(!sportData.temperatures ||
+					(currentTemperature >= sportData.temperatures.min &&
+						currentTemperature <= sportData.temperatures.max)) &&
+				currentHour >= sportData.hoursOfDay.from &&
+				currentHour + sportData.duration.min <= sportData.hoursOfDay.to
 			);
 		});
 
@@ -163,39 +166,40 @@ export default function WhatToDo() {
 		const randomSport = availableSports[randomIndex];
 		setSelectedSport(randomSport);
 
-		const availableIntressen = Object.keys(intressen).filter((intresse) => {
-			const intresseData = intresse in intressen ? intressen[intresse] : null;
+		const availableInterests = Object.keys(interests).filter((interest) => {
+			const interestData = interest in interests ? interests[interest] : null;
 			return (
-				intresseData &&
-				currentHour >= intresseData.tiderPåDygnet.från &&
-				currentHour <= intresseData.tiderPåDygnet.till
+				interestData &&
+				currentHour >= interestData.hoursOfDay.from &&
+				currentHour <= interestData.hoursOfDay.to
 			);
 		});
-		const randomIntresseIndex = Math.floor(
-			Math.random() * availableIntressen.length,
+		const randomInterestIndex = Math.floor(
+			Math.random() * availableInterests.length,
 		);
-		const randomIntresse = availableIntressen[randomIntresseIndex];
-		setSelectedIntresse(randomIntresse);
+		const randomInterest = availableInterests[randomInterestIndex];
+		setSelectedIntresse(randomInterest);
 	};
 
 	return (
 		<main className="container max-w-(--breakpoint-xl) place-content-center flex h-dvh items-center flex-col">
-			{selectedSport || selectedIntresse ? (
+			{selectedSport || selectedInterest ? (
 				<p className="text-2xl">
 					{t("whatToDo.suggestion")}
 					{selectedSport
-						? ` ${sporter[selectedSport].verb} ${
-								sporter[selectedSport].plats[
+						? ` ${tData(sports[selectedSport].verb, lang)} ${tData(
+								sports[selectedSport].places[
 									Math.floor(
-										Math.random() * sporter[selectedSport].plats.length,
+										Math.random() * sports[selectedSport].places.length,
 									)
-								]
-							}${
-								selectedIntresse
-									? ` ${t("whatToDo.orMaybe")} ${intressen[selectedIntresse].verb}?`
+								],
+								lang,
+							)}${
+								selectedInterest
+									? ` ${t("whatToDo.orMaybe")} ${tData(interests[selectedInterest].verb, lang)}?`
 									: "?"
 							}`
-						: ` ${intressen[selectedIntresse].verb}?`}
+						: ` ${tData(interests[selectedInterest].verb, lang)}?`}
 				</p>
 			) : null}
 			<button
@@ -203,7 +207,7 @@ export default function WhatToDo() {
 				type="button"
 				onClick={handleButtonClick}
 			>
-				{!selectedSport && !selectedIntresse
+				{!selectedSport && !selectedInterest
 					? t("whatToDo.button")
 					: t("whatToDo.tryAgain")}
 			</button>
