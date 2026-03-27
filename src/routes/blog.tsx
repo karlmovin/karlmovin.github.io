@@ -1,12 +1,21 @@
-import { posts } from "../data/posts.json";
 import { useState, useMemo } from "react";
 
-type Post = {
+type PostAttributes = {
   title: string;
   date: string;
-  body: string;
   tags?: string[];
 };
+
+type Post = PostAttributes & {
+  body: string;
+};
+
+const postModules = import.meta.glob("../data/posts/*.md", { eager: true }) as Record<string, { attributes: PostAttributes; markdown: string }>;
+
+const posts: Post[] = Object.values(postModules).map((mod) => ({
+  ...mod.attributes,
+  body: mod.markdown,
+}));
 
 function HighlightText({
   text,
@@ -63,7 +72,7 @@ function Post({
       </div>
       <div
         className={`${
-          isTruncated ? "line-clamp-5" : "line-clamp-none"
+          isTruncated ? "line-clamp-3" : "line-clamp-none"
         } max-w-prose text-gray-700 dark:text-gray-200 leading-relaxed`}
       >
         <HighlightText text={post.body} searchTerm={searchTerm} />
