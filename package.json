@@ -1,34 +1,35 @@
 {
-  "name": "karl-movins-website",
-  "homepage": "http://www.karlmovin.se",
-  "private": true,
-  "version": "0.1.0",
-  "type": "module",
-  "packageManager": "pnpm@10.33.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsgo && vite build",
-    "lint": "pnpx @biomejs/biome lint --write",
-    "format": "pnpx @biomejs/biome format --write",
-    "check": "pnpx @biomejs/biome check --write",
-    "preview": "pnpm run build && vite preview",
-    "tsc": "tsgo"
-  },
-  "dependencies": {
-    "html-react-parser": "^5.2.17",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-router": "^7.13.2"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.4.9",
-    "@tailwindcss/vite": "^4.2.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@typescript/native-preview": "7.0.0-dev.20260325.1",
-    "@vitejs/plugin-react": "^6.0.1",
-    "tailwindcss": "^4.2.2",
-    "vite": "^8.0.2",
-    "vite-plugin-markdown": "^2.2.0"
-  }
+	"name": "karl-movins-website",
+	"homepage": "http://www.karlmovin.se",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"packageManager": "pnpm@10.33.0",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsgo && vite build",
+		"lint": "biome lint --write",
+		"format": "biome format --write",
+		"check": "biome check --write",
+		"preview": "pnpm run build && vite preview",
+		"tsc": "tsgo",
+		"knip": "pnpx knip"
+	},
+	"dependencies": {
+		"html-react-parser": "^5.2.17",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4",
+		"react-router": "^7.13.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.9",
+		"@tailwindcss/vite": "^4.2.2",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"@typescript/native-preview": "7.0.0-dev.20260325.1",
+		"@vitejs/plugin-react": "^6.0.1",
+		"tailwindcss": "^4.2.2",
+		"vite": "^8.0.2",
+		"vite-plugin-markdown": "^2.2.0"
+	}
 }

@@ -1,10 +1,9 @@
-import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from '@tailwindcss/vite'
-import {plugin as mdPlugin, Mode} from 'vite-plugin-markdown'
-
+import { defineConfig } from "vite";
+import { Mode, plugin as mdPlugin } from "vite-plugin-markdown";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), mdPlugin({ mode: [Mode.MARKDOWN] })],
+	plugins: [react(), tailwindcss(), mdPlugin({ mode: [Mode.MARKDOWN] })],
 });
