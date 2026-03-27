@@ -1,6 +1,6 @@
 {
 	"nav": {
-		"packlistor": "Packing Lists",
+		"packing_lists": "Packing Lists",
 		"books": "Books",
 		"bookmarks": "Bookmarks",
 		"art": "Art",
@@ -22,7 +22,7 @@
 		"loading": "Loading book...",
 		"author": "Author"
 	},
-	"packlistor": {
+	"packing_lists": {
 		"title": "Packing Lists",
 		"season": "Season",
 		"activity": "Activity",

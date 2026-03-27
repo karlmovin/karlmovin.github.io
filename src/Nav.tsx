@@ -33,7 +33,7 @@ export default function Nav() {
 						</div>
 						<div className="hidden sm:ml-6 sm:flex sm:space-x-8">
 							<NavLink
-								to="../packlistor"
+								to="../packing_lists"
 								className={({ isActive }: { isActive: boolean }) =>
 									`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
 										isActive
@@ -42,7 +42,7 @@ export default function Nav() {
 									}`
 								}
 							>
-								{t("nav.packlistor")}
+								{t("nav.packing_lists")}
 							</NavLink>
 							<NavLink
 								to="../books"
@@ -177,7 +177,7 @@ export default function Nav() {
 				<div className="sm:hidden">
 					<div className="pt-2 pb-3 space-y-1">
 						<NavLink
-							to="../packlistor"
+							to="../packing_lists"
 							className={({ isActive }: { isActive: boolean }) =>
 								`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
 									isActive
@@ -186,7 +186,7 @@ export default function Nav() {
 								}`
 							}
 						>
-							{t("nav.packlistor")}
+							{t("nav.packing_lists")}
 						</NavLink>
 						<NavLink
 							to="../books"

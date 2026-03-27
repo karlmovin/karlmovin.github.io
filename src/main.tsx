@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import Packlistor from "./routes/packlistor.tsx";
+import PackingLists from "./routes/packing_lists.tsx";
 import Root from "./routes/root.tsx";
 import "./i18n";
 import "./index.css";
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
 				children: [
 					{ index: true, element: <Home /> },
 					{
-						path: "packlistor",
-						element: <Packlistor />,
+						path: "packing_lists",
+						element: <PackingLists />,
 					},
 					{
 						path: "books",

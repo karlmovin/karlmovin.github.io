@@ -1,6 +1,6 @@
 {
 	"nav": {
-		"packlistor": "Packlistor",
+		"packing_lists": "Packlistor",
 		"books": "B\u00f6cker",
 		"bookmarks": "Bokm\u00e4rken",
 		"art": "Konst",
@@ -22,7 +22,7 @@
 		"loading": "Laddar bok...",
 		"author": "F\u00f6rfattare"
 	},
-	"packlistor": {
+	"packing_lists": {
 		"title": "Packlistor",
 		"season": "S\u00e4song",
 		"activity": "Aktivitet",

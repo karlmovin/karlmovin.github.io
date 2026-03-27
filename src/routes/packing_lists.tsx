@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { packlistdata } from "../data/packlistor";
+import { packlistdata } from "../data/packing_lists.ts";
 
-export default function Packlistor() {
+export default function PackingLists() {
 	const [selectedEntries, setSelectedEntries] = useState<Set<string>>(
 		new Set(),
 	);
@@ -144,17 +144,17 @@ export default function Packlistor() {
 		<main className="container max-w-(--breakpoint-xl) mx-auto px-4 py-8">
 			<div className="mb-8">
 				<h1 className="text-3xl font-bold mb-6 text-center text-gray-900 dark:text-white">
-					{t("packlistor.title")}
+					{t("packing_lists.title")}
 				</h1>
 				<div className="max-w-2xl mx-auto space-y-6">
-					<CheckboxGroup label={t("packlistor.season")} entries={seasonEntries} />
-					<CheckboxGroup label={t("packlistor.activity")} entries={activityEntries} />
+					<CheckboxGroup label={t("packing_lists.season")} entries={seasonEntries} />
+					<CheckboxGroup label={t("packing_lists.activity")} entries={activityEntries} />
 					<button
 						onClick={handleResetAll}
 						disabled={!hasCheckedItems}
 						className="w-full px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-300 font-medium transition-colors focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-100 dark:disabled:hover:bg-gray-700"
 					>
-						{t("packlistor.resetAll")}
+						{t("packing_lists.resetAll")}
 					</button>
 				</div>
 			</div>
@@ -218,7 +218,7 @@ export default function Packlistor() {
 
 			{mergedGroups.length === 0 && (
 				<p className="text-center text-gray-500 dark:text-gray-400 mt-8">
-					{t("packlistor.emptyState")}
+					{t("packing_lists.emptyState")}
 				</p>
 			)}
 		</main>
