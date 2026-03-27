@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { bookmarks as bookmarksData } from "../data/bookmarks.json";
 
 type Bookmark = {
@@ -24,6 +25,7 @@ function Card({
 	tagFilters: string[];
 	handleTagFilter: (checked: boolean, tag: string) => void;
 }) {
+	const { t } = useTranslation();
 	return (
 		<div className="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-lg shadow-xs hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 w-[300px] h-[280px]">
 			<div className="p-6 overflow-hidden">
@@ -58,7 +60,7 @@ function Card({
 					rel="noopener noreferrer"
 					className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors"
 				>
-					Öppna
+					{t("bookmarks.open")}
 				</a>
 			</div>
 		</div>
@@ -142,6 +144,7 @@ function BookmarksPage() {
 	const bookmarks = bookmarksData as Bookmark[];
 	const [tagFilters, setTagFilters] = useState<string[]>([]);
 	const [searchTerm, setSearchTerm] = useState<string>("");
+	const { t } = useTranslation();
 	const [showSuggestions, setShowSuggestions] = useState(false);
 	const [suggestions, setSuggestions] = useState<string[]>([]);
 	const searchRef = useRef<HTMLDivElement>(null);
@@ -218,12 +221,12 @@ function BookmarksPage() {
 		<section className="container max-w-(--breakpoint-xl) mx-auto px-4 py-8">
 			<div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
 				<h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-					Bokmärken
+					{t("bookmarks.title")}
 				</h1>
 				<div className="relative" ref={searchRef}>
 					<input
 						type="text"
-						placeholder="Sök eller välj tagg..."
+						placeholder={t("bookmarks.searchPlaceholder")}
 						value={searchTerm}
 						onChange={handleSearch}
 						onFocus={() => searchTerm.length > 0 && setShowSuggestions(true)}
@@ -253,7 +256,7 @@ function BookmarksPage() {
 						onClick={() => setTagFilters([])}
 						className="px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
 					>
-						Rensa filter
+						{t("bookmarks.clearFilters")}
 					</button>
 					{tagFilters.map((tag) => (
 						<button

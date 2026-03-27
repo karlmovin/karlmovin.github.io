@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Packlistor from "./routes/packlistor.tsx";
 import Root from "./routes/root.tsx";
+import "./i18n";
 import "./index.css";
 import ErrorPage from "./error-page.tsx";
 import Blog from "./routes/blog.tsx";

@@ -1,0 +1,73 @@
+{
+	"nav": {
+		"packlistor": "Packlistor",
+		"books": "B\u00f6cker",
+		"bookmarks": "Bokm\u00e4rken",
+		"art": "Konst",
+		"weather": "V\u00e4der",
+		"blog": "Blog",
+		"news": "Text-TV",
+		"whatToDo": "Vad ska jag g\u00f6ra idag?",
+		"openMenu": "\u00d6ppna huvudmeny"
+	},
+	"theme": {
+		"toggle": "V\u00e4xla mellan ljust och m\u00f6rkt tema"
+	},
+	"books": {
+		"noBooks": "Inga b\u00f6cker",
+		"reading": "P\u00e5g\u00e5ende b\u00f6cker",
+		"paused": "P\u00e5b\u00f6rjade b\u00f6cker",
+		"read": "L\u00e4sta b\u00f6cker",
+		"planned": "Planerade b\u00f6cker",
+		"loading": "Laddar bok...",
+		"author": "F\u00f6rfattare"
+	},
+	"packlistor": {
+		"title": "Packlistor",
+		"season": "S\u00e4song",
+		"activity": "Aktivitet",
+		"resetAll": "\u00c5terst\u00e4ll alla",
+		"emptyState": "V\u00e4lj s\u00e4song och/eller aktivitet ovan f\u00f6r att se packlistan."
+	},
+	"blog": {
+		"title": "N\u00e5gonstans m\u00e5ste jag ju skriva av mig...",
+		"searchPlaceholder": "S\u00f6k i inl\u00e4gg...",
+		"noResults": "Inga inl\u00e4gg hittades",
+		"showMore": "Visa mer",
+		"showLess": "Visa mindre"
+	},
+	"bookmarks": {
+		"title": "Bokm\u00e4rken",
+		"searchPlaceholder": "S\u00f6k eller v\u00e4lj tagg...",
+		"clearFilters": "Rensa filter",
+		"open": "\u00d6ppna"
+	},
+	"weather": {
+		"title": "V\u00e4der idag",
+		"poweredBy": "powered by",
+		"noWeather": "Inget v\u00e4der"
+	},
+	"konst": {
+		"periods": "Konstperioder",
+		"artists": "Konstn\u00e4rer jag fastnat f\u00f6r",
+		"konstriktning": "Konstriktning",
+		"konstriktningText": "En konstriktning \u00e4r en stil inom konsten. Ben\u00e4mningen anv\u00e4nds f\u00f6r \u00f6vergripande stilar som r\u00f6r m\u00e5nga konstn\u00e4rer och under en l\u00e4ngre tid, \u00e5tminstone n\u00e5gra \u00e5r. M\u00e5nga av konstriktningarna slutar med -ism (till exempel kubism och futurism), och ben\u00e4mns d\u00e4rf\u00f6r ofta som ismer. Ben\u00e4mningen av de olika konstriktningarna har ibland myntats av de ut\u00f6vande konstn\u00e4rerna sj\u00e4lva (till exempel dadaism och suprematism) och i andra fall av omv\u00e4rlden och d\u00e5 speciellt konstkritiker (till exempel impressionism och fauvism). I m\u00e5nga fall har ben\u00e4mningen uppkommit f\u00f6rst efter konstriktningens slut, detta g\u00e4ller speciellt \u00e4ldre tiders stilar (till exempel rokoko och manierism).",
+		"konststilar": "Konststilar",
+		"konststilarText": "Konststil anv\u00e4nds om stilar oberoende av storlek. Begreppet kan anv\u00e4ndas s\u00e5v\u00e4l f\u00f6r en konstriktning, en lokal tillf\u00e4llig stil eller en enskild konstn\u00e4rs stil.",
+		"konstskola": "Konstskola",
+		"konstskolaText": "Skola anv\u00e4nds oftast om en lokal undergrupp till en konstriktning. Till exempel var Barbizonskolan en grupp konstn\u00e4rer inom realismen. Hudson River-skolan och D\u00fcsseldorfskolan var varianter under romantiken. I dessa fall anv\u00e4nds allts\u00e5 inte ordet \"skola\" i betydelsen utbildningsanstalt, utan enbart \"lokal konststil\". Begreppet skola anv\u00e4nds \u00e4ven inom \u00e4ldre m\u00e5leri, till exempel Rubens skola. Det anv\u00e4nds d\u00e5 som beteckning f\u00f6r en krets konstn\u00e4rer (eller elever) som studerat f\u00f6r en m\u00e4stare, eller ef\u00f6ljare till konstn\u00e4ren."
+	},
+	"whatToDo": {
+		"suggestion": "Du kan till exempel",
+		"orMaybe": "eller s\u00e5 kan du kanske",
+		"button": "Vad ska jag g\u00f6ra idag?",
+		"tryAgain": "N\u00e4 tack, n\u00e5got annat?"
+	},
+	"error": {
+		"pageNotFound": "Page Not Found",
+		"home": "Hem"
+	},
+	"sideSection": {
+		"notes": "NOTES"
+	}
+}

@@ -1,0 +1,73 @@
+{
+	"nav": {
+		"packlistor": "Packing Lists",
+		"books": "Books",
+		"bookmarks": "Bookmarks",
+		"art": "Art",
+		"weather": "Weather",
+		"blog": "Blog",
+		"news": "Text-TV",
+		"whatToDo": "What should I do today?",
+		"openMenu": "Open main menu"
+	},
+	"theme": {
+		"toggle": "Toggle between light and dark theme"
+	},
+	"books": {
+		"noBooks": "No books",
+		"reading": "Currently reading",
+		"paused": "Paused books",
+		"read": "Read books",
+		"planned": "Planned books",
+		"loading": "Loading book...",
+		"author": "Author"
+	},
+	"packlistor": {
+		"title": "Packing Lists",
+		"season": "Season",
+		"activity": "Activity",
+		"resetAll": "Reset all",
+		"emptyState": "Select a season and/or activity above to see the packing list."
+	},
+	"blog": {
+		"title": "I need somewhere to write my thoughts...",
+		"searchPlaceholder": "Search posts...",
+		"noResults": "No posts found",
+		"showMore": "Show more",
+		"showLess": "Show less"
+	},
+	"bookmarks": {
+		"title": "Bookmarks",
+		"searchPlaceholder": "Search or select tag...",
+		"clearFilters": "Clear filters",
+		"open": "Open"
+	},
+	"weather": {
+		"title": "Weather today",
+		"poweredBy": "powered by",
+		"noWeather": "No weather data"
+	},
+	"konst": {
+		"periods": "Art Periods",
+		"artists": "Artists I've taken a liking to",
+		"konstriktning": "Art Movement",
+		"konstriktningText": "An art movement is a style within art. The term is used for overarching styles that involve many artists over a longer period of time, at least a few years. Many art movements end with -ism (for example cubism and futurism), and are therefore often referred to as isms. The naming of the various art movements has sometimes been coined by the practicing artists themselves (for example dadaism and suprematism) and in other cases by the outside world and especially art critics (for example impressionism and fauvism). In many cases the name has emerged only after the end of the art movement, this is especially true for older styles (for example rococo and mannerism).",
+		"konststilar": "Art Styles",
+		"konststilarText": "Art style is used for styles regardless of size. The concept can be used for an art movement, a local temporary style or an individual artist's style.",
+		"konstskola": "Art School",
+		"konstskolaText": "School is most often used for a local subgroup of an art movement. For example, the Barbizon school was a group of artists within realism. The Hudson River school and the D\u00fcsseldorf school were variants during romanticism. In these cases, the word \"school\" is not used in the sense of educational institution, but only \"local art style\". The concept of school is also used within older painting, for example Rubens' school. It is then used as a designation for a group of artists (or students) who studied under a master, or followers of the artist."
+	},
+	"whatToDo": {
+		"suggestion": "You could for example",
+		"orMaybe": "or maybe you could",
+		"button": "What should I do today?",
+		"tryAgain": "No thanks, something else?"
+	},
+	"error": {
+		"pageNotFound": "Page Not Found",
+		"home": "Home"
+	},
+	"sideSection": {
+		"notes": "NOTES"
+	}
+}

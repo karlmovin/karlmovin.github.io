@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { artists, konstperioder } from "../data/konst.json";
 
 function Accordion({
@@ -35,9 +36,10 @@ function Accordion({
 }
 
 export default function Konst() {
+	const { t } = useTranslation();
 	return (
 		<section className="container max-w-(--breakpoint-xl)">
-			<p className="text-2xl pb-2">Konstperioder</p>
+			<p className="text-2xl pb-2">{t("konst.periods")}</p>
 			<div className="w-lg">
 				<ul className="flex flex-col w-full">
 					{Object.entries(konstperioder).map(
@@ -73,34 +75,16 @@ export default function Konst() {
 					)}
 				</ul>
 			</div>
-			<Accordion title="Konstriktning">
-				En konstriktning är en stil inom konsten. Benämningen används för
-				övergripande stilar som rör många konstnärer och under en längre tid,
-				åtminstone några år. Många av konstriktningarna slutar med -ism (till
-				exempel kubism och futurism), och benämns därför ofta som ismer.
-				Benämningen av de olika konstriktningarna har ibland myntats av de
-				utövande konstnärerna själva (till exempel dadaism och suprematism) och
-				i andra fall av omvärlden och då speciellt konstkritiker (till exempel
-				impressionism och fauvism). I många fall har benämningen uppkommit först
-				efter konstriktningens slut, detta gäller speciellt äldre tiders stilar
-				(till exempel rokoko och manierism).
+			<Accordion title={t("konst.konstriktning")}>
+				{t("konst.konstriktningText")}
 			</Accordion>
-			<Accordion title="Konststilar">
-				Konststil används om stilar oberoende av storlek. Begreppet kan användas
-				såväl för en konstriktning, en lokal tillfällig stil eller en enskild
-				konstnärs stil.
+			<Accordion title={t("konst.konststilar")}>
+				{t("konst.konststilarText")}
 			</Accordion>
-			<Accordion title="Konstskola">
-				Skola används oftast om en lokal undergrupp till en konstriktning. Till
-				exempel var Barbizonskolan en grupp konstnärer inom realismen. Hudson
-				River-skolan och Düsseldorfskolan var varianter under romantiken. I
-				dessa fall används alltså inte ordet "skola" i betydelsen
-				utbildningsanstalt, utan enbart "lokal konststil". Begreppet skola
-				används även inom äldre måleri, till exempel Rubens skola. Det används
-				då som beteckning för en krets konstnärer (eller elever) som studerat
-				för en mästare, eller efterföljare till konstnären.
+			<Accordion title={t("konst.konstskola")}>
+				{t("konst.konstskolaText")}
 			</Accordion>
-			<p className="text-2xl">Konstnärer jag fastnat för</p>
+			<p className="text-2xl">{t("konst.artists")}</p>
 			{Object.entries(artists).map(([artist, { url, image }]) => (
 				<a
 					key={artist}

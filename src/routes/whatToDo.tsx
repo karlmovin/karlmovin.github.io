@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { intressen } from "../data/interests";
 import { sporter } from "../data/sports";
 import type { Forecast, Instant, TimeSerie } from "./weather";
@@ -18,6 +19,7 @@ import type { Forecast, Instant, TimeSerie } from "./weather";
 */
 
 export default function WhatToDo() {
+	const { t } = useTranslation();
 	const [selectedSport, setSelectedSport] = useState("");
 	const [selectedIntresse, setSelectedIntresse] = useState("");
 	const [location, setLocation] = useState({ lat: 59.334591, lon: 18.06324 });
@@ -180,7 +182,7 @@ export default function WhatToDo() {
 		<main className="container max-w-(--breakpoint-xl) place-content-center flex h-dvh items-center flex-col">
 			{selectedSport || selectedIntresse ? (
 				<p className="text-2xl">
-					Du kan till exempel
+					{t("whatToDo.suggestion")}
 					{selectedSport
 						? ` ${sporter[selectedSport].verb} ${
 								sporter[selectedSport].plats[
@@ -190,12 +192,10 @@ export default function WhatToDo() {
 								]
 							}${
 								selectedIntresse
-									? " eller så kan du kanske " +
-										intressen[selectedIntresse].verb +
-										"?"
+									? ` ${t("whatToDo.orMaybe")} ${intressen[selectedIntresse].verb}?`
 									: "?"
 							}`
-						: " " + intressen[selectedIntresse].verb + "?"}
+						: ` ${intressen[selectedIntresse].verb}?`}
 				</p>
 			) : null}
 			<button
@@ -204,8 +204,8 @@ export default function WhatToDo() {
 				onClick={handleButtonClick}
 			>
 				{!selectedSport && !selectedIntresse
-					? "Vad ska jag göra idag?"
-					: "Nä tack, något annat?"}
+					? t("whatToDo.button")
+					: t("whatToDo.tryAgain")}
 			</button>
 		</main>
 	);

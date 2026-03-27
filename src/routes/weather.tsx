@@ -1,5 +1,6 @@
 import parse from "html-react-parser";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export type Instant = {
 	details: {
@@ -53,6 +54,7 @@ export type TimeSerie = {
 };
 
 export default function Weather() {
+	const { t } = useTranslation();
 	const [location, setLocation] = useState({ lat: 59.334591, lon: 18.06324 });
 	const [yrLoc, setYrLoc] = useState({
 		category: { id: "CA01", name: "Capital" },
@@ -128,7 +130,7 @@ export default function Weather() {
 			<div className="flex w-full max-w-200 flex-col rounded-br-xl bg-white dark:bg-gray-800 bg-clip-border p-4 text-gray-700 dark:text-gray-200 shadow-xs">
 				<div className="p-4 mb-2">
 					<h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-900 dark:text-white">
-						{"Väder idag "}
+						{t("weather.title")}{" "}
 						{new Intl.DateTimeFormat("se-SE", {
 							weekday: "long",
 							hour: "2-digit",
@@ -139,7 +141,7 @@ export default function Weather() {
 							href="https://developer.yr.no/doc/GettingStarted/"
 							className="text-blue-600 dark:text-blue-400 hover:underline"
 						>
-							powered by
+							{t("weather.poweredBy")}
 						</a>{" "}
 						<a
 							href="https://www.yr.no/"
@@ -177,7 +179,7 @@ export default function Weather() {
 							textTvWeather[0].content_plain
 								.find((content) => content.includes("för Stockholm"))
 								?.replaceAll("\n", "<br>")
-								.split("Borlänge")[0] ?? "Inget väder",
+								.split("Borlänge")[0] ?? t("weather.noWeather"),
 						)
 					: null}
 			</div>

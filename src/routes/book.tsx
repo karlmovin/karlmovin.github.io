@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router";
 import { books as booksData } from "../data/books.json";
 
@@ -13,16 +14,17 @@ function BookPage() {
 	const slug = useParams<{ slug: string }>().slug;
 	const books = booksData as Book[];
 	const book = books.find((b: Book) => b.slug === slug);
+	const { t } = useTranslation();
 
 	if (!book) {
-		return <p className="text-gray-500 text-sm">Laddar bok...</p>;
+		return <p className="text-gray-500 text-sm">{t("books.loading")}</p>;
 	}
 
 	return (
 		<main className="flex flex-col gap-4 container max-w-(--breakpoint-xl)">
 			<p className="text-2xl text-gray-900 dark:text-gray-100">{book.title}</p>
 			<p className="text-sm text-gray-700 dark:text-gray-300">
-				Författare: {book.author}
+				{t("books.author")}: {book.author}
 			</p>
 			<div className="flex gap-2 flex-wrap">
 				{book.genres.map((genre) => (

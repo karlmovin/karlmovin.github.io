@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { intressen } from "../data/interests";
 import { sporter } from "../data/sports";
 import type { Forecast, Instant, TimeSerie } from "../routes/weather";
@@ -9,6 +10,7 @@ type WhatToDoPopupProps = {
 };
 
 export default function WhatToDoPopup({ isOpen, onClose }: WhatToDoPopupProps) {
+	const { t } = useTranslation();
 	const [selectedSport, setSelectedSport] = useState("");
 	const [selectedIntresse, setSelectedIntresse] = useState("");
 	const [location, setLocation] = useState({ lat: 59.334591, lon: 18.06324 });
@@ -174,7 +176,7 @@ export default function WhatToDoPopup({ isOpen, onClose }: WhatToDoPopupProps) {
 				<div className="text-center">
 					{selectedSport || selectedIntresse ? (
 						<p className="text-xl mb-4 text-gray-900 dark:text-white">
-							Du kan till exempel
+							{t("whatToDo.suggestion")}
 							{selectedSport
 								? ` ${sporter[selectedSport].verb} ${
 										sporter[selectedSport].plats[
@@ -184,12 +186,10 @@ export default function WhatToDoPopup({ isOpen, onClose }: WhatToDoPopupProps) {
 										]
 									}${
 										selectedIntresse
-											? " eller så kan du kanske " +
-												intressen[selectedIntresse].verb +
-												"?"
+											? ` ${t("whatToDo.orMaybe")} ${intressen[selectedIntresse].verb}?`
 											: "?"
 									}`
-								: " " + intressen[selectedIntresse].verb + "?"}
+								: ` ${intressen[selectedIntresse].verb}?`}
 						</p>
 					) : null}
 					<button
@@ -197,8 +197,8 @@ export default function WhatToDoPopup({ isOpen, onClose }: WhatToDoPopupProps) {
 						onClick={handleButtonClick}
 					>
 						{!selectedSport && !selectedIntresse
-							? "Vad ska jag göra idag?"
-							: "Nä tack, något annat?"}
+							? t("whatToDo.button")
+							: t("whatToDo.tryAgain")}
 					</button>
 				</div>
 			</div>

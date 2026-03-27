@@ -1,11 +1,13 @@
+import { useTranslation } from "react-i18next";
 import { notes } from "../data/notes";
 
 function Notes() {
+	const { t } = useTranslation();
 	return (
 		<section>
 			{notes?.length ? (
 				<>
-					<p className="text-2xl">NOTES</p>
+					<p className="text-2xl">{t("sideSection.notes")}</p>
 					<ol>
 						{notes.map((note, index) => (
 							<li key={index}>{note}</li>

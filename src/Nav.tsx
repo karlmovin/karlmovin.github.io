@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router";
 import karl from "./assets/karl.png";
+import LanguageToggle from "./components/LanguageToggle";
 import ThemeToggle from "./components/ThemeToggle";
 import WhatToDoPopup from "./components/WhatToDoPopup";
 
 export default function Nav() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isWhatToDoOpen, setIsWhatToDoOpen] = useState(false);
+	const { t } = useTranslation();
 
 	return (
 		<nav className="bg-white dark:bg-gray-900 shadow-lg">
@@ -39,7 +42,7 @@ export default function Nav() {
 									}`
 								}
 							>
-								Packlistor
+								{t("nav.packlistor")}
 							</NavLink>
 							<NavLink
 								to="../books"
@@ -51,7 +54,7 @@ export default function Nav() {
 									}`
 								}
 							>
-								Böcker
+								{t("nav.books")}
 							</NavLink>
 							<NavLink
 								to="../bookmarks"
@@ -63,7 +66,7 @@ export default function Nav() {
 									}`
 								}
 							>
-								Bokmärken
+								{t("nav.bookmarks")}
 							</NavLink>
 							<NavLink
 								to="../konst"
@@ -75,7 +78,7 @@ export default function Nav() {
 									}`
 								}
 							>
-								Konst
+								{t("nav.art")}
 							</NavLink>
 							<NavLink
 								to="../weather"
@@ -87,7 +90,7 @@ export default function Nav() {
 									}`
 								}
 							>
-								Väder
+								{t("nav.weather")}
 							</NavLink>
 							<NavLink
 								to="../blog"
@@ -99,7 +102,7 @@ export default function Nav() {
 									}`
 								}
 							>
-								Blog
+								{t("nav.blog")}
 							</NavLink>
 							<NavLink
 								to="../news"
@@ -111,7 +114,7 @@ export default function Nav() {
 									}`
 								}
 							>
-								Text-TV
+								{t("nav.news")}
 							</NavLink>
 						</div>
 					</div>
@@ -120,8 +123,9 @@ export default function Nav() {
 							onClick={() => setIsWhatToDoOpen(true)}
 							className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
 						>
-							Vad ska jag göra idag?
+							{t("nav.whatToDo")}
 						</button>
+						<LanguageToggle />
 						<ThemeToggle />
 					</div>
 					<div className="-mr-2 flex items-center sm:hidden">
@@ -130,7 +134,7 @@ export default function Nav() {
 							className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-gray-500"
 							aria-expanded="false"
 						>
-							<span className="sr-only">Öppna huvudmeny</span>
+							<span className="sr-only">{t("nav.openMenu")}</span>
 							{!isOpen ? (
 								<svg
 									className="block h-6 w-6"
@@ -182,7 +186,7 @@ export default function Nav() {
 								}`
 							}
 						>
-							Packlistor
+							{t("nav.packlistor")}
 						</NavLink>
 						<NavLink
 							to="../books"
@@ -194,7 +198,7 @@ export default function Nav() {
 								}`
 							}
 						>
-							Böcker
+							{t("nav.books")}
 						</NavLink>
 						<NavLink
 							to="../bookmarks"
@@ -206,7 +210,7 @@ export default function Nav() {
 								}`
 							}
 						>
-							Bokmärken
+							{t("nav.bookmarks")}
 						</NavLink>
 						<NavLink
 							to="../konst"
@@ -218,7 +222,7 @@ export default function Nav() {
 								}`
 							}
 						>
-							Konst
+							{t("nav.art")}
 						</NavLink>
 						<NavLink
 							to="../weather"
@@ -230,7 +234,7 @@ export default function Nav() {
 								}`
 							}
 						>
-							Väder
+							{t("nav.weather")}
 						</NavLink>
 						<NavLink
 							to="../blog"
@@ -242,7 +246,7 @@ export default function Nav() {
 								}`
 							}
 						>
-							Blog
+							{t("nav.blog")}
 						</NavLink>
 						<NavLink
 							to="../news"
@@ -254,7 +258,7 @@ export default function Nav() {
 								}`
 							}
 						>
-							Text-TV
+							{t("nav.news")}
 						</NavLink>
 						<button
 							onClick={() => {
@@ -263,11 +267,12 @@ export default function Nav() {
 							}}
 							className="block w-full text-left pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
 						>
-							Vad ska jag göra idag?
+							{t("nav.whatToDo")}
 						</button>
 					</div>
 					<div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
-						<div className="flex items-center px-4">
+						<div className="flex items-center px-4 gap-4">
+							<LanguageToggle />
 							<ThemeToggle />
 						</div>
 					</div>

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { isRouteErrorResponse, useRouteError } from "react-router";
 
 function errorMessage(error: unknown): string {
@@ -15,6 +16,7 @@ function errorMessage(error: unknown): string {
 
 export default function ErrorPage() {
 	const error = useRouteError();
+	const { t } = useTranslation();
 	console.error(errorMessage(error));
 
 	return (
@@ -23,13 +25,13 @@ export default function ErrorPage() {
 				<h1 className="text-9xl font-extrabold text-white tracking-widest">
 					404
 				</h1>
-				<div className=" text-white px-6 text-sm ">Page Not Found</div>
+				<div className=" text-white px-6 text-sm ">{t("error.pageNotFound")}</div>
 				<button className="mt-5">
 					<a className="relative inline-block text-sm font-medium text-white group active:text-white focus:outline-hidden focus:ring-3">
 						<span className="absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-gray-50 group-hover:translate-y-0 group-hover:translate-x-0"></span>
 
 						<span className="relative block px-8 py-3 bg-gray-700 border border-current">
-							<a href="/">Hem</a>
+							<a href="/">{t("error.home")}</a>
 						</span>
 					</a>
 				</button>

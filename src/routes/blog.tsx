@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type PostAttributes = {
 	title: string;
@@ -56,7 +57,8 @@ function Post({
 	searchTerm: string;
 }) {
 	const [isTruncated, setIsTruncated] = useState(true);
-	const formattedDate = new Date(post.date).toLocaleDateString("sv-SE", {
+	const { t, i18n } = useTranslation();
+	const formattedDate = new Date(post.date).toLocaleDateString(i18n.language === "sv" ? "sv-SE" : "en-US", {
 		year: "numeric",
 		month: "long",
 		day: "numeric",
@@ -98,14 +100,14 @@ function Post({
 				>
 					{isTruncated ? (
 						<>
-							Visa mer
+							{t("blog.showMore")}
 							<span className="material-symbols-outlined text-sm">
 								expand_more
 							</span>
 						</>
 					) : (
 						<>
-							Visa mindre
+							{t("blog.showLess")}
 							<span className="material-symbols-outlined text-sm">
 								expand_less
 							</span>
@@ -120,6 +122,7 @@ function Post({
 function Blog() {
 	const [searchTerm, setSearchTerm] = useState("");
 	const [selectedTags, setSelectedTags] = useState<string[]>([]);
+	const { t } = useTranslation();
 
 	const allTags = useMemo(() => {
 		const tags = new Set<string>();
@@ -153,13 +156,13 @@ function Blog() {
 		<main className="flex flex-col gap-6 py-8 container max-w-(--breakpoint-xl) mx-auto px-4">
 			<div className="flex flex-col gap-4">
 				<h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-					Någonstans måste jag ju skriva av mig...
+					{t("blog.title")}
 				</h1>
 
 				<div className="flex flex-col gap-4">
 					<input
 						type="text"
-						placeholder="Sök i inlägg..."
+						placeholder={t("blog.searchPlaceholder")}
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
 						className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
@@ -187,7 +190,7 @@ function Blog() {
 
 			{filteredPosts.length === 0 ? (
 				<div className="text-center py-8 text-gray-600 dark:text-gray-400">
-					Inga inlägg hittades
+					{t("blog.noResults")}
 				</div>
 			) : (
 				<ul className="flex flex-col gap-6">
