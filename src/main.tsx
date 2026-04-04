@@ -16,6 +16,7 @@ import BookmarksPage from "./routes/links.tsx";
 import News from "./routes/news.tsx";
 import Weather from "./routes/weather.tsx";
 import WhatToDo from "./routes/whatToDo.tsx";
+import Woodworking from "./routes/woodworking.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
 					{
 						path: "news",
 						element: <News />,
+					},
+					{
+						path: "woodworking",
+						element: <Woodworking />,
 					},
 				],
 			},

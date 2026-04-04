@@ -10,7 +10,8 @@
 		"whatToDo": "What should I do today?",
 		"openMenu": "Open main menu",
 		"tools": "Tools",
-		"information": "Information"
+		"information": "Information",
+		"woodworking": "Woodworking"
 	},
 	"theme": {
 		"toggle": "Toggle between light and dark theme"
@@ -64,6 +65,21 @@
 		"orMaybe": "or maybe you could",
 		"button": "What should I do today?",
 		"tryAgain": "No thanks, something else?"
+	},
+	"woodworking": {
+		"title": "Woodworking",
+		"plannedProjects": "Planned Projects",
+		"resources": "Resources",
+		"courses": "Courses",
+		"woodworkers": "Woodworkers",
+		"inspiration": "Inspiration",
+		"japanInspo": "Japan Inspiration",
+		"project1": "Box with lid",
+		"project2": "Stool",
+		"project3": "Workbench",
+		"project4": "'All the world's games'",
+		"project5": "Watch holder",
+		"project6": "Bird feeder"
 	},
 	"error": {
 		"pageNotFound": "Page Not Found",

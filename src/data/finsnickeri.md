@@ -1,14 +1,13 @@
 # Woodworking
 
-Projekt:
+Planerade Projekt:
 
 1. Låda med lock
 2. Pall
 3. Snickarbord
-4. Dm screen
-5. All världens spel
-6. Klockhållare
-7. Fågelmatare
+4. All världens spel
+5. Klockhållare
+6. Fågelmatare
 
 [https://www.svenskttra.se/publikationer-start/publikationer/snickerihandbok/](https://www.svenskttra.se/publikationer-start/publikationer/snickerihandbok/)
 
@@ -46,11 +45,6 @@ Yasuhiro TV
 
 [snickerihandbok.pdf](Woodworking%2021f9e9090b644dc884ef498c78a4d2ec/snickerihandbok.pdf)
 
-### Verktygsvaruhus
-
-https://www.verktygsvaruhuset.se/product/bahco-skruvmejsel-set-8-delar
-
-Proffsmagasinet
 
 ### Japan-inspo:
 

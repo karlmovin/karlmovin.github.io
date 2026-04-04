@@ -10,7 +10,8 @@
 		"whatToDo": "Vad ska jag g\u00f6ra idag?",
 		"openMenu": "\u00d6ppna huvudmeny",
 		"tools": "Verktyg",
-		"information": "Information"
+		"information": "Information",
+		"woodworking": "Finsnickeri"
 	},
 	"theme": {
 		"toggle": "V\u00e4xla mellan ljust och m\u00f6rkt tema"
@@ -64,6 +65,21 @@
 		"orMaybe": "eller s\u00e5 kan du kanske",
 		"button": "Vad ska jag g\u00f6ra idag?",
 		"tryAgain": "N\u00e4 tack, n\u00e5got annat?"
+	},
+	"woodworking": {
+		"title": "Finsnickeri",
+		"plannedProjects": "Planerade Projekt",
+		"resources": "Resurser",
+		"courses": "Kurser",
+		"woodworkers": "Finsnickare",
+		"inspiration": "Inspiration",
+		"japanInspo": "Japan-inspo",
+		"project1": "Låda med lock",
+		"project2": "Pall",
+		"project3": "Snickarbord",
+		"project4": "All världens spel",
+		"project5": "Klockhållare",
+		"project6": "Fågelmatare"
 	},
 	"error": {
 		"pageNotFound": "Page Not Found",

@@ -204,6 +204,12 @@ export default function Nav() {
 								>
 									{t("nav.bookmarks")}
 								</DropdownLink>
+								<DropdownLink
+									to="../woodworking"
+									onClick={closeDropdown}
+								>
+									{t("nav.woodworking")}
+								</DropdownLink>
 							</NavDropdown>
 							<NavLink
 								to="../blog"
@@ -368,6 +374,14 @@ export default function Nav() {
 									}
 								>
 									{t("nav.bookmarks")}
+								</NavLink>
+								<NavLink
+									to="../woodworking"
+									className={({ isActive }: { isActive: boolean }) =>
+										`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
+									}
+								>
+									Finsnickeri
 								</NavLink>
 							</div>
 						)}
