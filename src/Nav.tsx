@@ -146,7 +146,7 @@ export default function Nav() {
 									alt="Karl"
 								/>
 								<span className="self-center text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-									Karl Movin
+									GAS - globally available stuff
 								</span>
 							</NavLink>
 						</div>
