@@ -2,6 +2,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+:root:not(.dark) {
+	--color-white: #f5f0e1;
+	--color-gray-50: #ede8d6;
+	--color-gray-100: #e2dcc8;
+	--color-gray-200: #d4ccb3;
+	--color-gray-300: #b5aa8f;
+}
+
 @utility container {
 	margin-inline: auto;
 	padding-inline: 2rem;
@@ -14,7 +22,7 @@
 	@keyframes color-pulse {
 		0%,
 		100% {
-			background-color: rgb(255, 255, 255);
+			background-color: #f5f0e1;
 			color: rgb(31, 41, 55);
 		}
 		50% {
