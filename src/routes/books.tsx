@@ -93,17 +93,25 @@ export default function Books() {
 		);
 	};
 
+	const filteredBooks = (books: Book[]) =>
+		books.filter((book) =>
+			genreFilters?.length === 0
+				? true
+				: book.genres.some((genre) => genreFilters.includes(genre)),
+		);
+
 	return (
 		<main className="flex flex-col gap-4 container max-w-(--breakpoint-xl)">
 			{booksByStatus.map(({ title, books }) => (
 				<section key={title}>
-					<p className="text-2xl">{title}</p>
+					<div className="flex items-center gap-3 mb-1">
+						<p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 shrink-0">
+							{title} ({filteredBooks(books).length})
+						</p>
+						<hr className="flex-1 border-gray-200 dark:border-gray-700" />
+					</div>
 					<BookList
-						books={books.filter((book) =>
-							genreFilters?.length === 0
-								? true
-								: book.genres.some((genre) => genreFilters.includes(genre)),
-						)}
+						books={filteredBooks(books)}
 						genreFilters={genreFilters}
 						handleGenreFilter={handleGenreFilter}
 					/>

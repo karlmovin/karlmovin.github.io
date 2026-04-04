@@ -34,11 +34,17 @@ function BookPage() {
 			<ul className="flex flex-col w-full max-w-lg gap-3">
 				{book.notes.map((note, index) => (
 					<li
-						className="flex gap-4 pt-2 pb-4 bg-slate-300 dark:bg-slate-700 border-l-2 border-slate-600 dark:border-slate-400"
+						className="pt-2 pb-4 bg-gray-100 dark:bg-gray-700 border-l-2 border-gray-400 dark:border-gray-400"
 						key={index}
 					>
-						<p className="before:content-['\u201C\u00a0'] after:content-['\u00a0\u201D'] italic mx-2 font-sans antialiased text-gray-800 dark:text-gray-200">
-							{note}
+						<p className="italic mx-2 font-sans antialiased text-gray-800 dark:text-gray-200 break-words">
+							{note.startsWith("http") ? (
+								<a href={note} target="_blank" rel="noreferrer" className="not-italic underline text-blue-700 dark:text-blue-400 break-all">
+									{decodeURIComponent(note)}
+								</a>
+							) : (
+								<>&ldquo; {note} &rdquo;</>
+							)}
 						</p>
 					</li>
 				))}

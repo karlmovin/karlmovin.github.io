@@ -19,7 +19,9 @@ export default function Root() {
 	return (
 		<div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
 			<Nav />
-			<Outlet />
+			<div className="pt-6">
+				<Outlet />
+			</div>
 		</div>
 	);
 }
