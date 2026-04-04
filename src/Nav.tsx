@@ -4,7 +4,17 @@ import { NavLink } from "react-router";
 import logo from "./assets/logo.svg";
 import LanguageToggle from "./components/LanguageToggle";
 import ThemeToggle from "./components/ThemeToggle";
-import WhatToDoPopup from "./components/WhatToDoPopup";
+import WhatToDo from "./components/WhatToDoPopup";
+
+type NavItem =
+	| { type: "link"; to: string; label: string }
+	| { type: "external"; href: string; label: string };
+
+type NavSection = {
+	id: string;
+	label: string;
+	items: NavItem[];
+};
 
 function ChevronDown({ className }: { className?: string }) {
 	return (
@@ -71,52 +81,104 @@ function NavDropdown({
 	);
 }
 
-function DropdownLink({
-	to,
-	onClick,
-	children,
-}: {
-	to: string;
-	onClick: () => void;
-	children: React.ReactNode;
-}) {
-	return (
-		<NavLink
-			to={to}
-			onClick={onClick}
-			className={({ isActive }: { isActive: boolean }) =>
-				`block px-4 py-2 text-sm ${
-					isActive
-						? "bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white"
-						: "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white"
-				}`
-			}
-		>
-			{children}
-		</NavLink>
+const dropdownItemClass =
+	"block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white";
+const dropdownItemActiveClass =
+	"block px-4 py-2 text-sm bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white";
+
+const mobileItemClass =
+	"block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white";
+const mobileItemActiveClass =
+	"block pl-3 pr-4 py-2 border-l-4 text-base font-medium bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white";
+
+function DesktopDropdownItems({
+	items,
+	onClose,
+}: { items: NavItem[]; onClose: () => void }) {
+	return items.map((item) =>
+		item.type === "link" ? (
+			<NavLink
+				key={item.to}
+				to={`../${item.to}`}
+				onClick={onClose}
+				className={({ isActive }: { isActive: boolean }) =>
+					isActive ? dropdownItemActiveClass : dropdownItemClass
+				}
+			>
+				{item.label}
+			</NavLink>
+		) : (
+			<a
+				key={item.href}
+				href={item.href}
+				target="_blank"
+				rel="noopener noreferrer"
+				onClick={onClose}
+				className={dropdownItemClass}
+			>
+				{item.label} ↗
+			</a>
+		),
 	);
 }
 
-function DropdownButton({
-	onClick,
-	children,
+function MobileItems({ items }: { items: NavItem[] }) {
+	return items.map((item) =>
+		item.type === "link" ? (
+			<NavLink
+				key={item.to}
+				to={`../${item.to}`}
+				className={({ isActive }: { isActive: boolean }) =>
+					isActive ? mobileItemActiveClass : mobileItemClass
+				}
+			>
+				{item.label}
+			</NavLink>
+		) : (
+			<a
+				key={item.href}
+				href={item.href}
+				target="_blank"
+				rel="noopener noreferrer"
+				className={mobileItemClass}
+			>
+				{item.label} ↗
+			</a>
+		),
+	);
+}
+
+function MobileSection({
+	section,
+	isOpen,
+	onToggle,
 }: {
-	onClick: () => void;
-	children: React.ReactNode;
+	section: NavSection;
+	isOpen: boolean;
+	onToggle: () => void;
 }) {
 	return (
-		<button
-			onClick={onClick}
-			className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white"
-		>
-			{children}
-		</button>
+		<>
+			<button
+				onClick={onToggle}
+				className="flex items-center justify-between w-full pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+			>
+				{section.label}
+				<ChevronDown
+					className={`h-5 w-5 transition-transform ${isOpen ? "rotate-180" : ""}`}
+				/>
+			</button>
+			{isOpen && (
+				<div className="pl-6 space-y-1">
+					<MobileItems items={section.items} />
+				</div>
+			)}
+		</>
 	);
 }
 
 export default function Nav() {
 	const [isOpen, setIsOpen] = useState(false);
-	const [isWhatToDoOpen, setIsWhatToDoOpen] = useState(false);
 	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 	const [openMobileSection, setOpenMobileSection] = useState<string | null>(
 		null,
@@ -125,10 +187,33 @@ export default function Nav() {
 
 	const closeDropdown = () => setOpenDropdown(null);
 
-	const mobileInactiveClass =
-		"border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white";
-	const mobileActiveClass =
-		"bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white";
+	const sections: NavSection[] = [
+		{
+			id: "tools",
+			label: t("nav.tools"),
+			items: [
+				{ type: "link", to: "weather", label: t("nav.weather") },
+				{ type: "link", to: "news", label: t("nav.news") },
+				{ type: "link", to: "packing_lists", label: t("nav.packing_lists") },
+				{ type: "external", href: "https://sl-map.gunnar.se/", label: t("nav.slMap") },
+			],
+		},
+		{
+			id: "information",
+			label: t("nav.information"),
+			items: [
+				{ type: "link", to: "art", label: t("nav.art") },
+				{ type: "link", to: "books", label: t("nav.books") },
+				{ type: "link", to: "links", label: t("nav.links") },
+				{ type: "link", to: "woodworking", label: t("nav.woodworking") },
+				{ type: "link", to: "rpg", label: t("nav.rpg") },
+			],
+		},
+	];
+
+	const topLevelLinks: NavItem[] = [
+		{ type: "link", to: "blog", label: t("nav.blog") },
+	];
 
 	return (
 		<nav className="bg-white dark:bg-gray-900 shadow-lg">
@@ -147,100 +232,41 @@ export default function Nav() {
 							</NavLink>
 						</div>
 						<div className="hidden sm:ml-6 sm:flex sm:space-x-8 sm:items-stretch">
-							<NavDropdown
-								label={t("nav.tools")}
-								id="tools"
-								openDropdown={openDropdown}
-								setOpenDropdown={setOpenDropdown}
-							>
-								<DropdownLink
-									to="../weather"
-									onClick={closeDropdown}
+							{sections.map((section) => (
+								<NavDropdown
+									key={section.id}
+									label={section.label}
+									id={section.id}
+									openDropdown={openDropdown}
+									setOpenDropdown={setOpenDropdown}
 								>
-									{t("nav.weather")}
-								</DropdownLink>
-								<DropdownLink
-									to="../news"
-									onClick={closeDropdown}
-								>
-									{t("nav.news")}
-								</DropdownLink>
-								<DropdownLink
-									to="../packing_lists"
-									onClick={closeDropdown}
-								>
-									{t("nav.packing_lists")}
-								</DropdownLink>
-								<DropdownButton
-									onClick={() => {
-										setIsWhatToDoOpen(true);
-										closeDropdown();
-									}}
-								>
-									{t("nav.whatToDo")}
-								</DropdownButton>
-								<a
-									href="https://sl-map.gunnar.se/"
-									target="_blank"
-									rel="noopener noreferrer"
-									onClick={closeDropdown}
-									className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white"
-								>
-									{t("nav.slMap")} ↗
-								</a>
-							</NavDropdown>
-							<NavDropdown
-								label={t("nav.information")}
-								id="information"
-								openDropdown={openDropdown}
-								setOpenDropdown={setOpenDropdown}
-							>
-								<DropdownLink
-									to="../art"
-									onClick={closeDropdown}
-								>
-									{t("nav.art")}
-								</DropdownLink>
-								<DropdownLink
-									to="../books"
-									onClick={closeDropdown}
-								>
-									{t("nav.books")}
-								</DropdownLink>
-								<DropdownLink
-									to="../bookmarks"
-									onClick={closeDropdown}
-								>
-									{t("nav.bookmarks")}
-								</DropdownLink>
-								<DropdownLink
-									to="../woodworking"
-									onClick={closeDropdown}
-								>
-									{t("nav.woodworking")}
-								</DropdownLink>
-								<DropdownLink
-									to="../rpg"
-									onClick={closeDropdown}
-								>
-									{t("nav.rpg")}
-								</DropdownLink>
-							</NavDropdown>
-							<NavLink
-								to="../blog"
-								className={({ isActive }: { isActive: boolean }) =>
-									`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-										isActive
-											? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
-											: "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
-									}`
-								}
-							>
-								{t("nav.blog")}
-							</NavLink>
+									<DesktopDropdownItems
+										items={section.items}
+										onClose={closeDropdown}
+									/>
+								</NavDropdown>
+							))}
+							{topLevelLinks.map((item) =>
+								item.type === "link" ? (
+									<NavLink
+										key={item.to}
+										to={`../${item.to}`}
+										className={({ isActive }: { isActive: boolean }) =>
+											`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
+												isActive
+													? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
+													: "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+											}`
+										}
+									>
+										{item.label}
+									</NavLink>
+								) : null,
+							)}
 						</div>
 					</div>
 					<div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
+						<WhatToDo />
 						<LanguageToggle />
 						<ThemeToggle />
 					</div>
@@ -294,152 +320,43 @@ export default function Nav() {
 			{isOpen && (
 				<div className="sm:hidden">
 					<div className="pt-2 pb-3 space-y-1">
-						{/* Tools section */}
-						<button
-							onClick={() =>
-								setOpenMobileSection(
-									openMobileSection === "tools"
-										? null
-										: "tools",
-								)
-							}
-							className="flex items-center justify-between w-full pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
-						>
-							{t("nav.tools")}
-							<ChevronDown
-								className={`h-5 w-5 transition-transform ${openMobileSection === "tools" ? "rotate-180" : ""}`}
+						{sections.map((section) => (
+							<MobileSection
+								key={section.id}
+								section={section}
+								isOpen={openMobileSection === section.id}
+								onToggle={() =>
+									setOpenMobileSection(
+										openMobileSection === section.id
+											? null
+											: section.id,
+									)
+								}
 							/>
-						</button>
-						{openMobileSection === "tools" && (
-							<div className="pl-6 space-y-1">
+						))}
+						{topLevelLinks.map((item) =>
+							item.type === "link" ? (
 								<NavLink
-									to="../weather"
+									key={item.to}
+									to={`../${item.to}`}
 									className={({ isActive }: { isActive: boolean }) =>
-										`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
+										isActive ? mobileItemActiveClass : mobileItemClass
 									}
 								>
-									{t("nav.weather")}
+									{item.label}
 								</NavLink>
-								<NavLink
-									to="../news"
-									className={({ isActive }: { isActive: boolean }) =>
-										`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
-									}
-								>
-									{t("nav.news")}
-								</NavLink>
-								<NavLink
-									to="../packing_lists"
-									className={({ isActive }: { isActive: boolean }) =>
-										`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
-									}
-								>
-									{t("nav.packing_lists")}
-								</NavLink>
-								<button
-									onClick={() => {
-										setIsWhatToDoOpen(true);
-										setIsOpen(false);
-									}}
-									className="block w-full text-left pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
-								>
-									{t("nav.whatToDo")}
-								</button>
-								<a
-									href="https://sl-map.gunnar.se/"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
-								>
-									{t("nav.slMap")} ↗
-								</a>
-							</div>
+							) : null,
 						)}
-
-						{/* Information section */}
-						<button
-							onClick={() =>
-								setOpenMobileSection(
-									openMobileSection === "information"
-										? null
-										: "information",
-								)
-							}
-							className="flex items-center justify-between w-full pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
-						>
-							{t("nav.information")}
-							<ChevronDown
-								className={`h-5 w-5 transition-transform ${openMobileSection === "information" ? "rotate-180" : ""}`}
-							/>
-						</button>
-						{openMobileSection === "information" && (
-							<div className="pl-6 space-y-1">
-								<NavLink
-									to="../art"
-									className={({ isActive }: { isActive: boolean }) =>
-										`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
-									}
-								>
-									{t("nav.art")}
-								</NavLink>
-								<NavLink
-									to="../books"
-									className={({ isActive }: { isActive: boolean }) =>
-										`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
-									}
-								>
-									{t("nav.books")}
-								</NavLink>
-								<NavLink
-									to="../bookmarks"
-									className={({ isActive }: { isActive: boolean }) =>
-										`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
-									}
-								>
-									{t("nav.bookmarks")}
-								</NavLink>
-								<NavLink
-									to="../woodworking"
-									className={({ isActive }: { isActive: boolean }) =>
-										`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
-									}
-								>
-									{t("nav.woodworking")}
-								</NavLink>
-								<NavLink
-									to="../rpg"
-									className={({ isActive }: { isActive: boolean }) =>
-										`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
-									}
-								>
-									{t("nav.rpg")}
-								</NavLink>
-							</div>
-						)}
-
-						{/* Blog */}
-						<NavLink
-							to="../blog"
-							className={({ isActive }: { isActive: boolean }) =>
-								`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${isActive ? mobileActiveClass : mobileInactiveClass}`
-							}
-						>
-							{t("nav.blog")}
-						</NavLink>
 					</div>
 					<div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
 						<div className="flex items-center px-4 gap-4">
+							<WhatToDo />
 							<LanguageToggle />
 							<ThemeToggle />
 						</div>
 					</div>
 				</div>
 			)}
-
-			<WhatToDoPopup
-				isOpen={isWhatToDoOpen}
-				onClose={() => setIsWhatToDoOpen(false)}
-			/>
 		</nav>
 	);
 }

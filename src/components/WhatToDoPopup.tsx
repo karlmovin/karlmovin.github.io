@@ -1,18 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { t as tData } from "../data/i18n-helpers";
 import { interests } from "../data/interests";
 import { sports } from "../data/sports";
 import type { Forecast, Instant, TimeSerie } from "../routes/weather";
 
-type WhatToDoPopupProps = {
-	isOpen: boolean;
-	onClose: () => void;
-};
-
-export default function WhatToDoPopup({ isOpen, onClose }: WhatToDoPopupProps) {
+export default function WhatToDo() {
 	const { t, i18n } = useTranslation();
 	const lang = i18n.language;
+	const [isOpen, setIsOpen] = useState(false);
 	const [selectedSport, setSelectedSport] = useState("");
 	const [selectedInterest, setSelectedIntresse] = useState("");
 	const [location, setLocation] = useState({ lat: 59.334591, lon: 18.06324 });
@@ -26,6 +22,7 @@ export default function WhatToDoPopup({ isOpen, onClose }: WhatToDoPopupProps) {
 			tomorrow: Forecast;
 		};
 	} | null>(null);
+	const ref = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		if ("geolocation" in navigator) {
@@ -102,7 +99,17 @@ export default function WhatToDoPopup({ isOpen, onClose }: WhatToDoPopupProps) {
 		}
 	}, [location]);
 
-	const handleButtonClick = () => {
+	useEffect(() => {
+		function handleClickOutside(event: MouseEvent) {
+			if (ref.current && !ref.current.contains(event.target as Node)) {
+				setIsOpen(false);
+			}
+		}
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => document.removeEventListener("mousedown", handleClickOutside);
+	}, []);
+
+	const rollSuggestion = () => {
 		const currentMonth = new Date().getMonth() + 1;
 		const currentHour = new Date().getHours();
 		if (!weather) return;
@@ -124,8 +131,8 @@ export default function WhatToDoPopup({ isOpen, onClose }: WhatToDoPopupProps) {
 			);
 		});
 
-		const randomIndex = Math.floor(Math.random() * availableSports.length);
-		const randomSport = availableSports[randomIndex];
+		const randomSport =
+			availableSports[Math.floor(Math.random() * availableSports.length)];
 		setSelectedSport(randomSport);
 
 		const availableInterests = Object.keys(interests).filter((interest) => {
@@ -136,76 +143,63 @@ export default function WhatToDoPopup({ isOpen, onClose }: WhatToDoPopupProps) {
 				currentHour <= interestData.hoursOfDay.to
 			);
 		});
-		const randomInterestIndex = Math.floor(
-			Math.random() * availableInterests.length,
-		);
-		const randomInterest = availableInterests[randomInterestIndex];
+		const randomInterest =
+			availableInterests[
+				Math.floor(Math.random() * availableInterests.length)
+			];
 		setSelectedIntresse(randomInterest);
 	};
 
-	const handleBackdropClick = (e: React.MouseEvent) => {
-		if (e.target === e.currentTarget) {
-			onClose();
+	const handleClick = () => {
+		if (!isOpen) {
+			setIsOpen(true);
+			rollSuggestion();
+		} else {
+			rollSuggestion();
 		}
 	};
 
-	if (!isOpen) return null;
+	const suggestion =
+		selectedSport || selectedInterest
+			? `${t("whatToDo.suggestion")}${
+					selectedSport
+						? ` ${tData(sports[selectedSport].verb, lang)} ${tData(
+								sports[selectedSport].places[
+									Math.floor(
+										Math.random() * sports[selectedSport].places.length,
+									)
+								],
+								lang,
+							)}${
+								selectedInterest
+									? ` ${t("whatToDo.orMaybe")} ${tData(interests[selectedInterest].verb, lang)}?`
+									: "?"
+							}`
+						: ` ${tData(interests[selectedInterest].verb, lang)}?`
+				}`
+			: null;
 
 	return (
-		<div
-			className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-			onClick={handleBackdropClick}
-		>
-			<div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full mx-4 relative">
-				<button
-					onClick={onClose}
-					className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-				>
-					<svg
-						className="w-6 h-6"
-						fill="none"
-						stroke="currentColor"
-						viewBox="0 0 24 24"
-					>
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth={2}
-							d="M6 18L18 6M6 6l12 12"
-						/>
-					</svg>
-				</button>
-
-				<div className="text-center">
-					{selectedSport || selectedInterest ? (
-						<p className="text-xl mb-4 text-gray-900 dark:text-white">
-							{t("whatToDo.suggestion")}
-							{selectedSport
-								? ` ${tData(sports[selectedSport].verb, lang)} ${tData(
-										sports[selectedSport].places[
-											Math.floor(
-												Math.random() * sports[selectedSport].places.length,
-											)
-										],
-										lang,
-									)}${
-										selectedInterest
-											? ` ${t("whatToDo.orMaybe")} ${tData(interests[selectedInterest].verb, lang)}?`
-											: "?"
-									}`
-								: ` ${tData(interests[selectedInterest].verb, lang)}?`}
-						</p>
-					) : null}
+		<div className="relative" ref={ref}>
+			<button
+				onClick={handleClick}
+				className="px-2 py-1 text-xs font-bold tracking-wide rounded bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors"
+			>
+				WTFTODO
+			</button>
+			{isOpen && suggestion && (
+				<div className="absolute right-0 top-full mt-2 w-72 rounded-lg shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 z-50">
+					<p className="text-sm text-gray-900 dark:text-white mb-3">
+						{suggestion}
+					</p>
 					<button
-						className="px-4 py-2 rounded-lg bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900 font-medium transition-colors"
-						onClick={handleButtonClick}
+						onClick={rollSuggestion}
+						className="text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
 					>
-						{!selectedSport && !selectedInterest
-							? t("whatToDo.button")
-							: t("whatToDo.tryAgain")}
+						{t("whatToDo.tryAgain")}
 					</button>
 				</div>
-			</div>
+			)}
 		</div>
 	);
 }
