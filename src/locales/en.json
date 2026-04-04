@@ -95,8 +95,9 @@
 		"project6": "Bird feeder"
 	},
 	"error": {
-		"pageNotFound": "Page Not Found",
-		"home": "Home"
+		"pageNotFound": "Page not found",
+		"redirecting": "Redirecting to home in {{seconds}}s...",
+		"home": "Go home now"
 	},
 	"sideSection": {
 		"notes": "NOTES"

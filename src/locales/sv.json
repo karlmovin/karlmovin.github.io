@@ -95,8 +95,9 @@
 		"project6": "Fågelmatare"
 	},
 	"error": {
-		"pageNotFound": "Page Not Found",
-		"home": "Hem"
+		"pageNotFound": "Sidan hittades inte",
+		"redirecting": "Omdirigerar till startsidan om {{seconds}}s...",
+		"home": "Till startsidan"
 	},
 	"sideSection": {
 		"notes": "NOTES"
