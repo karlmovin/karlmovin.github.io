@@ -12,7 +12,8 @@
 		"tools": "Verktyg",
 		"information": "Information",
 		"slMap": "SL-karta",
-		"woodworking": "Finsnickeri"
+		"woodworking": "Finsnickeri",
+		"rpg": "Rollspel"
 	},
 	"theme": {
 		"toggle": "V\u00e4xla mellan ljust och m\u00f6rkt tema"
@@ -66,6 +67,18 @@
 		"orMaybe": "eller s\u00e5 kan du kanske",
 		"button": "Vad ska jag g\u00f6ra idag?",
 		"tryAgain": "N\u00e4 tack, n\u00e5got annat?"
+	},
+	"rpg": {
+		"title": "Rollspel",
+		"campaignSheet": "Kampanjblad",
+		"assets": "Resurser",
+		"tools": "Verktyg",
+		"dmStuff": "DM-material",
+		"blogs": "Bloggar",
+		"art": "Konst",
+		"miniatures": "Miniatyrer",
+		"maps": "Kartor",
+		"alternativeRpgs": "Alternativa rollspel"
 	},
 	"woodworking": {
 		"title": "Finsnickeri",

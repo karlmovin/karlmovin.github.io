@@ -17,6 +17,7 @@ import News from "./routes/news.tsx";
 import Weather from "./routes/weather.tsx";
 import WhatToDo from "./routes/whatToDo.tsx";
 import Woodworking from "./routes/woodworking.tsx";
+import Rpg from "./routes/rpg.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
 					{
 						path: "woodworking",
 						element: <Woodworking />,
+					},
+					{
+						path: "rpg",
+						element: <Rpg />,
 					},
 				],
 			},
