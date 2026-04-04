@@ -2,133 +2,57 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { type Bookmark, bookmarks as bookmarksData } from "../data/bookmarks";
 
-function Card({
-	title,
-	description,
-	url: href,
-	tags,
+function BookmarkList({
+	bookmarks,
 	tagFilters,
 	handleTagFilter,
 }: {
-	title: string;
-	description?: string;
-	url: string;
-	tags: string[];
+	bookmarks: Bookmark[];
 	tagFilters: string[];
 	handleTagFilter: (checked: boolean, tag: string) => void;
 }) {
-	const { t } = useTranslation();
+	if (bookmarks.length === 0) return null;
 	return (
-		<div className="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-lg shadow-xs hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 w-[300px] h-[280px]">
-			<div className="p-6 overflow-hidden">
-				<h5 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2">
-					{title}
-				</h5>
-				{description && (
-					<p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
-						{description}
-					</p>
-				)}
-			</div>
-			<div className="flex flex-col gap-4 p-6 pt-0">
-				<div className="flex flex-wrap gap-2">
-					{tags.map((tag) => (
-						<button
-							key={tag}
-							className={`px-3 py-1 rounded-full text-sm transition-colors ${
-								tagFilters.includes(tag)
-									? "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"
-									: "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
-							}`}
-							onClick={() => handleTagFilter(!tagFilters.includes(tag), tag)}
-						>
-							{tag}
-						</button>
-					))}
-				</div>
-				<a
-					href={href}
-					target="_blank"
-					rel="noopener noreferrer"
-					className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors"
+		<ol className="space-y-0.5">
+			{bookmarks.map((bookmark, index) => (
+				<li
+					key={bookmark.id || bookmark.url || index}
+					className="flex items-baseline gap-x-1 py-0.5 text-sm leading-5"
 				>
-					{t("bookmarks.open")}
-				</a>
-			</div>
-		</div>
-	);
-}
-
-function HorizontalList({ children }: { children: React.ReactNode[] }) {
-	const [showRightScrollButton, setShowRightScrollButton] = useState(false);
-	const [showLeftScrollButton, setShowLeftScrollButton] = useState(false);
-	const containerRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		const checkScroll = () => {
-			if (containerRef.current) {
-				const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
-				setShowRightScrollButton(scrollLeft + clientWidth < scrollWidth);
-				setShowLeftScrollButton(scrollLeft > 0);
-			}
-		};
-
-		const container = containerRef.current;
-		if (container) {
-			checkScroll();
-			container.addEventListener("scroll", checkScroll);
-			window.addEventListener("resize", checkScroll);
-		}
-
-		return () => {
-			if (container) {
-				container.removeEventListener("scroll", checkScroll);
-				window.removeEventListener("resize", checkScroll);
-			}
-		};
-	}, []);
-
-	const scrollRight = () => {
-		if (containerRef.current) {
-			containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
-		}
-	};
-
-	const scrollLeft = () => {
-		if (containerRef.current) {
-			containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
-		}
-	};
-
-	return (
-		<div className="flex relative">
-			{showLeftScrollButton && (
-				<button
-					onClick={scrollLeft}
-					className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-2 rounded-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-lg border border-gray-200 dark:border-gray-700 transition-all hover:scale-110 flex items-center justify-center w-8 h-8 animate-color-pulse dark:animate-color-pulse-dark"
-				>
-					<span className="material-symbols-outlined text-xl">
-						chevron_left
+					<span className="text-gray-400 text-xs w-5 shrink-0 text-right">
+						{index + 1}.
 					</span>
-				</button>
-			)}
-			<div
-				ref={containerRef}
-				className="flex overflow-x-auto pb-4 scrollbar-hide"
-			>
-				<div className="flex gap-6">{children}</div>
-			</div>
-			{showRightScrollButton && (
-				<button
-					onClick={scrollRight}
-					className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 p-2 rounded-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-lg border border-gray-200 dark:border-gray-700 transition-all hover:scale-110 flex items-center justify-center w-8 h-8 animate-color-pulse dark:animate-color-pulse-dark"
-				>
-					<span className="material-symbols-outlined text-xl">
-						chevron_right
+					<a
+						href={bookmark.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="font-medium text-gray-900 dark:text-gray-100 hover:underline"
+					>
+						{bookmark.title}
+					</a>
+					{bookmark.description && (
+						<span className="text-gray-500 text-xs hidden sm:inline">
+							— {bookmark.description}
+						</span>
+					)}
+					<span className="hidden sm:inline text-xs text-gray-400">
+						|{" "}
+						{bookmark.tags.map((tag, ti) => (
+							<button
+								key={`${bookmark.url}-${tag}-${ti}`}
+								className={`hover:underline ${tagFilters.includes(tag) ? "font-semibold text-gray-600 dark:text-gray-300" : ""}`}
+								onClick={() =>
+									handleTagFilter(!tagFilters.includes(tag), tag)
+								}
+							>
+								{tag}
+								{ti < bookmark.tags.length - 1 ? ", " : ""}
+							</button>
+						))}
 					</span>
-				</button>
-			)}
-		</div>
+				</li>
+			))}
+		</ol>
 	);
 }
 
@@ -154,7 +78,6 @@ function BookmarksPage() {
 	});
 
 	useEffect(() => {
-		// Hantera klick utanför sökrutan
 		function handleClickOutside(event: MouseEvent) {
 			if (
 				searchRef.current &&
@@ -203,15 +126,18 @@ function BookmarksPage() {
 	const filteredBookmarks = bookmarks.filter((bookmark) => {
 		const { title, tags } = bookmark;
 		const lowerCaseSearchTerm = searchTerm.toLowerCase();
-		return (
+		const matchesSearch =
 			title.toLowerCase().includes(lowerCaseSearchTerm) ||
-			tags.some((tag) => tag.toLowerCase().includes(lowerCaseSearchTerm))
-		);
+			tags.some((tag) => tag.toLowerCase().includes(lowerCaseSearchTerm));
+		const matchesTags =
+			tagFilters.length === 0 ||
+			bookmark.tags.some((tag) => tagFilters.includes(tag));
+		return matchesSearch && matchesTags;
 	});
 
 	return (
-		<section className="container max-w-(--breakpoint-xl) mx-auto px-4 py-8">
-			<div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+		<main className="flex flex-col gap-4 container max-w-(--breakpoint-xl)">
+			<div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
 				<h1 className="text-3xl font-bold text-gray-900 dark:text-white">
 					{t("bookmarks.title")}
 				</h1>
@@ -243,7 +169,7 @@ function BookmarksPage() {
 				</div>
 			</div>
 			{tagFilters.length > 0 && (
-				<div className="flex flex-wrap gap-2 mb-6">
+				<div className="flex flex-wrap gap-2">
 					<button
 						onClick={() => setTagFilters([])}
 						className="px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
@@ -262,48 +188,54 @@ function BookmarksPage() {
 					))}
 				</div>
 			)}
-			<HorizontalList>
-				{filteredBookmarks
-					.filter((bookmark) =>
-						tagFilters.length
-							? bookmark.tags.some((tag) => tagFilters.includes(tag))
-							: !!searchTerm.length,
-					)
-					.map((bookmark, index) => (
-						<Card
-							key={bookmark.id || bookmark.url || index}
-							tagFilters={tagFilters}
-							handleTagFilter={handleTagFilter}
-							{...bookmark}
-						/>
-					))}
-			</HorizontalList>
-			{availableTags.map((availableTag) => (
-				<div className="my-8" key={availableTag}>
-					{filteredBookmarks.find((bookmark) =>
-						bookmark.tags.includes(availableTag),
-					) && (
-						<h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-							{availableTag}
-						</h2>
-					)}
-					<HorizontalList key={availableTag}>
-						{filteredBookmarks
-							.filter((bookmark) => bookmark.tags.includes(availableTag))
-							.map((bookmark, index) => (
-								<Card
-									key={
-										bookmark.id || bookmark.url || `${availableTag}-${index}`
-									}
+			{tagFilters.length > 0 ? (
+				availableTags
+					.filter((tag) => tagFilters.includes(tag))
+					.map((tag) => {
+						const tagBookmarks = filteredBookmarks.filter((b) =>
+							b.tags.includes(tag),
+						);
+						if (tagBookmarks.length === 0) return null;
+						return (
+							<section key={tag}>
+								<div className="flex items-center gap-3 mb-1">
+									<p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 shrink-0">
+										{tag} ({tagBookmarks.length})
+									</p>
+									<hr className="flex-1 border-gray-200 dark:border-gray-700" />
+								</div>
+								<BookmarkList
+									bookmarks={tagBookmarks}
 									tagFilters={tagFilters}
 									handleTagFilter={handleTagFilter}
-									{...bookmark}
 								/>
-							))}
-					</HorizontalList>
-				</div>
-			))}
-		</section>
+							</section>
+						);
+					})
+			) : (
+				availableTags.map((tag) => {
+					const tagBookmarks = filteredBookmarks.filter((b) =>
+						b.tags.includes(tag),
+					);
+					if (tagBookmarks.length === 0) return null;
+					return (
+						<section key={tag}>
+							<div className="flex items-center gap-3 mb-1">
+								<p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 shrink-0">
+									{tag} ({tagBookmarks.length})
+								</p>
+								<hr className="flex-1 border-gray-200 dark:border-gray-700" />
+							</div>
+							<BookmarkList
+								bookmarks={tagBookmarks}
+								tagFilters={tagFilters}
+								handleTagFilter={handleTagFilter}
+							/>
+						</section>
+					);
+				})
+			)}
+		</main>
 	);
 }
 
