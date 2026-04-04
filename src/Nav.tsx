@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router";
-import karl from "./assets/karl.png";
+import logo from "./assets/logo.svg";
 import LanguageToggle from "./components/LanguageToggle";
 import ThemeToggle from "./components/ThemeToggle";
 import WhatToDoPopup from "./components/WhatToDoPopup";
@@ -140,11 +140,7 @@ export default function Nav() {
 								to="../"
 								className="flex items-center space-x-3 rtl:space-x-reverse group"
 							>
-								<img
-									src={karl}
-									className="h-12 rounded-full ring-2 ring-gray-200 dark:ring-gray-700 transition-transform group-hover:scale-105"
-									alt="Karl"
-								/>
+								<img src={logo} className="h-10 w-10 transition-transform group-hover:scale-105" alt="KRL"/>
 								<span className="self-center text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
 									GAS - globally available stuff
 								</span>

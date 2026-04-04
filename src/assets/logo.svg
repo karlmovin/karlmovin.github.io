@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#4a0e0e"/>
+  <!-- Bulb -->
+  <path d="M32,6 C20,6 12,16 12,26 C12,34 18,38 22,42 L22,46 L42,46 L42,42 C46,38 52,34 52,26 C52,16 44,6 32,6 Z" fill="white"/>
+  <!-- Base threads -->
+  <rect x="22" y="46" width="20" height="3" fill="white"/>
+  <rect x="24" y="50" width="16" height="3" fill="white"/>
+  <rect x="26" y="54" width="12" height="3" rx="1.5" fill="white"/>
+  <!-- Filament -->
+  <path d="M26,30 L29,22 L32,30 L35,22 L38,30" fill="none" stroke="#4a0e0e" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
