@@ -6,9 +6,17 @@ import LanguageToggle from "./components/LanguageToggle";
 import ThemeToggle from "./components/ThemeToggle";
 import WhatToDo from "./components/WhatToDoPopup";
 
-type NavItem =
+type NavLeaf =
 	| { type: "link"; to: string; label: string }
 	| { type: "external"; href: string; label: string };
+
+type NavGroup = {
+	type: "group";
+	label: string;
+	children: NavLeaf[];
+};
+
+type NavItem = NavLeaf | NavGroup;
 
 type NavSection = {
 	id: string;
@@ -85,77 +93,169 @@ const dropdownItemClass =
 	"block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white";
 const dropdownItemActiveClass =
 	"block px-4 py-2 text-sm bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white";
+const dropdownSubItemClass =
+	"block pl-8 pr-4 py-1.5 text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white";
+const dropdownSubItemActiveClass =
+	"block pl-8 pr-4 py-1.5 text-sm bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white";
 
 const mobileItemClass =
 	"block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white";
 const mobileItemActiveClass =
 	"block pl-3 pr-4 py-2 border-l-4 text-base font-medium bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white";
+const mobileSubItemClass =
+	"block pl-6 pr-4 py-1.5 border-l-4 text-sm font-medium border-transparent text-gray-400 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white";
+const mobileSubItemActiveClass =
+	"block pl-6 pr-4 py-1.5 border-l-4 text-sm font-medium bg-gray-50 dark:bg-gray-800 border-gray-900 dark:border-white text-gray-900 dark:text-white";
+
+function LeafItem({
+	item,
+	onClick,
+	className,
+	activeClassName,
+}: {
+	item: NavLeaf;
+	onClick?: () => void;
+	className: string;
+	activeClassName: string;
+}) {
+	if (item.type === "link") {
+		return (
+			<NavLink
+				to={`../${item.to}`}
+				onClick={onClick}
+				className={({ isActive }: { isActive: boolean }) =>
+					isActive ? activeClassName : className
+				}
+			>
+				{item.label}
+			</NavLink>
+		);
+	}
+	return (
+		<a
+			href={item.href}
+			target="_blank"
+			rel="noopener noreferrer"
+			onClick={onClick}
+			className={className}
+		>
+			{item.label} ↗
+		</a>
+	);
+}
 
 function DesktopDropdownItems({
 	items,
 	onClose,
-}: { items: NavItem[]; onClose: () => void }) {
-	return items.map((item) =>
-		item.type === "link" ? (
-			<NavLink
-				key={item.to}
-				to={`../${item.to}`}
-				onClick={onClose}
-				className={({ isActive }: { isActive: boolean }) =>
-					isActive ? dropdownItemActiveClass : dropdownItemClass
-				}
-			>
-				{item.label}
-			</NavLink>
-		) : (
-			<a
-				key={item.href}
-				href={item.href}
-				target="_blank"
-				rel="noopener noreferrer"
+	expandedGroup,
+	setExpandedGroup,
+}: {
+	items: NavItem[];
+	onClose: () => void;
+	expandedGroup: string | null;
+	setExpandedGroup: (id: string | null) => void;
+}) {
+	return items.map((item) => {
+		if (item.type === "group") {
+			const isExpanded = expandedGroup === item.label;
+			return (
+				<div key={item.label}>
+					<button
+						onClick={() =>
+							setExpandedGroup(isExpanded ? null : item.label)
+						}
+						className={`${dropdownItemClass} flex items-center justify-between w-full`}
+					>
+						{item.label}
+						<ChevronDown
+							className={`h-3.5 w-3.5 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+						/>
+					</button>
+					{isExpanded &&
+						item.children.map((child) => (
+							<LeafItem
+								key={child.type === "link" ? child.to : child.href}
+								item={child}
+								onClick={onClose}
+								className={dropdownSubItemClass}
+								activeClassName={dropdownSubItemActiveClass}
+							/>
+						))}
+				</div>
+			);
+		}
+		return (
+			<LeafItem
+				key={item.type === "link" ? item.to : item.href}
+				item={item}
 				onClick={onClose}
 				className={dropdownItemClass}
-			>
-				{item.label} ↗
-			</a>
-		),
-	);
+				activeClassName={dropdownItemActiveClass}
+			/>
+		);
+	});
 }
 
-function MobileItems({ items }: { items: NavItem[] }) {
-	return items.map((item) =>
-		item.type === "link" ? (
-			<NavLink
-				key={item.to}
-				to={`../${item.to}`}
-				className={({ isActive }: { isActive: boolean }) =>
-					isActive ? mobileItemActiveClass : mobileItemClass
-				}
-			>
-				{item.label}
-			</NavLink>
-		) : (
-			<a
-				key={item.href}
-				href={item.href}
-				target="_blank"
-				rel="noopener noreferrer"
+function MobileItems({
+	items,
+	expandedGroup,
+	setExpandedGroup,
+}: {
+	items: NavItem[];
+	expandedGroup: string | null;
+	setExpandedGroup: (id: string | null) => void;
+}) {
+	return items.map((item) => {
+		if (item.type === "group") {
+			const isExpanded = expandedGroup === item.label;
+			return (
+				<div key={item.label}>
+					<button
+						onClick={() =>
+							setExpandedGroup(isExpanded ? null : item.label)
+						}
+						className={`${mobileItemClass} flex items-center justify-between w-full`}
+					>
+						{item.label}
+						<ChevronDown
+							className={`h-4 w-4 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+						/>
+					</button>
+					{isExpanded &&
+						item.children.map((child) => (
+							<LeafItem
+								key={child.type === "link" ? child.to : child.href}
+								item={child}
+								className={mobileSubItemClass}
+								activeClassName={mobileSubItemActiveClass}
+							/>
+						))}
+				</div>
+			);
+		}
+		return (
+			<LeafItem
+				key={item.type === "link" ? item.to : item.href}
+				item={item}
 				className={mobileItemClass}
-			>
-				{item.label} ↗
-			</a>
-		),
-	);
+				activeClassName={mobileItemActiveClass}
+			/>
+		);
+	});
 }
 
 function MobileSection({
 	section,
 	isOpen,
 	onToggle,
+	expandedGroup,
+	setExpandedGroup,
 }: {
 	section: NavSection;
 	isOpen: boolean;
 	onToggle: () => void;
+	expandedGroup: string | null;
+	setExpandedGroup: (id: string | null) => void;
 }) {
 	return (
 		<>
@@ -170,7 +270,11 @@ function MobileSection({
 			</button>
 			{isOpen && (
 				<div className="pl-6 space-y-1">
-					<MobileItems items={section.items} />
+					<MobileItems
+						items={section.items}
+						expandedGroup={expandedGroup}
+						setExpandedGroup={setExpandedGroup}
+					/>
 				</div>
 			)}
 		</>
@@ -183,6 +287,7 @@ export default function Nav() {
 	const [openMobileSection, setOpenMobileSection] = useState<string | null>(
 		null,
 	);
+	const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
 	const { t } = useTranslation();
 
 	const closeDropdown = () => setOpenDropdown(null);
@@ -193,7 +298,14 @@ export default function Nav() {
 			label: t("nav.tools"),
 			items: [
 				{ type: "link", to: "weather", label: t("nav.weather") },
-				{ type: "link", to: "news", label: t("nav.news") },
+				{
+					type: "group",
+					label: t("nav.news"),
+					children: [
+						{ type: "link", to: "news", label: "Text-TV" },
+						{ type: "external", href: "https://ground.news", label: "Ground News" },
+					],
+				},
 				{ type: "link", to: "packing_lists", label: t("nav.packing_lists") },
 				{ type: "external", href: "https://sl-map.gunnar.se/", label: t("nav.slMap") },
 			],
@@ -211,7 +323,7 @@ export default function Nav() {
 		},
 	];
 
-	const topLevelLinks: NavItem[] = [
+	const topLevelLinks: NavLeaf[] = [
 		{ type: "link", to: "blog", label: t("nav.blog") },
 	];
 
@@ -243,26 +355,19 @@ export default function Nav() {
 									<DesktopDropdownItems
 										items={section.items}
 										onClose={closeDropdown}
+										expandedGroup={expandedGroup}
+										setExpandedGroup={setExpandedGroup}
 									/>
 								</NavDropdown>
 							))}
-							{topLevelLinks.map((item) =>
-								item.type === "link" ? (
-									<NavLink
-										key={item.to}
-										to={`../${item.to}`}
-										className={({ isActive }: { isActive: boolean }) =>
-											`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-												isActive
-													? "border-gray-900 dark:border-white text-gray-900 dark:text-white"
-													: "border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
-											}`
-										}
-									>
-										{item.label}
-									</NavLink>
-								) : null,
-							)}
+							{topLevelLinks.map((item) => (
+								<LeafItem
+									key={item.type === "link" ? item.to : item.href}
+									item={item}
+									className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium border-transparent text-gray-500 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white`}
+									activeClassName={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium border-gray-900 dark:border-white text-gray-900 dark:text-white`}
+								/>
+							))}
 						</div>
 					</div>
 					<div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
@@ -332,21 +437,18 @@ export default function Nav() {
 											: section.id,
 									)
 								}
+								expandedGroup={expandedGroup}
+								setExpandedGroup={setExpandedGroup}
 							/>
 						))}
-						{topLevelLinks.map((item) =>
-							item.type === "link" ? (
-								<NavLink
-									key={item.to}
-									to={`../${item.to}`}
-									className={({ isActive }: { isActive: boolean }) =>
-										isActive ? mobileItemActiveClass : mobileItemClass
-									}
-								>
-									{item.label}
-								</NavLink>
-							) : null,
-						)}
+						{topLevelLinks.map((item) => (
+							<LeafItem
+								key={item.type === "link" ? item.to : item.href}
+								item={item}
+								className={mobileItemClass}
+								activeClassName={mobileItemActiveClass}
+							/>
+						))}
 					</div>
 					<div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
 						<div className="flex items-center px-4 gap-4">

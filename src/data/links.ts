@@ -659,4 +659,52 @@ export const links: Link[] = [
 			"Min.io is a high performance, distributed object storage system.",
 		tags: ["storage", "object storage"],
 	},
+	{
+		url: "https://github.com/jesseduffield/lazygit",
+		title: "Lazygit",
+		description: "Simple terminal UI for git commands",
+		tags: ["git", "development", "terminal"],
+	},
+	{
+		url: "https://github.com/jesseduffield/lazygit/blob/master/docs/keybindings/Keybindings_en.md",
+		title: "Lazygit Keybindings",
+		description: "Keybinding reference for lazygit",
+		tags: ["git", "development", "terminal", "keybindings"],
+	},
+	{
+		url: "https://gist.github.com/MohamedAlaa/2961058",
+		title: "tmux Keybindings",
+		description: "tmux shortcuts & cheatsheet",
+		tags: ["terminal", "keybindings", "tmux"],
+	},
+	{
+		url: "https://www.bwplotka.dev/2025/lazygit/",
+		title: "Lazygit blog post",
+		description: "Blog post on lazygit by bwplotka",
+		tags: ["git", "development", "blog post", "reading"],
+	},
+	{
+		url: "https://github.com/sindresorhus/awesome",
+		title: "Awesome",
+		description: "Awesome lists about all kinds of interesting topics",
+		tags: ["github", "development"],
+	},
+	{
+		url: "https://github.com/ohmyzsh/ohmyzsh/",
+		title: "Oh My Zsh",
+		description: "Framework for managing your zsh configuration",
+		tags: ["terminal", "zsh", "development"],
+	},
+	{
+		url: "https://tldr.tech/",
+		title: "TLDR",
+		description: "Free daily newsletter with the most interesting stories in tech",
+		tags: ["news", "development"],
+	},
+	{
+		url: "https://news.ycombinator.com/",
+		title: "Hacker News",
+		description: "Social news website focusing on computer science and entrepreneurship",
+		tags: ["news", "development"],
+	},
 ];
