@@ -8,7 +8,9 @@
 		"blog": "Blog",
 		"news": "Text-TV",
 		"whatToDo": "What should I do today?",
-		"openMenu": "Open main menu"
+		"openMenu": "Open main menu",
+		"tools": "Tools",
+		"information": "Information"
 	},
 	"theme": {
 		"toggle": "Toggle between light and dark theme"

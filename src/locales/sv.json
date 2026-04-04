@@ -8,7 +8,9 @@
 		"blog": "Blog",
 		"news": "Text-TV",
 		"whatToDo": "Vad ska jag g\u00f6ra idag?",
-		"openMenu": "\u00d6ppna huvudmeny"
+		"openMenu": "\u00d6ppna huvudmeny",
+		"tools": "Verktyg",
+		"information": "Information"
 	},
 	"theme": {
 		"toggle": "V\u00e4xla mellan ljust och m\u00f6rkt tema"
