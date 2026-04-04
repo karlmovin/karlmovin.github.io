@@ -2,7 +2,7 @@
 	"nav": {
 		"packing_lists": "Packing Lists",
 		"books": "Books",
-		"bookmarks": "Bookmarks",
+		"links": "Links",
 		"art": "Art",
 		"weather": "Weather",
 		"blog": "Blog",
@@ -41,11 +41,10 @@
 		"showMore": "Show more",
 		"showLess": "Show less"
 	},
-	"bookmarks": {
-		"title": "Bookmarks",
+	"links": {
+		"title": "Links",
 		"searchPlaceholder": "Search or select tag...",
-		"clearFilters": "Clear filters",
-		"open": "Open"
+		"clearFilters": "Clear filters"
 	},
 	"weather": {
 		"title": "Weather today",

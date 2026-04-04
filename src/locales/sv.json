@@ -2,7 +2,7 @@
 	"nav": {
 		"packing_lists": "Packlistor",
 		"books": "B\u00f6cker",
-		"bookmarks": "Bokm\u00e4rken",
+		"links": "L\u00e4nkar",
 		"art": "Konst",
 		"weather": "V\u00e4der",
 		"blog": "Blog",
@@ -41,11 +41,10 @@
 		"showMore": "Visa mer",
 		"showLess": "Visa mindre"
 	},
-	"bookmarks": {
-		"title": "Bokm\u00e4rken",
+	"links": {
+		"title": "L\u00e4nkar",
 		"searchPlaceholder": "S\u00f6k eller v\u00e4lj tagg...",
-		"clearFilters": "Rensa filter",
-		"open": "\u00d6ppna"
+		"clearFilters": "Rensa filter"
 	},
 	"weather": {
 		"title": "V\u00e4der idag",

@@ -1,4 +1,4 @@
-export type Bookmark = {
+export type Link = {
 	id?: string;
 	title: string;
 	url: string;
@@ -6,7 +6,7 @@ export type Bookmark = {
 	tags: string[];
 };
 
-export const bookmarks: Bookmark[] = [
+export const links: Link[] = [
 	{
 		title: "Flightradar24",
 		url: "https://www.flightradar24.com/57.08,27.17/5",

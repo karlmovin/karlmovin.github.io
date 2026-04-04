@@ -12,7 +12,7 @@ import BookPage from "./routes/book.tsx";
 import Books from "./routes/books.tsx";
 import Home from "./routes/home.tsx";
 import Art from "./routes/art.tsx";
-import BookmarksPage from "./routes/links.tsx";
+import LinksPage from "./routes/links.tsx";
 import News from "./routes/news.tsx";
 import Weather from "./routes/weather.tsx";
 import Woodworking from "./routes/woodworking.tsx";
@@ -40,8 +40,8 @@ const router = createBrowserRouter([
 						element: <BookPage />,
 					},
 					{
-						path: "bookmarks",
-						element: <BookmarksPage />,
+						path: "links",
+						element: <LinksPage />,
 					},
 					{
 						path: "art",
