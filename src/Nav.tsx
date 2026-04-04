@@ -179,6 +179,15 @@ export default function Nav() {
 								>
 									{t("nav.whatToDo")}
 								</DropdownButton>
+								<a
+									href="https://sl-map.gunnar.se/"
+									target="_blank"
+									rel="noopener noreferrer"
+									onClick={closeDropdown}
+									className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white"
+								>
+									{t("nav.slMap")} ↗
+								</a>
 							</NavDropdown>
 							<NavDropdown
 								label={t("nav.information")}
@@ -330,6 +339,14 @@ export default function Nav() {
 								>
 									{t("nav.whatToDo")}
 								</button>
+								<a
+									href="https://sl-map.gunnar.se/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-white hover:text-gray-700 dark:hover:text-white"
+								>
+									{t("nav.slMap")} ↗
+								</a>
 							</div>
 						)}
 
