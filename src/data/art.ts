@@ -49,6 +49,10 @@ export const artists: Record<string, { url: string; image: string }> = {
 		url: "https://hydro74.com/",
 		image: "https://hydro74.com/IMG_2024/LOGO_2.jpg",
 	},
+	"Eyvind Earle": {
+		url: "https://en.wikipedia.org/wiki/Eyvind_Earle",
+		image: "https://upload.wikimedia.org/wikipedia/en/5/5c/Eyvind_Earle.jpg",
+	},
 };
 
 export const artPeriods: ArtPeriod[] = [

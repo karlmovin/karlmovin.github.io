@@ -44,7 +44,8 @@
 	"links": {
 		"title": "Links",
 		"searchPlaceholder": "Search or select tag...",
-		"clearFilters": "Clear filters"
+		"clearFilters": "Clear filters",
+		"showMore": "Show more ({{remaining}} remaining)"
 	},
 	"weather": {
 		"title": "Weather today",

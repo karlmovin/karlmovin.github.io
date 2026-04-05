@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { type Link, links as linksData } from "../data/links";
 
+const PAGE_SIZE = 20;
+
 function LinkList({
 	links,
 	tagFilters,
@@ -17,7 +19,7 @@ function LinkList({
 			{links.map((link, index) => (
 				<li
 					key={link.id || link.url || index}
-					className="flex items-baseline gap-x-1 py-0.5 text-sm leading-5"
+					className="flex items-baseline gap-x-1 py-0.5 text-sm leading-5 min-w-0"
 				>
 					<span className="text-gray-400 text-xs w-5 shrink-0 text-right">
 						{index + 1}.
@@ -26,16 +28,16 @@ function LinkList({
 						href={link.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="font-medium text-gray-900 dark:text-gray-100 hover:underline"
+						className="font-medium text-gray-900 dark:text-gray-100 hover:underline truncate shrink-0 max-w-[40%]"
 					>
 						{link.title}
 					</a>
 					{link.description && (
-						<span className="text-gray-500 text-xs hidden sm:inline">
+						<span className="text-gray-500 text-xs hidden sm:inline truncate min-w-0">
 							— {link.description}
 						</span>
 					)}
-					<span className="hidden sm:inline text-xs text-gray-400">
+					<span className="hidden sm:inline text-xs text-gray-400 shrink-0 whitespace-nowrap">
 						|{" "}
 						{link.tags.map((tag, ti) => (
 							<button
@@ -53,6 +55,46 @@ function LinkList({
 				</li>
 			))}
 		</ol>
+	);
+}
+
+function TagSection({
+	tag,
+	links,
+	tagFilters,
+	handleTagFilter,
+}: {
+	tag: string;
+	links: Link[];
+	tagFilters: string[];
+	handleTagFilter: (checked: boolean, tag: string) => void;
+}) {
+	const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+	const { t } = useTranslation();
+	const hasMore = links.length > visibleCount;
+
+	return (
+		<section>
+			<div className="flex items-center gap-3 mb-1">
+				<p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 shrink-0">
+					{tag} ({links.length})
+				</p>
+				<hr className="flex-1 border-gray-200 dark:border-gray-700" />
+			</div>
+			<LinkList
+				links={links.slice(0, visibleCount)}
+				tagFilters={tagFilters}
+				handleTagFilter={handleTagFilter}
+			/>
+			{hasMore && (
+				<button
+					onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
+					className="mt-1 text-xs text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+				>
+					{t("links.showMore", { remaining: links.length - visibleCount })}
+				</button>
+			)}
+		</section>
 	);
 }
 
@@ -135,6 +177,10 @@ function LinksPage() {
 		return matchesSearch && matchesTags;
 	});
 
+	const visibleTags = tagFilters.length > 0
+		? availableTags.filter((tag) => tagFilters.includes(tag))
+		: availableTags;
+
 	return (
 		<main className="flex flex-col gap-4 container max-w-(--breakpoint-xl)">
 			<div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -188,53 +234,21 @@ function LinksPage() {
 					))}
 				</div>
 			)}
-			{tagFilters.length > 0 ? (
-				availableTags
-					.filter((tag) => tagFilters.includes(tag))
-					.map((tag) => {
-						const tagLinks = filteredLinks.filter((b) =>
-							b.tags.includes(tag),
-						);
-						if (tagLinks.length === 0) return null;
-						return (
-							<section key={tag}>
-								<div className="flex items-center gap-3 mb-1">
-									<p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 shrink-0">
-										{tag} ({tagLinks.length})
-									</p>
-									<hr className="flex-1 border-gray-200 dark:border-gray-700" />
-								</div>
-								<LinkList
-									links={tagLinks}
-									tagFilters={tagFilters}
-									handleTagFilter={handleTagFilter}
-								/>
-							</section>
-						);
-					})
-			) : (
-				availableTags.map((tag) => {
-					const tagLinks = filteredLinks.filter((b) =>
-						b.tags.includes(tag),
-					);
-					if (tagLinks.length === 0) return null;
-					return (
-						<section key={tag}>
-							<div className="flex items-center gap-3 mb-1">
-								<p className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 shrink-0">
-									{tag} ({tagLinks.length})
-								</p>
-								<hr className="flex-1 border-gray-200 dark:border-gray-700" />
-							</div>
-							<LinkList
-								links={tagLinks}
-								tagFilters={tagFilters}
-								handleTagFilter={handleTagFilter}
-							/>
-						</section>
-					);
-				})
-			)}
+			{visibleTags.map((tag) => {
+				const tagLinks = filteredLinks.filter((b) =>
+					b.tags.includes(tag),
+				);
+				if (tagLinks.length === 0) return null;
+				return (
+					<TagSection
+						key={tag}
+						tag={tag}
+						links={tagLinks}
+						tagFilters={tagFilters}
+						handleTagFilter={handleTagFilter}
+					/>
+				);
+			})}
 		</main>
 	);
 }

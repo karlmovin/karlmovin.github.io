@@ -44,7 +44,8 @@
 	"links": {
 		"title": "L\u00e4nkar",
 		"searchPlaceholder": "S\u00f6k eller v\u00e4lj tagg...",
-		"clearFilters": "Rensa filter"
+		"clearFilters": "Rensa filter",
+		"showMore": "Visa fler ({{remaining}} kvar)"
 	},
 	"weather": {
 		"title": "V\u00e4der idag",
