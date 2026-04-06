@@ -89,35 +89,19 @@ function Post({
 					{post.tags.map((tag) => (
 						<span
 							key={tag}
-							className="px-2 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full"
+							className="px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full"
 						>
 							{tag}
 						</span>
 					))}
 				</div>
 			)}
-			<div>
-				<button
-					onClick={() => setIsTruncated(!isTruncated)}
-					className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors flex items-center gap-1"
-				>
-					{isTruncated ? (
-						<>
-							{t("blog.showMore")}
-							<span className="material-symbols-outlined text-sm">
-								expand_more
-							</span>
-						</>
-					) : (
-						<>
-							{t("blog.showLess")}
-							<span className="material-symbols-outlined text-sm">
-								expand_less
-							</span>
-						</>
-					)}
-				</button>
-			</div>
+			<button
+				onClick={() => setIsTruncated(!isTruncated)}
+				className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors self-start"
+			>
+				{isTruncated ? t("blog.showMore") : t("blog.showLess")}
+			</button>
 		</li>
 	);
 }
@@ -179,8 +163,8 @@ function Blog() {
 									onClick={() => toggleTag(tag)}
 									className={`px-3 py-1 rounded-full text-sm transition-colors ${
 										selectedTags.includes(tag)
-											? "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"
-											: "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
+											? "bg-gray-300 dark:bg-gray-600 text-gray-900 dark:text-white font-medium"
+											: "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600"
 									}`}
 								>
 									{tag}
