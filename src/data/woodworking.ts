@@ -63,7 +63,6 @@ export const inspiration: WoodworkingLink[] = [
 		label: { sv: "Boksnurra", en: "Revolving Bookcase" },
 		url: "https://www.bukowskis.com/sv/lots/1301898-boksnurra-1900-talets-andra-halft",
 	},
-	{ label: "FutoNota", url: "https://futonota.se/" },
 	{
 		label: { sv: "Verkstad", en: "Workshop" },
 		url: "https://www.pinterest.co.uk/pin/155374255872022332/",
@@ -76,27 +75,15 @@ export const inspiration: WoodworkingLink[] = [
 
 export const japanInspiration: WoodworkingLink[] = [
 	{
-		label: { sv: "Världshistoria", en: "World History" },
+		label: { sv: "Traditionell japansk interiör", en: "Traditional Japanese interior" },
 		url: "https://www.worldhistory.org/img/c/p/1200x627/11013.jpg?v=1610671503",
 	},
 	{
-		label: { sv: "Japansk interiör 1", en: "Japanese Interior 1" },
-		url: "https://www.homeartmania.com/wp-content/uploads/2016/08/Japanese-style-interior-designs60.jpg",
-	},
-	{
-		label: { sv: "Nihon rumsdesign", en: "Nihon Room Design" },
+		label: { sv: "Tavla", en: "Canvas" },
 		url: "https://image.freepik.com/free-photo/nihon-room-design-interior-cabinet-shelf-wall-tatami-mat-floor-room-japanese-style-3d-rendering_43151-3772.jpg",
 	},
 	{
-		label: { sv: "Japanska husdekorationer", en: "Japanese House Decorations" },
-		url: "https://www.flutternyc.com/wp-content/uploads/2019/03/Japanese-House-Decorations.jpg",
-	},
-	{
-		label: { sv: "Japansk interiör 2", en: "Japanese Interior 2" },
-		url: "https://www.homeartmania.com/wp-content/uploads/2016/08/Japanese-style-interior-designs53.jpg",
-	},
-	{
-		label: { sv: "Wara Juraku exteriör", en: "Wara Juraku Exterior" },
+		label: { sv: "Vägglampa", en: "Wall Light" },
 		url: "https://habitusoutlet.com/wp-content/uploads/2017/11/Wara-Juraku-Exterior-Feature-1000x400.jpg",
 	},
 ];
