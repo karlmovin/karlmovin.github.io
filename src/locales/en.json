@@ -50,7 +50,129 @@
 	"weather": {
 		"title": "Weather today",
 		"poweredBy": "powered by",
-		"noWeather": "No weather data"
+		"noWeather": "No weather data",
+		"narrative": {
+			"title": "Forecast summary",
+			"loading": "Loading forecast…",
+			"error": "Couldn't load forecast from SMHI.",
+			"poweredBy": "summary derived from",
+			"smhi": "SMHI",
+			"locationStockholm": "Stockholm",
+			"locationHuddinge": "Huddinge",
+			"locationCustom": "My location",
+			"useMyLocation": "Use my location",
+			"outOfCoverage": "Your location is outside SMHI's Nordic coverage — showing Stockholm.",
+			"day": {
+				"today": "Today",
+				"tomorrow": "Tomorrow"
+			},
+			"warmth": {
+				"freezing": "freezing",
+				"cold": "cold",
+				"cool": "cool",
+				"mild": "mild",
+				"warm": "warm",
+				"hot": "hot"
+			},
+			"wind": {
+				"calm": "calm",
+				"breezy": "breezy ({{speed}} m/s from {{direction}})",
+				"windy": "windy ({{speed}} m/s from {{direction}})",
+				"veryWindy": "very windy ({{speed}} m/s from {{direction}})"
+			},
+			"compass": {
+				"N": "the north",
+				"NE": "the northeast",
+				"E": "the east",
+				"SE": "the southeast",
+				"S": "the south",
+				"SW": "the southwest",
+				"W": "the west",
+				"NW": "the northwest"
+			},
+			"intensity": {
+				"light": "light",
+				"moderate": "moderate",
+				"heavy": "heavy"
+			},
+			"period": {
+				"night": "Overnight",
+				"morning": "In the morning",
+				"afternoon": "In the afternoon",
+				"evening": "In the evening"
+			},
+			"headlineSentence": {
+				"clear": "{{day}} will be a clear, {{warmth}} day, with temperatures reaching {{max}}°C around {{maxTime}}.",
+				"partlyCloudy": "{{day}} will be a partly cloudy, {{warmth}} day, with temperatures reaching {{max}}°C around {{maxTime}}.",
+				"cloudy": "{{day}} will be cloudy and {{warmth}}, with temperatures reaching {{max}}°C around {{maxTime}}.",
+				"fog": "{{day}} will be foggy and {{warmth}}, with temperatures around {{max}}°C.",
+				"rainy": "{{day}} will be wet and {{warmth}}, with rain through the day and temperatures up to {{max}}°C around {{maxTime}}.",
+				"snowy": "{{day}} will be snowy and {{warmth}}, with snow falling through the day. Top temperature {{max}}°C around {{maxTime}}.",
+				"sleet": "{{day}} will be a sleety, {{warmth}} day, with mixed rain and snow.",
+				"thunder": "{{day}} will be unsettled and {{warmth}}, with risk of thunderstorms. Top temperature {{max}}°C around {{maxTime}}."
+			},
+			"lowSentence": "Lows around {{min}}°C around {{minTime}}.",
+			"periodLine": "{{period}}, around {{temp}}°C, {{description}}.",
+			"description": {
+				"clear": "clear skies",
+				"partlyCloudy": "partly cloudy",
+				"cloudy": "cloudy skies",
+				"fog": "foggy",
+				"rainy": "rain",
+				"snowy": "snow",
+				"sleet": "sleet",
+				"thunder": "thunderstorms"
+			},
+			"windLine": "Wind: {{wind}}.",
+			"event": {
+				"rainStarts": "Around {{time}}, expect {{intensity}} rain (≈{{probability}}% chance).",
+				"rainStops": "Rain eases around {{time}}.",
+				"snowStarts": "Around {{time}}, expect {{intensity}} snowfall.",
+				"windPicksUp": "Wind picks up around {{time}} ({{speed}} m/s).",
+				"windShifts": "Wind shifts from {{from}} to {{to}} around {{time}}.",
+				"thunder": "Risk of thunder around {{time}} ({{probability}}%).",
+				"cloudsClear": "Skies clear around {{time}}.",
+				"cloudsGather": "Clouds gather around {{time}}."
+			},
+			"adviceLead": "Worth packing:",
+			"advice": {
+				"lightLayers": "light layers (a thin shirt and something on top for the evening)",
+				"extraLayer": "an extra sweater or fleece",
+				"removableLayers": "layers you can shed as it warms up",
+				"warmJacket": "a warm jacket",
+				"heavyCoat": "a proper winter coat",
+				"hatAndGloves": "a hat and gloves",
+				"scarf": "a scarf",
+				"rainJacket": "a rain jacket (an umbrella won't help in this wind)",
+				"umbrella": "an umbrella",
+				"waterproofShoes": "waterproof shoes",
+				"winterBoots": "winter boots",
+				"sunscreen": "sunscreen",
+				"sunglasses": "sunglasses",
+				"windproof": "a windproof outer layer",
+				"iceWarning": "caution for ice on surfaces",
+				"thunderShelter": "a plan for shelter if thunder rolls in"
+			},
+			"showDetails": "Show details",
+			"hideDetails": "Hide details",
+			"details": {
+				"tempRange": "Temperature range",
+				"tempRangeValue": "{{min}}°C ({{minTime}}) → {{max}}°C ({{maxTime}})",
+				"maxWind": "Max wind",
+				"maxWindValue": "{{speed}} m/s",
+				"totalPrecip": "Total precipitation",
+				"totalPrecipValue": "{{amount}} mm",
+				"maxPrecipProb": "Highest precipitation probability",
+				"maxPrecipProbValue": "{{prob}}%",
+				"hourly": "Hour-by-hour",
+				"colHour": "Hour",
+				"colTemp": "Temp",
+				"colWind": "Wind",
+				"colWindDir": "Dir",
+				"colPrecip": "Precip",
+				"colSymbol": "Sky"
+			}
+		}
 	},
 	"art": {
 		"periods": "Art Periods",

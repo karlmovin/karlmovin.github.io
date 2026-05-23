@@ -1,6 +1,7 @@
 import parse from "html-react-parser";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import WeatherNarrative from "../components/WeatherNarrative";
 
 export type Instant = {
 	details: {
@@ -127,6 +128,7 @@ export default function Weather() {
 
 	return (
 		<main className="container max-w-(--breakpoint-xl) mx-auto px-4 py-8">
+			<WeatherNarrative />
 			<div className="flex w-full max-w-200 flex-col rounded-br-xl bg-white dark:bg-gray-800 bg-clip-border p-4 text-gray-700 dark:text-gray-200 shadow-xs">
 				<div className="p-4 mb-2">
 					<h5 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-gray-900 dark:text-white">

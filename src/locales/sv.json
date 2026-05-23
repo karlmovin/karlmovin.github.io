@@ -50,7 +50,129 @@
 	"weather": {
 		"title": "V\u00e4der idag",
 		"poweredBy": "powered by",
-		"noWeather": "Inget v\u00e4der"
+		"noWeather": "Inget v\u00e4der",
+		"narrative": {
+			"title": "V\u00e4derprognos i text",
+			"loading": "Laddar prognos\u2026",
+			"error": "Kunde inte ladda prognos fr\u00e5n SMHI.",
+			"poweredBy": "sammanfattning baserad p\u00e5",
+			"smhi": "SMHI",
+			"locationStockholm": "Stockholm",
+			"locationHuddinge": "Huddinge",
+			"locationCustom": "Min plats",
+			"useMyLocation": "Anv\u00e4nd min plats",
+			"outOfCoverage": "Din plats ligger utanf\u00f6r SMHI:s nordiska t\u00e4ckning \u2014 visar Stockholm.",
+			"day": {
+				"today": "Idag",
+				"tomorrow": "Imorgon"
+			},
+			"warmth": {
+				"freezing": "iskall",
+				"cold": "kall",
+				"cool": "sval",
+				"mild": "mild",
+				"warm": "varm",
+				"hot": "het"
+			},
+			"wind": {
+				"calm": "stiltje",
+				"breezy": "lugn bris ({{speed}} m/s fr\u00e5n {{direction}})",
+				"windy": "bl\u00e5sigt ({{speed}} m/s fr\u00e5n {{direction}})",
+				"veryWindy": "mycket bl\u00e5sigt ({{speed}} m/s fr\u00e5n {{direction}})"
+			},
+			"compass": {
+				"N": "norr",
+				"NE": "nordost",
+				"E": "\u00f6st",
+				"SE": "sydost",
+				"S": "s\u00f6der",
+				"SW": "sydv\u00e4st",
+				"W": "v\u00e4st",
+				"NW": "nordv\u00e4st"
+			},
+			"intensity": {
+				"light": "l\u00e4tt",
+				"moderate": "m\u00e5ttligt",
+				"heavy": "kraftigt"
+			},
+			"period": {
+				"night": "P\u00e5 natten",
+				"morning": "P\u00e5 morgonen",
+				"afternoon": "P\u00e5 eftermiddagen",
+				"evening": "P\u00e5 kv\u00e4llen"
+			},
+			"headlineSentence": {
+				"clear": "{{day}} blir en klar och {{warmth}} dag, med temperaturer som n\u00e5r {{max}}\u00b0C runt {{maxTime}}.",
+				"partlyCloudy": "{{day}} blir en halvklar och {{warmth}} dag, med temperaturer upp till {{max}}\u00b0C runt {{maxTime}}.",
+				"cloudy": "{{day}} blir mulet och {{warmth}}, med temperaturer upp till {{max}}\u00b0C runt {{maxTime}}.",
+				"fog": "{{day}} blir disigt och {{warmth}}, med temperaturer kring {{max}}\u00b0C.",
+				"rainy": "{{day}} blir bl\u00f6tt och {{warmth}}, med regn under dagen och toppar p\u00e5 {{max}}\u00b0C runt {{maxTime}}.",
+				"snowy": "{{day}} blir sn\u00f6igt och {{warmth}}, med sn\u00f6fall under dagen. H\u00f6gsta temperatur {{max}}\u00b0C runt {{maxTime}}.",
+				"sleet": "{{day}} blir en sl\u00e4ttig och {{warmth}} dag, med blandning av regn och sn\u00f6.",
+				"thunder": "{{day}} blir or\u00f6ligt och {{warmth}}, med risk f\u00f6r \u00e5skv\u00e4der. H\u00f6gsta temperatur {{max}}\u00b0C runt {{maxTime}}."
+			},
+			"lowSentence": "L\u00e4gsta temperatur omkring {{min}}\u00b0C runt {{minTime}}.",
+			"periodLine": "{{period}}, omkring {{temp}}\u00b0C, {{description}}.",
+			"description": {
+				"clear": "klar himmel",
+				"partlyCloudy": "halvklart",
+				"cloudy": "mulet",
+				"fog": "dimma",
+				"rainy": "regn",
+				"snowy": "sn\u00f6",
+				"sleet": "sl\u00e4tta",
+				"thunder": "\u00e5skv\u00e4der"
+			},
+			"windLine": "Vind: {{wind}}.",
+			"event": {
+				"rainStarts": "Runt {{time}} v\u00e4ntas {{intensity}} regn (\u2248{{probability}}% sannolikhet).",
+				"rainStops": "Regnet avtar runt {{time}}.",
+				"snowStarts": "Runt {{time}} v\u00e4ntas {{intensity}} sn\u00f6fall.",
+				"windPicksUp": "Vinden tilltar runt {{time}} ({{speed}} m/s).",
+				"windShifts": "Vinden vrider från {{from}} till {{to}} runt {{time}}.",
+				"thunder": "Risk f\u00f6r \u00e5ska runt {{time}} ({{probability}}%).",
+				"cloudsClear": "Det klarnar upp runt {{time}}.",
+				"cloudsGather": "Molnen tilltar runt {{time}}."
+			},
+			"adviceLead": "V\u00e4rt att ta med:",
+			"advice": {
+				"lightLayers": "tunna lager (T-shirt och n\u00e5got \u00f6ver till kv\u00e4llen)",
+				"extraLayer": "en extra tr\u00f6ja eller fleece",
+				"removableLayers": "kl\u00e4der du kan skala av n\u00e4r det blir varmare",
+				"warmJacket": "en varm jacka",
+				"heavyCoat": "en rej\u00e4l vinterjacka",
+				"hatAndGloves": "m\u00f6ssa och vantar",
+				"scarf": "en halsduk",
+				"rainJacket": "en regnjacka (paraplyet h\u00e5ller inte i den h\u00e4r vinden)",
+				"umbrella": "ett paraply",
+				"waterproofShoes": "vattent\u00e4ta skor",
+				"winterBoots": "vinterk\u00e4ngor",
+				"sunscreen": "solskydd",
+				"sunglasses": "solglas\u00f6gon",
+				"windproof": "ett vindt\u00e4tt ytterlager",
+				"iceWarning": "f\u00f6rsiktighet f\u00f6r is p\u00e5 marken",
+				"thunderShelter": "en plan f\u00f6r skydd om \u00e5skan kommer"
+			},
+			"showDetails": "Visa detaljer",
+			"hideDetails": "D\u00f6lj detaljer",
+			"details": {
+				"tempRange": "Temperaturspann",
+				"tempRangeValue": "{{min}}\u00b0C ({{minTime}}) \u2192 {{max}}\u00b0C ({{maxTime}})",
+				"maxWind": "H\u00f6gsta vind",
+				"maxWindValue": "{{speed}} m/s",
+				"totalPrecip": "Total nederb\u00f6rd",
+				"totalPrecipValue": "{{amount}} mm",
+				"maxPrecipProb": "H\u00f6gsta nederb\u00f6rdssannolikhet",
+				"maxPrecipProbValue": "{{prob}}%",
+				"hourly": "Timme f\u00f6r timme",
+				"colHour": "Timme",
+				"colTemp": "Temp",
+				"colWind": "Vind",
+				"colWindDir": "Riktn.",
+				"colPrecip": "Nederb.",
+				"colSymbol": "Himmel"
+			}
+		}
 	},
 	"art": {
 		"periods": "Konstperioder",
