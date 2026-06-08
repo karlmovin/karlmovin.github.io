@@ -553,4 +553,22 @@ export const books: Book[] = [
 		genres: ["children", "NPF", "parenting"],
 		rating: 5,
 	},
+	{
+		title: "Einstein's Dreams",
+		author: "Alan Lightman",
+		slug: "einsteins-dreams_lightman",
+		notes: [],
+		status: "planned",
+		tags: [],
+		genres: ["fiction", "science", "philosophy"],
+	},
+	{
+		title: "The order of time",
+		author: "Carlo Rovelli",
+		slug: "the-order-of-time_rovelli",
+		notes: [],
+		status: "reading",
+		tags: [],
+		genres: ["science", "physics", "philosophy"],
+	}
 ];
