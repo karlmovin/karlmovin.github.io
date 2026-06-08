@@ -105,7 +105,7 @@ export default function Weather() {
 	useEffect(() => {
 		async function fetchTextTvWeather() {
 			const response = await fetch(
-				"https://api.texttv.nu/api/get/410?includePlainTextContent=1&app=kallesväder",
+				"https://api.texttv.nu/api/get/408?includePlainTextContent=1&app=kallesväder",
 			);
 			const data = await response.json();
 			setTextTvWeather(data);
@@ -117,7 +117,7 @@ export default function Weather() {
 			// https://api.met.no/doc/ForecastJSON
 			// https://www.yr.no/api/v0/locations/search?language=en&q=stockholm
 			const yrLocation = await fetch(
-				`https://www.yr.no/api/v0/locations/${location.lat},${location.lon}/`,
+				`https://www.yr.no/api/v0/locations/?id=2-2673730`, // Stockholm
 			);
 			const data = await yrLocation.json();
 			setYrLoc(data);
@@ -142,20 +142,6 @@ export default function Weather() {
 							hour: "2-digit",
 							minute: "2-digit",
 						}).format(new Date())}{" "}
-						(
-						<a
-							href="https://developer.yr.no/doc/GettingStarted/"
-							className="text-blue-600 dark:text-blue-400 hover:underline"
-						>
-							{t("weather.poweredBy")}
-						</a>{" "}
-						<a
-							href="https://www.yr.no/"
-							className="bg-[#00A5D8] text-white rounded-full p-1 hover:bg-[#0088b3] transition-colors"
-						>
-							YR
-						</a>
-						)
 					</h5>
 					<button
 						type="button"
@@ -192,7 +178,7 @@ export default function Weather() {
 							textTvWeather[0].content_plain
 								.find((content) => content.includes("för Stockholm"))
 								?.replaceAll("\n", "<br>")
-								.split("Borlänge")[0] ?? t("weather.noWeather"),
+								.split("Torsby")[0] ?? t("weather.noWeather"),
 						)
 					: null}
 			</div>
