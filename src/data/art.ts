@@ -18,7 +18,7 @@ export const artists: Record<string, { url: string; image: string }> = {
 	"Karl Mårtens": {
 		url: "https://www.konstochfolk.se/2015/08/19/karl-martens/",
 		image:
-			"https://www.konstochfolk.se/files/2020/04/Karl-Ma%CC%8Artens-800x867.jpg",
+			"https://www.konstochfolk.se/wp-content/uploads/2020/04/Karl-Ma%CC%8Artens-800x867.jpg",
 	},
 	"Theodor Kittelsen": {
 		url: "https://en.wikipedia.org/wiki/Theodor_Kittelsen",
@@ -51,7 +51,7 @@ export const artists: Record<string, { url: string; image: string }> = {
 	},
 	"Eyvind Earle": {
 		url: "https://en.wikipedia.org/wiki/Eyvind_Earle",
-		image: "https://upload.wikimedia.org/wikipedia/en/5/5c/Eyvind_Earle.jpg",
+		image: "https://upload.wikimedia.org/wikipedia/en/5/5f/Eyvind_Earle.jpg",
 	},
 };
 
