@@ -28,43 +28,45 @@ function BookList({
 					<span className="text-gray-400 text-xs w-5 shrink-0 text-right">
 						{index + 1}.
 					</span>
-					<Link
-						to={book.slug ?? ""}
-						className={`font-medium text-gray-900 dark:text-gray-100 hover:underline ${book.slug ? "" : "pointer-events-none"}`}
-						aria-disabled={book.slug ? "false" : "true"}
-					>
-						{book.title}
-					</Link>
 					{(book.rating ?? 0) > 0 && (
 						<span className="text-yellow-600 dark:text-yellow-400 text-xs">
 							{"★".repeat(book.rating ?? 0)}
 						</span>
 					)}
-					{(book.notes?.length ?? 0) > 0 && (
-						<span className="text-gray-400 text-xs">
-							({book.notes?.length}n)
+					<Link
+						to={book.slug ?? ""}
+						className={`font-medium text-gray-900 dark:text-gray-100 hover:underline ${book.slug ? "" : "pointer-events-none"}`}
+						aria-disabled={book.slug ? "false" : "true"}
+					>
+						{book.title.split(":")[0]}
+					</Link>
+						<span className="text-gray-500 text-xs">
+							— {book.author}
 						</span>
-					)}
-					<span className="text-gray-500 text-xs">
-						— {book.author}
-					</span>
-					<span className="hidden sm:inline text-xs text-gray-400">
-						|{" "}
-						{book.genres.map((genre, gi) => (
-							<button
-								key={`${book.slug}-${genre}-${gi}`}
-								className={`hover:underline ${genreFilters.includes(genre) ? "font-semibold text-gray-600 dark:text-gray-300" : ""}`}
-								onClick={() =>
-									handleGenreFilter(
-										!genreFilters.includes(genre),
-										genre,
-									)
-								}
-							>
-								{translateGenre(genre)}
-								{gi < book.genres.length - 1 ? ", " : ""}
-							</button>
-						))}
+					<span className="ml-auto flex items-baseline gap-x-1">
+						{(book.notes?.length ?? 0) > 0 && (
+							<span className="text-gray-400 text-xs">
+								({book.notes?.length}n)
+							</span>
+						)}
+						<span className="hidden sm:inline text-xs text-gray-400">
+							|{" "}
+							{book.genres.map((genre, gi) => (
+								<button
+									key={`${book.slug}-${genre}-${gi}`}
+									className={`hover:underline ${genreFilters.includes(genre) ? "font-semibold text-gray-600 dark:text-gray-300" : ""}`}
+									onClick={() =>
+										handleGenreFilter(
+											!genreFilters.includes(genre),
+											genre,
+										)
+									}
+								>
+									{translateGenre(genre)}
+									{gi < book.genres.length - 1 ? ", " : ""}
+								</button>
+							))}
+						</span>
 					</span>
 				</li>
 			))}

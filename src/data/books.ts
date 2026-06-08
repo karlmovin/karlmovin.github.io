@@ -563,7 +563,7 @@ export const books: Book[] = [
 		genres: ["fiction", "science", "philosophy"],
 	},
 	{
-		title: "The order of time",
+		title: "The Order of Time",
 		author: "Carlo Rovelli",
 		slug: "the-order-of-time_rovelli",
 		notes: [],
