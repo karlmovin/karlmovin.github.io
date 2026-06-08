@@ -1,5 +1,5 @@
 import parse from "html-react-parser";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import WeatherNarrative from "../components/WeatherNarrative";
 
@@ -87,7 +87,11 @@ export default function Weather() {
 		| null
 	>(null);
 
-	useEffect(() => {
+	const locationRequested = useRef(false);
+
+	const requestLocation = () => {
+		if (locationRequested.current) return;
+		locationRequested.current = true;
 		if ("geolocation" in navigator) {
 			navigator.geolocation.getCurrentPosition((position) => {
 				setLocation({
@@ -96,7 +100,7 @@ export default function Weather() {
 				});
 			});
 		}
-	}, []);
+	};
 
 	useEffect(() => {
 		async function fetchTextTvWeather() {
@@ -153,6 +157,13 @@ export default function Weather() {
 						</a>
 						)
 					</h5>
+					<button
+						type="button"
+						onClick={requestLocation}
+						className="mt-2 px-2 py-1 text-sm rounded-md bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+					>
+						{t("weather.narrative.useMyLocation")}
+					</button>
 				</div>
 				<div className="space-y-4">
 					<iframe

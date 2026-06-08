@@ -194,6 +194,7 @@ function DayPlanCard({
 	onToggleExpand,
 }: DayPlanCardProps) {
 	const { t } = useTranslation();
+
 	const day = t(
 		plan.dayOffset === 0
 			? "weather.narrative.day.today"

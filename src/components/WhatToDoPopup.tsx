@@ -23,8 +23,11 @@ export default function WhatToDo() {
 		};
 	} | null>(null);
 	const ref = useRef<HTMLDivElement>(null);
+	const locationRequested = useRef(false);
 
-	useEffect(() => {
+	const requestLocation = () => {
+		if (locationRequested.current) return;
+		locationRequested.current = true;
 		if ("geolocation" in navigator) {
 			navigator.geolocation.getCurrentPosition((position) => {
 				setLocation({
@@ -33,7 +36,7 @@ export default function WhatToDo() {
 				});
 			});
 		}
-	}, []);
+	};
 
 	useEffect(() => {
 		async function fetchWeather() {
@@ -151,6 +154,7 @@ export default function WhatToDo() {
 	};
 
 	const handleClick = () => {
+		requestLocation();
 		if (!isOpen) {
 			setIsOpen(true);
 			rollSuggestion();

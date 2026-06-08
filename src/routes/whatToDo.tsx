@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { t as tData } from "../data/i18n-helpers";
 import { interests } from "../data/interests";
@@ -51,7 +51,11 @@ export default function WhatToDo() {
 		| null
 	>(null);
 
-	useEffect(() => {
+	const locationRequested = useRef(false);
+
+	const requestLocation = () => {
+		if (locationRequested.current) return;
+		locationRequested.current = true;
 		if ("geolocation" in navigator) {
 			navigator.geolocation.getCurrentPosition((position) => {
 				setLocation({
@@ -60,7 +64,7 @@ export default function WhatToDo() {
 				});
 			});
 		}
-	}, []);
+	};
 
 	useEffect(() => {
 		async function fetchTextTvWeather() {
@@ -141,6 +145,7 @@ export default function WhatToDo() {
 	}, [location]);
 
 	const handleButtonClick = () => {
+		requestLocation();
 		const currentMonth = new Date().getMonth() + 1;
 		const currentHour = new Date().getHours();
 		if (!weather) return;
