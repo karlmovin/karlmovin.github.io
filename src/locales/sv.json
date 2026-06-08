@@ -224,5 +224,9 @@
 	},
 	"sideSection": {
 		"notes": "NOTES"
+	},
+	"home": {
+		"prevQuote": "Föregående citat",
+		"nextQuote": "Nästa citat"
 	}
 }
