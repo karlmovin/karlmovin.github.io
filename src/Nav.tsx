@@ -288,7 +288,21 @@ export default function Nav() {
 		null,
 	);
 	const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
+	const [logoAnim, setLogoAnim] = useState("");
 	const { t } = useTranslation();
+
+	const logoAnimations = [
+		"animate-flip",
+		"animate-spin",
+		"animate-wiggle",
+		"animate-pulsing",
+	];
+	const startLogoAnim = () => {
+		setLogoAnim(
+			logoAnimations[Math.floor(Math.random() * logoAnimations.length)],
+		);
+	};
+	const stopLogoAnim = () => setLogoAnim("");
 
 	const closeDropdown = () => setOpenDropdown(null);
 
@@ -335,12 +349,15 @@ export default function Nav() {
 						<div className="shrink-0 flex items-center">
 							<NavLink
 								to="../"
-								className="flex items-center space-x-3 rtl:space-x-reverse group"
+								onMouseEnter={startLogoAnim}
+								onMouseLeave={stopLogoAnim}
+								className="flex items-center space-x-3 rtl:space-x-reverse group perspective-[600px]"
 							>
-								<img src={logo} className="h-10 w-10 transition-transform group-hover:scale-105" alt="KRL"/>
-								<span className="self-center text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-									GAS - globally available stuff
-								</span>
+								<img
+									src={logo}
+									className={`h-10 w-10 origin-center transition-[filter] duration-300 ${logoAnim}`}
+									alt="Globally Available Stuff"
+								/>
 							</NavLink>
 						</div>
 						<div className="hidden sm:ml-6 sm:flex sm:space-x-8 sm:items-stretch">

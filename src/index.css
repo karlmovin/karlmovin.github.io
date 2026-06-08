@@ -18,7 +18,36 @@
 @theme {
 	--animate-color-pulse: color-pulse 2s ease-in-out infinite;
 	--animate-color-pulse-dark: color-pulse-dark 2s ease-in-out infinite;
+	--animate-wiggle: wiggle 0.4s ease-in-out infinite;
+	--animate-flip: flip 1.5s linear infinite;
+	--animate-pulsing: pulsing 0.8s ease-in-out infinite;
 
+	@keyframes pulsing {
+		0%,
+		100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.2);
+		}
+	}
+	@keyframes flip {
+		from {
+			transform: rotateY(0deg);
+		}
+		to {
+			transform: rotateY(360deg);
+		}
+	}
+	@keyframes wiggle {
+		0%,
+		100% {
+			rotate: -8deg;
+		}
+		50% {
+			rotate: 8deg;
+		}
+	}
 	@keyframes color-pulse {
 		0%,
 		100% {

@@ -21,13 +21,11 @@ export default function Home() {
 	return (
 		<main className="container max-w-(--breakpoint-xl) mx-auto px-4 py-8">
 			{quotes?.length ? (
-				<div className="card p-6">
-					<div className="flex items-center justify-center min-h-[200px]">
+					<div className="flex items-center justify-center min-h-50">
 						<p className="text-3xl font-bold text-center text-gray-700 dark:text-gray-200">
 							{tData(quotes[currentQuoteIndex], i18n.language)}
 						</p>
 					</div>
-				</div>
 			) : null}
 		</main>
 	);
