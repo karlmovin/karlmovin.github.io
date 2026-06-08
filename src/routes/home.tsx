@@ -12,7 +12,7 @@ export default function Home() {
 		if (quotes.length > 1) {
 			const interval = setInterval(() => {
 				setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
-			}, 5000); // Change quote every 5 seconds
+			}, 10_000); // Change quote every 10 seconds
 
 			return () => clearInterval(interval);
 		}
