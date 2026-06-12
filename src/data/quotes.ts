@@ -21,4 +21,7 @@ export const quotes: Translated[] = [
 		sv: "Skjut inte upp till imorgon det som kan göras idag.",
 		en: "Don't wait until tomorrow with what can be done today.",
 	},
+{
+  sv: "Böcker är fantasier. De existerar för att påminna mig om min egen törst efter mer kunskap",
+  en: "Books are fantasies. They’re there to remind me of my own desire for more knowledge."
 ];
