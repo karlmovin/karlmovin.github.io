@@ -24,4 +24,5 @@ export const quotes: Translated[] = [
 {
   sv: "Böcker är fantasier. De existerar för att påminna mig om min egen törst efter mer kunskap",
   en: "Books are fantasies. They’re there to remind me of my own desire for more knowledge."
+ }
 ];
