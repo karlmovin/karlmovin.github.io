@@ -80,7 +80,7 @@ function Post({
 			<div
 				className={`${
 					isTruncated ? "line-clamp-3" : "line-clamp-none"
-				} max-w-prose text-gray-700 dark:text-gray-200 leading-relaxed`}
+				} max-w-prose text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-line`}
 			>
 				<HighlightText text={post.body} searchTerm={searchTerm} />
 			</div>
