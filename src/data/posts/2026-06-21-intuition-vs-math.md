@@ -1,7 +1,7 @@
 ---
 title: Big maths
 date: 2026-06-21
-tags:
+tags: math
 ---
 
 Ta två eller fler siffror, sammanfoga till ett tal, subtrahera med summan av talen. Resultatet är alltid delbart med 9.
