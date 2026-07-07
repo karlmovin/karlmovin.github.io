@@ -566,7 +566,7 @@ export const books: Book[] = [
 		title: "The Order of Time",
 		author: "Carlo Rovelli",
 		slug: "the-order-of-time_rovelli",
-		notes: [],
+		notes: ["a semi-light read about time and space. touches on how science views time,and the history behind it. explains why time is troublesome. Rovelli claims for example that *now* and *here* doesn't exist in an absolute form, which makes sense (now is different depending on where you are, and vv)."],
 		status: "reading",
 		tags: [],
 		genres: ["science", "physics", "philosophy"],
