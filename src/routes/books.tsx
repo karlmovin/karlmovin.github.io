@@ -46,7 +46,7 @@ function BookList({
 					<span className="ml-auto flex items-baseline gap-x-1">
 						{(book.notes?.length ?? 0) > 0 && (
 							<span className="text-gray-400 text-xs">
-								({book.notes?.length}n)
+								({book.notes?.length})
 							</span>
 						)}
 						<span className="hidden sm:inline text-xs text-gray-400">
