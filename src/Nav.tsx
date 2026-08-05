@@ -320,6 +320,13 @@ export default function Nav() {
 						{ type: "external", href: "https://ground.news", label: "Ground News" },
 					],
 				},
+				{
+					type: "group",
+					label: "recipies",
+					children: [
+						{ type: "external", href: "https://www.alexanderlagarmat.se/bakning/kalljasta-frallor/", label: "Kalljästa Frallor" },
+					],
+				},
 				{ type: "link", to: "packing_lists", label: t("nav.packing_lists") },
 				{ type: "external", href: "https://sl-map.gunnar.se/", label: t("nav.slMap") },
 				{ type: "external", href: "https://nvdbpakarta.trafikverket.se/map", label: t("nav.trafficMap") },
