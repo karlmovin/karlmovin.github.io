@@ -343,6 +343,7 @@ export default function Nav() {
 				{ type: "link", to: "woodworking", label: t("nav.woodworking") },
 				{ type: "link", to: "rpg", label: t("nav.rpg") },
    { type: "external", href: "https://stretchguide-vtpt2dgp.manus.space", label: "stretch101" },
+{ type: "external", href: "https://boardgamegeek.com/collection/user/Suparn", label: "boardgames"},
 			],
 		},
 	];
