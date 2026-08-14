@@ -1,0 +1,36 @@
+{
+	"manifest_version": 3,
+	"name": "Gatekeeper — Anti Doom Scroll",
+	"version": "0.1.0",
+	"description": "Forces a conscious choice before distracting sites load. Pick a reason; invalid reasons get redirected.",
+	"minimum_chrome_version": "116",
+	"permissions": ["storage", "scripting", "bookmarks", "activeTab"],
+	"optional_host_permissions": ["<all_urls>"],
+	"background": {
+		"service_worker": "background/service-worker.js",
+		"type": "module"
+	},
+	"options_ui": {
+		"page": "options/options.html",
+		"open_in_tab": true
+	},
+	"action": {
+		"default_popup": "popup/popup.html",
+		"default_title": "Gatekeeper",
+		"default_icon": {
+			"16": "icons/icon-16.png",
+			"32": "icons/icon-32.png"
+		}
+	},
+	"icons": {
+		"16": "icons/icon-16.png",
+		"48": "icons/icon-48.png",
+		"128": "icons/icon-128.png"
+	},
+	"web_accessible_resources": [
+		{
+			"resources": ["pages/blocked.html"],
+			"matches": ["<all_urls>"]
+		}
+	]
+}

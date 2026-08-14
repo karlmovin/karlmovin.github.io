@@ -1,0 +1,82 @@
+:root {
+	color-scheme: light dark;
+	--bg: #ffffff;
+	--fg: #0f172a;
+	--sub: #64748b;
+	--border: #e2e8f0;
+	--primary: #4f46e5;
+	--primary-fg: #ffffff;
+	--secondary: #f1f5f9;
+	--secondary-fg: #0f172a;
+	--secondary-hover: #e2e8f0;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #0f172a;
+		--fg: #e2e8f0;
+		--sub: #94a3b8;
+		--border: #1e293b;
+		--secondary: #1e293b;
+		--secondary-fg: #e2e8f0;
+		--secondary-hover: #334155;
+	}
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+	background: var(--bg);
+	color: var(--fg);
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	width: 320px;
+	padding: 14px;
+}
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 14px;
+}
+.title { font-size: 15px; font-weight: 700; }
+
+.toggle { position: relative; width: 40px; height: 22px; display: inline-block; }
+.toggle input { opacity: 0; width: 0; height: 0; }
+.slider {
+	position: absolute; inset: 0;
+	background: var(--secondary); border-radius: 22px;
+	transition: background 0.2s;
+	cursor: pointer;
+}
+.slider::before {
+	content: ""; position: absolute;
+	left: 2px; top: 2px;
+	width: 18px; height: 18px;
+	background: white; border-radius: 50%;
+	transition: transform 0.2s;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.toggle input:checked + .slider { background: var(--primary); }
+.toggle input:checked + .slider::before { transform: translateX(18px); }
+
+.status {
+	padding: 12px;
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	margin-bottom: 12px;
+}
+#status-line { font-weight: 600; font-size: 14px; }
+.sub { font-size: 12px; color: var(--sub); margin-top: 4px; }
+
+#actions { display: flex; flex-direction: column; gap: 8px; }
+.btn {
+	all: unset;
+	text-align: center;
+	cursor: pointer;
+	padding: 10px 12px;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 500;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.primary { background: var(--primary); color: var(--primary-fg); }
+.secondary { background: var(--secondary); color: var(--secondary-fg); }
+.secondary:hover { background: var(--secondary-hover); }

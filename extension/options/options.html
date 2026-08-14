@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Gatekeeper · Options</title>
+		<link rel="stylesheet" href="options.css" />
+	</head>
+	<body>
+		<header class="topbar">
+			<h1>Gatekeeper</h1>
+			<div class="global">
+				<label class="row">
+					<input type="checkbox" id="global-active" />
+					<span>Extension enabled</span>
+				</label>
+				<label class="row">
+					<span>Default pass (minutes)</span>
+					<input type="number" id="default-minutes" min="1" max="720" />
+				</label>
+				<div class="row">
+					<button id="export-btn" class="btn ghost" type="button">Export</button>
+					<button id="import-btn" class="btn ghost" type="button">Import</button>
+					<input type="file" id="import-file" accept="application/json" hidden />
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div class="toolbar">
+				<h2>Blocked sites</h2>
+				<button id="add-site" class="btn primary" type="button">Add site</button>
+			</div>
+			<div id="sites"></div>
+
+			<template id="site-template">
+				<article class="site" data-site-id="">
+					<header class="site-header">
+						<div class="site-title">
+							<label class="row">
+								<input type="checkbox" class="site-active" />
+								<span class="badge">on</span>
+							</label>
+							<input type="text" class="site-label" placeholder="Label (e.g. Facebook)" />
+						</div>
+						<div class="site-actions">
+							<button class="btn ghost expand-btn" type="button">Edit ▾</button>
+							<button class="btn danger delete-btn" type="button">Delete</button>
+						</div>
+					</header>
+					<div class="site-body">
+						<div class="row grid-2">
+							<label class="field">
+								<span>Match type</span>
+								<select class="match-type">
+									<option value="domain">Domain (matches subdomains)</option>
+									<option value="glob">Glob (Chrome match pattern)</option>
+								</select>
+							</label>
+							<label class="field">
+								<span class="pattern-label">Domain</span>
+								<input type="text" class="pattern" placeholder="facebook.com" />
+							</label>
+						</div>
+						<div class="pattern-hint sub"></div>
+
+						<div class="row grid-2">
+							<label class="field">
+								<span>Pass duration (minutes)</span>
+								<input type="number" class="grant-minutes" min="1" max="720" />
+							</label>
+							<label class="field">
+								<span>Pass scope</span>
+								<select class="grant-scope">
+									<option value="domain">Per site (all tabs)</option>
+									<option value="tab">Per tab</option>
+								</select>
+							</label>
+						</div>
+
+						<fieldset class="reasons-fs">
+							<legend>Reasons</legend>
+							<div class="reasons-list"></div>
+							<button class="btn ghost add-reason" type="button">+ Add reason</button>
+							<div class="sub reasons-hint">Add at least one valid and one invalid reason.</div>
+						</fieldset>
+
+						<fieldset class="deny-fs">
+							<legend>If they pick an invalid reason…</legend>
+							<label class="field">
+								<span>Action</span>
+								<select class="deny-type">
+									<option value="redirectUrl">Redirect to a URL</option>
+									<option value="randomBookmark">Redirect to a random bookmark</option>
+									<option value="reminder">Show a reminder (stay blocked)</option>
+									<option value="blockedPage">Show the blocked page</option>
+								</select>
+							</label>
+							<label class="field deny-url-field">
+								<span>Redirect URL</span>
+								<input type="url" class="deny-url" placeholder="https://www.karlmovin.se" />
+							</label>
+							<label class="field deny-fallback-field" hidden>
+								<span>Fallback URL (if no bookmarks)</span>
+								<input type="url" class="deny-fallback" placeholder="https://www.karlmovin.se" />
+							</label>
+							<label class="field deny-message-field">
+								<span>Message</span>
+								<textarea class="deny-message" rows="3" placeholder="You said you had no reason. Do the thing you actually planned."></textarea>
+							</label>
+						</fieldset>
+
+						<div class="save-row">
+							<div class="save-status sub"></div>
+							<button class="btn primary save-btn" type="button">Save</button>
+						</div>
+					</div>
+				</article>
+			</template>
+
+			<template id="reason-template">
+				<div class="reason-row">
+					<input type="text" class="reason-text" placeholder="Reason text" />
+					<label class="row">
+						<input type="checkbox" class="reason-valid" />
+						<span>valid</span>
+					</label>
+					<button class="btn ghost small delete-reason" type="button">✕</button>
+				</div>
+			</template>
+		</main>
+
+		<script src="options.js" type="module"></script>
+	</body>
+</html>

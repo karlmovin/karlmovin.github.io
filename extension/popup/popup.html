@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Gatekeeper</title>
+		<link rel="stylesheet" href="popup.css" />
+	</head>
+	<body>
+		<header>
+			<div class="title">Gatekeeper</div>
+			<label class="toggle">
+				<input type="checkbox" id="active" />
+				<span class="slider"></span>
+			</label>
+		</header>
+
+		<section id="tab-status" class="status">
+			<div id="status-line">Loading…</div>
+			<div id="status-sub" class="sub"></div>
+		</section>
+
+		<section id="actions">
+			<button id="block-this" class="btn primary" type="button">
+				Block this site…
+			</button>
+			<button id="clear-pass" class="btn secondary" type="button" hidden>
+				Clear pass for this site
+			</button>
+			<button id="open-options" class="btn secondary" type="button">
+				Manage blocklist
+			</button>
+		</section>
+
+		<script src="popup.js" type="module"></script>
+	</body>
+</html>
