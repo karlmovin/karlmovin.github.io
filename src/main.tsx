@@ -7,16 +7,17 @@ import Root from "./routes/root.tsx";
 import "./i18n";
 import "./index.css";
 import ErrorPage from "./error-page.tsx";
+import Art from "./routes/art.tsx";
 import Blog from "./routes/blog.tsx";
 import BookPage from "./routes/book.tsx";
 import Books from "./routes/books.tsx";
 import Home from "./routes/home.tsx";
-import Art from "./routes/art.tsx";
 import LinksPage from "./routes/links.tsx";
 import News from "./routes/news.tsx";
+import Rpg from "./routes/rpg.tsx";
+import Verktyg from "./routes/verktyg.tsx";
 import Weather from "./routes/weather.tsx";
 import Woodworking from "./routes/woodworking.tsx";
-import Rpg from "./routes/rpg.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
 					{
 						path: "rpg",
 						element: <Rpg />,
+					},
+					{
+						path: "verktyg",
+						element: <Verktyg />,
 					},
 				],
 			},
