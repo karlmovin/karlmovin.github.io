@@ -69,7 +69,7 @@ const router = createBrowserRouter([
 						element: <Rpg />,
 					},
 					{
-						path: "verktyg",
+						path: "pass-calculator",
 						element: <PassCalculator />,
 					},
 				],

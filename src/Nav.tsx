@@ -320,7 +320,7 @@ export default function Nav() {
 					],
 				},
 				{ type: "link", to: "packing_lists", label: t("nav.packing_lists") },
-				{ type: "link", to: "verktyg", label: t("nav.seasonPass") },
+				{ type: "link", to: "pass-calculator", label: t("nav.seasonPass") },
 				{
 					type: "external",
 					href: "https://sl-map.gunnar.se/",
