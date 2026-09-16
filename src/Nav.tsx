@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router";
 import logo from "./assets/logo.svg";
@@ -65,8 +65,7 @@ function NavDropdown({
 			}
 		}
 		document.addEventListener("mousedown", handleClickOutside);
-		return () =>
-			document.removeEventListener("mousedown", handleClickOutside);
+		return () => document.removeEventListener("mousedown", handleClickOutside);
 	}, [isOpen, setOpenDropdown]);
 
 	return (
@@ -161,9 +160,7 @@ function DesktopDropdownItems({
 			return (
 				<div key={item.label}>
 					<button
-						onClick={() =>
-							setExpandedGroup(isExpanded ? null : item.label)
-						}
+						onClick={() => setExpandedGroup(isExpanded ? null : item.label)}
 						className={`${dropdownItemClass} flex items-center justify-between w-full`}
 					>
 						{item.label}
@@ -211,9 +208,7 @@ function MobileItems({
 			return (
 				<div key={item.label}>
 					<button
-						onClick={() =>
-							setExpandedGroup(isExpanded ? null : item.label)
-						}
+						onClick={() => setExpandedGroup(isExpanded ? null : item.label)}
 						className={`${mobileItemClass} flex items-center justify-between w-full`}
 					>
 						{item.label}
@@ -317,13 +312,30 @@ export default function Nav() {
 					label: t("nav.news"),
 					children: [
 						{ type: "link", to: "news", label: "Text-TV" },
-						{ type: "external", href: "https://ground.news", label: "Ground News" },
+						{
+							type: "external",
+							href: "https://ground.news",
+							label: "Ground News",
+						},
 					],
 				},
 				{ type: "link", to: "packing_lists", label: t("nav.packing_lists") },
-				{ type: "external", href: "https://sl-map.gunnar.se/", label: t("nav.slMap") },
-				{ type: "external", href: "https://nvdbpakarta.trafikverket.se/map", label: t("nav.trafficMap") },
-				{ type: "external", href: "https://minkarta.lantmateriet.se/map", label: t("nav.lantmaterietMap") },
+				{ type: "link", to: "pass-calculator", label: t("nav.seasonPass") },
+				{
+					type: "external",
+					href: "https://sl-map.gunnar.se/",
+					label: t("nav.slMap"),
+				},
+				{
+					type: "external",
+					href: "https://nvdbpakarta.trafikverket.se/map",
+					label: t("nav.trafficMap"),
+				},
+				{
+					type: "external",
+					href: "https://minkarta.lantmateriet.se/map",
+					label: t("nav.lantmaterietMap"),
+				},
 			],
 		},
 		{
@@ -334,7 +346,11 @@ export default function Nav() {
 					type: "group",
 					label: "recipies",
 					children: [
-						{ type: "external", href: "https://www.alexanderlagarmat.se/bakning/kalljasta-frallor/", label: "Kalljästa Frallor" },
+						{
+							type: "external",
+							href: "https://www.alexanderlagarmat.se/bakning/kalljasta-frallor/",
+							label: "Kalljästa Frallor",
+						},
 					],
 				},
 				{ type: "link", to: "art", label: t("nav.art") },
@@ -342,8 +358,16 @@ export default function Nav() {
 				{ type: "link", to: "links", label: t("nav.links") },
 				{ type: "link", to: "woodworking", label: t("nav.woodworking") },
 				{ type: "link", to: "rpg", label: t("nav.rpg") },
-   { type: "external", href: "https://stretchguide-vtpt2dgp.manus.space", label: "stretch101" },
-{ type: "external", href: "https://boardgamegeek.com/collection/user/Suparn", label: "boardgames"},
+				{
+					type: "external",
+					href: "https://stretchguide-vtpt2dgp.manus.space",
+					label: "stretch101",
+				},
+				{
+					type: "external",
+					href: "https://boardgamegeek.com/collection/user/Suparn",
+					label: "boardgames",
+				},
 			],
 		},
 	];
@@ -409,9 +433,7 @@ export default function Nav() {
 							className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-gray-500"
 							aria-expanded="false"
 						>
-							<span className="sr-only">
-								{t("nav.openMenu")}
-							</span>
+							<span className="sr-only">{t("nav.openMenu")}</span>
 							{!isOpen ? (
 								<svg
 									className="block h-6 w-6"
@@ -460,9 +482,7 @@ export default function Nav() {
 								isOpen={openMobileSection === section.id}
 								onToggle={() =>
 									setOpenMobileSection(
-										openMobileSection === section.id
-											? null
-											: section.id,
+										openMobileSection === section.id ? null : section.id,
 									)
 								}
 								expandedGroup={expandedGroup}

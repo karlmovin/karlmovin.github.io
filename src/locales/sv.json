@@ -15,7 +15,8 @@
 		"trafficMap": "Trafikkarta",
 		"lantmaterietMap": "Lantmäteriet-karta",
 		"woodworking": "Finsnickeri",
-		"rpg": "Rollspel"
+		"rpg": "Rollspel",
+		"seasonPass": "Säsongskort-kalkylator"
 	},
 	"theme": {
 		"toggle": "V\u00e4xla mellan ljust och m\u00f6rkt tema"
@@ -230,5 +231,43 @@
 	"home": {
 		"prevQuote": "Föregående citat",
 		"nextQuote": "Nästa citat"
+	},
+	"verktyg": {
+		"period": {
+			"week": "vecka",
+			"month": "månad",
+			"year": "år"
+		},
+		"perPeriod": {
+			"week": "per vecka",
+			"month": "per månad",
+			"year": "per år"
+		},
+		"seasonPass": {
+			"title": "Säsongskort-kalkylator",
+			"intro": "Räkna ut om det lönar sig att köpa säsongskort, eller om enkelbiljetter blir billigare för hur ofta du åker.",
+			"inputs": "Ange dina uppgifter",
+			"singleTicket": "Kostnad för enkel biljett",
+			"tripsPerWeek": "Antal gånger per vecka",
+			"roundTrip": "Tur och retur (dubbla enkelbiljetter per gång)",
+			"passCost": "Kostnad för säsongskort",
+			"passPeriod": "Period för säsongskort",
+			"result": "Resultat",
+			"worthIt": "Säsongskortet lönar sig.",
+			"notWorthIt": "Enkelbiljetter är billigare.",
+			"summary": "Enkelbiljetter kostar {{ticketCost}} {{period}}, säsongskortet kostar {{passCost}} — du {{action}} {{diff}}.",
+			"saving": "sparar",
+			"losing": "betalar extra",
+			"breakeven": "Så många gånger krävs för att säsongskortet ska löna sig",
+			"breakevenIntro": "För att nå upp till {{passCost}} per {{period}} behöver du åka minst så här ofta:",
+			"perWeek": "Per vecka",
+			"perMonth": "Per månad",
+			"breakevenRow": "≈ {{trips}} gånger ({{singles}} enkelresor)",
+			"above": "du åker mer",
+			"below": "du åker mindre",
+			"passCostBreakdown": "Säsongskortet omräknat",
+			"enterValues": "Fyll i alla fält för att se jämförelsen.",
+			"assumption": "Räknat på {{days}} dagar per månad och 365 dagar per år."
+		}
 	}
 }

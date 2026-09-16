@@ -15,7 +15,8 @@
 		"trafficMap": "Traffic Map",
 		"lantmaterietMap": "Lantmäteriet Map",
 		"woodworking": "Woodworking",
-		"rpg": "Tabletop RPG"
+		"rpg": "Tabletop RPG",
+		"seasonPass": "Season pass calculator"
 	},
 	"theme": {
 		"toggle": "Toggle between light and dark theme"
@@ -230,5 +231,43 @@
 	"home": {
 		"prevQuote": "Previous quote",
 		"nextQuote": "Next quote"
+	},
+	"verktyg": {
+		"period": {
+			"week": "week",
+			"month": "month",
+			"year": "year"
+		},
+		"perPeriod": {
+			"week": "per week",
+			"month": "per month",
+			"year": "per year"
+		},
+		"seasonPass": {
+			"title": "Season pass calculator",
+			"intro": "Work out whether a season pass is worth it, or if single tickets are cheaper for how often you travel.",
+			"inputs": "Enter your details",
+			"singleTicket": "One-way ticket cost",
+			"tripsPerWeek": "Trips per week",
+			"roundTrip": "Round trip (two singles per trip)",
+			"passCost": "Season pass cost",
+			"passPeriod": "Season pass period",
+			"result": "Result",
+			"worthIt": "The season pass pays off.",
+			"notWorthIt": "Single tickets are cheaper.",
+			"summary": "Singles cost {{ticketCost}} {{period}}, the pass costs {{passCost}} — you {{action}} {{diff}}.",
+			"saving": "save",
+			"losing": "pay extra",
+			"breakeven": "Trips needed for the pass to pay off",
+			"breakevenIntro": "To reach {{passCost}} per {{period}} you'd need to travel at least this often:",
+			"perWeek": "Per week",
+			"perMonth": "Per month",
+			"breakevenRow": "≈ {{trips}} trips ({{singles}} single fares)",
+			"above": "you travel more",
+			"below": "you travel less",
+			"passCostBreakdown": "Season pass, other periods",
+			"enterValues": "Fill in every field to see the comparison.",
+			"assumption": "Based on {{days}} days per month and 365 days per year."
+		}
 	}
 }
