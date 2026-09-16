@@ -28,7 +28,7 @@ function formatNumber(value: number, lang: string, digits = 1): string {
 	}).format(value);
 }
 
-export default function Verktyg() {
+export default function PassCalculator() {
 	const { t, i18n } = useTranslation();
 	const lang = i18n.language;
 

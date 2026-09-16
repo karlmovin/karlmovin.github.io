@@ -15,7 +15,7 @@ import Home from "./routes/home.tsx";
 import LinksPage from "./routes/links.tsx";
 import News from "./routes/news.tsx";
 import Rpg from "./routes/rpg.tsx";
-import Verktyg from "./routes/verktyg.tsx";
+import PassCalculator from "./routes/pass-calculator.tsx";
 import Weather from "./routes/weather.tsx";
 import Woodworking from "./routes/woodworking.tsx";
 
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
 					},
 					{
 						path: "verktyg",
-						element: <Verktyg />,
+						element: <PassCalculator />,
 					},
 				],
 			},
