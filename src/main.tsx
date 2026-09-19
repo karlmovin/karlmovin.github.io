@@ -17,6 +17,7 @@ import News from "./routes/news.tsx";
 import Rpg from "./routes/rpg.tsx";
 import PassCalculator from "./routes/pass-calculator.tsx";
 import Weather from "./routes/weather.tsx";
+import Wishlist from "./routes/wishlist.tsx";
 import Woodworking from "./routes/woodworking.tsx";
 
 const router = createBrowserRouter([
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
 					{
 						path: "pass-calculator",
 						element: <PassCalculator />,
+					},
+					{
+						path: "wishlist",
+						element: <Wishlist />,
 					},
 				],
 			},

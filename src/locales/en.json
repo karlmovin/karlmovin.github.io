@@ -18,7 +18,8 @@
 		"rpg": "Tabletop RPG",
 		"seasonPass": "Season pass calculator",
 		"recipes": "Recipes",
-		"wine": "Wine"
+		"wine": "Wine",
+		"wishlist": "Wishlist"
 	},
 	"theme": {
 		"toggle": "Toggle between light and dark theme"
@@ -233,6 +234,9 @@
 	"home": {
 		"prevQuote": "Previous quote",
 		"nextQuote": "Next quote"
+	},
+	"wishlist": {
+		"title": "Wishlist"
 	},
 	"verktyg": {
 		"period": {
