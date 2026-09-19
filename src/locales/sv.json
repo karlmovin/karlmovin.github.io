@@ -18,7 +18,8 @@
 		"rpg": "Rollspel",
 		"seasonPass": "Säsongskort-kalkylator",
 		"recipes": "Recept",
-		"wine": "Vin"
+		"wine": "Vin",
+		"wishlist": "Önskelista"
 	},
 	"theme": {
 		"toggle": "V\u00e4xla mellan ljust och m\u00f6rkt tema"
@@ -233,6 +234,9 @@
 	"home": {
 		"prevQuote": "Föregående citat",
 		"nextQuote": "Nästa citat"
+	},
+	"wishlist": {
+		"title": "Önskelista"
 	},
 	"verktyg": {
 		"period": {
