@@ -344,12 +344,23 @@ export default function Nav() {
 			items: [
 				{
 					type: "group",
-					label: "recipies",
+					label: t("nav.recipes"),
 					children: [
 						{
 							type: "external",
 							href: "https://www.alexanderlagarmat.se/bakning/kalljasta-frallor/",
 							label: "Kalljästa Frallor",
+						},
+					],
+				},
+				{
+					type: "group",
+					label: t("nav.wine"),
+					children: [
+						{
+							type: "external",
+							href: "https://www.systembolaget.se/sok/?textQuery=altitude%20duorum",
+							label: "Altitude by Duorum 2024 — 4/5 (pasta, pizza)",
 						},
 					],
 				},

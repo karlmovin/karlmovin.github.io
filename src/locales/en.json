@@ -16,7 +16,9 @@
 		"lantmaterietMap": "Lantmäteriet Map",
 		"woodworking": "Woodworking",
 		"rpg": "Tabletop RPG",
-		"seasonPass": "Season pass calculator"
+		"seasonPass": "Season pass calculator",
+		"recipes": "Recipes",
+		"wine": "Wine"
 	},
 	"theme": {
 		"toggle": "Toggle between light and dark theme"
