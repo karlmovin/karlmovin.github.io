@@ -238,6 +238,16 @@
 	"wishlist": {
 		"title": "Önskelista"
 	},
+	"recipes": {
+		"title": "Recept",
+		"searchPlaceholder": "Sök recept...",
+		"noResults": "Inga recept hittades"
+	},
+	"wines": {
+		"title": "Vin",
+		"searchPlaceholder": "Sök vin...",
+		"noResults": "Inga viner hittades"
+	},
 	"verktyg": {
 		"period": {
 			"week": "vecka",
