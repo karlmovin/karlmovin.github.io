@@ -322,19 +322,25 @@ export default function Nav() {
 				{ type: "link", to: "packing_lists", label: t("nav.packing_lists") },
 				{ type: "link", to: "pass-calculator", label: t("nav.seasonPass") },
 				{
-					type: "external",
-					href: "https://sl-map.gunnar.se/",
-					label: t("nav.slMap"),
-				},
-				{
-					type: "external",
-					href: "https://nvdbpakarta.trafikverket.se/map",
-					label: t("nav.trafficMap"),
-				},
-				{
-					type: "external",
-					href: "https://minkarta.lantmateriet.se/map",
-					label: t("nav.lantmaterietMap"),
+					type: "group",
+					label: t("nav.maps"),
+					children: [
+						{
+							type: "external",
+							href: "https://sl-map.gunnar.se/",
+							label: t("nav.slMap"),
+						},
+						{
+							type: "external",
+							href: "https://nvdbpakarta.trafikverket.se/map",
+							label: t("nav.trafficMap"),
+						},
+						{
+							type: "external",
+							href: "https://minkarta.lantmateriet.se/map",
+							label: t("nav.lantmaterietMap"),
+						},
+					],
 				},
 			],
 		},
