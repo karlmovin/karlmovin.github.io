@@ -238,6 +238,16 @@
 	"wishlist": {
 		"title": "Wishlist"
 	},
+	"recipes": {
+		"title": "Recipes",
+		"searchPlaceholder": "Search recipes...",
+		"noResults": "No recipes found"
+	},
+	"wines": {
+		"title": "Wine",
+		"searchPlaceholder": "Search wines...",
+		"noResults": "No wines found"
+	},
 	"verktyg": {
 		"period": {
 			"week": "week",

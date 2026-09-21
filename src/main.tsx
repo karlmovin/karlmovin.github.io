@@ -16,7 +16,9 @@ import LinksPage from "./routes/links.tsx";
 import News from "./routes/news.tsx";
 import Rpg from "./routes/rpg.tsx";
 import PassCalculator from "./routes/pass-calculator.tsx";
+import Recipes from "./routes/recipes.tsx";
 import Weather from "./routes/weather.tsx";
+import Wines from "./routes/wines.tsx";
 import Wishlist from "./routes/wishlist.tsx";
 import Woodworking from "./routes/woodworking.tsx";
 
@@ -76,6 +78,14 @@ const router = createBrowserRouter([
 					{
 						path: "wishlist",
 						element: <Wishlist />,
+					},
+					{
+						path: "recipes",
+						element: <Recipes />,
+					},
+					{
+						path: "wines",
+						element: <Wines />,
 					},
 				],
 			},
