@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { t as tl } from "../data/i18n-helpers";
 import { wines } from "../data/wines";
 
-function Rating({ value, max = 5 }: { value: number; max?: number }) {
+function Rating({ value, max = 10 }: { value: number; max?: number }) {
 	return (
 		<span
 			className="text-yellow-500 dark:text-yellow-400"

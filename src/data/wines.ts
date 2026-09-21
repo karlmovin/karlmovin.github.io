@@ -13,9 +13,9 @@ export const wines: Wine[] = [
 	{
 		name: "Altitude by Duorum",
 		year: 2024,
-		rating: 4,
+		rating: 8,
 		url: "https://www.systembolaget.se/sok/?textQuery=altitude%20duorum",
-		tags: ["pastapizza", "sällskap"],
+		tags: ["pasta", "pizza", "sällskap"],
 		notes: {
 			sv: "Gott sällskapsvin, passar till pasta och pizza.",
 			en: "Good social wine, pairs with pasta and pizza.",
