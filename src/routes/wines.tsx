@@ -108,6 +108,15 @@ export default function Wines() {
 									{w.name} ↗
 								</a>
 								<span className="text-sm text-gray-600 dark:text-gray-400">
+									<span
+										aria-label={tl(w.country.name, lang)}
+										className="mr-1"
+									>
+										{w.country.flag}
+									</span>
+									{tl(w.country.name, lang)}
+								</span>
+								<span className="text-sm text-gray-600 dark:text-gray-400">
 									{w.year}
 								</span>
 								<Rating value={w.rating} />
