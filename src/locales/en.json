@@ -210,6 +210,8 @@
 		"alternativeRpgs": "Alternative RPGs"
 	},
 	"woodworking": {
+		"anatomy": "Terminology & anatomy",
+		"loading3d": "Loading 3D model…",
 		"title": "Woodworking",
 		"plannedProjects": "Planned Projects",
 		"resources": "Resources",
@@ -223,6 +225,20 @@
 		"project4": "'All the world's games'",
 		"project5": "Watch holder",
 		"project6": "Bird feeder"
+	},
+	"handPlane": {
+		"title": "Hand plane (Stanley/Bailey No. 4)",
+		"explode": "Exploded view",
+		"explodeAll": "Explode",
+		"assemble": "Assemble",
+		"resetView": "Reset view",
+		"autoRotate": "Rotate",
+		"isolate": "Show selected part only",
+		"hint": "Drag to rotate, scroll/pinch to zoom, right-click/two fingers to pan. Click a part to select it.",
+		"parts": "Parts",
+		"previous": "Previous part",
+		"next": "Next part",
+		"selectPrompt": "Pick a part in the list or in the model to read more about it."
 	},
 	"error": {
 		"pageNotFound": "Page not found",
