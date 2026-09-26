@@ -210,6 +210,8 @@
 		"alternativeRpgs": "Alternative RPGs"
 	},
 	"woodworking": {
+		"anatomy": "Terminology & anatomy",
+		"loading3d": "Loading 3D model…",
 		"title": "Woodworking",
 		"plannedProjects": "Planned Projects",
 		"resources": "Resources",
@@ -225,9 +227,8 @@
 		"project6": "Bird feeder"
 	},
 	"handPlane": {
-		"title": "Hand plane in 3D",
-		"back": "Woodworking",
-		"explode": "Explode",
+		"title": "Hand plane (Stanley/Bailey No. 4)",
+		"explode": "Exploded view",
 		"explodeAll": "Explode",
 		"assemble": "Assemble",
 		"resetView": "Reset view",
@@ -237,8 +238,7 @@
 		"parts": "Parts",
 		"previous": "Previous part",
 		"next": "Next part",
-		"selectPrompt": "Pick a part in the list or in the model to read more about it.",
-		"link": "Parts of a hand plane in 3D"
+		"selectPrompt": "Pick a part in the list or in the model to read more about it."
 	},
 	"error": {
 		"pageNotFound": "Page not found",

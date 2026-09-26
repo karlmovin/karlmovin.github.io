@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import {
 	plannedProjectKeys,
 	resources,
@@ -10,6 +10,11 @@ import {
 	type WoodworkingLink,
 } from "../data/woodworking";
 import { t as tl } from "../data/i18n-helpers";
+
+// three.js is heavy, so the 3D model is split into its own chunk.
+const HandPlaneAnatomy = lazy(
+	() => import("../components/hand-plane/HandPlaneAnatomy"),
+);
 
 function ExtLink({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
@@ -22,6 +27,33 @@ function ExtLink({ href, children }: { href: string; children: React.ReactNode }
 			{children}
 		</a>
 	);
+}
+
+/** Renders its children only once scrolled near, so the 3D chunk isn't fetched up front. */
+function WhenVisible({
+	placeholder,
+	children,
+}: {
+	placeholder: React.ReactNode;
+	children: React.ReactNode;
+}) {
+	const ref = useRef<HTMLDivElement>(null);
+	const [visible, setVisible] = useState(false);
+
+	useEffect(() => {
+		const el = ref.current;
+		if (!el || visible) return;
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) setVisible(true);
+			},
+			{ rootMargin: "300px" },
+		);
+		observer.observe(el);
+		return () => observer.disconnect();
+	}, [visible]);
+
+	return <div ref={ref}>{visible ? children : placeholder}</div>;
 }
 
 function resolveLabel(label: WoodworkingLink["label"], lang: string): string {
@@ -41,14 +73,6 @@ export default function Woodworking() {
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-3">
 				{/* Left column */}
 				<div className="space-y-3">
-					{/* 3D hand plane */}
-					<Link
-						to="/woodworking/hand-plane"
-						className="block border border-gray-300 dark:border-gray-600 p-3 bg-white dark:bg-gray-800 text-sm font-medium text-blue-700 dark:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700"
-					>
-						{t("handPlane.link")} →
-					</Link>
-
 					{/* Planned Projects */}
 					<div className="border border-gray-300 dark:border-gray-600 p-3 bg-white dark:bg-gray-800">
 						<h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-600 pb-1 mb-2">
@@ -142,6 +166,22 @@ export default function Woodworking() {
 					</div>
 				</div>
 			</div>
+
+			{/* Terminology & anatomy */}
+			<section className="mt-3 border border-gray-300 dark:border-gray-600 p-3 bg-white dark:bg-gray-800">
+				<h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-600 pb-1 mb-2">
+					{t("woodworking.anatomy")}
+				</h2>
+				<WhenVisible placeholder={<p className="h-80 flex items-center justify-center text-sm text-gray-500 dark:text-gray-400">
+						{t("woodworking.loading3d")}
+					</p>}>
+					<Suspense fallback={<p className="h-80 flex items-center justify-center text-sm text-gray-500 dark:text-gray-400">
+							{t("woodworking.loading3d")}
+						</p>}>
+						<HandPlaneAnatomy />
+					</Suspense>
+				</WhenVisible>
+			</section>
 		</div>
 	);
 }

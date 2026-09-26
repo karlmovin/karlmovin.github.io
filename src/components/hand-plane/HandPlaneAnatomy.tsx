@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
-import HandPlaneViewer from "../components/hand-plane/HandPlaneViewer";
-import { type HandPlanePartId, handPlaneParts } from "../data/hand-plane";
-import { t as tl } from "../data/i18n-helpers";
+import { type HandPlanePartId, handPlaneParts } from "../../data/hand-plane";
+import { t as tl } from "../../data/i18n-helpers";
+import HandPlaneViewer from "./HandPlaneViewer";
 
-export default function HandPlane() {
+/** Interactive, explodable 3D hand plane with a legend of its parts. */
+export default function HandPlaneAnatomy() {
 	const { t, i18n } = useTranslation();
 	const lang = i18n.language;
 	const [explode, setExplode] = useState(0);
@@ -38,18 +38,10 @@ export default function HandPlane() {
 		"px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-40";
 
 	return (
-		<div className="max-w-7xl mx-auto px-2 sm:px-4 py-4">
-			<div className="mb-4 border-b-2 border-gray-800 dark:border-gray-200 pb-1 flex items-baseline justify-between gap-2">
-				<h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-					{t("handPlane.title")}
-				</h1>
-				<Link
-					to="/woodworking"
-					className="text-sm text-blue-700 dark:text-blue-400 hover:underline"
-				>
-					← {t("handPlane.back")}
-				</Link>
-			</div>
+		<div>
+			<h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2">
+				{t("handPlane.title")}
+			</h3>
 
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
 				<div className="lg:col-span-2 space-y-2">
@@ -123,9 +115,9 @@ export default function HandPlane() {
 				<div className="space-y-3">
 					<div className="border border-gray-300 dark:border-gray-600 p-3 bg-white dark:bg-gray-800">
 						<div className="flex items-center justify-between border-b border-gray-300 dark:border-gray-600 pb-1 mb-2">
-							<h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white">
+							<h4 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">
 								{t("handPlane.parts")}
-							</h2>
+							</h4>
 							<div className="flex gap-1">
 								<button
 									type="button"
@@ -174,9 +166,9 @@ export default function HandPlane() {
 					<div className="border border-gray-300 dark:border-gray-600 p-3 bg-white dark:bg-gray-800 min-h-24">
 						{selectedPart ? (
 							<>
-								<h2 className="text-sm font-bold text-gray-900 dark:text-white mb-1">
+								<h4 className="text-sm font-bold text-gray-900 dark:text-white mb-1">
 									{selectedIndex + 1}. {tl(selectedPart.name, lang)}
-								</h2>
+								</h4>
 								<p className="text-sm text-gray-700 dark:text-gray-300">
 									{tl(selectedPart.description, lang)}
 								</p>

@@ -210,6 +210,8 @@
 		"alternativeRpgs": "Alternativa rollspel"
 	},
 	"woodworking": {
+		"anatomy": "Terminologi & anatomi",
+		"loading3d": "Laddar 3D-modell…",
 		"title": "Finsnickeri",
 		"plannedProjects": "Planerade Projekt",
 		"resources": "Resurser",
@@ -225,10 +227,9 @@
 		"project6": "Fågelmatare"
 	},
 	"handPlane": {
-		"title": "Handhyvel i 3D",
-		"back": "Finsnickeri",
+		"title": "Handhyvel (Stanley/Bailey nr 4)",
 		"explode": "Sprängskiss",
-		"explodeAll": "Sprängvy",
+		"explodeAll": "Spräng isär",
 		"assemble": "Montera ihop",
 		"resetView": "Återställ vy",
 		"autoRotate": "Rotera",
@@ -237,8 +238,7 @@
 		"parts": "Delar",
 		"previous": "Föregående del",
 		"next": "Nästa del",
-		"selectPrompt": "Välj en del i listan eller i modellen för att läsa mer om den.",
-		"link": "Handhyvelns delar i 3D"
+		"selectPrompt": "Välj en del i listan eller i modellen för att läsa mer om den."
 	},
 	"error": {
 		"pageNotFound": "Sidan hittades inte",

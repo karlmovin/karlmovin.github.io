@@ -60,7 +60,7 @@ export default function HandPlaneViewer({
 		const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 		renderer.shadowMap.enabled = true;
-		renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+		renderer.shadowMap.type = THREE.PCFShadowMap;
 		renderer.toneMapping = THREE.ACESFilmicToneMapping;
 		container.appendChild(renderer.domElement);
 		renderer.domElement.style.display = "block";
@@ -192,12 +192,13 @@ export default function HandPlaneViewer({
 
 		const projected = new THREE.Vector3();
 		let frame = 0;
-		const clock = new THREE.Clock();
+		const timer = new THREE.Timer();
 		const tick = () => {
 			frame = requestAnimationFrame(tick);
 			const s = state.current;
 			// Frame-rate independent easing factor.
-			const ease = 1 - Math.exp(-clock.getDelta() * 8);
+			timer.update();
+			const ease = 1 - Math.exp(-timer.getDelta() * 8);
 			currentExplode += (s.explode - currentExplode) * ease;
 			controls.autoRotate = s.autoRotate;
 
