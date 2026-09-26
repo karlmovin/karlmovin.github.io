@@ -25,6 +25,10 @@ export const resources: WoodworkingLink[] = [
 		url: "https://www.svenskttra.se/publikationer-start/publikationer/snickerihandbok/",
 	},
 	{ label: "Rubank", url: "https://www.rubank.se/" },
+	{ label: "WW Masterclasses", url: "https://woodworkingmasterclasses.com/" },
+	{ label: "Common Woodworking", url: "https://commonwoodworking.com/" },
+	{ label: "Center for Furniture Craftsmanship", url: "https://woodschool.org/videolibrary/" },
+	{ label: "Free Online Woodworking School", url: "https://www.youtube.com/channel/UCNGaGS5ve2fv936pSaedRng"},
 ];
 
 export const courses: WoodworkingLink[] = [
@@ -56,6 +60,8 @@ export const woodworkers: WoodworkingPerson[] = [
 	{ name: "Matt Estlea", url: "https://www.youtube.com/@MattEstlea" },
 	{ name: "Studio No Ha", url: "https://www.youtube.com/@No.hastudio" },
 	{ name: "Steve Ramsey WWFMM", url: "https://www.youtube.com/@SteveRamsey" },
+	{ name: "Rex Krueger", url: "https://www.youtube.com/@RexKrueger" },
+	{ name: "Tom McLaughlin", url: "https://www.youtube.com/@Epicwoodworking" },
 ];
 
 export const inspiration: WoodworkingLink[] = [
