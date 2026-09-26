@@ -224,6 +224,22 @@
 		"project5": "Watch holder",
 		"project6": "Bird feeder"
 	},
+	"handPlane": {
+		"title": "Hand plane in 3D",
+		"back": "Woodworking",
+		"explode": "Explode",
+		"explodeAll": "Explode",
+		"assemble": "Assemble",
+		"resetView": "Reset view",
+		"autoRotate": "Rotate",
+		"isolate": "Show selected part only",
+		"hint": "Drag to rotate, scroll/pinch to zoom, right-click/two fingers to pan. Click a part to select it.",
+		"parts": "Parts",
+		"previous": "Previous part",
+		"next": "Next part",
+		"selectPrompt": "Pick a part in the list or in the model to read more about it.",
+		"link": "Parts of a hand plane in 3D"
+	},
 	"error": {
 		"pageNotFound": "Page not found",
 		"redirecting": "Redirecting to home in {{seconds}}s...",

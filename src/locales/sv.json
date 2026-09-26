@@ -224,6 +224,22 @@
 		"project5": "Klockhållare",
 		"project6": "Fågelmatare"
 	},
+	"handPlane": {
+		"title": "Handhyvel i 3D",
+		"back": "Finsnickeri",
+		"explode": "Sprängskiss",
+		"explodeAll": "Sprängvy",
+		"assemble": "Montera ihop",
+		"resetView": "Återställ vy",
+		"autoRotate": "Rotera",
+		"isolate": "Visa endast vald del",
+		"hint": "Dra för att rotera, scrolla/nyp för att zooma, högerklicka/två fingrar för att panorera. Klicka på en del för att välja den.",
+		"parts": "Delar",
+		"previous": "Föregående del",
+		"next": "Nästa del",
+		"selectPrompt": "Välj en del i listan eller i modellen för att läsa mer om den.",
+		"link": "Handhyvelns delar i 3D"
+	},
 	"error": {
 		"pageNotFound": "Sidan hittades inte",
 		"redirecting": "Omdirigerar till startsidan om {{seconds}}s...",

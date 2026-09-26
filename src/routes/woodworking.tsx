@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 import {
 	plannedProjectKeys,
 	resources,
@@ -40,6 +41,14 @@ export default function Woodworking() {
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-3">
 				{/* Left column */}
 				<div className="space-y-3">
+					{/* 3D hand plane */}
+					<Link
+						to="/woodworking/hand-plane"
+						className="block border border-gray-300 dark:border-gray-600 p-3 bg-white dark:bg-gray-800 text-sm font-medium text-blue-700 dark:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700"
+					>
+						{t("handPlane.link")} →
+					</Link>
+
 					{/* Planned Projects */}
 					<div className="border border-gray-300 dark:border-gray-600 p-3 bg-white dark:bg-gray-800">
 						<h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-600 pb-1 mb-2">

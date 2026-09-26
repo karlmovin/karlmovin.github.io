@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
@@ -21,6 +21,9 @@ import Weather from "./routes/weather.tsx";
 import Wines from "./routes/wines.tsx";
 import Wishlist from "./routes/wishlist.tsx";
 import Woodworking from "./routes/woodworking.tsx";
+
+// three.js is heavy, so the 3D page is split into its own chunk.
+const HandPlane = lazy(() => import("./routes/hand-plane.tsx"));
 
 const router = createBrowserRouter([
 	{
@@ -66,6 +69,14 @@ const router = createBrowserRouter([
 					{
 						path: "woodworking",
 						element: <Woodworking />,
+					},
+					{
+						path: "woodworking/hand-plane",
+						element: (
+							<Suspense fallback={null}>
+								<HandPlane />
+							</Suspense>
+						),
 					},
 					{
 						path: "rpg",
