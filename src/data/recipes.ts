@@ -10,7 +10,7 @@ export type Recipe = {
 export const recipes: Recipe[] = [
 	{
 		title: "Kalljästa Frallor",
-		url: "https://www.alexanderlagarmat.se/bakning/kalljasta-frallor/",
+		url: "https://www.alexanderlagarmat.se/wprm_print/2168#",
 		tags: ["frukost", "bröd"],
 	},
 ];
