@@ -27,4 +27,12 @@ export const stsBlocks: ContentBlock[] = [
 		url: "https://teckensprakslexikon.su.se/",
 		label: { sv: "Teckenspråkslexikon", en: "Sign language lexicon" },
 	},
+	{
+		type: "link",
+		url: "https://www.isof.se/svenskt-teckensprak",
+		label: {
+			sv: "Institutet för språk och folkminnen",
+			en: "Institute for Language and Folklore",
+		},
+	},
 ];
