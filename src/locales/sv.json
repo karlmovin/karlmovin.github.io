@@ -16,6 +16,7 @@
 		"trafficMap": "Trafikkarta",
 		"lantmaterietMap": "Lantmäteriet-karta",
 		"woodworking": "Finsnickeri",
+		"sprak": "Språk",
 		"rpg": "Rollspel",
 		"seasonPass": "Säsongskort-kalkylator",
 		"recipes": "Recept",
@@ -225,6 +226,9 @@
 		"project4": "All världens spel",
 		"project5": "Klockhållare",
 		"project6": "Fågelmatare"
+	},
+	"sprak": {
+		"title": "Språk"
 	},
 	"handPlane": {
 		"title": "Handhyvel (Stanley/Bailey nr 4)",
