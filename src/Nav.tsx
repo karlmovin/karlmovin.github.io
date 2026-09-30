@@ -354,6 +354,11 @@ export default function Nav() {
 				{ type: "link", to: "books", label: t("nav.books") },
 				{ type: "link", to: "links", label: t("nav.links") },
 				{ type: "link", to: "woodworking", label: t("nav.woodworking") },
+				{
+					type: "group",
+					label: t("nav.language"),
+					children: [{ type: "link", to: "sts", label: "STS" }],
+				},
 				{ type: "link", to: "rpg", label: t("nav.rpg") },
 				{ type: "link", to: "wishlist", label: t("nav.wishlist") },
 				{
