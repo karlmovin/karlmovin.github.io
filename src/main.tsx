@@ -17,7 +17,7 @@ import News from "./routes/news.tsx";
 import Rpg from "./routes/rpg.tsx";
 import PassCalculator from "./routes/pass-calculator.tsx";
 import Recipes from "./routes/recipes.tsx";
-import Sprak from "./routes/sprak.tsx";
+import Sts from "./routes/sts.tsx";
 import Weather from "./routes/weather.tsx";
 import Wines from "./routes/wines.tsx";
 import Wishlist from "./routes/wishlist.tsx";
@@ -69,8 +69,8 @@ const router = createBrowserRouter([
 						element: <Woodworking />,
 					},
 					{
-						path: "sprak",
-						element: <Sprak />,
+						path: "sts",
+						element: <Sts />,
 					},
 					{
 						path: "rpg",

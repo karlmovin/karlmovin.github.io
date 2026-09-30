@@ -16,7 +16,7 @@
 		"trafficMap": "Traffic Map",
 		"lantmaterietMap": "Lantmäteriet Map",
 		"woodworking": "Woodworking",
-		"sprak": "Language",
+		"language": "Language",
 		"rpg": "Tabletop RPG",
 		"seasonPass": "Season pass calculator",
 		"recipes": "Recipes",
@@ -227,8 +227,8 @@
 		"project5": "Watch holder",
 		"project6": "Bird feeder"
 	},
-	"sprak": {
-		"title": "Language"
+	"sts": {
+		"title": "Swedish Sign Language (STS)"
 	},
 	"handPlane": {
 		"title": "Hand plane (Stanley/Bailey No. 4)",

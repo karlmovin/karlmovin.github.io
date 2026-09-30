@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { languageSubsections, type ContentBlock } from "../data/sprak";
+import { stsBlocks, type ContentBlock } from "../data/sts";
 import { t as tl } from "../data/i18n-helpers";
 
 function ExtLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -66,32 +66,18 @@ function Block({ block, lang }: { block: ContentBlock; lang: string }) {
 	}
 }
 
-export default function Sprak() {
+export default function Sts() {
 	const { t, i18n } = useTranslation();
 	const lang = i18n.language;
 
 	return (
 		<div className="max-w-7xl mx-auto px-2 sm:px-4 py-4">
 			<h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b-2 border-gray-800 dark:border-gray-200 pb-1">
-				{t("sprak.title")}
+				{t("sts.title")}
 			</h1>
-
-			<div className="space-y-3">
-				{languageSubsections.map((section) => (
-					<section
-						key={section.id}
-						className="border border-gray-300 dark:border-gray-600 p-3 bg-white dark:bg-gray-800"
-					>
-						<h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white border-b border-gray-300 dark:border-gray-600 pb-1 mb-2">
-							{tl(section.title, lang)}
-							{section.abbreviation ? ` (${section.abbreviation})` : ""}
-						</h2>
-						<div className="space-y-2">
-							{section.blocks.map((block) => (
-								<Block key={blockKey(block)} block={block} lang={lang} />
-							))}
-						</div>
-					</section>
+			<div className="border border-gray-300 dark:border-gray-600 p-3 bg-white dark:bg-gray-800 space-y-2">
+				{stsBlocks.map((block) => (
+					<Block key={blockKey(block)} block={block} lang={lang} />
 				))}
 			</div>
 		</div>
