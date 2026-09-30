@@ -22,4 +22,9 @@ export const stsBlocks: ContentBlock[] = [
 		url: "https://teckensprakslexikon.su.se/files/handformer-oversikt.pdf",
 		label: { sv: "Handformer", en: "Hand forms" },
 	},
+	{
+		type: "link",
+		url: "https://teckensprakslexikon.su.se/",
+		label: { sv: "Teckenspråkslexikon", en: "Sign language lexicon" },
+	},
 ];
