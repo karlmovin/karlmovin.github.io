@@ -9,4 +9,7 @@ export const wishlist: WishlistItem[] = [
 	{
 		label: { sv: "Läderförkläde", en: "Leather apron" },
 	},
+ {
+		label: { sv: "Symaskin", en: "Sewing machine" },
+	},
 ];
