@@ -83,4 +83,17 @@ export const wines: Wine[] = [
 			en: "Spicy, pairs with flavorful dishes.",
 		},
 	},
+	{
+		name: "Crudo Catarratto Zibibbo",
+		year: 2024,
+		rating: 7,
+		priceClass: 1,
+		url: "https://www.systembolaget.se/produkt/vin/crudo-7411308/",
+		country: countries.IT,
+		tags: ["vitt", "catarratto", "zibibbo", "sicilien", "sällskap", "fisk"],
+		notes: {
+			sv: "Spännande vitt sällskapsvin, gott till fisk.",
+			en: "Exciting white social wine, good with fish.",
+		},
+	},
 ];
