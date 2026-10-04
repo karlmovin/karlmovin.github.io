@@ -18,6 +18,21 @@ function Rating({ value, max = 10 }: { value: number; max?: number }) {
 	);
 }
 
+function PriceClass({ value, max = 4 }: { value: number; max?: number }) {
+	return (
+		<span
+			className="px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 rounded-full text-green-600 dark:text-green-400"
+			aria-label={`${"$".repeat(value)} / ${"$".repeat(max)}`}
+			title={`${"$".repeat(value)} / ${"$".repeat(max)}`}
+		>
+			{"$".repeat(value)}
+			<span className="text-gray-300 dark:text-gray-500">
+				{"$".repeat(max - value)}
+			</span>
+		</span>
+	);
+}
+
 export default function Wines() {
 	const { t, i18n } = useTranslation();
 	const lang = i18n.language;
@@ -120,6 +135,7 @@ export default function Wines() {
 									{w.year}
 								</span>
 								<Rating value={w.rating} />
+								<PriceClass value={w.priceClass} />
 							</div>
 							{w.notes && (
 								<p className="max-w-prose text-gray-700 dark:text-gray-200 leading-relaxed">
