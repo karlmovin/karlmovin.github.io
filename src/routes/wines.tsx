@@ -39,10 +39,68 @@ function PriceClass({ value, max = 4 }: { value: number; max?: number }) {
 	);
 }
 
-const selectClass =
-	"px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors";
 const chipClass =
 	"px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full";
+
+function Select({
+	ariaLabel,
+	value,
+	onChange,
+	children,
+}: {
+	ariaLabel: string;
+	value: string;
+	onChange: (value: string) => void;
+	children: React.ReactNode;
+}) {
+	return (
+		<div className="relative">
+			<select
+				aria-label={ariaLabel}
+				value={value}
+				onChange={(e) => onChange(e.target.value)}
+				className="appearance-none cursor-pointer rounded-full bg-gray-100 dark:bg-gray-700 py-2 pl-4 pr-9 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+			>
+				{children}
+			</select>
+			<svg
+				aria-hidden="true"
+				viewBox="0 0 20 20"
+				fill="none"
+				stroke="currentColor"
+				strokeWidth={2}
+				className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500 dark:text-gray-400"
+			>
+				<path strokeLinecap="round" strokeLinejoin="round" d="M6 8l4 4 4-4" />
+			</svg>
+		</div>
+	);
+}
+
+function ToggleChip({
+	checked,
+	onChange,
+	label,
+}: {
+	checked: boolean;
+	onChange: (checked: boolean) => void;
+	label: string;
+}) {
+	return (
+		<button
+			type="button"
+			aria-pressed={checked}
+			onClick={() => onChange(!checked)}
+			className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+				checked
+					? "bg-blue-600 text-white hover:bg-blue-700"
+					: "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+			}`}
+		>
+			{label}
+		</button>
+	);
+}
 
 export default function Wines() {
 	const { t, i18n } = useTranslation();
@@ -111,11 +169,10 @@ export default function Wines() {
 					/>
 
 					<div className="flex flex-wrap items-center gap-3">
-						<select
-							aria-label={t("wines.filters.color")}
+						<Select
+							ariaLabel={t("wines.filters.color")}
 							value={colorFilter}
-							onChange={(e) => setColorFilter(e.target.value as Color | "")}
-							className={selectClass}
+							onChange={(value) => setColorFilter(value as Color | "")}
 						>
 							<option value="">{t("wines.filters.allColors")}</option>
 							{(Object.keys(colorLabels) as Color[]).map((color) => (
@@ -123,13 +180,12 @@ export default function Wines() {
 									{tl(colorLabels[color], lang)}
 								</option>
 							))}
-						</select>
+						</Select>
 
-						<select
-							aria-label={t("wines.filters.grapes")}
+						<Select
+							ariaLabel={t("wines.filters.grapes")}
 							value={grapeFilter}
-							onChange={(e) => setGrapeFilter(e.target.value)}
-							className={selectClass}
+							onChange={setGrapeFilter}
 						>
 							<option value="">{t("wines.filters.allGrapes")}</option>
 							{allGrapes.map((grape) => (
@@ -137,13 +193,12 @@ export default function Wines() {
 									{grape}
 								</option>
 							))}
-						</select>
+						</Select>
 
-						<select
-							aria-label={t("wines.filters.food")}
+						<Select
+							ariaLabel={t("wines.filters.food")}
 							value={foodFilter}
-							onChange={(e) => setFoodFilter(e.target.value as FoodTag | "")}
-							className={selectClass}
+							onChange={(value) => setFoodFilter(value as FoodTag | "")}
 						>
 							<option value="">{t("wines.filters.allFood")}</option>
 							{(Object.keys(foodLabels) as FoodTag[]).map((food) => (
@@ -151,27 +206,19 @@ export default function Wines() {
 									{tl(foodLabels[food], lang)}
 								</option>
 							))}
-						</select>
+						</Select>
 
-						<label className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
-							<input
-								type="checkbox"
-								checked={ecologicalOnly}
-								onChange={(e) => setEcologicalOnly(e.target.checked)}
-								className="rounded border-gray-300 dark:border-gray-600"
-							/>
-							{t("wines.filters.ecological")}
-						</label>
+						<ToggleChip
+							checked={ecologicalOnly}
+							onChange={setEcologicalOnly}
+							label={t("wines.filters.ecological")}
+						/>
 
-						<label className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
-							<input
-								type="checkbox"
-								checked={socialOnly}
-								onChange={(e) => setSocialOnly(e.target.checked)}
-								className="rounded border-gray-300 dark:border-gray-600"
-							/>
-							{t("wines.filters.social")}
-						</label>
+						<ToggleChip
+							checked={socialOnly}
+							onChange={setSocialOnly}
+							label={t("wines.filters.social")}
+						/>
 					</div>
 				</div>
 			</div>
