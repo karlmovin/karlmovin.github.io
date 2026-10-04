@@ -267,7 +267,17 @@
 	"wines": {
 		"title": "Wine",
 		"searchPlaceholder": "Search wines...",
-		"noResults": "No wines found"
+		"noResults": "No wines found",
+		"filters": {
+			"color": "Color",
+			"allColors": "All colors",
+			"grapes": "Grapes",
+			"allGrapes": "All grapes",
+			"food": "Food",
+			"allFood": "All food",
+			"ecological": "Organic",
+			"social": "Social wine"
+		}
 	},
 	"verktyg": {
 		"period": {

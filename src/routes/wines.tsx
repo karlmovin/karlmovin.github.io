@@ -1,7 +1,13 @@
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { t as tl } from "../data/i18n-helpers";
-import { wines } from "../data/wines";
+import {
+	type Color,
+	colorLabels,
+	type FoodTag,
+	foodLabels,
+	wines,
+} from "../data/wines";
 
 function Rating({ value, max = 10 }: { value: number; max?: number }) {
 	return (
@@ -33,16 +39,27 @@ function PriceClass({ value, max = 4 }: { value: number; max?: number }) {
 	);
 }
 
+const selectClass =
+	"px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors";
+const chipClass =
+	"px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full";
+
 export default function Wines() {
 	const { t, i18n } = useTranslation();
 	const lang = i18n.language;
 	const [searchTerm, setSearchTerm] = useState("");
-	const [selectedTags, setSelectedTags] = useState<string[]>([]);
+	const [colorFilter, setColorFilter] = useState<Color | "">("");
+	const [grapeFilter, setGrapeFilter] = useState("");
+	const [foodFilter, setFoodFilter] = useState<FoodTag | "">("");
+	const [ecologicalOnly, setEcologicalOnly] = useState(false);
+	const [socialOnly, setSocialOnly] = useState(false);
 
-	const allTags = useMemo(() => {
-		const tags = new Set<string>();
-		wines.forEach((w) => w.tags.forEach((tag) => tags.add(tag)));
-		return Array.from(tags).sort();
+	const allGrapes = useMemo(() => {
+		const grapes = new Set<string>();
+		for (const w of wines) {
+			for (const grape of w.grapes) grapes.add(grape);
+		}
+		return Array.from(grapes).sort();
 	}, []);
 
 	const filtered = useMemo(() => {
@@ -53,18 +70,29 @@ export default function Wines() {
 				!q ||
 				w.name.toLowerCase().includes(q) ||
 				notes.toLowerCase().includes(q);
-			const matchesTags =
-				selectedTags.length === 0 ||
-				selectedTags.every((tag) => w.tags.includes(tag));
-			return matchesSearch && matchesTags;
+			const matchesColor = !colorFilter || w.color === colorFilter;
+			const matchesGrape = !grapeFilter || w.grapes.includes(grapeFilter);
+			const matchesFood = !foodFilter || w.food.includes(foodFilter);
+			const matchesEcological = !ecologicalOnly || w.ecological;
+			const matchesSocial = !socialOnly || w.social;
+			return (
+				matchesSearch &&
+				matchesColor &&
+				matchesGrape &&
+				matchesFood &&
+				matchesEcological &&
+				matchesSocial
+			);
 		});
-	}, [searchTerm, selectedTags, lang]);
-
-	const toggleTag = (tag: string) => {
-		setSelectedTags((prev) =>
-			prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
-		);
-	};
+	}, [
+		searchTerm,
+		colorFilter,
+		grapeFilter,
+		foodFilter,
+		ecologicalOnly,
+		socialOnly,
+		lang,
+	]);
 
 	return (
 		<main className="flex flex-col gap-6 py-8 container max-w-(--breakpoint-xl) mx-auto px-4">
@@ -82,23 +110,69 @@ export default function Wines() {
 						className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
 					/>
 
-					{allTags.length > 0 && (
-						<div className="flex flex-wrap gap-2">
-							{allTags.map((tag) => (
-								<button
-									key={tag}
-									onClick={() => toggleTag(tag)}
-									className={`px-3 py-1 rounded-full text-sm transition-colors ${
-										selectedTags.includes(tag)
-											? "bg-gray-300 dark:bg-gray-600 text-gray-900 dark:text-white font-medium"
-											: "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600"
-									}`}
-								>
-									{tag}
-								</button>
+					<div className="flex flex-wrap items-center gap-3">
+						<select
+							aria-label={t("wines.filters.color")}
+							value={colorFilter}
+							onChange={(e) => setColorFilter(e.target.value as Color | "")}
+							className={selectClass}
+						>
+							<option value="">{t("wines.filters.allColors")}</option>
+							{(Object.keys(colorLabels) as Color[]).map((color) => (
+								<option key={color} value={color}>
+									{tl(colorLabels[color], lang)}
+								</option>
 							))}
-						</div>
-					)}
+						</select>
+
+						<select
+							aria-label={t("wines.filters.grapes")}
+							value={grapeFilter}
+							onChange={(e) => setGrapeFilter(e.target.value)}
+							className={selectClass}
+						>
+							<option value="">{t("wines.filters.allGrapes")}</option>
+							{allGrapes.map((grape) => (
+								<option key={grape} value={grape}>
+									{grape}
+								</option>
+							))}
+						</select>
+
+						<select
+							aria-label={t("wines.filters.food")}
+							value={foodFilter}
+							onChange={(e) => setFoodFilter(e.target.value as FoodTag | "")}
+							className={selectClass}
+						>
+							<option value="">{t("wines.filters.allFood")}</option>
+							{(Object.keys(foodLabels) as FoodTag[]).map((food) => (
+								<option key={food} value={food}>
+									{tl(foodLabels[food], lang)}
+								</option>
+							))}
+						</select>
+
+						<label className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+							<input
+								type="checkbox"
+								checked={ecologicalOnly}
+								onChange={(e) => setEcologicalOnly(e.target.checked)}
+								className="rounded border-gray-300 dark:border-gray-600"
+							/>
+							{t("wines.filters.ecological")}
+						</label>
+
+						<label className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+							<input
+								type="checkbox"
+								checked={socialOnly}
+								onChange={(e) => setSocialOnly(e.target.checked)}
+								className="rounded border-gray-300 dark:border-gray-600"
+							/>
+							{t("wines.filters.social")}
+						</label>
+					</div>
 				</div>
 			</div>
 
@@ -123,10 +197,7 @@ export default function Wines() {
 									{w.name} ↗
 								</a>
 								<span className="text-sm text-gray-600 dark:text-gray-400">
-									<span
-										aria-label={tl(w.country.name, lang)}
-										className="mr-1"
-									>
+									<span aria-label={tl(w.country.name, lang)} className="mr-1">
 										{w.country.flag}
 									</span>
 									{tl(w.country.name, lang)}
@@ -142,18 +213,29 @@ export default function Wines() {
 									{tl(w.notes, lang)}
 								</p>
 							)}
-							{w.tags.length > 0 && (
-								<div className="flex flex-wrap gap-2">
-									{w.tags.map((tag) => (
-										<span
-											key={tag}
-											className="px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-full"
-										>
-											{tag}
-										</span>
-									))}
-								</div>
-							)}
+							<div className="flex flex-wrap gap-2">
+								<span className={chipClass}>
+									{tl(colorLabels[w.color], lang)}
+								</span>
+								{w.grapes.map((grape) => (
+									<span key={grape} className={chipClass}>
+										{grape}
+									</span>
+								))}
+								{w.food.map((food) => (
+									<span key={food} className={chipClass}>
+										{tl(foodLabels[food], lang)}
+									</span>
+								))}
+								{w.ecological && (
+									<span className={chipClass}>
+										{t("wines.filters.ecological")}
+									</span>
+								)}
+								{w.social && (
+									<span className={chipClass}>{t("wines.filters.social")}</span>
+								)}
+							</div>
 						</li>
 					))}
 				</ul>

@@ -267,7 +267,17 @@
 	"wines": {
 		"title": "Vin",
 		"searchPlaceholder": "Sök vin...",
-		"noResults": "Inga viner hittades"
+		"noResults": "Inga viner hittades",
+		"filters": {
+			"color": "Färg",
+			"allColors": "Alla färger",
+			"grapes": "Druvor",
+			"allGrapes": "Alla druvor",
+			"food": "Mat",
+			"allFood": "Alla maträtter",
+			"ecological": "Ekologiskt",
+			"social": "Sällskapsvin"
+		}
 	},
 	"verktyg": {
 		"period": {
