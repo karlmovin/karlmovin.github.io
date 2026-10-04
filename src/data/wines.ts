@@ -54,8 +54,8 @@ export const wines: Wine[] = [
 		country: countries.IT,
 		tags: ["rött", "sangiovese", "chianti", "ekologiskt", "lamm", "nöt"],
 		notes: {
-			sv: "Kryddig med ekkaraktär, toner av mörka körsbär, plommon, kakao, nötter, svart te och örter. Passar till lamm eller nötkött.",
-			en: "Spicy with oak character, notes of dark cherries, plums, cocoa, nuts, black tea and herbs. Pairs with lamb or beef.",
+			sv: "Mellantungt, passar till tyngre smaker.",
+			en: "Medium-bodied, pairs with heavier flavors.",
 		},
 	},
 	{
@@ -74,8 +74,8 @@ export const wines: Wine[] = [
 			"nöt",
 		],
 		notes: {
-			sv: "Fruktigt med toner av mörka körsbär, viol, plommon, färska örter och skogsbär. Från Douro-dalen, Portugal.",
-			en: "Fruity with notes of dark cherries, violet, plum, fresh herbs and forest berries. From the Douro valley, Portugal.",
+			sv: "Kryddigt, passar till smakrika rätter.",
+			en: "Spicy, pairs with flavorful dishes.",
 		},
 	},
 ];
