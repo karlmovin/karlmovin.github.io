@@ -18,6 +18,7 @@ export type Wine = {
 export const countries = {
 	PT: { flag: "🇵🇹", name: { sv: "Portugal", en: "Portugal" } },
 	DE: { flag: "🇩🇪", name: { sv: "Tyskland", en: "Germany" } },
+	IT: { flag: "🇮🇹", name: { sv: "Italien", en: "Italy" } },
 } satisfies Record<string, Country>;
 
 export const wines: Wine[] = [
@@ -43,6 +44,38 @@ export const wines: Wine[] = [
 		notes: {
 			sv: "Sött, småsurt sällskapsvin, passar till asiatisk mat och fisk.",
 			en: "Sweet, slightly sour social wine, pairs with Asian food and fish.",
+		},
+	},
+	{
+		name: "Castelgufo Chianti Riserva Organic",
+		year: 2022,
+		rating: 7,
+		url: "https://www.systembolaget.se/produkt/vin/castelgufo-7238901/",
+		country: countries.IT,
+		tags: ["rött", "sangiovese", "chianti", "ekologiskt", "lamm", "nöt"],
+		notes: {
+			sv: "Kryddig med ekkaraktär, toner av mörka körsbär, plommon, kakao, nötter, svart te och örter. Passar till lamm eller nötkött.",
+			en: "Spicy with oak character, notes of dark cherries, plums, cocoa, nuts, black tea and herbs. Pairs with lamb or beef.",
+		},
+	},
+	{
+		name: "Mural",
+		year: 2024,
+		rating: 6,
+		url: "https://www.systembolaget.se/produkt/vin/mural-9414001/",
+		country: countries.PT,
+		tags: [
+			"rött",
+			"tinta roriz",
+			"touriga francesa",
+			"touriga nacional",
+			"douro",
+			"lamm",
+			"nöt",
+		],
+		notes: {
+			sv: "Fruktigt med toner av mörka körsbär, viol, plommon, färska örter och skogsbär. Från Douro-dalen, Portugal.",
+			en: "Fruity with notes of dark cherries, violet, plum, fresh herbs and forest berries. From the Douro valley, Portugal.",
 		},
 	},
 ];
