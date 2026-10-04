@@ -234,7 +234,7 @@ export default function Wines() {
 							key={w.url}
 							className="flex flex-col gap-3 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xs border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow"
 						>
-							<div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+							<div className="flex flex-col gap-1">
 								<a
 									href={w.url}
 									target="_blank"
@@ -243,17 +243,22 @@ export default function Wines() {
 								>
 									{w.name} ↗
 								</a>
-								<span className="text-sm text-gray-600 dark:text-gray-400">
-									<span aria-label={tl(w.country.name, lang)} className="mr-1">
-										{w.country.flag}
+								<div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+									<span className="text-sm text-gray-600 dark:text-gray-400">
+										<span
+											aria-label={tl(w.country.name, lang)}
+											className="mr-1"
+										>
+											{w.country.flag}
+										</span>
+										{tl(w.country.name, lang)}
 									</span>
-									{tl(w.country.name, lang)}
-								</span>
-								<span className="text-sm text-gray-600 dark:text-gray-400">
-									{w.year}
-								</span>
-								<Rating value={w.rating} />
-								<PriceClass value={w.priceClass} />
+									<span className="text-sm text-gray-600 dark:text-gray-400">
+										{w.year}
+									</span>
+									<Rating value={w.rating} />
+									<PriceClass value={w.priceClass} />
+								</div>
 							</div>
 							{w.notes && (
 								<p className="max-w-prose text-gray-700 dark:text-gray-200 leading-relaxed">
