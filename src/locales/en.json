@@ -21,7 +21,9 @@
 		"seasonPass": "Season pass calculator",
 		"recipes": "Recipes",
 		"wine": "Wine",
-		"wishlist": "Wishlist"
+		"wishlist": "Wishlist",
+		"foodAndDrink": "Food & drink",
+		"temperatures": "Internal temperatures"
 	},
 	"theme": {
 		"toggle": "Toggle between light and dark theme"
@@ -263,6 +265,13 @@
 		"title": "Recipes",
 		"searchPlaceholder": "Search recipes...",
 		"noResults": "No recipes found"
+	},
+	"temperatures": {
+		"title": "Internal temperatures",
+		"description": "It's important to keep track of the internal temperature of ingredients. These are the recommendations.",
+		"ingredient": "Ingredient",
+		"temperature": "Internal temperature",
+		"atLeast": "At least"
 	},
 	"wines": {
 		"title": "Wine",

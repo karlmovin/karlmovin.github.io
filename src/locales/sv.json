@@ -21,7 +21,9 @@
 		"seasonPass": "Säsongskort-kalkylator",
 		"recipes": "Recept",
 		"wine": "Vin",
-		"wishlist": "Önskelista"
+		"wishlist": "Önskelista",
+		"foodAndDrink": "Mat och dryck",
+		"temperatures": "Innertemperaturer"
 	},
 	"theme": {
 		"toggle": "V\u00e4xla mellan ljust och m\u00f6rkt tema"
@@ -263,6 +265,13 @@
 		"title": "Recept",
 		"searchPlaceholder": "Sök recept...",
 		"noResults": "Inga recept hittades"
+	},
+	"temperatures": {
+		"title": "Innertemperaturer",
+		"description": "Det är viktigt att hålla koll på råvarans innertemperatur. De här rekommenderas.",
+		"ingredient": "Råvara",
+		"temperature": "Innertemperatur",
+		"atLeast": "Minst"
 	},
 	"wines": {
 		"title": "Vin",
