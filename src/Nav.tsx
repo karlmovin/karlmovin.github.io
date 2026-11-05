@@ -348,8 +348,19 @@ export default function Nav() {
 			id: "information",
 			label: t("nav.information"),
 			items: [
-				{ type: "link", to: "recipes", label: t("nav.recipes") },
-				{ type: "link", to: "wines", label: t("nav.wine") },
+				{
+					type: "group",
+					label: t("nav.foodAndDrink"),
+					children: [
+						{ type: "link", to: "recipes", label: t("nav.recipes") },
+						{ type: "link", to: "wines", label: t("nav.wine") },
+						{
+							type: "link",
+							to: "temperatures",
+							label: t("nav.temperatures"),
+						},
+					],
+				},
 				{ type: "link", to: "art", label: t("nav.art") },
 				{ type: "link", to: "books", label: t("nav.books") },
 				{ type: "link", to: "links", label: t("nav.links") },
