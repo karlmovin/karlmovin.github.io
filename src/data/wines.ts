@@ -115,6 +115,23 @@ export const wines: Wine[] = [
 		},
 	},
 	{
+		name: "Boirà Sangiovese Organic",
+		year: 2025,
+		rating: 8,
+		priceClass: 1,
+		url: "https://www.systembolaget.se/produkt/vin/boira-sangiovese-2025-3243101/",
+		country: countries.IT,
+		color: "red",
+		grapes: ["Sangiovese"],
+		food: ["lamb", "pasta"],
+		ecological: true,
+		social: true,
+		notes: {
+			sv: "Fruktigt med inslag av körsbär, blåbär och kanel, 115 kr på Systembolaget.",
+			en: "Fruity with notes of cherry, blueberry and cinnamon, 115 SEK at Systembolaget.",
+		},
+	},
+	{
 		name: "Crudo Catarratto Zibibbo",
 		year: 2024,
 		rating: 7,
