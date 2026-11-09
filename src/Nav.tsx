@@ -197,10 +197,12 @@ function MobileItems({
 	items,
 	expandedGroup,
 	setExpandedGroup,
+	onNavigate,
 }: {
 	items: NavItem[];
 	expandedGroup: string | null;
 	setExpandedGroup: (id: string | null) => void;
+	onNavigate: () => void;
 }) {
 	return items.map((item) => {
 		if (item.type === "group") {
@@ -221,6 +223,7 @@ function MobileItems({
 							<LeafItem
 								key={child.type === "link" ? child.to : child.href}
 								item={child}
+								onClick={onNavigate}
 								className={mobileSubItemClass}
 								activeClassName={mobileSubItemActiveClass}
 							/>
@@ -232,6 +235,7 @@ function MobileItems({
 			<LeafItem
 				key={item.type === "link" ? item.to : item.href}
 				item={item}
+				onClick={onNavigate}
 				className={mobileItemClass}
 				activeClassName={mobileItemActiveClass}
 			/>
@@ -245,12 +249,14 @@ function MobileSection({
 	onToggle,
 	expandedGroup,
 	setExpandedGroup,
+	onNavigate,
 }: {
 	section: NavSection;
 	isOpen: boolean;
 	onToggle: () => void;
 	expandedGroup: string | null;
 	setExpandedGroup: (id: string | null) => void;
+	onNavigate: () => void;
 }) {
 	return (
 		<>
@@ -269,6 +275,7 @@ function MobileSection({
 						items={section.items}
 						expandedGroup={expandedGroup}
 						setExpandedGroup={setExpandedGroup}
+						onNavigate={onNavigate}
 					/>
 				</div>
 			)}
@@ -300,6 +307,11 @@ export default function Nav() {
 	const stopLogoAnim = () => setLogoAnim("");
 
 	const closeDropdown = () => setOpenDropdown(null);
+	const closeMobileMenu = () => {
+		setIsOpen(false);
+		setOpenMobileSection(null);
+		setExpandedGroup(null);
+	};
 
 	const sections: NavSection[] = [
 		{
@@ -501,12 +513,14 @@ export default function Nav() {
 								}
 								expandedGroup={expandedGroup}
 								setExpandedGroup={setExpandedGroup}
+								onNavigate={closeMobileMenu}
 							/>
 						))}
 						{topLevelLinks.map((item) => (
 							<LeafItem
 								key={item.type === "link" ? item.to : item.href}
 								item={item}
+								onClick={closeMobileMenu}
 								className={mobileItemClass}
 								activeClassName={mobileItemActiveClass}
 							/>
