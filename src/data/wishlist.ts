@@ -27,4 +27,12 @@ export const wishlist: WishlistItem[] = [
 			en: "Nice backpack, but must be comfortable to wear too",
 		},
 	},
+	{
+		label: { sv: "Täljkit", en: "Carving kit" },
+		url: "https://www.morakniv.com/products/taljkit-fyra-knivar/",
+	},
+	{
+		label: { sv: "Täljyxa", en: "Sloyd axe" },
+		url: "https://www.naturkompaniet.se/produkt/liten-sloejdbila-dubbelslipad-20876573/?color=nocolor",
+	},
 ];
